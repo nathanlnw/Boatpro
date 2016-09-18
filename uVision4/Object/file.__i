@@ -1,0 +1,1 @@
+-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\interface_layer\Include -I..\StartUp\inc -I..\user\inc -I..\driver\inc -I..\debug\inc -I..\ptl\inc -I d:\Keil\ARM\RV31\Inc -I d:\Keil\ARM\CMSIS\Include -I d:\Keil\ARM\Inc\ST\STM32F10x -o ".\Object\file.o" --omf_browse ".\Object\file.crf" --depend ".\Object\file.d" "..\driver\src\file.c"

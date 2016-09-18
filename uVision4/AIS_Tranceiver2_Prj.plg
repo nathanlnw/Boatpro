@@ -1,0 +1,28 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\MyUVision4s\Mxxxx_Tranceiver2\AIS_Tranceiver2_Prj_00\uVision4\AIS_Tranceiver2_Prj.uvproj
+Project File Date:  06/30/2014
+
+<h2>Output:</h2>
+Build target 'AIS_Tranceiver2_Target'
+assembling cortexm3_macro.s...
+compiling stm32f10x_it.c...
+..\StartUp\src\stm32f10x_it.c(20): error:  #5: cannot open source input file "def.h": No such file or directory
+assembling stm32f10x_startup.s...
+compiling stm32f10x_target.c...
+..\StartUp\src\stm32f10x_target.c(13): error:  #5: cannot open source input file "def.h": No such file or directory
+compiling batteryscan.c...
+..\interface_layer\Source\batteryscan.c(12): error:  #5: cannot open source input file "config.h": No such file or directory
+compiling CMX7042Comm.c...
+..\interface_layer\Source\CMX7042Comm.c(16): error:  #5: cannot open source input file "def.h": No such file or directory
+compiling firfilt.c...
+..\interface_layer\Source\firfilt.c(17): error:  #5: cannot open source input file "def.h": No such file or directory
+compiling gmskmod.c...
+..\interface_layer\Source\gmskmod.c(13): error:  #5: cannot open source input file "def.h": No such file or directory
+Project build/rebuild aborted.
+Target not created
+Clean started: Project: 'AIS_Tranceiver2_Prj'
+   deleting intermediate output files for target 'AIS_Tranceiver2_Target'

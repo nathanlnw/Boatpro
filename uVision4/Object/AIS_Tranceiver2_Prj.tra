@@ -1,0 +1,83 @@
+*** Creating Trace Output File '.\Object\AIS_Tranceiver2_Prj.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\object\cortexm3_macro.o"'
+### List of Objects: adding '".\object\stm32f10x_it.o"'
+### List of Objects: adding '".\object\stm32f10x_startup.o"'
+### List of Objects: adding '".\object\stm32f10x_target.o"'
+### List of Objects: adding '"..\library\STM32F10xR.LIB"'
+### List of Objects: adding '".\object\stm32f10x_sdio.o"'
+### List of Objects: adding '".\object\stm32f10x_flash.o"'
+### List of Objects: adding '".\object\batteryscan.o"'
+### List of Objects: adding '".\object\ioctrl.o"'
+### List of Objects: adding '".\object\keyscan.o"'
+### List of Objects: adding '".\object\parastorage.o"'
+### List of Objects: adding '".\object\rxtxctrl.o"'
+### List of Objects: adding '".\object\systemtick.o"'
+### List of Objects: adding '".\object\datalinkservice.o"'
+### List of Objects: adding '".\object\linkmanagemententity.o"'
+### List of Objects: adding '".\object\physicallayer.o"'
+### List of Objects: adding '".\object\ais_msgmodu.o"'
+### List of Objects: adding '".\object\aisdigitalinterface.o"'
+### List of Objects: adding '".\object\aismsgmodule.o"'
+### List of Objects: adding '".\object\slot.o"'
+### List of Objects: adding '".\object\tdma.o"'
+### List of Objects: adding '".\object\deviceinfo.o"'
+### List of Objects: adding '".\object\aisinfo.o"'
+### List of Objects: adding '".\object\msgmanager.o"'
+### List of Objects: adding '".\object\aisptlmain.o"'
+### List of Objects: adding '".\object\adjust.o"'
+### List of Objects: adding '".\object\batteryctrl.o"'
+### List of Objects: adding '".\object\common.o"'
+### List of Objects: adding '".\object\gpsctrl.o"'
+### List of Objects: adding '".\object\initial.o"'
+### List of Objects: adding '".\object\ledctrl.o"'
+### List of Objects: adding '".\object\main.o"'
+### List of Objects: adding '".\object\powerdown.o"'
+### List of Objects: adding '".\object\powerup.o"'
+### List of Objects: adding '".\object\sleepctrl.o"'
+### List of Objects: adding '".\object\tempersensor.o"'
+### List of Objects: adding '".\object\testing.o"'
+### List of Objects: adding '".\object\uartmsg.o"'
+### List of Objects: adding '".\object\ubloxprotocol.o"'
+### List of Objects: adding '".\object\transceiverctrl.o"'
+### List of Objects: adding '".\object\selfcheck.o"'
+### List of Objects: adding '".\object\rflinkselfcheck.o"'
+### List of Objects: adding '".\object\taskmanager.o"'
+### List of Objects: adding '".\object\diskio.o"'
+### List of Objects: adding '".\object\ff.o"'
+### List of Objects: adding '".\object\filectrl.o"'
+### List of Objects: adding '".\object\flashctrl.o"'
+### List of Objects: adding '".\object\encrypt.o"'
+### List of Objects: adding '".\object\24c02.o"'
+### List of Objects: adding '".\object\adc.o"'
+### List of Objects: adding '".\object\bkpregister.o"'
+### List of Objects: adding '".\object\dac.o"'
+### List of Objects: adding '".\object\gps.o"'
+### List of Objects: adding '".\object\led.o"'
+### List of Objects: adding '".\object\power.o"'
+### List of Objects: adding '".\object\rtc.o"'
+### List of Objects: adding '".\object\rxtx.o"'
+### List of Objects: adding '".\object\spi.o"'
+### List of Objects: adding '".\object\tim.o"'
+### List of Objects: adding '".\object\usart.o"'
+### List of Objects: adding '".\object\wdg.o"'
+### List of Objects: adding '".\object\gpiospi.o"'
+### List of Objects: adding '".\object\si446x.o"'
+### List of Objects: adding '".\object\sdcard.o"'
+### List of Objects: adding '".\object\debug.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 ".\object\cortexm3_macro.o" ".\object\stm32f10x_it.o" ".\object\stm32f10x_startup.o" ".\object\stm32f10x_target.o" C:\Users\dell\Desktop\文件交接\M4508D\源码\目标板\M4508D小模块源码\AIS_M4508D_V1.0.0\library\STM32F10xR.LIB ".\object\stm32f10x_sdio.o" ".\object\stm32f10x_flash.o" ".\object\batteryscan.o" ".\object\ioctrl.o" ".\object\keyscan.o" ".\object\parastorage.o" ".\object\rxtxctrl.o" ".\object\systemtick.o" ".\object\datalinkservice.o" ".\object\linkmanagemententity.o" ".\object\physicallayer.o" ".\object\ais_msgmodu.o" ".\object\aisdigitalinterface.o" ".\object\aismsgmodule.o" ".\object\slot.o" ".\object\tdma.o" ".\object\deviceinfo.o" ".\object\aisinfo.o" ".\object\msgmanager.o" ".\object\aisptlmain.o" ".\object\adjust.o" ".\object\batteryctrl.o" ".\object\common.o" ".\object\gpsctrl.o" ".\object\initial.o" ".\object\ledctrl.o" ".\object\main.o" ".\object\powerdown.o" ".\object\powerup.o" ".\object\sleepctrl.o" ".\object\tempersensor.o" ".\object\testing.o" ".\object\uartmsg.o" ".\object\ubloxprotocol.o" ".\object\transceiverctrl.o" ".\object\selfcheck.o" ".\object\rflinkselfcheck.o" ".\object\taskmanager.o" ".\object\diskio.o" ".\object\ff.o" ".\object\filectrl.o" ".\object\flashctrl.o" ".\object\encrypt.o" ".\object\24c02.o" ".\object\adc.o" ".\object\bkpregister.o" ".\object\dac.o" ".\object\gps.o" ".\object\led.o" ".\object\power.o" ".\object\rtc.o" ".\object\rxtx.o" ".\object\spi.o" ".\object\tim.o" ".\object\usart.o" ".\object\wdg.o" ".\object\gpiospi.o" ".\object\si446x.o" ".\object\sdcard.o" ".\object\debug.o" --strict --scatter ".\Object\AIS_Tranceiver2_Prj.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\List\AIS_Tranceiver2_Prj.map" -o ".\Object\AIS_Tranceiver2_Prj.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\Object\AIS_Tranceiver2_Prj.axf'
+### ADS-LD Command File: '.\Object\AIS_Tranceiver2_Prj.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\Object\AIS_Tranceiver2_Prj.lnp', Handle=0x0000067C
+### Writing '.lnp' file
+### ADS-LD Command file '.\Object\AIS_Tranceiver2_Prj.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.
