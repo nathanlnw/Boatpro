@@ -84,5 +84,7 @@ typedef struct SPIRxFIFOStruct
 
 /* Public  function  ---------------------------------------------------------*/
 extern void SPI2_Init(void);
+extern U8 GPIO_SPI2_ExchangeByte(U8 sendData);
+extern U8 GPIO_SPI1_ExchangeByte(U8 sendData);
 
 #endif

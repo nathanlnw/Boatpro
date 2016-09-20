@@ -73,6 +73,9 @@
 .\object\tim.o: ..\driver\inc\BKPRegister.h
 .\object\tim.o: ..\migrateF4to5\migrate.h
 .\object\tim.o: ..\driver\inc\power.h
+.\object\tim.o: ..\debug\inc\debug.h
+.\object\tim.o: ..\user\inc\uartmsg.h
+.\object\tim.o: ..\driver\inc\SPI.h
 .\object\tim.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\tim.o: ..\user\inc\flashctrl.h
 .\object\tim.o: ..\user\inc\encrypt.h
@@ -81,5 +84,4 @@
 .\object\tim.o: ..\user\inc\SOTDMA.h
 .\object\tim.o: ..\user\inc\adjust.h
 .\object\tim.o: ..\user\inc\sleepctrl.h
-.\object\tim.o: ..\driver\inc\SPI.h
 .\object\tim.o: ..\driver\inc\gpiospi.h

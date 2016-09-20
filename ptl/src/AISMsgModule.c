@@ -88,8 +88,8 @@ void AISMSG_BuildMsg1(const AISMsgTypeStruct_1_2_3* pAISMsg)
 	BITMAP msg_bitmap;
 	U8 len_1;
 	U8 len_2;
-	U8 i;
-    U8 Temp;
+//	U8 i;
+ //   U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -156,8 +156,7 @@ void AISMSG_BuildMsg2(const AISMsgTypeStruct_1_2_3* pAISMsg)
 	BITMAP msg_bitmap;
 	U8 len_1;
 	U8 len_2;
-	U8 i;
-    U8 Temp;
+
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -224,8 +223,7 @@ void AISMSG_BuildMsg3(const AISMsgTypeStruct_1_2_3* pAISMsg)
 	BITMAP msg_bitmap;
 	U8 len_1;
 	U8 len_2;
-	U8 i;
-    U8 Temp;
+
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -274,8 +272,7 @@ void AISMSG_BuildMsg4(const AISMsgTypeStruct_4_11* pAISMsg)
 	BITMAP msg_bitmap;
 	U8 len_1;
 	U8 len_2;
-	U8 i;
-    U8 Temp;
+
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -344,7 +341,7 @@ void AISMSG_BuildMsg5(const AISMsgTypeStruct_5* pAISMsg)
 	U8 len_1;
 	U8 len_2;
 	U8 i;
-    U8 Temp;
+  //  U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -461,8 +458,8 @@ void AISMSG_BuildMsg7(const AISMsgTypeStruct_7_13* pAISMsg)
 	BITMAP msg_bitmap;
 	U8 len_1;
 	U8 len_2;
-	U8 i;
-    U8 Temp;
+	//U8 i;
+   // U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -593,8 +590,8 @@ void AISMSG_BuildMsg9(const AISMsgTypeStruct_9* pAISMsg)
 	BITMAP msg_bitmap;
 	U8 len_1;
 	U8 len_2;
-	U8 i;
-    U8 Temp;
+//	U8 i;
+ //   U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -675,8 +672,8 @@ void AISMSG_BuildMsg10(const AISMsgTypeStruct_10* pAISMsg)
 	BITMAP msg_bitmap;
 	U8 len_1;
 	U8 len_2;
-	U8 i;
-    U8 Temp;
+//	U8 i;
+  //  U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -712,8 +709,8 @@ void AISMSG_BuildMsg11(const AISMsgTypeStruct_4_11* pAISMsg)
 	BITMAP msg_bitmap;
 	U8 len_1;
 	U8 len_2;
-	U8 i;
-    U8 Temp;
+//	U8 i;
+  //  U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -836,8 +833,8 @@ void AISMSG_BuildMsg13(const AISMsgTypeStruct_7_13* pAISMsg)
 	BITMAP msg_bitmap;
 	U8 len_1;
 	U8 len_2;
-	U8 i;
-    U8 Temp;
+//	U8 i;
+ //   U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -967,8 +964,8 @@ void AISMSG_BuildMsg15(const AISMsgTypeStruct_15* pAISMsg)
 	BITMAP msg_bitmap;
 	U8 len_1;
 	U8 len_2;
-	U8 i;
-    U8 Temp;
+//	U8 i;
+   // U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -1064,8 +1061,8 @@ void AISMSG_BuildMsg16(const AISMsgTypeStruct_16* pAISMsg)
 	BITMAP msg_bitmap;
 	U8 len_1;
 	U8 len_2;
-	U8 i;
-    U8 Temp;
+//	U8 i;
+ //   U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -1131,7 +1128,7 @@ void AISMSG_BuildMsg17(const AISMsgTypeStruct_17* pAISMsg)
 	U8 len_1;
 	U8 len_2;
 	U8 i;
-    U8 Temp;
+//    U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -1193,8 +1190,8 @@ void AISMSG_BuildMsg18(const AISMsgTypeStruct_18* pAISMsg)
 	BITMAP msg_bitmap;
 	U8 len_1;
 	U8 len_2;
-	U8 i;
-    U8 Temp;
+//	U8 i;
+ //   U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -1279,7 +1276,7 @@ void AISMSG_BuildMsg19(const AISMsgTypeStruct_19* pAISMsg)
 	U8 len_1;
 	U8 len_2;
 	U8 i;
-    U8 Temp;
+   // U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -1335,8 +1332,8 @@ void AISMSG_BuildMsg20(const AISMsgTypeStruct_20* pAISMsg)
 	BITMAP msg_bitmap;
 	U8 len_1;
 	U8 len_2;
-	U8 i;
-    U8 Temp;
+//	U8 i;
+  //  U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -1442,7 +1439,7 @@ void AISMSG_BuildMsg21(const AISMsgTypeStruct_21* pAISMsg)
 	U8 len_1;
 	U8 len_2;
 	U8 i;
-    U8 Temp;
+//    U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -1518,8 +1515,8 @@ void AISMSG_BuildMsg22(const AISMsgTypeStruct_22* pAISMsg)
 	BITMAP msg_bitmap;
 	U8 len_1;
 	U8 len_2;
-	U8 i;
-    U8 Temp;
+//	U8 i;
+   // U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -1566,8 +1563,8 @@ void AISMSG_BuildMsg23(const AISMsgTypeStruct_23* pAISMsg)
 	BITMAP msg_bitmap;
 	U8 len_1;
 	U8 len_2;
-	U8 i;
-    U8 Temp;
+//	U8 i;
+ //   U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -1613,7 +1610,7 @@ void AISMSG_BuildMsg24A(const AISMsgTypeStruct_24A* pAISMsg)
 	U8 len_1;
 	U8 len_2;
 	U8 i;
-    U8 Temp;
+  //  U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -1652,7 +1649,7 @@ void AISMSG_BuildMsg24B(const AISMsgTypeStruct_24B* pAISMsg)
 	U8 len_1;
 	U8 len_2;
 	U8 i;
-    U8 Temp;
+ //   U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -1928,7 +1925,7 @@ void AISMSG_BuildMsg26(AISMsgTypeStruct_26* pAISMsg)
             /*lq unstructed binary data */
             /*lq 溢出保护，当超过最大长度时，只保留未超出的部分*/                    
             if (pAISMsg->BinaryDataBitLen > AIS_MSG26_BINDATA_BIT_MAXLEN_10)
-            {
+            { 
                 pAISMsg->BinaryDataBitLen = AIS_MSG26_BINDATA_BIT_MAXLEN_10;            
             }
 
@@ -2035,8 +2032,8 @@ void AISMSG_BuildMsg27(const AISMsgTypeStruct_27* pAISMsg)
 	BITMAP msg_bitmap;
 	U8 len_1;
 	U8 len_2;
-	U8 i;
-    U8 Temp;
+//	U8 i;
+   // U8 Temp;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
 
@@ -2076,9 +2073,9 @@ void AISMSG_BuildMsg27(const AISMsgTypeStruct_27* pAISMsg)
 static void AISMSG_ParseMsg1_2(AISMsgBinBuffArray_1_2_3 AISMsgBinBuff, AISMsgTypeStruct_1_2_3* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
-	U8 i;
+//	U8 len_1;
+//	U8 len_2;
+//	U8 i;
     U32 Temp32;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
@@ -2157,9 +2154,9 @@ static void AISMSG_ParseMsg1_2(AISMsgBinBuffArray_1_2_3 AISMsgBinBuff, AISMsgTyp
 static void AISMSG_ParseMsg3(AISMsgBinBuffArray_1_2_3 AISMsgBinBuff, AISMsgTypeStruct_1_2_3* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
-	U8 i;
+//	U8 len_1;
+//	U8 len_2;
+//	U8 i;
     U32 Temp32;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
@@ -2236,9 +2233,9 @@ static void AISMSG_ParseMsg3(AISMsgBinBuffArray_1_2_3 AISMsgBinBuff, AISMsgTypeS
 static void AISMSG_ParseMsg4_11(AISMsgBinBuffArray_4_11 AISMsgBinBuff, AISMsgTypeStruct_4_11* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
-	U8 i;
+//	U8 len_1;
+//	U8 len_2;
+//	U8 i;
     U32 Temp32;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
@@ -2319,8 +2316,8 @@ static void AISMSG_ParseMsg4_11(AISMsgBinBuffArray_4_11 AISMsgBinBuff, AISMsgTyp
 static void AISMSG_ParseMsg5(AISMsgBinBuffArray_5 AISMsgBinBuff, AISMsgTypeStruct_5* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
+//	U8 len_1;
+//	U8 len_2;
 	U8 i;
     U32 Temp32;
 
@@ -2405,8 +2402,8 @@ static void AISMSG_ParseMsg5(AISMsgBinBuffArray_5 AISMsgBinBuff, AISMsgTypeStruc
 static void AISMSG_ParseMsg6(AISMsgBinBuffArray_6 AISMsgBinBuff, AISMsgTypeStruct_6* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
+//	U8 len_1;
+//	U8 len_2;
 	U8 i;
     U8 Temp;
     U8 Temp8;
@@ -2467,10 +2464,10 @@ static void AISMSG_ParseMsg6(AISMsgBinBuffArray_6 AISMsgBinBuff, AISMsgTypeStruc
 static void AISMSG_ParseMsg7_13(AISMsgBinBuffArray_7_13 AISMsgBinBuff, AISMsgTypeStruct_7_13* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
-	U8 i;
-    U8 Temp;
+//	U8 len_1;
+//	U8 len_2;
+//	U8 i;
+//    U8 Temp;
     U8 Temp8;
     U32 Temp32;
 
@@ -2533,8 +2530,8 @@ static void AISMSG_ParseMsg7_13(AISMsgBinBuffArray_7_13 AISMsgBinBuff, AISMsgTyp
 static void AISMSG_ParseMsg8(AISMsgBinBuffArray_8 AISMsgBinBuff, AISMsgTypeStruct_8* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
+//	U8 len_1;
+//	U8 len_2;
 	U8 i;
     U8 Temp;
     U8 Temp8;
@@ -2589,11 +2586,11 @@ static void AISMSG_ParseMsg8(AISMsgBinBuffArray_8 AISMsgBinBuff, AISMsgTypeStruc
 static void AISMSG_ParseMsg9(AISMsgBinBuffArray_9 AISMsgBinBuff, AISMsgTypeStruct_9* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
-	U8 i;
-    U8 Temp;
-    U8 Temp8;
+//	U8 len_1;
+//	U8 len_2;
+//	U8 i;
+//    U8 Temp;
+//    U8 Temp8;
     U32 Temp32;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
@@ -2691,11 +2688,11 @@ static void AISMSG_ParseMsg9(AISMsgBinBuffArray_9 AISMsgBinBuff, AISMsgTypeStruc
 static void AISMSG_ParseMsg10(AISMsgBinBuffArray_10 AISMsgBinBuff, AISMsgTypeStruct_10* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
-	U8 i;
-    U8 Temp;
-    U8 Temp8;
+//	U8 len_1;
+//	U8 len_2;
+//	U8 i;
+//    U8 Temp;
+ //   U8 Temp8;
     U32 Temp32;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
@@ -2727,10 +2724,10 @@ static void AISMSG_ParseMsg10(AISMsgBinBuffArray_10 AISMsgBinBuff, AISMsgTypeStr
 static void AISMSG_ParseMsg12(AISMsgBinBuffArray_12 AISMsgBinBuff, AISMsgTypeStruct_12* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
+//	U8 len_1;
+//	U8 len_2;
 	U8 i;
-    U8 Temp;
+//    U8 Temp;
     U8 Temp8;
     U32 Temp32;
 
@@ -2787,10 +2784,10 @@ static void AISMSG_ParseMsg12(AISMsgBinBuffArray_12 AISMsgBinBuff, AISMsgTypeStr
 static void AISMSG_ParseMsg14(AISMsgBinBuffArray_14 AISMsgBinBuff, AISMsgTypeStruct_14* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
+//	U8 len_1;
+//	U8 len_2;
 	U8 i;
-    U8 Temp;
+//    U8 Temp;
     U8 Temp8;
     U32 Temp32;
 
@@ -2840,10 +2837,10 @@ static void AISMSG_ParseMsg14(AISMsgBinBuffArray_14 AISMsgBinBuff, AISMsgTypeStr
 static void AISMSG_ParseMsg15(AISMsgBinBuffArray_15 AISMsgBinBuff, AISMsgTypeStruct_15* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
-	U8 i;
-    U8 Temp;
+//	U8 len_1;
+//	U8 len_2;
+//	U8 i;
+//    U8 Temp;
     U8 Temp8;
     U32 Temp32;
 
@@ -2911,10 +2908,10 @@ static void AISMSG_ParseMsg15(AISMsgBinBuffArray_15 AISMsgBinBuff, AISMsgTypeStr
 static void AISMSG_ParseMsg16(AISMsgBinBuffArray_16 AISMsgBinBuff, AISMsgTypeStruct_16* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
-	U8 i;
-    U8 Temp;
+//	U8 len_1;
+//	U8 len_2;
+//	U8 i;
+//    U8 Temp;
     U8 Temp8;
     U32 Temp32;
 
@@ -2962,10 +2959,10 @@ static void AISMSG_ParseMsg16(AISMsgBinBuffArray_16 AISMsgBinBuff, AISMsgTypeStr
 static void AISMSG_ParseMsg17(AISMsgBinBuffArray_17 AISMsgBinBuff, AISMsgTypeStruct_17* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
+//	U8 len_1;
+//	U8 len_2;
 	U8 i;
-    U8 Temp;
+//    U8 Temp;
     U8 Temp8;
     U32 Temp32;
 
@@ -3027,11 +3024,11 @@ static void AISMSG_ParseMsg17(AISMsgBinBuffArray_17 AISMsgBinBuff, AISMsgTypeStr
 static void AISMSG_ParseMsg18(AISMsgBinBuffArray_18 AISMsgBinBuff, AISMsgTypeStruct_18* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
-	U8 i;
-    U8 Temp;
-    U8 Temp8;
+//	U8 len_1;
+//	U8 len_2;
+//	U8 i;
+//    U8 Temp;
+//    U8 Temp8;
     U32 Temp32;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
@@ -3134,11 +3131,11 @@ static void AISMSG_ParseMsg18(AISMsgBinBuffArray_18 AISMsgBinBuff, AISMsgTypeStr
 static void AISMSG_ParseMsg19(AISMsgBinBuffArray_19 AISMsgBinBuff, AISMsgTypeStruct_19* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
+//	U8 len_1;
+//	U8 len_2;
 	U8 i;
-    U8 Temp;
-    U8 Temp8;
+//    U8 Temp;
+//    U8 Temp8;
     U32 Temp32;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
@@ -3209,10 +3206,10 @@ static void AISMSG_ParseMsg19(AISMsgBinBuffArray_19 AISMsgBinBuff, AISMsgTypeStr
 static void AISMSG_ParseMsg20(AISMsgBinBuffArray_20 AISMsgBinBuff, AISMsgTypeStruct_20* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
-	U8 i;
-    U8 Temp;
+//	U8 len_1;
+//	U8 len_2;
+//	U8 i;
+//    U8 Temp;
     U8 Temp8;
     U32 Temp32;
 
@@ -3290,10 +3287,10 @@ static void AISMSG_ParseMsg20(AISMsgBinBuffArray_20 AISMsgBinBuff, AISMsgTypeStr
 static void AISMSG_ParseMsg21(AISMsgBinBuffArray_21 AISMsgBinBuff, AISMsgTypeStruct_21* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
+//	U8 len_1;
+//U8 len_2;
 	U8 i;
-    U8 Temp;
+//    U8 Temp;
     U8 Temp8;
     U32 Temp32;
 
@@ -3388,11 +3385,11 @@ static void AISMSG_ParseMsg21(AISMsgBinBuffArray_21 AISMsgBinBuff, AISMsgTypeStr
 static void AISMSG_ParseMsg22(AISMsgBinBuffArray_22 AISMsgBinBuff, AISMsgTypeStruct_22* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
-	U8 i;
-    U8 Temp;
-    U8 Temp8;
+//	U8 len_1;
+//	U8 len_2;
+//	U8 i;
+//    U8 Temp;
+//    U8 Temp8;
     U32 Temp32;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
@@ -3445,11 +3442,11 @@ static void AISMSG_ParseMsg22(AISMsgBinBuffArray_22 AISMsgBinBuff, AISMsgTypeStr
 static void AISMSG_ParseMsg23(AISMsgBinBuffArray_23 AISMsgBinBuff, AISMsgTypeStruct_23* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
-	U8 i;
-    U8 Temp;
-    U8 Temp8;
+//	U8 len_1;
+//	U8 len_2;
+//	U8 i;
+//    U8 Temp;
+//    U8 Temp8;
     U32 Temp32;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
@@ -3497,11 +3494,11 @@ static void AISMSG_ParseMsg23(AISMsgBinBuffArray_23 AISMsgBinBuff, AISMsgTypeStr
 static void AISMSG_ParseMsg24A(AISMsgBinBuffArray_24A AISMsgBinBuff, AISMsgTypeStruct_24A* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
+//	U8 len_1;
+//	U8 len_2;
 	U8 i;
-    U8 Temp;
-    U8 Temp8;
+//    U8 Temp;
+//    U8 Temp8;
     U32 Temp32;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
@@ -3539,11 +3536,11 @@ static void AISMSG_ParseMsg24A(AISMsgBinBuffArray_24A AISMsgBinBuff, AISMsgTypeS
 static void AISMSG_ParseMsg24B(AISMsgBinBuffArray_24B AISMsgBinBuff, AISMsgTypeStruct_24B* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
+//	U8 len_1;
+//	U8 len_2;
 	U8 i;
-    U8 Temp;
-    U8 Temp8;
+//    U8 Temp;
+//    U8 Temp8;
     U32 Temp32;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));
@@ -3606,8 +3603,8 @@ static void AISMSG_ParseMsg24B(AISMsgBinBuffArray_24B AISMsgBinBuff, AISMsgTypeS
 static void AISMSG_ParseMsg25(AISMsgBinBuffArray_25 AISMsgBinBuff, AISMsgTypeStruct_25* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
+//	U8 len_1;
+//	U8 len_2;
 	U8 i;
     U8 Temp;
     U8 Temp8;
@@ -3766,8 +3763,8 @@ static void AISMSG_ParseMsg25(AISMsgBinBuffArray_25 AISMsgBinBuff, AISMsgTypeStr
 static void AISMSG_ParseMsg26(AISMsgBinBuffArray_26 AISMsgBinBuff, AISMsgTypeStruct_26* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
+//	U8 len_1;
+//	U8 len_2;
 	U8 i;
     U8 Temp;
     U8 Temp8;
@@ -3971,11 +3968,11 @@ static void AISMSG_ParseMsg26(AISMsgBinBuffArray_26 AISMsgBinBuff, AISMsgTypeStr
 static void AISMSG_ParseMsg27(AISMsgBinBuffArray_27 AISMsgBinBuff, AISMsgTypeStruct_27* pAISMsg)
 {
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
-	U8 i;
-    U8 Temp;
-    U8 Temp8;
+//	U8 len_1;
+//	U8 len_2;
+//	U8 i;
+//    U8 Temp;
+//    U8 Temp8;
     U32 Temp32;
 
 	memset((U8*)&msg_bitmap, 0, sizeof(BITMAP));

@@ -37,25 +37,25 @@ static RecStationStruct RecStationPara;
 *******************************************************************************/
 static void AISINFO_AisStaticInfoStructInit(AisStaticInfoStruct *pAisStaticInfoStruct)
 {
-    U16 i;
+ //    U16 i;
 
 	pAisStaticInfoStruct->MMSI = AIS_INFO_MMSI_DEFAULT;
 
     /*lq SSD */
-    strcpy(pAisStaticInfoStruct->CallSign, AIS_INFO_CALL_SIGN_DEFAULT);
-    strcpy(pAisStaticInfoStruct->ShipName, AIS_INFO_SHIP_NAME_DEFAULT);
+    strcpy((char*)pAisStaticInfoStruct->CallSign, AIS_INFO_CALL_SIGN_DEFAULT);
+    strcpy((char*)pAisStaticInfoStruct->ShipName, AIS_INFO_SHIP_NAME_DEFAULT);
     pAisStaticInfoStruct->ShipA = AIS_INFO_SHIPA_DEFAULT;
     pAisStaticInfoStruct->ShipB = AIS_INFO_SHIPB_DEFAULT;
     pAisStaticInfoStruct->ShipC = AIS_INFO_SHIPC_DEFAULT;
     pAisStaticInfoStruct->ShipD = AIS_INFO_SHIPD_DEFAULT;   
     pAisStaticInfoStruct->DTE = AIS_INFO_DTE_DEFAULT;    
-    strcpy(pAisStaticInfoStruct->TalkerID, AIS_DI_TALKER_ID_DEFAULT);
+    strcpy((char*)pAisStaticInfoStruct->TalkerID, AIS_DI_TALKER_ID_DEFAULT);
 
     /*lq VSD */
     pAisStaticInfoStruct->TypeOfShip = AIS_INFO_SHIP_TYPE_DEFAULT;
     pAisStaticInfoStruct->MaxDraught = AIS_INFO_MAX_DRAUGHT_DEFAULT;
     pAisStaticInfoStruct->Persons = AIS_INFO_PERSONS_DEFAULT;
-    strcpy(pAisStaticInfoStruct->Destination, AIS_INFO_DESTINATION_DEFAULT);
+    strcpy((char*)pAisStaticInfoStruct->Destination, AIS_INFO_DESTINATION_DEFAULT);
     pAisStaticInfoStruct->ETAMonth = AIS_INFO_ETA_MONTH_DEFAULT;
     pAisStaticInfoStruct->ETADay = AIS_INFO_ETA_DAY_DEFAULT;
     pAisStaticInfoStruct->ETAHour = AIS_INFO_ETA_HOUR_DEFAULT;
@@ -67,7 +67,7 @@ static void AISINFO_AisStaticInfoStructInit(AisStaticInfoStruct *pAisStaticInfoS
     pAisStaticInfoStruct->TypeOfEPFS = AIS_INFO_EPFS_TYPE_DEFAULT;
 
     /*lq P712*/
-    strcpy(pAisStaticInfoStruct->VendID, AIS_INFO_VEND_ID_DEFAULT);
+    strcpy((char*)pAisStaticInfoStruct->VendID, AIS_INFO_VEND_ID_DEFAULT);
     pAisStaticInfoStruct->AISVersionIndicator = AIS_INFO_AIS_VERSION_INDICATOR_DEFAULT;
     pAisStaticInfoStruct->IMONumber = AIS_INFO_IMO_NUMBER_DEFAULT;
     pAisStaticInfoStruct->AI_DAC = AIS_INFO_AI_DAC_DEFAULT;

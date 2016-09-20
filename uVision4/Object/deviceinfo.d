@@ -64,6 +64,12 @@
 .\object\deviceinfo.o: ..\driver\inc\BKPRegister.h
 .\object\deviceinfo.o: ..\migrateF4to5\migrate.h
 .\object\deviceinfo.o: ..\driver\inc\power.h
+.\object\deviceinfo.o: ..\debug\inc\debug.h
+.\object\deviceinfo.o: ..\driver\inc\Tim.h
+.\object\deviceinfo.o: ..\user\inc\uartmsg.h
+.\object\deviceinfo.o: ..\driver\inc\wdg.h
+.\object\deviceinfo.o: ..\driver\inc\SPI.h
+.\object\deviceinfo.o: ..\interface_layer\Include\systemtick.h
 .\object\deviceinfo.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\deviceinfo.o: ..\user\inc\flashctrl.h
 .\object\deviceinfo.o: ..\user\inc\encrypt.h

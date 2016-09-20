@@ -64,6 +64,12 @@
 .\object\aisinfo.o: ..\driver\inc\BKPRegister.h
 .\object\aisinfo.o: ..\migrateF4to5\migrate.h
 .\object\aisinfo.o: ..\driver\inc\power.h
+.\object\aisinfo.o: ..\debug\inc\debug.h
+.\object\aisinfo.o: ..\driver\inc\Tim.h
+.\object\aisinfo.o: ..\user\inc\uartmsg.h
+.\object\aisinfo.o: ..\driver\inc\wdg.h
+.\object\aisinfo.o: ..\driver\inc\SPI.h
+.\object\aisinfo.o: ..\interface_layer\Include\systemtick.h
 .\object\aisinfo.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\aisinfo.o: ..\user\inc\flashctrl.h
 .\object\aisinfo.o: ..\user\inc\encrypt.h

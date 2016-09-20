@@ -65,11 +65,15 @@
 .\object\main.o: ..\driver\inc\BKPRegister.h
 .\object\main.o: ..\migrateF4to5\migrate.h
 .\object\main.o: ..\driver\inc\power.h
+.\object\main.o: ..\debug\inc\debug.h
+.\object\main.o: ..\driver\inc\Tim.h
+.\object\main.o: ..\user\inc\uartmsg.h
+.\object\main.o: ..\driver\inc\wdg.h
+.\object\main.o: ..\driver\inc\SPI.h
+.\object\main.o: ..\interface_layer\Include\systemtick.h
 .\object\main.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\main.o: ..\user\inc\flashctrl.h
 .\object\main.o: ..\user\inc\encrypt.h
-.\object\main.o: ..\interface_layer\Include\systemtick.h
-.\object\main.o: ..\debug\inc\debug.h
 .\object\main.o: ..\user\inc\powerdown.h
 .\object\main.o: ..\interface_layer\Include\keyscan.h
 .\object\main.o: ..\user\inc\digunit.h
@@ -81,7 +85,6 @@
 .\object\main.o: ..\driver\inc\24c02.h
 .\object\main.o: ..\ptl\inc\PTL_Main.h
 .\object\main.o: ..\ptl\inc\gentype.h
-.\object\main.o: ..\driver\inc\wdg.h
 .\object\main.o: ..\user\inc\adjust.h
 .\object\main.o: ..\driver\inc\rtc.h
 .\object\main.o: ..\interface_layer\Include\batteryscan.h

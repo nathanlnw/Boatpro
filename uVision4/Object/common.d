@@ -65,6 +65,12 @@
 .\object\common.o: ..\driver\inc\BKPRegister.h
 .\object\common.o: ..\migrateF4to5\migrate.h
 .\object\common.o: ..\driver\inc\power.h
+.\object\common.o: ..\debug\inc\debug.h
+.\object\common.o: ..\driver\inc\Tim.h
+.\object\common.o: ..\user\inc\uartmsg.h
+.\object\common.o: ..\driver\inc\wdg.h
+.\object\common.o: ..\driver\inc\SPI.h
+.\object\common.o: ..\interface_layer\Include\systemtick.h
 .\object\common.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\common.o: ..\user\inc\flashctrl.h
 .\object\common.o: ..\user\inc\encrypt.h

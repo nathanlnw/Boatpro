@@ -64,6 +64,12 @@
 .\object\datalinkservice.o: ..\driver\inc\BKPRegister.h
 .\object\datalinkservice.o: ..\migrateF4to5\migrate.h
 .\object\datalinkservice.o: ..\driver\inc\power.h
+.\object\datalinkservice.o: ..\debug\inc\debug.h
+.\object\datalinkservice.o: ..\driver\inc\Tim.h
+.\object\datalinkservice.o: ..\user\inc\uartmsg.h
+.\object\datalinkservice.o: ..\driver\inc\wdg.h
+.\object\datalinkservice.o: ..\driver\inc\SPI.h
+.\object\datalinkservice.o: ..\interface_layer\Include\systemtick.h
 .\object\datalinkservice.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\datalinkservice.o: ..\user\inc\flashctrl.h
 .\object\datalinkservice.o: ..\user\inc\encrypt.h

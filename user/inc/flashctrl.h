@@ -204,7 +204,7 @@ FLASH中单个参数存储方式：
 #define STM32_FLASH_MODAMP_CEIL			    	48			                            //调制幅度存储最大长度
 #define STM32_FLASH_FREQADJ_FLOOR			    16			                            //发射功率存储最大长度
 #define STM32_FLASH_FREQADJ_CEIL			    48			                            //发射功率存储最大长度
-#define STM32_FLASH_RF_VOLT_ADJUST_FLOOR       	0           
+#define STM32_FLASH_RF_VOLT_ADJUST_FLOOR        0//0  orginal	0           
 #define STM32_FLASH_RF_VOLT_ADJUST_CEIL        	30  
 #define STM32_FLASH_DTE_FLOOR                  	(AIS_INFO_DTE_MIN)                      //DTE
 #define STM32_FLASH_DTE_CEIL                   	(AIS_INFO_DTE_MAX)                      //DTE

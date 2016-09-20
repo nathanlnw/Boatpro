@@ -67,6 +67,11 @@
 .\object\gps.o: ..\driver\inc\BKPRegister.h
 .\object\gps.o: ..\migrateF4to5\migrate.h
 .\object\gps.o: ..\driver\inc\power.h
+.\object\gps.o: ..\debug\inc\debug.h
+.\object\gps.o: ..\user\inc\uartmsg.h
+.\object\gps.o: ..\driver\inc\wdg.h
+.\object\gps.o: ..\driver\inc\SPI.h
+.\object\gps.o: ..\interface_layer\Include\systemtick.h
 .\object\gps.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\gps.o: ..\user\inc\flashctrl.h
 .\object\gps.o: ..\user\inc\encrypt.h

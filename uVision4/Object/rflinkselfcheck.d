@@ -64,6 +64,12 @@
 .\object\rflinkselfcheck.o: ..\driver\inc\BKPRegister.h
 .\object\rflinkselfcheck.o: ..\migrateF4to5\migrate.h
 .\object\rflinkselfcheck.o: ..\driver\inc\power.h
+.\object\rflinkselfcheck.o: ..\debug\inc\debug.h
+.\object\rflinkselfcheck.o: ..\driver\inc\Tim.h
+.\object\rflinkselfcheck.o: ..\user\inc\uartmsg.h
+.\object\rflinkselfcheck.o: ..\driver\inc\wdg.h
+.\object\rflinkselfcheck.o: ..\driver\inc\SPI.h
+.\object\rflinkselfcheck.o: ..\interface_layer\Include\systemtick.h
 .\object\rflinkselfcheck.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\rflinkselfcheck.o: ..\user\inc\flashctrl.h
 .\object\rflinkselfcheck.o: ..\user\inc\encrypt.h

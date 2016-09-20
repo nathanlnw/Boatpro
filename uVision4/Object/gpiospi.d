@@ -65,6 +65,12 @@
 .\object\gpiospi.o: ..\driver\inc\BKPRegister.h
 .\object\gpiospi.o: ..\migrateF4to5\migrate.h
 .\object\gpiospi.o: ..\driver\inc\power.h
+.\object\gpiospi.o: ..\debug\inc\debug.h
+.\object\gpiospi.o: ..\driver\inc\Tim.h
+.\object\gpiospi.o: ..\user\inc\uartmsg.h
+.\object\gpiospi.o: ..\driver\inc\wdg.h
+.\object\gpiospi.o: ..\driver\inc\SPI.h
+.\object\gpiospi.o: ..\interface_layer\Include\systemtick.h
 .\object\gpiospi.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\gpiospi.o: ..\user\inc\flashctrl.h
 .\object\gpiospi.o: ..\user\inc\encrypt.h

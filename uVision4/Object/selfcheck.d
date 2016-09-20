@@ -69,6 +69,11 @@
 .\object\selfcheck.o: ..\driver\inc\BKPRegister.h
 .\object\selfcheck.o: ..\migrateF4to5\migrate.h
 .\object\selfcheck.o: ..\driver\inc\power.h
+.\object\selfcheck.o: ..\debug\inc\debug.h
+.\object\selfcheck.o: ..\driver\inc\Tim.h
+.\object\selfcheck.o: ..\user\inc\uartmsg.h
+.\object\selfcheck.o: ..\driver\inc\wdg.h
+.\object\selfcheck.o: ..\driver\inc\SPI.h
 .\object\selfcheck.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\selfcheck.o: ..\user\inc\flashctrl.h
 .\object\selfcheck.o: ..\user\inc\encrypt.h

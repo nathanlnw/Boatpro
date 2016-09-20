@@ -123,5 +123,7 @@ typedef struct TransceiverTxCtrlStruct
 /* Public variables ----------------------------------------------------------*/
 
 /* Public functions ----------------------------------------------------------*/
+//lnw add
+extern U8 TRCTRL_InstTxTestGetSignalBit(TransceiverTypeEnum cs);
 
 #endif

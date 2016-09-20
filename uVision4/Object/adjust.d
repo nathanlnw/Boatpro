@@ -64,11 +64,14 @@
 .\object\adjust.o: ..\driver\inc\BKPRegister.h
 .\object\adjust.o: ..\migrateF4to5\migrate.h
 .\object\adjust.o: ..\driver\inc\power.h
+.\object\adjust.o: ..\debug\inc\debug.h
+.\object\adjust.o: ..\driver\inc\Tim.h
+.\object\adjust.o: ..\user\inc\uartmsg.h
+.\object\adjust.o: ..\driver\inc\wdg.h
+.\object\adjust.o: ..\driver\inc\SPI.h
+.\object\adjust.o: ..\interface_layer\Include\systemtick.h
 .\object\adjust.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\adjust.o: ..\user\inc\flashctrl.h
 .\object\adjust.o: ..\user\inc\encrypt.h
 .\object\adjust.o: ..\user\inc\adjust.h
-.\object\adjust.o: ..\driver\inc\Tim.h
 .\object\adjust.o: ..\driver\inc\rtc.h
-.\object\adjust.o: ..\debug\inc\debug.h
-.\object\adjust.o: ..\interface_layer\Include\systemtick.h

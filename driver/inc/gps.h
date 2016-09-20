@@ -68,6 +68,17 @@ extern U8 GetTimSaveState(void);
 extern void ResetTimSaveState(void);
 extern void SetGpsPulseEn(void);
 extern void ResetGpsPulseEn(void);
+
+
+
+// lnw add
+extern U32 GetTimCnt(void);
+extern U32 GetRtcCnt(void);
+extern U32 GetTimCount(void);
+extern U32 GetRtcCount(void);
+extern U8 GetTimSaveState(void);
+
+
 #endif	//__USART_H__
 
 

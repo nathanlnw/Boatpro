@@ -1,6 +1,0 @@
---cpu Cortex-M3 -g --16 --apcs=interwork --pd "__MICROLIB SETA 1"
--I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"
--I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include
--I E:\Keil_520\ARM\CMSIS\Include
---pd "__UVISION_VERSION SETA 520" --pd "STM32F10X_HD SETA 1"
---list .\list\cortexm3_macro.lst --xref -o .\object\cortexm3_macro.o --depend .\object\cortexm3_macro.d "..\StartUp\src\cortexm3_macro.s"

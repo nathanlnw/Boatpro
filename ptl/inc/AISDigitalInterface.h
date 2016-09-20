@@ -23,17 +23,17 @@
 #define AIS_DI_SEN_TOTAL_MAX            9
 #define AIS_DI_SEN_NUM_MIN              1
 #define AIS_DI_SEN_NUM_MAX              9
-#define AIS_DI_MSG_SEQ_MIN              0
+#define AIS_DI_MSG_SEQ_MIN              0//0
 #define AIS_DI_MSG_SEQ_MAX              9
-#define AIS_DI_BBM_CHN_MIN              0
+#define AIS_DI_BBM_CHN_MIN              0//0
 #define AIS_DI_BBM_CHN_MAX              3
-#define AIS_DI_BBM_FILL_BIT_MIN         0
+#define AIS_DI_BBM_FILL_BIT_MIN         1//0
 #define AIS_DI_BBM_FILL_BIT_MAX         5
-#define AIS_DI_ABM_CHN_MIN              0
+#define AIS_DI_ABM_CHN_MIN              0//0
 #define AIS_DI_ABM_CHN_MAX              3
-#define AIS_DI_ABM_FILL_BIT_MIN         0
+#define AIS_DI_ABM_FILL_BIT_MIN         0//0
 #define AIS_DI_ABM_FILL_BIT_MAX         5
-#define AIS_DI_ABK_ACK_TYPE_MSG6_12_ACK_SUCCESS         0
+#define AIS_DI_ABK_ACK_TYPE_MSG6_12_ACK_SUCCESS         0//0
 #define AIS_DI_ABK_ACK_TYPE_MSG6_12_BROADCAST_SUCCESS   1
 #define AIS_DI_ABK_ACK_TYPE_MSG_BROADCAST_FAILURE       2
 #define AIS_DI_ABK_ACK_TYPE_MSG8_14_5_BROADCAST_SUCCESS 3
@@ -99,5 +99,8 @@ extern ABMStruct ABMPara;
 extern BBMStruct BBMPara;
        
 /* Public  function  ---------------------------------------------------------*/
+extern void AISDI_BuildVDM(U8 listener[], U8 data[], U16 len, U8 channel);// lnw  add
+extern void AISDI_BuildVDO(U8 listener[], U8 data[], U16 len, U8 channel);// lnw add
+extern U8 AsciiToSixBinCode(U8 code);// lnw add
 
 #endif

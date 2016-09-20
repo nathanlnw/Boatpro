@@ -64,6 +64,12 @@
 .\object\encrypt.o: ..\driver\inc\BKPRegister.h
 .\object\encrypt.o: ..\migrateF4to5\migrate.h
 .\object\encrypt.o: ..\driver\inc\power.h
+.\object\encrypt.o: ..\debug\inc\debug.h
+.\object\encrypt.o: ..\driver\inc\Tim.h
+.\object\encrypt.o: ..\user\inc\uartmsg.h
+.\object\encrypt.o: ..\driver\inc\wdg.h
+.\object\encrypt.o: ..\driver\inc\SPI.h
+.\object\encrypt.o: ..\interface_layer\Include\systemtick.h
 .\object\encrypt.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\encrypt.o: ..\user\inc\flashctrl.h
 .\object\encrypt.o: ..\user\inc\encrypt.h

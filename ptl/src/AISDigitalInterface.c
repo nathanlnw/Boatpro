@@ -174,7 +174,7 @@ U8 AISDI_SenEnque(AisDiSenFifoStruct* pAisDiSenFifoStruct, U8* pData)
 {
 	if (AISDI_IsSenQueFull(pAisDiSenFifoStruct) == FALSE)
 	{
-		strcpy(pAisDiSenFifoStruct->Fifo[pAisDiSenFifoStruct->FifoInput], pData);
+		strcpy((char*)pAisDiSenFifoStruct->Fifo[pAisDiSenFifoStruct->FifoInput], (char*)pData);
 		pAisDiSenFifoStruct->FifoInput = (pAisDiSenFifoStruct->FifoInput + 1) 
 										  % AIS_DI_SEN_FIFO_DEPTH;		
 	
@@ -198,7 +198,7 @@ U8 AISDI_SenDeque(AisDiSenFifoStruct* pAisDiSenFifoStruct, U8* pData)
 {
 	if (AISDI_IsSenQueEmpty(pAisDiSenFifoStruct) == FALSE)
 	{
-		strcpy(pData, pAisDiSenFifoStruct->Fifo[pAisDiSenFifoStruct->FifoOutput]);
+		strcpy((char*)pData, (char*)pAisDiSenFifoStruct->Fifo[pAisDiSenFifoStruct->FifoOutput]);
 		pAisDiSenFifoStruct->FifoOutput = (pAisDiSenFifoStruct->FifoOutput + 1) 
 										  % AIS_DI_SEN_FIFO_DEPTH;		
 	
@@ -230,8 +230,8 @@ void AISDI_BuildVDM(U8 listener[], U8 data[], U16 len, U8 channel)
     U16 temp16;
 	AISDISenBuffArray sentence;
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
+//	U8 len_1;
+	//U8 len_2;
 	U8 i;
     U8 temp8;
 	U8 tempBuff[10];
@@ -257,25 +257,25 @@ void AISDI_BuildVDM(U8 listener[], U8 data[], U16 len, U8 channel)
 		if (sixBitCodeNum <= 62)
 		{
             /*lq 单语句 */
-        	sprintf(sentence, "!");
-        	strncat(sentence, listener, 2);
-        	strcat(sentence, "VDM");			
-			strcat(sentence, ",1");		//lq 语句总数
-			strcat(sentence, ",1");		//lq 语句序号
-			strcat(sentence, ",");		//lq 消息序号，单语句消息的消息序号字段为空
-			strcat(sentence, ",");		//lq 信道为空
-			strcat(sentence, ",");		//lq 数据
+        	sprintf((char*)sentence, "!");
+        	strncat((char*)sentence, (const char*)listener, 2);
+        	strcat((char*)sentence, "VDM");			
+			strcat((char*)sentence, ",1");		//lq 语句总数
+			strcat((char*)sentence, ",1");		//lq 语句序号
+			strcat((char*)sentence, ",");		//lq 消息序号，单语句消息的消息序号字段为空
+			strcat((char*)sentence, ",");		//lq 信道为空
+			strcat((char*)sentence, ",");		//lq 数据
 			for (i = 0; i < sixBitCodeNum - 1; i++)
 			{
 				bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6);
 				temp8 = SixBinCodeToAscii(temp8);
-				strncat(sentence, &temp8, 1);
+				strncat((char*)sentence,(const char*) &temp8, 1);
 			}
 			bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6 - fillBitNum);
 			temp8 = SixBinCodeToAscii(temp8 << fillBitNum);
-			strncat(sentence, &temp8, 1);
-			sprintf(tempBuff, ",%d", fillBitNum); 
-			strcat(sentence, tempBuff);	//lq 位填充数
+			strncat((char*)sentence, (const char*)&temp8, 1);
+			sprintf((char*)tempBuff, ",%d", fillBitNum); 
+			strcat((char*)sentence, (const char*)tempBuff);	//lq 位填充数
 
 			/*lq 存入语句队列*/
 			AISDI_SenEnque(&AisDiSenQue, sentence);							
@@ -297,52 +297,52 @@ void AISDI_BuildVDM(U8 listener[], U8 data[], U16 len, U8 channel)
             /*lq 最大长度语句 */
             for (senNum = 1; senNum < senTotal; senNum++)
             {
-            	sprintf(sentence, "!");
-            	strncat(sentence, listener, 2);
-            	strcat(sentence, "VDM");
-			    sprintf(tempBuff, ",%d", senTotal); 
-    			strcat(sentence, tempBuff);		//lq 语句总数
-			    sprintf(tempBuff, ",%d", senNum); 
-    			strcat(sentence, tempBuff);		//lq 语句序号
-			    sprintf(tempBuff, ",%d", msgSeq); 
-    			strcat(sentence, tempBuff);		//lq 消息序号
-    			strcat(sentence, ",");		    //lq 信道为空
-    			strcat(sentence, ",");		    //lq 数据
+            	sprintf((char*)sentence, "!");
+            	strncat((char*)sentence, (const char*)listener, 2);
+            	strcat((char*)sentence, "VDM");
+			    sprintf((char*)tempBuff, ",%d", senTotal); 
+    			strcat((char*)sentence, (const char*)tempBuff);		//lq 语句总数
+			    sprintf((char*)tempBuff, ",%d", senNum); 
+    			strcat((char*)sentence, (const char*)tempBuff);		//lq 语句序号
+			    sprintf((char*)tempBuff, ",%d", msgSeq); 
+    			strcat((char*)sentence, (const char*)tempBuff);		//lq 消息序号
+    			strcat((char*)sentence, ",");		    //lq 信道为空
+    			strcat((char*)sentence, ",");		    //lq 数据
     			for (i = 0; i < 61; i++)
     			{
     				bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6);
     				temp8 = SixBinCodeToAscii(temp8);
-    				strncat(sentence, &temp8, 1);
+    				strncat((char*)sentence, (const char*)&temp8, 1);
     			}
-    			strcat(sentence, ",0");	        //lq 位填充数
+    			strcat((char*)sentence, ",0");	        //lq 位填充数
     
     			/*lq 存入语句队列*/
     			AISDI_SenEnque(&AisDiSenQue, sentence);            
             }
 
             /*lq 该消息的最后一条语句 */
-        	sprintf(sentence, "!");
-        	strncat(sentence, listener, 2);
-        	strcat(sentence, "VDM");
-		    sprintf(tempBuff, ",%d", senTotal); 
-			strcat(sentence, tempBuff);		//lq 语句总数
-		    sprintf(tempBuff, ",%d", senNum); 
-			strcat(sentence, tempBuff);		//lq 语句序号
-		    sprintf(tempBuff, ",%d", msgSeq); 
-			strcat(sentence, tempBuff);		//lq 消息序号
-			strcat(sentence, ",");		    //lq 信道为空
-			strcat(sentence, ",");		    //lq 数据
+        	sprintf((char*)sentence, "!");
+        	strncat((char*)sentence, (const char*)listener, 2);
+        	strcat((char*)sentence, "VDM");
+		    sprintf((char*)tempBuff, ",%d", senTotal); 
+			strcat((char*)sentence, (const char*)tempBuff);		//lq 语句总数
+		    sprintf((char*)tempBuff, ",%d", senNum); 
+			strcat((char*)sentence,(const char*) tempBuff);		//lq 语句序号
+		    sprintf((char*)tempBuff, ",%d", msgSeq); 
+			strcat((char*)sentence,(const char*) tempBuff);		//lq 消息序号
+			strcat((char*)sentence, ",");		    //lq 信道为空
+			strcat((char*)sentence, ",");		    //lq 数据
 			for (i = 0; i < temp16 - 1; i++)
 			{
 				bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6);
 				temp8 = SixBinCodeToAscii(temp8);
-				strncat(sentence, &temp8, 1);
+				strncat((char*)sentence,(const char*) &temp8, 1);
 			}
 			bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6 - fillBitNum);
 			temp8 = SixBinCodeToAscii(temp8 << fillBitNum);
-			strncat(sentence, &temp8, 1);
-			sprintf(tempBuff, ",%d", fillBitNum); 
-			strcat(sentence, tempBuff);	    //lq 位填充数
+			strncat((char*)sentence,(const char*) &temp8, 1);
+			sprintf((char*)tempBuff, ",%d", fillBitNum); 
+			strcat((char*)sentence,(const char*) tempBuff);	    //lq 位填充数
 			
             /*lq 存入语句队列*/
 			AISDI_SenEnque(&AisDiSenQue, sentence);
@@ -357,26 +357,26 @@ void AISDI_BuildVDM(U8 listener[], U8 data[], U16 len, U8 channel)
 		if (sixBitCodeNum <= 61)
 		{
             /*lq 单语句 */
-        	sprintf(sentence, "!");
-        	strncat(sentence, listener, 2);
-        	strcat(sentence, "VDM");
-			strcat(sentence, ",1");		//lq 语句总数
-			strcat(sentence, ",1");		//lq 语句序号
-			strcat(sentence, ",");		//lq 消息序号，单语句消息的消息序号字段为空
-			strcat(sentence, ",");			
-			strncat(sentence, &channel, 1);//lq 信道			
-			strcat(sentence, ",");		//lq 数据
+        	sprintf((char*)sentence, "!");
+        	strncat((char*)sentence, (const char*)listener, 2);
+        	strcat((char*)sentence, "VDM");
+			strcat((char*)sentence, ",1");		//lq 语句总数
+			strcat((char*)sentence, ",1");		//lq 语句序号
+			strcat((char*)sentence, ",");		//lq 消息序号，单语句消息的消息序号字段为空
+			strcat((char*)sentence, ",");			
+			strncat((char*)sentence,(char*) &channel, 1);//lq 信道			
+			strcat((char*)sentence, ",");		//lq 数据
 			for (i = 0; i < sixBitCodeNum - 1; i++)
 			{
 				bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6);
 				temp8 = SixBinCodeToAscii(temp8);
-				strncat(sentence, &temp8, 1);
+				strncat((char*)sentence,(const char*) &temp8, 1);
 			}
 			bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6 - fillBitNum);
 			temp8 = SixBinCodeToAscii(temp8 << fillBitNum);
-			strncat(sentence, &temp8, 1);
-			sprintf(tempBuff, ",%d", fillBitNum); 
-			strcat(sentence, tempBuff);	//lq 位填充数
+			strncat((char*)sentence,(const char*) &temp8, 1);
+			sprintf((char*)tempBuff, ",%d", fillBitNum); 
+			strcat((char*)sentence,(const char*) tempBuff);	//lq 位填充数
 
 			/*lq 存入语句队列*/
 			AISDI_SenEnque(&AisDiSenQue, sentence);							
@@ -398,54 +398,54 @@ void AISDI_BuildVDM(U8 listener[], U8 data[], U16 len, U8 channel)
             /*lq 最大长度语句 */
             for (senNum = 1; senNum < senTotal; senNum++)
             {
-            	sprintf(sentence, "!");
-            	strncat(sentence, listener, 2);
-            	strcat(sentence, "VDM");
-			    sprintf(tempBuff, ",%d", senTotal); 
-    			strcat(sentence, tempBuff);		//lq 语句总数
-			    sprintf(tempBuff, ",%d", senNum); 
-    			strcat(sentence, tempBuff);		//lq 语句序号
-			    sprintf(tempBuff, ",%d", msgSeq); 
-    			strcat(sentence, tempBuff);		//lq 消息序号
-    			strcat(sentence, ",");			
-    			strncat(sentence, &channel, 1); //lq 信道			
-    			strcat(sentence, ",");		    //lq 数据
+            	sprintf((char*)sentence, "!");
+            	strncat((char*)sentence, (const char*)listener, 2);
+            	strcat((char*)sentence, "VDM");
+			    sprintf((char*)tempBuff, ",%d", senTotal); 
+    			strcat((char*)sentence,(const char*) tempBuff);		//lq 语句总数
+			    sprintf((char*)tempBuff, ",%d", senNum); 
+    			strcat((char*)sentence,(const char*) tempBuff);		//lq 语句序号
+			    sprintf((char*)tempBuff, ",%d", msgSeq); 
+    			strcat((char*)sentence,(const char*) tempBuff);		//lq 消息序号
+    			strcat((char*)sentence, ",");			
+    			strncat((char*)sentence,(char*) &channel, 1); //lq 信道			
+    			strcat((char*)sentence, ",");		    //lq 数据
     			for (i = 0; i < 60; i++)
     			{
     				bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6);
     				temp8 = SixBinCodeToAscii(temp8);
-    				strncat(sentence, &temp8, 1);
+    				strncat((char*)sentence,(const char*) &temp8, 1);
     			}
-    			strcat(sentence, ",0");	        //lq 位填充数
+    			strcat((char*)sentence, ",0");	        //lq 位填充数
     
     			/*lq 存入语句队列*/
     			AISDI_SenEnque(&AisDiSenQue, sentence);            
             }
 
             /*lq 该消息的最后一条语句 */
-        	sprintf(sentence, "!");
-        	strncat(sentence, listener, 2);
-        	strcat(sentence, "VDM");
-		    sprintf(tempBuff, ",%d", senTotal); 
-			strcat(sentence, tempBuff);		//lq 语句总数
-		    sprintf(tempBuff, ",%d", senNum); 
-			strcat(sentence, tempBuff);		//lq 语句序号
-		    sprintf(tempBuff, ",%d", msgSeq); 
-			strcat(sentence, tempBuff);		//lq 消息序号
-			strcat(sentence, ",");			
-			strncat(sentence, &channel, 1); //lq 信道
-			strcat(sentence, ",");		    //lq 数据
+        	sprintf((char*)sentence, "!");
+        	strncat((char*)sentence, (const char*)listener, 2);
+        	strcat((char*)sentence, "VDM");
+		    sprintf((char*)tempBuff, ",%d", senTotal); 
+			strcat((char*)sentence,(const char*) tempBuff);		//lq 语句总数
+		    sprintf((char*)tempBuff, ",%d", senNum); 
+			strcat((char*)sentence,(const char*) tempBuff);		//lq 语句序号
+		    sprintf((char*)tempBuff, ",%d", msgSeq); 
+			strcat((char*)sentence,(const char*) tempBuff);		//lq 消息序号
+			strcat((char*)sentence, ",");			
+			strncat((char*)sentence,(char*) &channel, 1); //lq 信道
+			strcat((char*)sentence, ",");		    //lq 数据
 			for (i = 0; i < temp16 - 1; i++)
 			{
 				bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6);
 				temp8 = SixBinCodeToAscii(temp8);
-				strncat(sentence, &temp8, 1);
+				strncat((char*)sentence,(const char*) &temp8, 1);
 			}
 			bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6 - fillBitNum);
 			temp8 = SixBinCodeToAscii(temp8 << fillBitNum);
-			strncat(sentence, &temp8, 1);
-			sprintf(tempBuff, ",%d", fillBitNum); 
-			strcat(sentence, tempBuff);	    //lq 位填充数
+			strncat((char*)sentence,(const char*) &temp8, 1);
+			sprintf((char*)tempBuff, ",%d", fillBitNum); 
+			strcat((char*)sentence,(const char*) tempBuff);	    //lq 位填充数
 			
             /*lq 存入语句队列*/
 			AISDI_SenEnque(&AisDiSenQue, sentence);
@@ -476,8 +476,8 @@ void AISDI_BuildVDO(U8 listener[], U8 data[], U16 len, U8 channel)
     U16 temp16;
 	AISDISenBuffArray sentence;
 	BITMAP msg_bitmap;
-	U8 len_1;
-	U8 len_2;
+	//U8 len_1;   //lnw mask
+	//U8 len_2;
 	U8 i;
     U8 temp8;
 	U8 tempBuff[10];
@@ -503,25 +503,25 @@ void AISDI_BuildVDO(U8 listener[], U8 data[], U16 len, U8 channel)
 		if (sixBitCodeNum <= 62)
 		{
             /*lq 单语句 */
-        	sprintf(sentence, "!");
-        	strncat(sentence, listener, 2);
-        	strcat(sentence, "VDO");			
-			strcat(sentence, ",1");		//lq 语句总数
-			strcat(sentence, ",1");		//lq 语句序号
-			strcat(sentence, ",");		//lq 消息序号，单语句消息的消息序号字段为空
-			strcat(sentence, ",");		//lq 信道为空
-			strcat(sentence, ",");		//lq 数据
+        	sprintf((char*)sentence, "!");
+        	strncat((char*)sentence, (const char*)listener, 2);
+        	strcat((char*)sentence, "VDO");			
+			strcat((char*)sentence, ",1");		//lq 语句总数
+			strcat((char*)sentence, ",1");		//lq 语句序号
+			strcat((char*)sentence, ",");		//lq 消息序号，单语句消息的消息序号字段为空
+			strcat((char*)sentence, ",");		//lq 信道为空
+			strcat((char*)sentence, ",");		//lq 数据
 			for (i = 0; i < sixBitCodeNum - 1; i++)
 			{
 				bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6);
 				temp8 = SixBinCodeToAscii(temp8);
-				strncat(sentence, &temp8, 1);
+				strncat((char*)sentence,(const char*) &temp8, 1);
 			}
 			bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6 - fillBitNum);
 			temp8 = SixBinCodeToAscii(temp8 << fillBitNum);
-			strncat(sentence, &temp8, 1);
-			sprintf(tempBuff, ",%d", fillBitNum); 
-			strcat(sentence, tempBuff);	//lq 位填充数
+			strncat((char*)sentence,(const char*) &temp8, 1);
+			sprintf((char*)tempBuff, ",%d", fillBitNum); 
+			strcat((char*)sentence,(const char*) tempBuff);	//lq 位填充数
 
 			/*lq 存入语句队列*/
 			AISDI_SenEnque(&AisDiSenQue, sentence);							
@@ -543,52 +543,52 @@ void AISDI_BuildVDO(U8 listener[], U8 data[], U16 len, U8 channel)
             /*lq 最大长度语句 */
             for (senNum = 1; senNum < senTotal; senNum++)
             {
-            	sprintf(sentence, "!");
-            	strncat(sentence, listener, 2);
-            	strcat(sentence, "VDO");
-			    sprintf(tempBuff, ",%d", senTotal); 
-    			strcat(sentence, tempBuff);		//lq 语句总数
-			    sprintf(tempBuff, ",%d", senNum); 
-    			strcat(sentence, tempBuff);		//lq 语句序号
-			    sprintf(tempBuff, ",%d", msgSeq); 
-    			strcat(sentence, tempBuff);		//lq 消息序号
-    			strcat(sentence, ",");		    //lq 信道为空
-    			strcat(sentence, ",");		    //lq 数据
+            	sprintf((char*)sentence, "!");
+            	strncat((char*)sentence, (const char*)listener, 2);
+            	strcat((char*)sentence, "VDO");
+			    sprintf((char*)tempBuff, ",%d", senTotal); 
+    			strcat((char*)sentence,(const char*) tempBuff);		//lq 语句总数
+			    sprintf((char*)tempBuff, ",%d", senNum); 
+    			strcat((char*)sentence,(const char*) tempBuff);		//lq 语句序号
+			    sprintf((char*)tempBuff, ",%d", msgSeq); 
+    			strcat((char*)sentence,(const char*) tempBuff);		//lq 消息序号
+    			strcat((char*)sentence, ",");		    //lq 信道为空
+    			strcat((char*)sentence, ",");		    //lq 数据
     			for (i = 0; i < 61; i++)
     			{
     				bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6);
     				temp8 = SixBinCodeToAscii(temp8);
-    				strncat(sentence, &temp8, 1);
+    				strncat((char*)sentence,(const char*) &temp8, 1);
     			}
-    			strcat(sentence, ",0");	        //lq 位填充数
+    			strcat((char*)sentence, ",0");	        //lq 位填充数
     
     			/*lq 存入语句队列*/
     			AISDI_SenEnque(&AisDiSenQue, sentence);            
             }
 
             /*lq 该消息的最后一条语句 */
-        	sprintf(sentence, "!");
-        	strncat(sentence, listener, 2);
-        	strcat(sentence, "VDO");
-		    sprintf(tempBuff, ",%d", senTotal); 
-			strcat(sentence, tempBuff);		//lq 语句总数
-		    sprintf(tempBuff, ",%d", senNum); 
-			strcat(sentence, tempBuff);		//lq 语句序号
-		    sprintf(tempBuff, ",%d", msgSeq); 
-			strcat(sentence, tempBuff);		//lq 消息序号
-			strcat(sentence, ",");		    //lq 信道为空
-			strcat(sentence, ",");		    //lq 数据
+        	sprintf((char*)sentence, "!");
+        	strncat((char*)sentence, (const char*)listener, 2);
+        	strcat((char*)sentence, "VDO");
+		    sprintf((char*)tempBuff, ",%d", senTotal); 
+			strcat((char*)sentence,(const char*) tempBuff);		//lq 语句总数
+		    sprintf((char*)tempBuff, ",%d", senNum); 
+			strcat((char*)sentence,(const char*) tempBuff);		//lq 语句序号
+		    sprintf((char*)tempBuff, ",%d", msgSeq); 
+			strcat((char*)sentence,(const char*) tempBuff);		//lq 消息序号
+			strcat((char*)sentence, ",");		    //lq 信道为空
+			strcat((char*)sentence, ",");		    //lq 数据
 			for (i = 0; i < temp16 - 1; i++)
 			{
 				bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6);
 				temp8 = SixBinCodeToAscii(temp8);
-				strncat(sentence, &temp8, 1);
+				strncat((char*)sentence,(const char*) &temp8, 1);
 			}
 			bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6 - fillBitNum);
 			temp8 = SixBinCodeToAscii(temp8 << fillBitNum);
-			strncat(sentence, &temp8, 1);
-			sprintf(tempBuff, ",%d", fillBitNum); 
-			strcat(sentence, tempBuff);	    //lq 位填充数
+			strncat((char*)sentence,(const char*) &temp8, 1);
+			sprintf((char*)tempBuff, ",%d", fillBitNum); 
+			strcat((char*)sentence,(const char*) tempBuff);	    //lq 位填充数
 			
             /*lq 存入语句队列*/
 			AISDI_SenEnque(&AisDiSenQue, sentence);
@@ -603,26 +603,26 @@ void AISDI_BuildVDO(U8 listener[], U8 data[], U16 len, U8 channel)
 		if (sixBitCodeNum <= 61)
 		{
             /*lq 单语句 */
-        	sprintf(sentence, "!");
-        	strncat(sentence, listener, 2);
-        	strcat(sentence, "VDO");
-			strcat(sentence, ",1");		//lq 语句总数
-			strcat(sentence, ",1");		//lq 语句序号
-			strcat(sentence, ",");		//lq 消息序号，单语句消息的消息序号字段为空
-			strcat(sentence, ",");			
-			strncat(sentence, &channel, 1);//lq 信道			
-			strcat(sentence, ",");		//lq 数据
+        	sprintf((char*)sentence, "!");
+        	strncat((char*)sentence, (const char*)listener, 2);
+        	strcat((char*)sentence, "VDO");
+			strcat((char*)sentence, ",1");		//lq 语句总数
+			strcat((char*)sentence, ",1");		//lq 语句序号
+			strcat((char*)sentence, ",");		//lq 消息序号，单语句消息的消息序号字段为空
+			strcat((char*)sentence, ",");			
+			strncat((char*)sentence,(char*) &channel, 1);//lq 信道			
+			strcat((char*)sentence, ",");		//lq 数据
 			for (i = 0; i < sixBitCodeNum - 1; i++)
 			{
 				bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6);
 				temp8 = SixBinCodeToAscii(temp8);
-				strncat(sentence, &temp8, 1);
+				strncat((char*)sentence,(const char*) &temp8, 1);
 			}
 			bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6 - fillBitNum);
 			temp8 = SixBinCodeToAscii(temp8 << fillBitNum);
-			strncat(sentence, &temp8, 1);
-			sprintf(tempBuff, ",%d", fillBitNum); 
-			strcat(sentence, tempBuff);	//lq 位填充数
+			strncat((char*)sentence,(const char*) &temp8, 1);
+			sprintf((char*)tempBuff, ",%d", fillBitNum); 
+			strcat((char*)sentence,(const char*) tempBuff);	//lq 位填充数
 
 			/*lq 存入语句队列*/
 			AISDI_SenEnque(&AisDiSenQue, sentence);							
@@ -644,54 +644,54 @@ void AISDI_BuildVDO(U8 listener[], U8 data[], U16 len, U8 channel)
             /*lq 最大长度语句 */
             for (senNum = 1; senNum < senTotal; senNum++)
             {
-            	sprintf(sentence, "!");
-            	strncat(sentence, listener, 2);
-            	strcat(sentence, "VDO");
-			    sprintf(tempBuff, ",%d", senTotal); 
-    			strcat(sentence, tempBuff);		//lq 语句总数
-			    sprintf(tempBuff, ",%d", senNum); 
-    			strcat(sentence, tempBuff);		//lq 语句序号
-			    sprintf(tempBuff, ",%d", msgSeq); 
-    			strcat(sentence, tempBuff);		//lq 消息序号
-    			strcat(sentence, ",");			
-    			strncat(sentence, &channel, 1); //lq 信道			
-    			strcat(sentence, ",");		    //lq 数据
+            	sprintf((char*)sentence, "!");
+            	strncat((char*)sentence, (const char*)listener, 2);
+            	strcat((char*)sentence, "VDO");
+			    sprintf((char*)tempBuff, ",%d", senTotal); 
+    			strcat((char*)sentence,(const char*) tempBuff);		//lq 语句总数
+			    sprintf((char*)tempBuff, ",%d", senNum); 
+    			strcat((char*)sentence,(const char*) tempBuff);		//lq 语句序号
+			    sprintf((char*)tempBuff, ",%d", msgSeq); 
+    			strcat((char*)sentence,(const char*) tempBuff);		//lq 消息序号
+    			strcat((char*)sentence, ",");			
+    			strncat((char*)sentence,(char*) &channel, 1); //lq 信道			
+    			strcat((char*)sentence, ",");		    //lq 数据
     			for (i = 0; i < 60; i++)
     			{
     				bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6);
     				temp8 = SixBinCodeToAscii(temp8);
-    				strncat(sentence, &temp8, 1);
+    				strncat((char*)sentence,(const char*) &temp8, 1);
     			}
-    			strcat(sentence, ",0");	        //lq 位填充数
+    			strcat((char*)sentence, ",0");	        //lq 位填充数
     
     			/*lq 存入语句队列*/
     			AISDI_SenEnque(&AisDiSenQue, sentence);            
             }
 
             /*lq 该消息的最后一条语句 */
-        	sprintf(sentence, "!");
-        	strncat(sentence, listener, 2);
-        	strcat(sentence, "VDO");
-		    sprintf(tempBuff, ",%d", senTotal); 
-			strcat(sentence, tempBuff);		//lq 语句总数
-		    sprintf(tempBuff, ",%d", senNum); 
-			strcat(sentence, tempBuff);		//lq 语句序号
-		    sprintf(tempBuff, ",%d", msgSeq); 
-			strcat(sentence, tempBuff);		//lq 消息序号
-			strcat(sentence, ",");			
-			strncat(sentence, &channel, 1); //lq 信道
-			strcat(sentence, ",");		    //lq 数据
+        	sprintf((char*)sentence, "!");
+        	strncat((char*)sentence, (const char*)listener, 2);
+        	strcat((char*)sentence, "VDO");
+		    sprintf((char*)tempBuff, ",%d", senTotal); 
+			strcat((char*)sentence,(const char*) tempBuff);		//lq 语句总数
+		    sprintf((char*)tempBuff, ",%d", senNum); 
+			strcat((char*)sentence,(const char*) tempBuff);		//lq 语句序号
+		    sprintf((char*)tempBuff, ",%d", msgSeq); 
+			strcat((char*)sentence,(const char*) tempBuff);		//lq 消息序号
+			strcat((char*)sentence, ",");			
+			strncat((char*)sentence,(char*) &channel, 1); //lq 信道
+			strcat((char*)sentence, ",");		    //lq 数据
 			for (i = 0; i < temp16 - 1; i++)
 			{
 				bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6);
 				temp8 = SixBinCodeToAscii(temp8);
-				strncat(sentence, &temp8, 1);
+				strncat((char*)sentence,(const char*) &temp8, 1);
 			}
 			bitmap_get_value_for_U8(&msg_bitmap, &temp8, 6 - fillBitNum);
 			temp8 = SixBinCodeToAscii(temp8 << fillBitNum);
-			strncat(sentence, &temp8, 1);
-			sprintf(tempBuff, ",%d", fillBitNum); 
-			strcat(sentence, tempBuff);	    //lq 位填充数
+			strncat((char*)sentence,(const char*) &temp8, 1);
+			sprintf((char*)tempBuff, ",%d", fillBitNum); 
+			strcat((char*)sentence,(const char*) tempBuff);	    //lq 位填充数
 			
             /*lq 存入语句队列*/
 			AISDI_SenEnque(&AisDiSenQue, sentence);
@@ -720,30 +720,30 @@ void AISDI_BuildABK(U8 listener[], U32 addrMmsi, AisChannelEnum rxChannel,
 	U8 tempBuff[16];
 	
     /*lq 组建语句 */
-	sprintf(sentence, "$");
-	strncat(sentence, listener, 2);
-	strcat(sentence, "ABK");
-	strcat(sentence, ",");
-	sprintf(tempBuff, "%09d", addrMmsi);    			
-	strcat(sentence, tempBuff);		        //lq MMSI of the addressed AIS unit
-	strcat(sentence, ",");
+	sprintf((char*)sentence, "$");
+	strncat((char*)sentence, (const char*)listener, 2);
+	strcat((char*)sentence, "ABK");
+	strcat((char*)sentence, ",");
+	sprintf((char*)tempBuff, "%09d", (const char*)addrMmsi);    			
+	strcat((char*)sentence,(const char*) tempBuff);		        //lq MMSI of the addressed AIS unit
+	strcat((char*)sentence, ",");
 	if (rxChannel == ENUM_AIS_CHANNEL_A)    //lq AIS channel of reception
     {
-	    strcat(sentence, AIS_CHANNEL_NAME_A);
+	    strcat((char*)sentence, AIS_CHANNEL_NAME_A);
     }
     else
     {
-	    strcat(sentence, AIS_CHANNEL_NAME_B);
+	    strcat((char*)sentence, AIS_CHANNEL_NAME_B);
     }
-	strcat(sentence, ",");
-	sprintf(tempBuff, "%d", msgId);    			
-	strcat(sentence, tempBuff);		        //lq ITU-R M.1371Message ID
-	strcat(sentence, ",");
-	sprintf(tempBuff, "%d", msgSeqNum);    			
-	strcat(sentence, tempBuff);		        //lq Message sequence number
-	strcat(sentence, ",");
-	sprintf(tempBuff, "%d", ackType);    			
-	strcat(sentence, tempBuff);		        //lq Type of acknowledgement
+	strcat((char*)sentence, ",");
+	sprintf((char*)tempBuff, "%d", msgId);    			
+	strcat((char*)sentence,(const char*) tempBuff);		        //lq ITU-R M.1371Message ID
+	strcat((char*)sentence, ",");
+	sprintf((char*)tempBuff, "%d", msgSeqNum);    			
+	strcat((char*)sentence,(const char*) tempBuff);		        //lq Message sequence number
+	strcat((char*)sentence, ",");
+	sprintf((char*)tempBuff, "%d", ackType);    			
+	strcat((char*)sentence,(const char*) tempBuff);		        //lq Type of acknowledgement
     
     /*lq 存入语句队列*/
     AISDI_SenEnque(&AisDiSenQue, sentence);
@@ -767,7 +767,7 @@ void AISDI_SenPrint(AisDiSenFifoStruct* pAisDiSenFifoStruct)
 #else
     if (AISDI_SenDeque(pAisDiSenFifoStruct, sentence) == TRUE)
     {
-        UartResponseMsg(sentence);
+        UartResponseMsg((char*)sentence);
     }    
 #endif        
 }
@@ -812,20 +812,20 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
 		if (DevDynamicPara.ucWorkMode == EQ_WORKMOD_NORMAL)
 		{
             /**************Total number of sentences***************/
-            ucCheck = GetSegment((char *)pDat, chTemp, 1, uiLen, 30);
+            ucCheck = GetSegment((char *)pDat,(char*) chTemp, 1, uiLen, 30);
             
             /*lq 字段非空*/
             if (ucCheck != FALSE)
 			{
     			/*lq 长度有效性判断*/
-    			ucLen = strlen(chTemp);
+    			ucLen = strlen((char*)chTemp);
     			if (ucLen != 1)
     			{
     				UartResponseMsg("$DUAIR,0,ABM");
     				return (FALSE);
     			}
 
-                ulTemp = (U32)strtoul(chTemp, &pEnd, 10);
+                ulTemp = (U32)strtoul((const char*)chTemp, (char**)&pEnd, 10);
                 
                 /*lq 字符有效性判断*/
     			if ((*pEnd) != '\0')
@@ -853,20 +853,20 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
             }
 
             /**************Sentence number***************/
-            ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+            ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
             
             /*lq 字段非空*/
             if (ucCheck != FALSE)
 			{
     			/*lq 长度有效性判断*/
-    			ucLen = strlen(chTemp);
+    			ucLen = strlen((char*)chTemp);
     			if (ucLen != 1)
     			{
     				UartResponseMsg("$DUAIR,0,ABM");
     				return (FALSE);
     			}
 
-                ulTemp = (U32)strtoul(chTemp, &pEnd, 10);
+                ulTemp = (U32)strtoul((const char*)chTemp, (char**)&pEnd, 10);
                 
                 /*lq 字符有效性判断*/
     			if ((*pEnd) != '\0')
@@ -896,20 +896,20 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
 			if (ulTemp1 > 1)    //lq 语句总数为1时可省略消息序号字段
             {
                 /**************Sequential message identifier***************/
-                ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+                ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
                 
                 /*lq 字段非空*/
                 if (ucCheck != FALSE)
     			{
         			/*lq 长度有效性判断*/
-        			ucLen = strlen(chTemp);
+        			ucLen = strlen((char*)chTemp);
         			if (ucLen != 1)
         			{
         				UartResponseMsg("$DUAIR,0,ABM");
         				return (FALSE);
         			}
     
-                    ulTemp = (U32)strtoul(chTemp, &pEnd, 10);
+                    ulTemp = (U32)strtoul((const char*)chTemp, (char**)&pEnd, 10);
                     
                     /*lq 字符有效性判断*/
         			if ((*pEnd) != '\0')
@@ -938,20 +938,20 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
             }
 
             /**************MMSI of the destination AIS unit***************/
-            ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+            ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
             
             /*lq 字段非空*/
             if (ucCheck != FALSE)
 			{
     			/*lq 长度有效性判断*/
-    			ucLen = strlen(chTemp);
+    			ucLen = strlen((char*)chTemp);
     			if (ucLen != 9)
     			{
     				UartResponseMsg("$DUAIR,0,ABM");
     				return (FALSE);
     			}
 
-                ulTemp = (U32)strtoul(chTemp, &pEnd, 10);
+                ulTemp = (U32)strtoul((const char*)chTemp, (char**)&pEnd, 10);
                 
                 /*lq 字符有效性判断*/
     			if ((*pEnd) != '\0')
@@ -971,20 +971,20 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
             }            
 
             /**************channel for broadcast***************/
-            ucCheck = GetSegment((char *)pDat, chTemp, 5, uiLen, 30);
+            ucCheck = GetSegment((char *)pDat,(char*) chTemp, 5, uiLen, 30);
             
             /*lq 字段非空*/
             if (ucCheck != FALSE)
 			{
     			/*lq 长度有效性判断*/
-    			ucLen = strlen(chTemp);
+    			ucLen = strlen((char*)chTemp);
     			if (ucLen != 1)
     			{
     				UartResponseMsg("$DUAIR,0,ABM");
     				return (FALSE);
     			}
 
-                ulTemp = (U32)strtoul(chTemp, &pEnd, 10);
+                ulTemp = (U32)strtoul((const char*)chTemp, (char**)&pEnd, 10);
                 
                 /*lq 字符有效性判断*/
     			if ((*pEnd) != '\0')
@@ -1026,20 +1026,20 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
             }            
 
             /**************Message ID***************/
-            ucCheck = GetSegment((char *)pDat, chTemp, 6, uiLen, 30);
+            ucCheck = GetSegment((char *)pDat,(char*) chTemp, 6, uiLen, 30);
             
             /*lq 字段非空*/
             if (ucCheck != FALSE)
 			{
     			/*lq 长度有效性判断*/
-    			ucLen = strlen(chTemp);
+    			ucLen = strlen((char*)chTemp);
     			if (ucLen != 2)                         //lq ABM语句与BBM语句的该字段长度不同
     			{
     				UartResponseMsg("$DUAIR,0,ABM");
     				return (FALSE);
     			}
 
-                ulTemp = (U32)strtoul(chTemp, &pEnd, 10);
+                ulTemp = (U32)strtoul((const char*)chTemp, (char**)&pEnd, 10);
                 
                 /*lq 字符有效性判断*/
     			if ((*pEnd) != '\0')
@@ -1069,19 +1069,19 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
             } 
 
             /**************Encapsulated data***************/
-            ucCheck = GetSegment((char *)pDat, chTemp, 7, uiLen, 60);
+            ucCheck = GetSegment((char *)pDat,(char*) chTemp, 7, uiLen, 60);
             
             /*lq 字段非空*/
             if (ucCheck != FALSE)
 			{
     			/*lq 长度有效性判断*/
-    			ucLen = strlen(chTemp);
+    			ucLen = strlen((char*)chTemp);
     			if (!((ucLen >= 1) && (ucLen <= 60)))
     			{
     				UartResponseMsg("$DUAIR,0,ABM");
     				return (FALSE);
     			}
-                strcpy(chTemp2, chTemp);
+                strcpy((char*)chTemp2, (const char*)chTemp);
             }
             else
             {
@@ -1090,20 +1090,20 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
             }
 
             /**************Number of fill-bits***************/
-            ucCheck = GetSegment((char *)pDat, chTemp, 8, uiLen, 30);
+            ucCheck = GetSegment((char *)pDat,(char*) chTemp, 8, uiLen, 30);
             
             /*lq 字段非空*/
             if (ucCheck != FALSE)
 			{
     			/*lq 长度有效性判断*/
-    			ucLen = strlen(chTemp);
+    			ucLen = strlen((char*)chTemp);
     			if (ucLen != 1)
     			{
     				UartResponseMsg("$DUAIR,0,ABM");
     				return (FALSE);
     			}
 
-                ulTemp = (U32)strtoul(chTemp, &pEnd, 10);
+                ulTemp = (U32)strtoul((const char*)chTemp, (char**)&pEnd, 10);
                 
                 /*lq 字符有效性判断*/
     			if ((*pEnd) != '\0')
@@ -1135,8 +1135,8 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
                 ABMPara.ValidFlg = FALSE;
 
         	    /*lq 第一条语句始终覆盖之前的内容 */
-                strcpy(ABMPara.EncapData, chTemp2);
-                ABMPara.EncapDataLen = strlen(ABMPara.EncapData);
+                strcpy((char*)ABMPara.EncapData,(const char*)chTemp2);
+                ABMPara.EncapDataLen = strlen((char*)ABMPara.EncapData);
         
         		if (ulTemp1 > 1)
         		{
@@ -1159,14 +1159,14 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
         		if (ulTemp2 < ABMPara.SentenceTotal)							//lq 多语句消息的中间语句
         		{
         			ABMPara.SentenceNumber++;
-        			strcat(ABMPara.EncapData, chTemp2);
-                    ABMPara.EncapDataLen = strlen(ABMPara.EncapData);
+        			strcat((char*)ABMPara.EncapData, (const char*)chTemp2);
+                    ABMPara.EncapDataLen = strlen((char*)ABMPara.EncapData);
         		}
         		else if (ulTemp2 == ABMPara.SentenceTotal)						//lq 多语句消息的最后一条语句
         		{       
         			/*lq 转存完整的Encapsulated Data */
-        			strcat(ABMPara.EncapData, chTemp2);
-                    ABMPara.EncapDataLen = strlen(ABMPara.EncapData);
+        			strcat((char*)ABMPara.EncapData, (const char*)chTemp2);
+                    ABMPara.EncapDataLen = strlen((char*)ABMPara.EncapData);
         			ABMPara.FillBitNumber = ulTemp4;
                     ABMPara.ValidFlg = TRUE;
         		}
@@ -1182,20 +1182,20 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
 		if (DevDynamicPara.ucWorkMode == EQ_WORKMOD_NORMAL)
 		{
             /**************Total number of sentences***************/
-            ucCheck = GetSegment((char *)pDat, chTemp, 1, uiLen, 30);
+            ucCheck = GetSegment((char *)pDat,(char*) chTemp, 1, uiLen, 30);
             
             /*lq 字段非空*/
             if (ucCheck != FALSE)
 			{
     			/*lq 长度有效性判断*/
-    			ucLen = strlen(chTemp);
+    			ucLen = strlen((char*)chTemp);
     			if (ucLen != 1)
     			{
     				UartResponseMsg("$DUAIR,0,BBM");
     				return (FALSE);
     			}
 
-                ulTemp = (U32)strtoul(chTemp, &pEnd, 10);
+                ulTemp = (U32)strtoul((const char*)chTemp, (char**)&pEnd, 10);
                 
                 /*lq 字符有效性判断*/
     			if ((*pEnd) != '\0')
@@ -1223,20 +1223,20 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
             }
 
             /**************Sentence number***************/
-            ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+            ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
             
             /*lq 字段非空*/
             if (ucCheck != FALSE)
 			{
     			/*lq 长度有效性判断*/
-    			ucLen = strlen(chTemp);
+    			ucLen = strlen((char*)chTemp);
     			if (ucLen != 1)
     			{
     				UartResponseMsg("$DUAIR,0,BBM");
     				return (FALSE);
     			}
 
-                ulTemp = (U32)strtoul(chTemp, &pEnd, 10);
+                ulTemp = (U32)strtoul((const char*)chTemp, (char**)&pEnd, 10);
                 
                 /*lq 字符有效性判断*/
     			if ((*pEnd) != '\0')
@@ -1266,20 +1266,20 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
 			if (ulTemp1 > 1)    //lq 语句总数为1时可省略消息序号字段
             {
                 /**************Sequential message identifier***************/
-                ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+                ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
                 
                 /*lq 字段非空*/
                 if (ucCheck != FALSE)
     			{
         			/*lq 长度有效性判断*/
-        			ucLen = strlen(chTemp);
+        			ucLen = strlen((char*)chTemp);
         			if (ucLen != 1)
         			{
         				UartResponseMsg("$DUAIR,0,BBM");
         				return (FALSE);
         			}
     
-                    ulTemp = (U32)strtoul(chTemp, &pEnd, 10);
+                    ulTemp = (U32)strtoul((const char*)chTemp, (char**)&pEnd, 10);
                     
                     /*lq 字符有效性判断*/
         			if ((*pEnd) != '\0')
@@ -1308,20 +1308,20 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
             }
 
             /**************channel for broadcast***************/
-            ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+            ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
             
             /*lq 字段非空*/
             if (ucCheck != FALSE)
 			{
     			/*lq 长度有效性判断*/
-    			ucLen = strlen(chTemp);
+    			ucLen = strlen((char*)chTemp);
     			if (ucLen != 1)
     			{
     				UartResponseMsg("$DUAIR,0,BBM");
     				return (FALSE);
     			}
 
-                ulTemp = (U32)strtoul(chTemp, &pEnd, 10);
+                ulTemp = (U32)strtoul((const char*)chTemp, (char**)&pEnd, 10);
                 
                 /*lq 字符有效性判断*/
     			if ((*pEnd) != '\0')
@@ -1363,20 +1363,20 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
             }            
 
             /**************Message ID***************/
-            ucCheck = GetSegment((char *)pDat, chTemp, 5, uiLen, 30);
+            ucCheck = GetSegment((char *)pDat,(char*) chTemp, 5, uiLen, 30);
             
             /*lq 字段非空*/
             if (ucCheck != FALSE)
 			{
     			/*lq 长度有效性判断*/
-    			ucLen = strlen(chTemp);
+    			ucLen = strlen((char*)chTemp);
     			if (!((ucLen >= 1) && (ucLen <= 2)))    //lq ABM语句与BBM语句的该字段长度不同
     			{
     				UartResponseMsg("$DUAIR,0,BBM");
     				return (FALSE);
     			}
 
-                ulTemp = (U32)strtoul(chTemp, &pEnd, 10);
+                ulTemp = (U32)strtoul((const char*)chTemp, (char**)&pEnd, 10);
                 
                 /*lq 字符有效性判断*/
     			if ((*pEnd) != '\0')
@@ -1406,19 +1406,19 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
             } 
 
             /**************Encapsulated data***************/
-            ucCheck = GetSegment((char *)pDat, chTemp, 6, uiLen, 60);
+            ucCheck = GetSegment((char *)pDat,(char*) chTemp, 6, uiLen, 60);
             
             /*lq 字段非空*/
             if (ucCheck != FALSE)
 			{
     			/*lq 长度有效性判断*/
-    			ucLen = strlen(chTemp);
+    			ucLen = strlen((char*)chTemp);
     			if (!((ucLen >= 1) && (ucLen <= 60)))
     			{
     				UartResponseMsg("$DUAIR,0,BBM");
     				return (FALSE);
     			}
-                strcpy(chTemp2, chTemp);
+                strcpy((char*)chTemp2, (const char*)chTemp);
             }
             else
             {
@@ -1427,20 +1427,20 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
             }
 
             /**************Number of fill-bits***************/
-            ucCheck = GetSegment((char *)pDat, chTemp, 7, uiLen, 30);
+            ucCheck = GetSegment((char *)pDat,(char*) chTemp, 7, uiLen, 30);
             
             /*lq 字段非空*/
             if (ucCheck != FALSE)
 			{
     			/*lq 长度有效性判断*/
-    			ucLen = strlen(chTemp);
+    			ucLen = strlen((char*)chTemp);
     			if (ucLen != 1)
     			{
     				UartResponseMsg("$DUAIR,0,BBM");
     				return (FALSE);
     			}
 
-                ulTemp = (U32)strtoul(chTemp, &pEnd, 10);
+                ulTemp = (U32)strtoul((const char*)chTemp, (char**)&pEnd, 10);
                 
                 /*lq 字符有效性判断*/
     			if ((*pEnd) != '\0')
@@ -1472,8 +1472,8 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
                 BBMPara.ValidFlg = FALSE;
 
         	    /*lq 第一条语句始终覆盖之前的内容 */
-                strcpy(BBMPara.EncapData, chTemp2);
-                BBMPara.EncapDataLen = strlen(BBMPara.EncapData);
+                strcpy((char*)BBMPara.EncapData,(const char*) chTemp2);
+                BBMPara.EncapDataLen = strlen((char*)BBMPara.EncapData);
         
         		if (ulTemp1 > 1)
         		{
@@ -1496,14 +1496,14 @@ U8 AISDI_SentenceParse(U8 *pDat, U16 uiLen)
         		if (ulTemp2 < BBMPara.SentenceTotal)							//lq 多语句消息的中间语句
         		{
         			BBMPara.SentenceNumber++;
-        			strcat(BBMPara.EncapData, chTemp2);
-                    BBMPara.EncapDataLen = strlen(BBMPara.EncapData);
+        			strcat((char*)BBMPara.EncapData,(const char*) chTemp2);
+                    BBMPara.EncapDataLen = strlen((char*)BBMPara.EncapData);
         		}
         		else if (ulTemp2 == BBMPara.SentenceTotal)						//lq 多语句消息的最后一条语句
         		{       
         			/*lq 转存完整的Encapsulated Data */
-        			strcat(BBMPara.EncapData, chTemp2);
-                    BBMPara.EncapDataLen = strlen(BBMPara.EncapData);
+        			strcat((char*)BBMPara.EncapData,(const char*) chTemp2);
+                    BBMPara.EncapDataLen = strlen((char*)BBMPara.EncapData);
         			BBMPara.FillBitNumber = ulTemp4;
                     BBMPara.ValidFlg = TRUE;
         		}

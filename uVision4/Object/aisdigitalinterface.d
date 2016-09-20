@@ -64,6 +64,12 @@
 .\object\aisdigitalinterface.o: ..\driver\inc\BKPRegister.h
 .\object\aisdigitalinterface.o: ..\migrateF4to5\migrate.h
 .\object\aisdigitalinterface.o: ..\driver\inc\power.h
+.\object\aisdigitalinterface.o: ..\debug\inc\debug.h
+.\object\aisdigitalinterface.o: ..\driver\inc\Tim.h
+.\object\aisdigitalinterface.o: ..\user\inc\uartmsg.h
+.\object\aisdigitalinterface.o: ..\driver\inc\wdg.h
+.\object\aisdigitalinterface.o: ..\driver\inc\SPI.h
+.\object\aisdigitalinterface.o: ..\interface_layer\Include\systemtick.h
 .\object\aisdigitalinterface.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\aisdigitalinterface.o: ..\user\inc\flashctrl.h
 .\object\aisdigitalinterface.o: ..\user\inc\encrypt.h

@@ -64,6 +64,12 @@
 .\object\ais_msgmodu.o: ..\driver\inc\BKPRegister.h
 .\object\ais_msgmodu.o: ..\migrateF4to5\migrate.h
 .\object\ais_msgmodu.o: ..\driver\inc\power.h
+.\object\ais_msgmodu.o: ..\debug\inc\debug.h
+.\object\ais_msgmodu.o: ..\driver\inc\Tim.h
+.\object\ais_msgmodu.o: ..\user\inc\uartmsg.h
+.\object\ais_msgmodu.o: ..\driver\inc\wdg.h
+.\object\ais_msgmodu.o: ..\driver\inc\SPI.h
+.\object\ais_msgmodu.o: ..\interface_layer\Include\systemtick.h
 .\object\ais_msgmodu.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\ais_msgmodu.o: ..\user\inc\flashctrl.h
 .\object\ais_msgmodu.o: ..\user\inc\encrypt.h

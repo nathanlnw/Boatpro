@@ -72,6 +72,10 @@
 .\object\sleepctrl.o: ..\driver\inc\BKPRegister.h
 .\object\sleepctrl.o: ..\migrateF4to5\migrate.h
 .\object\sleepctrl.o: ..\driver\inc\power.h
+.\object\sleepctrl.o: ..\debug\inc\debug.h
+.\object\sleepctrl.o: ..\user\inc\uartmsg.h
+.\object\sleepctrl.o: ..\driver\inc\wdg.h
+.\object\sleepctrl.o: ..\driver\inc\SPI.h
 .\object\sleepctrl.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\sleepctrl.o: ..\user\inc\flashctrl.h
 .\object\sleepctrl.o: ..\user\inc\encrypt.h
@@ -80,7 +84,6 @@
 .\object\sleepctrl.o: ..\ptl\inc\Ptl_Interface.h
 .\object\sleepctrl.o: ..\ptl\inc\gentype.h
 .\object\sleepctrl.o: ..\ptl\inc\PTL_Main.h
-.\object\sleepctrl.o: ..\debug\inc\debug.h
 .\object\sleepctrl.o: ..\user\inc\adjust.h
 .\object\sleepctrl.o: ..\driver\inc\led.h
 .\object\sleepctrl.o: ..\user\inc\sotdma.h

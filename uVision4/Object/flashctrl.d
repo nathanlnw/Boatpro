@@ -64,6 +64,12 @@
 .\object\flashctrl.o: ..\driver\inc\BKPRegister.h
 .\object\flashctrl.o: ..\migrateF4to5\migrate.h
 .\object\flashctrl.o: ..\driver\inc\power.h
+.\object\flashctrl.o: ..\debug\inc\debug.h
+.\object\flashctrl.o: ..\driver\inc\Tim.h
+.\object\flashctrl.o: ..\user\inc\uartmsg.h
+.\object\flashctrl.o: ..\driver\inc\wdg.h
+.\object\flashctrl.o: ..\driver\inc\SPI.h
+.\object\flashctrl.o: ..\interface_layer\Include\systemtick.h
 .\object\flashctrl.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\flashctrl.o: ..\user\inc\flashctrl.h
 .\object\flashctrl.o: ..\user\inc\encrypt.h

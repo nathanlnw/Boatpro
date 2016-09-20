@@ -369,7 +369,7 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
         /*lq GPS消息生成*/
         GpsPara.GPS_MsgGenFlag = TRUE;
 		
-        ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+        ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
 
 		if (ucCheck == FALSE)
 		{
@@ -382,7 +382,7 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
 		if (chTemp[0] == 'A')                                     //lq 只有GPS定位后，才根据GPS的GPRMC报文更新GPS结构体
 		{
 			//提取时间
-			ucCheck = GetSegment((char *)pDat, chTemp, 1, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 1, uiLen, 30);
 
 			if (ucCheck == FALSE)
 			{
@@ -444,7 +444,7 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
 			}
 
 			//提取纬度
-			ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 
 			if (ucCheck == FALSE)
 			{
@@ -468,7 +468,7 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
 	            sTempLat = ulTempH * 10000 + uiTempL;
              }
 
-			ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
 
 			if (ucCheck == FALSE)
 			{
@@ -489,7 +489,7 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
                 }
 			}
 
-			ucCheck = GetSegment((char *)pDat, chTemp, 5, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 5, uiLen, 30);
 
 			if (ucCheck == FALSE)
 			{
@@ -513,7 +513,7 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
 				sTempLon = ulTempH * 10000 + uiTempL;
             }
 
-			ucCheck = GetSegment((char *)pDat, chTemp, 6, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 6, uiLen, 30);
 
 			if (ucCheck == FALSE)
 			{
@@ -625,7 +625,7 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
             }
 
 			//对地航速转换
-			ucCheck = GetSegment((char *)pDat, chTemp, 7, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 7, uiLen, 30);
 
 			if (ucCheck == FALSE)
 			{
@@ -677,7 +677,7 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
 			}
 
 			//对地航向转换
-			ucCheck = GetSegment((char *)pDat, chTemp, 8, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 8, uiLen, 30);
 
 			if (ucCheck == FALSE)
 			{
@@ -690,7 +690,7 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
 			}
 
 			//年月日提取
-			ucCheck = GetSegment((char *)pDat, chTemp, 9, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 9, uiLen, 30);
 
 			if (ucCheck == FALSE)
 			{
@@ -722,7 +722,7 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
         GpsPara.GPS_MsgGenFlag = TRUE;
 
 		/*lq GPS quality indicator，该字段不会为空（标准规定）*/
-        ucCheck = GetSegment((char *)pDat, chTemp, 6, uiLen, 30);
+        ucCheck = GetSegment((char *)pDat,(char*) chTemp, 6, uiLen, 30);
 		if (ucCheck != FALSE)
 		{
             pGpsCell->GPS_QualityIndicator = chTemp[0] - '0';    
@@ -736,7 +736,7 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
         GpsPara.GPS_MsgGenFlag = TRUE;
 
 		/*lq Mode，Mode=1 (fix not available, 卫星数<3)，Mode=2 (2D, 卫星数=3)，Mode=3 (3D, 卫星数>3) */
-        ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+        ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
 		if (ucCheck != FALSE)
 		{
             pGpsCell->GPS_FixMode = chTemp[0] - '0';    
@@ -747,7 +747,7 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
         }
 
 		/*lq PDOP */
-        ucCheck = GetSegment((char *)pDat, chTemp, 15, uiLen, 30);
+        ucCheck = GetSegment((char *)pDat,(char*) chTemp, 15, uiLen, 30);
 		if (ucCheck != FALSE)
 		{
             pGpsCell->GPS_PDOP = (U16)(atof(chTemp) * 10);
@@ -765,7 +765,7 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
         GpsPara.GPS_MsgGenFlag = TRUE;
 
 	    /*lq Expected error in latitude*/
-        ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+        ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
 		if (ucCheck != FALSE)
 		{
             pGpsCell->GPS_errlat = (U16)(atof(chTemp) + 0.5);
@@ -777,7 +777,7 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
         }
 
     	/*lq Expected error in longitude*/
-        ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+        ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 		if (ucCheck != FALSE)
 		{
             pGpsCell->GPS_errlon = (U16)(atof(chTemp) + 0.5);
@@ -794,20 +794,20 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
     {
         GpsSelfCheckInst.DataCommFlg = TRUE;
 
-		ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+		ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 		if (ucCheck == FALSE)
 		{
 			return (FALSE);
 		} 
 
         /*lq 长度有效性判断*/
-        ucLen = strlen(chTemp);
+        ucLen = strlen((char*)chTemp);
 		if (ucLen != 2)
 		{
 			return (FALSE);
 		}
 
-        ulTemp = strtoul(chTemp, &pEnd, 10);
+        ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
 
 		/*lq 字符有效性判断*/
 		if ((*pEnd) != 0)
@@ -821,7 +821,7 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
         }
         else if (ulTemp == 2)
         {   
-            ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+            ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
             if (ucCheck == FALSE)
             {
                 return (FALSE);
@@ -937,7 +937,7 @@ void GpsOutputProcess(U8 *pDat, U16 uiLen)
                 DEV_INFO_GPS_OUTPUT_INTERVAL_INDEX_GSV] != 0)
             {            
                 /*lq 获取当前语句的编号 */
-                ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);   
+                ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);   
         		if ((ucCheck == TRUE) && (chTemp[0] == '1'))    //lq 多语句，只对第一条语句计数
                 {
                     DevDynamicPara.GpsOutputCnt[DEV_INFO_GPS_OUTPUT_INTERVAL_INDEX_GSV]++;            
@@ -2077,7 +2077,7 @@ void GpsCtrlProcess(void)
     {
 		LEDInit(LED_TYPE_GPS_FIX);
 		Para_Read(PARA_GPS_FIRST_TIME_TYPE,ucTempBuf);
-		if(strncmp(ucTempBuf, PARA_GPS_FIRST_TIME_DEFAULT, 12) == FALSE)
+		if(strncmp((char*)ucTempBuf,(const char*) PARA_GPS_FIRST_TIME_DEFAULT, 12) == FALSE)
 		{ 
 			/* 记录GPS第一次定位的时间 */
 			dateTime.Year = GpsPara.GPS_TimeY;
@@ -2122,7 +2122,7 @@ void GpsCtrlProcess(void)
 			/* 计算本次航行距离 */        	
         	distance += GetDistance(NowGPS_Latitude, NowGPS_Longitud, LastGPS_Latitude, LastGPS_Longitud);
 
-			sprintf(ucTempBuf, "%5d", distance);
+			sprintf((char*)ucTempBuf, "%5d", distance);
             Para_Save(PARA_SAILING_DISTINCE_TYPE, (U8 *)ucTempBuf, 5);      // 计算之后的总航距离
 
 			/* 更新时间、经纬度 */

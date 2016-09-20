@@ -67,11 +67,14 @@
 .\object\rtc.o: ..\driver\inc\BKPRegister.h
 .\object\rtc.o: ..\migrateF4to5\migrate.h
 .\object\rtc.o: ..\driver\inc\power.h
+.\object\rtc.o: ..\debug\inc\debug.h
+.\object\rtc.o: ..\user\inc\uartmsg.h
+.\object\rtc.o: ..\driver\inc\wdg.h
+.\object\rtc.o: ..\driver\inc\SPI.h
+.\object\rtc.o: ..\interface_layer\Include\systemtick.h
 .\object\rtc.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\rtc.o: ..\user\inc\flashctrl.h
 .\object\rtc.o: ..\user\inc\encrypt.h
 .\object\rtc.o: ..\driver\inc\LED.h
 .\object\rtc.o: ..\user\inc\adjust.h
-.\object\rtc.o: ..\driver\inc\wdg.h
-.\object\rtc.o: ..\debug\inc\debug.h
 .\object\rtc.o: ..\user\inc\sleepctrl.h

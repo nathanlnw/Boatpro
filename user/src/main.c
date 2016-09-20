@@ -77,7 +77,7 @@ int main(void)
     PowerUpProcess();
 
 	while(1)
-	{
+	{   
 		Feed_Dog();
 
 		if (DevDynamicPara.ucWorkMode == EQ_WORKMOD_NORMAL)                     //lq 工作模式
@@ -175,7 +175,7 @@ int main(void)
 					{
 						Delay_ms(2); 
 						sprintf(chRetBuf, "$P712,TR,RSSI,2");  
-	                    sprintf(ucTempBuf, "%d", SI446X_GetRssi(SI446X_CHIP_B));
+	                    sprintf((char*)ucTempBuf, "%d", SI446X_GetRssi(SI446X_CHIP_B));
 	    				strcat(chRetBuf, ",");               
 	                    strcat(chRetBuf, (char *)ucTempBuf);                                                                                                                                                
 	    				UartResponseMsg(chRetBuf); 

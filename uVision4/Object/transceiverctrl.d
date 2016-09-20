@@ -65,6 +65,12 @@
 .\object\transceiverctrl.o: ..\driver\inc\BKPRegister.h
 .\object\transceiverctrl.o: ..\migrateF4to5\migrate.h
 .\object\transceiverctrl.o: ..\driver\inc\power.h
+.\object\transceiverctrl.o: ..\debug\inc\debug.h
+.\object\transceiverctrl.o: ..\driver\inc\Tim.h
+.\object\transceiverctrl.o: ..\user\inc\uartmsg.h
+.\object\transceiverctrl.o: ..\driver\inc\wdg.h
+.\object\transceiverctrl.o: ..\driver\inc\SPI.h
+.\object\transceiverctrl.o: ..\interface_layer\Include\systemtick.h
 .\object\transceiverctrl.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\transceiverctrl.o: ..\user\inc\flashctrl.h
 .\object\transceiverctrl.o: ..\user\inc\encrypt.h

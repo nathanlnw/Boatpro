@@ -879,7 +879,7 @@ static U8 MSGMAN_AisAckFifoEnque(AisAckFifoStruct *pAisAckFifoStruct,
                                  const AisAckCellStruct *pAisAckCellStruct)
 {
     AisAckCellStruct *pCell;
-    U16 i;
+//    U16 i;
        
     if (MSGMAN_AisAckFifoIsFull(pAisAckFifoStruct) == FALSE)
     {      
@@ -909,7 +909,7 @@ static U8 MSGMAN_AisAckFifoEnque(AisAckFifoStruct *pAisAckFifoStruct,
 static U8 MSGMAN_AisAckFifoDeque(AisAckFifoStruct *pAisAckFifoStruct,
                                  AisAckCellStruct *pAisAckCellStruct)
 {
-    U16 i;
+//    U16 i;
     AisAckCellStruct *pCell;
 
     if (MSGMAN_AisAckFifoIsEmpty(pAisAckFifoStruct) == FALSE)

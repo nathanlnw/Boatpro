@@ -68,10 +68,14 @@
 .\object\uartmsg.o: ..\driver\inc\BKPRegister.h
 .\object\uartmsg.o: ..\migrateF4to5\migrate.h
 .\object\uartmsg.o: ..\driver\inc\power.h
+.\object\uartmsg.o: ..\debug\inc\debug.h
+.\object\uartmsg.o: ..\driver\inc\Tim.h
+.\object\uartmsg.o: ..\driver\inc\wdg.h
+.\object\uartmsg.o: ..\driver\inc\SPI.h
+.\object\uartmsg.o: ..\interface_layer\Include\systemtick.h
 .\object\uartmsg.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\uartmsg.o: ..\user\inc\flashctrl.h
 .\object\uartmsg.o: ..\user\inc\encrypt.h
-.\object\uartmsg.o: ..\debug\inc\debug.h
 .\object\uartmsg.o: ..\interface_layer\Include\parastorage.h
 .\object\uartmsg.o: ..\user\inc\digunit.h
 .\object\uartmsg.o: ..\user\inc\mmi.h
@@ -80,7 +84,6 @@
 .\object\uartmsg.o: ..\ptl\inc\Ptl_Interface.h
 .\object\uartmsg.o: ..\ptl\inc\gentype.h
 .\object\uartmsg.o: ..\user\inc\sleepctrl.h
-.\object\uartmsg.o: ..\driver\inc\Tim.h
 .\object\uartmsg.o: ..\driver\inc\24c02.h
 .\object\uartmsg.o: ..\user\inc\tempersensor.h
 .\object\uartmsg.o: ..\user\inc\filectrl.h

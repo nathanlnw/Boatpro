@@ -82,6 +82,11 @@
 .\object\initial.o: ..\driver\inc\BKPRegister.h
 .\object\initial.o: ..\migrateF4to5\migrate.h
 .\object\initial.o: ..\driver\inc\power.h
+.\object\initial.o: ..\debug\inc\debug.h
+.\object\initial.o: ..\driver\inc\Tim.h
+.\object\initial.o: ..\driver\inc\wdg.h
+.\object\initial.o: ..\driver\inc\SPI.h
+.\object\initial.o: ..\interface_layer\Include\systemtick.h
 .\object\initial.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\initial.o: ..\user\inc\flashctrl.h
 .\object\initial.o: ..\user\inc\encrypt.h

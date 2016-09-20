@@ -66,8 +66,13 @@
 .\object\usart.o: ..\driver\inc\BKPRegister.h
 .\object\usart.o: ..\migrateF4to5\migrate.h
 .\object\usart.o: ..\driver\inc\power.h
+.\object\usart.o: ..\debug\inc\debug.h
+.\object\usart.o: ..\driver\inc\Tim.h
+.\object\usart.o: ..\user\inc\uartmsg.h
+.\object\usart.o: ..\driver\inc\wdg.h
+.\object\usart.o: ..\driver\inc\SPI.h
+.\object\usart.o: ..\interface_layer\Include\systemtick.h
 .\object\usart.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\usart.o: ..\user\inc\flashctrl.h
 .\object\usart.o: ..\user\inc\encrypt.h
-.\object\usart.o: ..\user\inc\uartmsg.h
 .\object\usart.o: ..\user\inc\UbloxProtocol.h

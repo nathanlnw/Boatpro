@@ -26,5 +26,5 @@
 /* Public  variables ---------------------------------------------------------*/
 
 /* Public  function  ---------------------------------------------------------*/
-
+extern void RxTxCtrl(U8 CtrlType, U32 Freq1, U32 Freq2);
 #endif

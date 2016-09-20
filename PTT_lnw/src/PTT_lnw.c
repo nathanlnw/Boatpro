@@ -43,13 +43,24 @@ void PTT_Init_IO(void)
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(PTT_WARNLIGHT_PORT, &GPIO_InitStructure);
 
+	GPIO_InitStructure.GPIO_Pin = PTT_WARNLIGHT_PIN_OUT_2;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(PTT_WARNLIGHT_PORT_2, &GPIO_InitStructure);
+
     //  PTT  语音收发控制
 	GPIO_InitStructure.GPIO_Pin = PTT_SPK_CTL_PIN_OUT;
 	GPIO_Init(PTT_SPK_CTL_PORT, &GPIO_InitStructure);
 
+	GPIO_InitStructure.GPIO_Pin = PTT_SPK_CTL_PIN_OUT_2;
+	GPIO_Init(PTT_SPK_CTL_PORT_2, &GPIO_InitStructure);
+
 	//  PTT   电源控制
 	GPIO_InitStructure.GPIO_Pin = PTT_MODULE_POWERCTL_OUT;
 	GPIO_Init(PTT_MODULE_POWERCTL_PORT, &GPIO_InitStructure);
+
+	GPIO_InitStructure.GPIO_Pin = PTT_MODULE_POWERCTL_OUT_2;
+	GPIO_Init(PTT_MODULE_POWERCTL_PORT_2, &GPIO_InitStructure);
 
     //  2. INPUT PIN  SET
       //  语音接收状态检测
@@ -57,8 +68,16 @@ void PTT_Init_IO(void)
 	GPIO_InitStructure.GPIO_Pin = PTT_RX_PIN_IN;
 	GPIO_Init(PTT_RX_PORT, &GPIO_InitStructure);
 
+	GPIO_InitStructure.GPIO_Pin = PTT_RX_PIN_IN_2;
+	GPIO_Init(PTT_RX_PORT_2, &GPIO_InitStructure);
+
+
 	GPIO_InitStructure.GPIO_Pin = PTT_MAINPOWERCUT_IN;
 	GPIO_Init(PTT_MAINPOWERCUT_PORT, &GPIO_InitStructure);
+
+	GPIO_InitStructure.GPIO_Pin = PTT_MAINPOWERCUT_IN_2;
+	GPIO_Init(PTT_MAINPOWERCUT_PORT_2, &GPIO_InitStructure);
+	
 
     //  3. OUTPUT  INIT STATE
      PTT_WARNLIGHT_OFF;         //   OFF  Init 
@@ -81,8 +100,8 @@ void PTT_OBJ_INIT(void)
    PTT_OBJ.WarnLight_Keep_Duraiton=WARNLIGHT_KEEP;
    PTT_OBJ.PTT_TX_Keep_Duraiton=PTT_TX_KEEP;
    PTT_OBJ.PTT_IDLE_Duration=PTT_IDLE_KEEP;
-   PTT_OBJ.PTT_Demo_Enable=ENABLE; 
-   PTT_OBJ.PTT_TX_Enable=ENABLE;
+   PTT_OBJ.PTT_Demo_Enable=Enable_PTT; 
+   PTT_OBJ.PTT_TX_Enable=Enable_PTT;
 }
 
 
@@ -137,9 +156,9 @@ void PTT_WARNLIGHT_ENABLE(void)
 ************************************************************/
 void PTT_TX_Control(void)
 {
-   if((PTT_MODULE_POWER_STATUS_GET)&&(ENABLE==PTT_OBJ.PTT_Demo_Enable)&&(PTT_OBJ.LowPowerMode_Staus==DISABLE))
+   if((PTT_MODULE_POWER_STATUS_GET)&&(Enable_PTT==PTT_OBJ.PTT_Demo_Enable)&&(PTT_OBJ.LowPowerMode_Staus==Disable_PTT))
    {
-	        if(ENABLE==PTT_OBJ.PTT_TX_Enable)    
+	        if(Enable_PTT==PTT_OBJ.PTT_TX_Enable)    
 		    {
 	           if(PTT_RX_STATUS_GET)   //  HIGH  means  no  Rx : idle
 			   {
@@ -149,7 +168,7 @@ void PTT_TX_Control(void)
 					{
 			            PTT_OBJ.PTT_TX_timecounter=0;
 	                    // Convert  to   RX
-						PTT_OBJ.PTT_TX_Enable=DISABLE;		
+						PTT_OBJ.PTT_TX_Enable=Disable_PTT;		
 						PTT_SPK_CTL_RX;
 					}
 	           	}		
@@ -160,7 +179,7 @@ void PTT_TX_Control(void)
 					if(PTT_OBJ.PTT_IDLE_timecouteer>=PTT_OBJ.PTT_IDLE_Duration)
 					{
 	                    PTT_OBJ.PTT_IDLE_timecouteer=0;
-	                    PTT_OBJ.PTT_TX_Enable=ENABLE;
+	                    PTT_OBJ.PTT_TX_Enable=Enable_PTT;
 					}
 		   	}
   	}
@@ -205,7 +224,7 @@ void PTT_MainPower_Check(void)
 
 		 PTT_MODULE_POWER_OFF;   //  cut down PTT power
 	   
-         PTT_OBJ.LowPowerMode_Staus=ENABLE;
+         PTT_OBJ.LowPowerMode_Staus=Enable_PTT;
 
          //  Check   and  STOP   RX
          if(RX_EN_PIN_GET)
@@ -219,10 +238,10 @@ void PTT_MainPower_Check(void)
   }
   else
   {  
-     if(PTT_OBJ.LowPowerMode_Staus==ENABLE)
+     if(PTT_OBJ.LowPowerMode_Staus==Enable_PTT)
      {
 	      //   RX   Recover   
-	      PTT_OBJ.LowPowerMode_Staus=DISABLE;	 
+	      PTT_OBJ.LowPowerMode_Staus=Disable_PTT;	 
 		  
 		  if(SI446X_RXSTTUS_Return())
 	      {  // RX state
@@ -232,7 +251,7 @@ void PTT_MainPower_Check(void)
   
      //  part 2 
      PTT_OBJ.MainPower_Status=MAIN__POWER_NORMAL;
-	 PTT_OBJ.LowPowerMode_Staus=DISABLE;
+	 PTT_OBJ.LowPowerMode_Staus=Disable_PTT;
 	 PTT_MODULE_POWER_ON;  // main power recover   PTT power   
 
 

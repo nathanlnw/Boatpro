@@ -46,7 +46,7 @@ U8 bitmap_set_value_for_U8(BITMAP* map, U8 data, U8 data_bit_len)
 {
 	U8 data_mask;
 	U8 temp;
-    U8 byteMask;
+//    U8 byteMask;  //lnw mask
 
 	if(data_bit_len == 0)
 	{
@@ -333,8 +333,8 @@ void InitMsg5(void)
     msg5.UserID = AisStaticPara.MMSI;                                       //lq 30 bits
     msg5.AISVersionIndicator = AisStaticPara.AISVersionIndicator;           //lq 2 bits
     msg5.IMONumber = AisStaticPara.IMONumber;                               //lq 30 bits
-    strncpy(msg5.CallSign, AisStaticPara.CallSign, AIS_INFO_CALL_SIGN_LEN); //lq 42 bits (6-bit ASCII)
-    strncpy(msg5.Name, AisStaticPara.ShipName, AIS_INFO_SHIP_NAME_LEN);     //lq 120 bits (6-bit ASCII)
+    strncpy((char*)msg5.CallSign, (char*)AisStaticPara.CallSign, AIS_INFO_CALL_SIGN_LEN); //lq 42 bits (6-bit ASCII)
+    strncpy((char*)msg5.Name, (char*)AisStaticPara.ShipName, AIS_INFO_SHIP_NAME_LEN);     //lq 120 bits (6-bit ASCII)
     msg5.TypeOfShipAndCargo = AisStaticPara.TypeOfShip;                     //lq 8 bits
     msg5.DimensionA = AisStaticPara.ShipA;                                  //lq 9 bits
     msg5.DimensionB = AisStaticPara.ShipB;                                  //lq 9 bits
@@ -346,7 +346,7 @@ void InitMsg5(void)
     msg5.ETAHour = AisStaticPara.ETAHour;                                   //lq 5 bits
     msg5.ETAMinute = AisStaticPara.ETAMinute;                               //lq 6 bits
     msg5.MaxPresentStaticDraught = AisStaticPara.MaxDraught;                //lq 8 bits
-    strncpy(msg5.Destination, AisStaticPara.Destination, AIS_INFO_DESTINATION_LEN); //lq 120 bits (6-bit ASCII)
+    strncpy((char*)msg5.Destination, (char*)AisStaticPara.Destination, AIS_INFO_DESTINATION_LEN); //lq 120 bits (6-bit ASCII)
     msg5.DTE = AisStaticPara.DTE;                                           //lq 1 bits
     //  Spare;                                                              //lq 1 bit, all 0
                                                                             //lq total 424 bits，2 slots
@@ -414,9 +414,9 @@ void InitMsg6(void)
 void InitMsg6Test(void)
 {
     static U8 seqNum = 0;           //lq 0 - 3
-    S16 i;
+//    S16 i;  // lnw mask
     AISMsgTypeStruct_6 msg6;
-	BITMAP msg_bitmap;
+	//BITMAP msg_bitmap;  // lnw mask
 
     msg6.MessageID = 6;                                                     //lq 6 bits
     msg6.RepeatIndicator = 0;                                               //lq 2 bits
@@ -612,7 +612,7 @@ void InitMsg12(void)
     static U8 seqNum = 0;                                                    //lq 0 - 3
     S16 i;
     AISMsgTypeStruct_12 msg12;
-	BITMAP msg_bitmap;
+//	BITMAP msg_bitmap;
 
     msg12.MessageID = 12;                                                    //lq 6 bits
     msg12.RepeatIndicator = 0;                                               //lq 2 bits
@@ -712,7 +712,7 @@ void InitMsg14(void)
 {
     S16 i;
     AISMsgTypeStruct_14 msg14;
-	BITMAP msg_bitmap;
+	//BITMAP msg_bitmap;
 
     msg14.MessageID = 14;                                                    //lq 6 bits
     msg14.RepeatIndicator = 0;                                               //lq 2 bits
@@ -857,7 +857,7 @@ void InitMsg19(void)
     msg19.TrueHeading = AisDynamicPara.TrueHeading;                         //lq 9 bits
     msg19.TimeStamp = AisDynamicPara.TimeStamp;                             //lq 6 bits
     //  Spare;                                                              //lq 4 bits, all 0
-    strncpy(msg19.Name, AisStaticPara.ShipName, AIS_INFO_SHIP_NAME_LEN);    //lq 120 bits (6-bit ASCII)
+    strncpy((char*)msg19.Name, (char*)AisStaticPara.ShipName, AIS_INFO_SHIP_NAME_LEN);    //lq 120 bits (6-bit ASCII)
     msg19.TypeOfShipAndCargo = AisStaticPara.TypeOfShip;                    //lq 8 bits
     msg19.DimensionA = AisStaticPara.ShipA;                                 //lq 9 bits
     msg19.DimensionB = AisStaticPara.ShipB;                                 //lq 9 bits
@@ -996,7 +996,7 @@ void InitMsg24A(void)
     msg24A.RepeatIndicator = 0;                                             //lq 2 bits
     msg24A.UserID = AisStaticPara.MMSI;                                     //lq 30 bits
     msg24A.PartNumber = 0;                                                  //lq 2 bits
-    strncpy(msg24A.Name, AisStaticPara.ShipName, AIS_INFO_SHIP_NAME_LEN);   //lq 120 bits (6-bit ASCII)
+    strncpy((char*)msg24A.Name, (char*)AisStaticPara.ShipName, AIS_INFO_SHIP_NAME_LEN);   //lq 120 bits (6-bit ASCII)
                                                                             //lq total 160 bits，1 slot
 
     /*lq 构造消息的二进制表示 */
@@ -1029,7 +1029,7 @@ void InitMsg24B(void)
         || ((AisStaticPara.VendID[4] & 0x3F) << 12)
         || ((AisStaticPara.VendID[5] & 0x3F) << 6)
         || ((AisStaticPara.VendID[7] & 0x3F));                                  //lq 20bits
-    strncpy(msg24B.CallSign, AisStaticPara.CallSign, AIS_INFO_CALL_SIGN_LEN);   //lq 42 bits (6-bit ASCII)
+    strncpy((char*)msg24B.CallSign, (char*)AisStaticPara.CallSign, AIS_INFO_CALL_SIGN_LEN);   //lq 42 bits (6-bit ASCII)
     msg24B.DimensionA = AisStaticPara.ShipA;                                    //lq 9 bits
     msg24B.DimensionB = AisStaticPara.ShipB;                                    //lq 9 bits
     msg24B.DimensionC = AisStaticPara.ShipC;                                    //lq 6 bits

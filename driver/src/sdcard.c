@@ -20,6 +20,7 @@
 #include  "stm32f10x_dma.h"
 #include  "stm32f10x_gpio.h"
 #include  "stm32f10x_rcc.h"
+#include  "Include.h"
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -869,7 +870,7 @@ SD_Error SD_SetDeviceMode(u32 Mode)
 *******************************************************************************/
 SD_Error SD_SelectDeselect(u32 addr)
 {
-  U32 delay;
+//  U32 delay;
   SD_Error errorstatus = SD_OK;
 
   /* Send CMD7 SDIO_SEL_DESEL_CARD */
@@ -1885,7 +1886,7 @@ SD_Error SD_StopTransfer(void)
 SD_Error SD_Erase(u32 startaddr, u32 endaddr)
 {
   SD_Error errorstatus = SD_OK;
-  u32 delay = 0;
+//  u32 delay = 0;
   vu32 maxdelay = 0;
   u8 cardstate = 0;
 

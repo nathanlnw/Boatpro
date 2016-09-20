@@ -432,4 +432,7 @@ extern void SetGpsPositionSampleNewFlg(void);
 extern void GpsWakeUp(void);
 extern void ResetGpsOffPositionSampleEn(void);
 
+
+extern void IniGpsMsgStru(GPSStruct *pGpsCell);//lnw add
+
 #endif

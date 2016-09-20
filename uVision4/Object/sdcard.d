@@ -66,6 +66,12 @@
 .\object\sdcard.o: ..\driver\inc\BKPRegister.h
 .\object\sdcard.o: ..\migrateF4to5\migrate.h
 .\object\sdcard.o: ..\driver\inc\power.h
+.\object\sdcard.o: ..\debug\inc\debug.h
+.\object\sdcard.o: ..\driver\inc\Tim.h
+.\object\sdcard.o: ..\user\inc\uartmsg.h
+.\object\sdcard.o: ..\driver\inc\wdg.h
+.\object\sdcard.o: ..\driver\inc\SPI.h
+.\object\sdcard.o: ..\interface_layer\Include\systemtick.h
 .\object\sdcard.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\sdcard.o: ..\user\inc\flashctrl.h
 .\object\sdcard.o: ..\user\inc\encrypt.h

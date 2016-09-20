@@ -59,4 +59,7 @@ extern U8 GPS_valid;
 //extern U16 set_4501_interval(U16 speed);
 extern void ResetMsgPara(void);
 
+extern U8 bitmap_get_value_for_U8(BITMAP* map, U8* pData, U8 data_bit_len);// lnw add
+extern U8 bitmap_get_value(BITMAP* map, U32* pData, U8 data_bit_len);//lnw add
+
 #endif

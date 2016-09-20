@@ -710,7 +710,7 @@ typedef struct AISMsg26AIBinData{
     U16 AI_DAC;                     //lq 10 bits
     U8  AI_FI;                      //lq 6 bits
     U8  ApplicationData[124];       //lq Maximum 988 bits (8-bit byte)
-    U8  ApplicationDataBitLen;
+    U16  ApplicationDataBitLen;     // lnw  modify  Old  U8    , it should be U16 
 }AISMsg26AIBinDataStruct;
 
 /*lq 26号消息二进制数据定义 */
@@ -733,7 +733,8 @@ typedef struct AISMsgType_26{
     AISMsg26BinDataUnion  BinaryData;             //lq Maximum 1004 bits (8-bit byte)
     U8  CommStateSelectFlag;        //lq 1 bit
     AISMsgCommStateUnion CommunicationState;         //lq 19 bits
-    U8  BinaryDataBitLen;           //lq 对于结构化二进制数据，包含DAC和FI
+    U16  BinaryDataBitLen;           //lq 对于结构化二进制数据，包含DAC和FI    
+                                     // lnw  change  old :U8   ,Range 0-255  ,  actual value max 1064 ,so  it must be change to U16
                                     //lq Maximum 1064 bits，1-5 slots(B-Class mobile AIS station not exceed 2 slots)
 }AISMsgTypeStruct_26;
 
@@ -824,5 +825,38 @@ extern AISMsgTypeStruct_27     AISMsg_27;
 /* Public  function  ---------------------------------------------------------*/
 extern AISMsgTypeEnum AISMSG_ParseMsg(AISMsgBinBuffArray AISMsgBinBuff);
 extern AISMsgTypeEnum AISMSG_ParseMsgType(U8 *pData);
+
+// lnw  add  below  
+extern void AISMSG_BuildMsg1(const AISMsgTypeStruct_1_2_3* pAISMsg);// lnw add
+extern void AISMSG_BuildMsg2(const AISMsgTypeStruct_1_2_3* pAISMsg);
+extern void AISMSG_BuildMsg3(const AISMsgTypeStruct_1_2_3* pAISMsg);//lnw add
+extern void AISMSG_BuildMsg5(const AISMsgTypeStruct_5* pAISMsg);//lnw add
+extern void AISMSG_BuildMsg6(AISMsgTypeStruct_6* pAISMsg);
+extern void AISMSG_BuildMsg7(const AISMsgTypeStruct_7_13* pAISMsg);
+extern void AISMSG_BuildMsg8(AISMsgTypeStruct_8* pAISMsg);
+extern void AISMSG_BuildMsg9(const AISMsgTypeStruct_9* pAISMsg);
+extern void AISMSG_BuildMsg10(const AISMsgTypeStruct_10* pAISMsg);
+extern void AISMSG_BuildMsg11(const AISMsgTypeStruct_4_11* pAISMsg);
+extern void AISMSG_BuildMsg12(AISMsgTypeStruct_12* pAISMsg);
+extern void AISMSG_BuildMsg13(const AISMsgTypeStruct_7_13* pAISMsg);
+extern void AISMSG_BuildMsg14(AISMsgTypeStruct_14* pAISMsg);
+extern void AISMSG_BuildMsg15(const AISMsgTypeStruct_15* pAISMsg);
+extern void AISMSG_BuildMsg16(const AISMsgTypeStruct_16* pAISMsg);
+extern void AISMSG_BuildMsg17(const AISMsgTypeStruct_17* pAISMsg);
+extern void AISMSG_BuildMsg18(const AISMsgTypeStruct_18* pAISMsg);
+extern void AISMSG_BuildMsg19(const AISMsgTypeStruct_19* pAISMsg);
+extern void AISMSG_BuildMsg20(const AISMsgTypeStruct_20* pAISMsg);
+extern void AISMSG_BuildMsg21(const AISMsgTypeStruct_21* pAISMsg);
+extern void AISMSG_BuildMsg22(const AISMsgTypeStruct_22* pAISMsg);
+extern void AISMSG_BuildMsg23(const AISMsgTypeStruct_23* pAISMsg);
+extern void AISMSG_BuildMsg24A(const AISMsgTypeStruct_24A* pAISMsg);
+extern void AISMSG_BuildMsg24B(const AISMsgTypeStruct_24B* pAISMsg);
+extern void AISMSG_BuildMsg25(AISMsgTypeStruct_25* pAISMsg);
+extern void AISMSG_BuildMsg26(AISMsgTypeStruct_26* pAISMsg);
+extern void AISMSG_BuildMsg27(const AISMsgTypeStruct_27* pAISMsg);
+
+
+
+
 
 #endif

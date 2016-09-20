@@ -824,7 +824,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 	else if (strncmp((char *)pDat, "P712", 4) == FALSE)
 	{
 		//获取第1字段内容，判断当前命令
-		ucCheck = GetSegment((char *)pDat, chTemp, 1, uiLen, 30);
+		ucCheck = GetSegment((char *)pDat,(char*) chTemp, 1, uiLen, 30);
 
 		if (ucCheck == FALSE)
 		{
@@ -843,7 +843,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				if (strncmp((char *)ucTempBuf, "000000000", 9) == FALSE)
 				{
 					//写入MMSI号，提取MMSI号
-					ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+					ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
 
 					if (ucCheck == FALSE)
 					{
@@ -851,7 +851,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 						return (FALSE);
 					}
 
-					ucLen = strlen(chTemp);
+					ucLen = strlen((char*)chTemp);
 					ucCheck = IsAscStringOk(chTemp);
 
 #if CONFIG_MMSI_SARTFORM_CHECK
@@ -904,9 +904,9 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			//序列号写入
 			else if (strncmp(chTemp, "SNW", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
 			
-				ucLen = strlen(chTemp);
+				ucLen = strlen((char*)chTemp);
 
 				if ((ucCheck == FALSE) || (ucLen != 8))
 				{
@@ -927,7 +927,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			{
 				//***************************VendID*******************************//
 				//写入VendID
-				ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
 	
 				if (ucCheck == FALSE)
 				{
@@ -935,7 +935,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 					return (FALSE);
 				}
 	
-				ucLen = strlen(chTemp);
+				ucLen = strlen((char*)chTemp);
 	
 				if (ucLen != 7)
 				{
@@ -957,7 +957,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			//GPS串口语句输出状态
 			else if (strncmp(chTemp, "GPSDATA", 7) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);				
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);				
 				
 				if (ucCheck == FALSE)
 				{
@@ -995,11 +995,11 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			else if (strncmp(chTemp, "GPSOP", 5) == FALSE)
 			{
 			    /*lq 读取第2字段的内容 */
-                ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+                ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
 				if (ucCheck == TRUE)                                            //lq 若字段空，则不进行该项的配置
 				{
                     /*lq 长度有效性判断 */
-                    ucLen = strlen(chTemp);
+                    ucLen = strlen((char*)chTemp);
             		if (ucLen > 3)
             		{
         				UartResponseMsg("$DUAIR,0,GPSOP");
@@ -1007,7 +1007,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             		}
             
             		/*lq 字符有效性判断 */
-                    ulTemp = strtoul(chTemp, &pEnd, 10);
+                    ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
             		if ((*pEnd) != 0)
             		{
             		    /*lq 字符无效 */
@@ -1031,11 +1031,11 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				}
                 
 			    /*lq 读取第3字段的内容 */
-                ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+                ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 				if (ucCheck == TRUE)                                            //lq 若字段空，则不进行该项的配置
 				{
                     /*lq 长度有效性判断 */
-                    ucLen = strlen(chTemp);
+                    ucLen = strlen((char*)chTemp);
             		if (ucLen > 3)
             		{
         				UartResponseMsg("$DUAIR,0,GPSOP");
@@ -1043,7 +1043,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             		}
             
             		/*lq 字符有效性判断 */
-                    ulTemp = strtoul(chTemp, &pEnd, 10);
+                    ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
             		if ((*pEnd) != 0)
             		{
             		    /*lq 字符无效 */
@@ -1067,11 +1067,11 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				}
 
 			    /*lq 读取第4字段的内容 */
-                ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+                ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
 				if (ucCheck == TRUE)                                            //lq 若字段空，则不进行该项的配置
 				{
                     /*lq 长度有效性判断 */
-                    ucLen = strlen(chTemp);
+                    ucLen = strlen((char*)chTemp);
             		if (ucLen > 3)
             		{
         				UartResponseMsg("$DUAIR,0,GPSOP");
@@ -1079,7 +1079,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             		}
             
             		/*lq 字符有效性判断 */
-                    ulTemp = strtoul(chTemp, &pEnd, 10);
+                    ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
             		if ((*pEnd) != 0)
             		{
             		    /*lq 字符无效 */
@@ -1103,11 +1103,11 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				}
                 
 			    /*lq 读取第5字段的内容 */
-                ucCheck = GetSegment((char *)pDat, chTemp, 5, uiLen, 30);
+                ucCheck = GetSegment((char *)pDat,(char*) chTemp, 5, uiLen, 30);
 				if (ucCheck == TRUE)                                            //lq 若字段空，则不进行该项的配置
 				{
                     /*lq 长度有效性判断 */
-                    ucLen = strlen(chTemp);
+                    ucLen = strlen((char*)chTemp);
             		if (ucLen > 3)
             		{
         				UartResponseMsg("$DUAIR,0,GPSOP");
@@ -1115,7 +1115,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             		}
             
             		/*lq 字符有效性判断 */
-                    ulTemp = strtoul(chTemp, &pEnd, 10);
+                    ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
             		if ((*pEnd) != 0)
             		{
             		    /*lq 字符无效 */
@@ -1139,11 +1139,11 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				}
                 
 			    /*lq 读取第6字段的内容 */
-                ucCheck = GetSegment((char *)pDat, chTemp, 6, uiLen, 30);
+                ucCheck = GetSegment((char *)pDat,(char*) chTemp, 6, uiLen, 30);
 				if (ucCheck == TRUE)                                            //lq 若字段空，则不进行该项的配置
 				{
                     /*lq 长度有效性判断 */
-                    ucLen = strlen(chTemp);
+                    ucLen = strlen((char*)chTemp);
             		if (ucLen > 3)
             		{
         				UartResponseMsg("$DUAIR,0,GPSOP");
@@ -1151,7 +1151,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             		}
             
             		/*lq 字符有效性判断 */
-                    ulTemp = strtoul(chTemp, &pEnd, 10);
+                    ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
             		if ((*pEnd) != 0)
             		{
             		    /*lq 字符无效 */
@@ -1175,11 +1175,11 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				}
                 
 			    /*lq 读取第7字段的内容 */
-                ucCheck = GetSegment((char *)pDat, chTemp, 7, uiLen, 30);
+                ucCheck = GetSegment((char *)pDat,(char*) chTemp, 7, uiLen, 30);
 				if (ucCheck == TRUE)                                            //lq 若字段空，则不进行该项的配置
 				{
                     /*lq 长度有效性判断 */
-                    ucLen = strlen(chTemp);
+                    ucLen = strlen((char*)chTemp);
             		if (ucLen > 3)
             		{
         				UartResponseMsg("$DUAIR,0,GPSOP");
@@ -1187,7 +1187,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             		}
             
             		/*lq 字符有效性判断 */
-                    ulTemp = strtoul(chTemp, &pEnd, 10);
+                    ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
             		if ((*pEnd) != 0)
             		{
             		    /*lq 字符无效 */
@@ -1211,11 +1211,11 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				}
                 
 			    /*lq 读取第8字段的内容 */
-                ucCheck = GetSegment((char *)pDat, chTemp, 8, uiLen, 30);
+                ucCheck = GetSegment((char *)pDat,(char*) chTemp, 8, uiLen, 30);
 				if (ucCheck == TRUE)                                            //lq 若字段空，则不进行该项的配置
 				{
                     /*lq 长度有效性判断 */
-                    ucLen = strlen(chTemp);
+                    ucLen = strlen((char*)chTemp);
             		if (ucLen > 3)
             		{
         				UartResponseMsg("$DUAIR,0,GPSOP");
@@ -1223,7 +1223,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             		}
             
             		/*lq 字符有效性判断 */
-                    ulTemp = strtoul(chTemp, &pEnd, 10);
+                    ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
             		if ((*pEnd) != 0)
             		{
             		    /*lq 字符无效 */
@@ -1253,7 +1253,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			//GPS同步
 			else if (strncmp(chTemp, "SYNCH", 5) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);				
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);				
 				
 				if (ucCheck == FALSE)
 				{
@@ -1324,9 +1324,9 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             //设置硬件版本号
 			else if (strncmp(chTemp, "HWF", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
 			
-				ucLen = strlen(chTemp);
+				ucLen = strlen((char*)chTemp);
 
 				if ((ucCheck == FALSE) || (ucLen > STM32_FLASH_HWVERSION_MAXLEN))
 				{
@@ -1351,7 +1351,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			/*lq AIS类别配置 */
 			else if (strncmp(chTemp, "AISCLASS", 8) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);//读取第二字段的内容
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);//读取第二字段的内容
 
 				if (ucCheck == FALSE)
 				{
@@ -1361,7 +1361,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				}
                 
                 /*lq 长度有效性判断 */
-                ucLen = strlen(chTemp);
+                ucLen = strlen((char*)chTemp);
         		if (ucLen != 1)
         		{
     				UartResponseMsg("$DUAIR,0,AISCLASS");
@@ -1369,7 +1369,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
         		}
         
         		/*lq 字符有效性判断 */
-                ulTemp = strtoul(chTemp, &pEnd, 10);
+                ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
         		if ((*pEnd) != 0)
         		{
         		    /*lq 字符无效 */
@@ -1397,7 +1397,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			/*lq Transceiver配置 */
 			else if (strncmp(chTemp, "TR", 2) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);//读取第二字段的内容
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);//读取第二字段的内容
 
 				if (ucCheck == FALSE)
 				{
@@ -1406,7 +1406,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				/*lq Transceiver （SI446X）状态配置 */
 				else if (strncmp(chTemp, "006", 3) == FALSE)
 				{
-    				ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);//读取第3字段的内容    
+    				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);//读取第3字段的内容    
     				if (ucCheck == FALSE)
     				{
         				UartResponseMsg("$DUAIR,0,TR,006");    					
@@ -1414,7 +1414,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
     				}
 
                     /*lq 长度有效性判断*/
-                    ucLen = strlen(chTemp);
+                    ucLen = strlen((char*)chTemp);
         			if (ucLen != 1)
         			{
         				UartResponseMsg("$DUAIR,0,TR,006");
@@ -1431,10 +1431,10 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                     else
                     {
                         /*lq 取值范围有效性判断*/
-                        ulTemp = strtoul(chTemp, &pEnd, 10);
+                        ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
                         if (ulTemp == 1)
                         {
-            				ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);//读取第4字段的内容    
+            				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);//读取第4字段的内容    
             				if (ucCheck == FALSE)
             				{
                 				UartResponseMsg("$DUAIR,0,TR,006");    					
@@ -1442,7 +1442,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             				}
         
                             /*lq 长度有效性判断*/
-                            ucLen = strlen(chTemp);
+                            ucLen = strlen((char*)chTemp);
                 			if (ucLen != 1)
                 			{
                 				UartResponseMsg("$DUAIR,0,TR,006");
@@ -1459,7 +1459,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                             else
                             {
                                 /*lq 取值范围有效性判断*/
-                                ulTemp = strtoul(chTemp, &pEnd, 10);
+                                ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
                                 if ((ulTemp >= 0) && (ulTemp <= 8))
                                 {
                                     SI446X_CHANGE_STATE(ulTemp, SI446X_CHIP_A);
@@ -1473,7 +1473,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                         }
                         else if (ulTemp == 2)
                         {
-            				ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);//读取第4字段的内容    
+            				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);//读取第4字段的内容    
             				if (ucCheck == FALSE)
             				{
                 				UartResponseMsg("$DUAIR,0,TR,006");    					
@@ -1481,7 +1481,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             				}
         
                             /*lq 长度有效性判断*/
-                            ucLen = strlen(chTemp);
+                            ucLen = strlen((char*)chTemp);
                 			if (ucLen != 1)
                 			{
                 				UartResponseMsg("$DUAIR,0,TR,006");
@@ -1498,7 +1498,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                             else
                             {
                                 /*lq 取值范围有效性判断*/
-                                ulTemp = strtoul(chTemp, &pEnd, 10);
+                                ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
                                 if ((ulTemp >= 0) && (ulTemp <= 8))
                                 {
                                     SI446X_CHANGE_STATE(ulTemp, SI446X_CHIP_B);
@@ -1521,7 +1521,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				/*lq Transceiver （SI446X）输出功率配置（暂未写入EEPROM） */
 				else if (strncmp(chTemp, "007", 3) == FALSE)
 				{
-    				ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);//读取第3字段的内容    
+    				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);//读取第3字段的内容    
     				if (ucCheck == FALSE)
     				{
         				UartResponseMsg("$DUAIR,0,TR,007");    					
@@ -1529,7 +1529,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
     				}
 
                     /*lq 长度有效性判断 */
-                    ucLen = strlen(chTemp);
+                    ucLen = strlen((char*)chTemp);
             		if (ucLen != 1)
             		{
         				UartResponseMsg("$DUAIR,0,TR,007");
@@ -1537,7 +1537,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             		}
             
             		/*lq 字符有效性判断 */
-                    ulTemp = strtoul(chTemp, &pEnd, 10);
+                    ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
             		if ((*pEnd) != 0)
             		{
             		    /*lq 字符无效 */
@@ -1553,7 +1553,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             			return (FALSE);
                     }
 
-    				ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);//读取第4字段的内容    
+    				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);//读取第4字段的内容    
     				if (ucCheck == FALSE)
     				{
         				UartResponseMsg("$DUAIR,0,TR,007");    					
@@ -1561,7 +1561,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
     				}
 
                     /*lq 长度有效性判断*/
-                    ucLen = strlen(chTemp);
+                    ucLen = strlen((char*)chTemp);
         			if ((ucLen < 1) || (ucLen > 3))
         			{
         				UartResponseMsg("$DUAIR,0,TR,007");
@@ -1569,7 +1569,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
         			}
 
             		/*lq 字符有效性判断 */
-                    ulTemp1 = strtoul(chTemp, &pEnd, 10);
+                    ulTemp1 = strtoul((const char*)chTemp, (char**)&pEnd, 10);
             		if ((*pEnd) != 0)
             		{
             		    /*lq 字符无效 */
@@ -1602,7 +1602,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			/*lq 调试输出配置 */
 			else if (strncmp(chTemp, "DBO", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);//读取第二字段的内容
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);//读取第二字段的内容
 
 				if (ucCheck == FALSE)
 				{
@@ -1612,7 +1612,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				}
                 
                 /*lq 长度有效性判断 */
-                ucLen = strlen(chTemp);
+                ucLen = strlen((char*)chTemp);
         		if (ucLen != 1)
         		{
     				UartResponseMsg("$DUAIR,0,DBO");
@@ -1620,7 +1620,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
         		}
         
         		/*lq 字符有效性判断 */
-                ulTemp = strtoul(chTemp, &pEnd, 10);
+                ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
         		if ((*pEnd) != 0)
         		{
         		    /*lq 字符无效 */
@@ -1654,7 +1654,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             //恢复出厂设置
 			else if (strncmp(chTemp, "RST", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
 
 				if (ucCheck == FALSE)
 				{
@@ -1686,7 +1686,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 
 			else if (strncmp(chTemp, "050", 3) == FALSE)//可配置参数部分
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);//读取第二字段的内容
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);//读取第二字段的内容
 
 				if (ucCheck == FALSE)
 				{
@@ -1699,7 +1699,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			//进入测试态
 			else if (strncmp(chTemp, "007", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
 
 				if (ucCheck == FALSE)
 				{
@@ -1724,7 +1724,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			//进入读取SD卡文件状态
 			else if (strncmp(chTemp, "008", 3) == FALSE)
 			{ 
-				ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
 
 				if (ucCheck == FALSE)
 				{
@@ -1777,7 +1777,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 
 			else if (strncmp(chTemp, "WriteCry", 8) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
 		
 				if (ucCheck == FALSE)
 				{
@@ -1792,7 +1792,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				
 				ucTemp = 0;
 				ReadDeviceID(ulDeviceIDBuff);
-				ulTemp2 = strtoul(chTemp, &pEnd, 10);
+				ulTemp2 = strtoul((const char*)chTemp, (char**)&pEnd, 10);
 				do
 				{
 					ulTemp1 = ReadCry(ucTemp);
@@ -1814,7 +1814,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 		}
 		else if (DevDynamicPara.ucWorkMode == EQ_WORKMOD_TEST)
 		{
-			ucCheck = GetSegment((char *)pDat, chTemp, 1, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 1, uiLen, 30);
 			if (ucCheck == FALSE)
 			{
 				return (FALSE);
@@ -1823,9 +1823,9 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			//写入序列号
 			if (strncmp(chTemp, "SNW", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
 			
-				ucLen = strlen(chTemp);
+				ucLen = strlen((char*)chTemp);
 
 				if ((ucCheck == FALSE) || (ucLen != 8))
 				{
@@ -1846,7 +1846,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				return (FALSE);
 			}
 
-			ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
 
 			if (ucCheck == TRUE)
 			{
@@ -1870,7 +1870,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				}
 			}		
 
-			ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
 			
 			if (ucCheck == FALSE)
 			{
@@ -1880,7 +1880,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			//按时隙发送载波
 			if (strncmp(chTemp, "001", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 
 				if (ucCheck == FALSE)
 				{
@@ -1909,7 +1909,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             //lq 发射标准信号4（伪随机信号）or接收测试
 			else if (strncmp(chTemp, "002", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 
 				if (ucCheck == FALSE)
 				{
@@ -1955,7 +1955,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             //发射频率准确度调整使能
 			else if (strncmp(chTemp, "003", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 
 				if (ucCheck == FALSE)
 				{
@@ -1987,7 +1987,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 
 				if (ucCheck == TRUE)
 				{
-					ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+					ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 
 					if (ucCheck == FALSE)
 					{
@@ -2003,7 +2003,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 						return (FALSE);
 					}
 
-					ucLen = strlen(chTemp);
+					ucLen = strlen((char*)chTemp);
 
 					DevStaticPara.uiFreqAdj = atoi(chTemp);		//该参数需要后期调试！！！
 
@@ -2032,7 +2032,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             //发射幅度调整使能
 			else if (strncmp(chTemp, "005", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 
 				if (ucCheck == FALSE)
 				{
@@ -2065,7 +2065,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				if (ucCheck == TRUE)
 				{
 
-					ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+					ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 	
 					if (ucCheck == FALSE)
 					{
@@ -2081,7 +2081,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 						return (FALSE);
 					}
 
-					ucLen = strlen(chTemp);	
+					ucLen = strlen((char*)chTemp);	
 
 					DevStaticPara.uiModAmpAdj = atoi(chTemp);		//该参数需要后期调试！！！
 	
@@ -2115,7 +2115,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             //lq 发射标准信号3（00001111）
 			else if (strncmp(chTemp, "008", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 
 				if (ucCheck == FALSE)
 				{
@@ -2157,7 +2157,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             //lq 发送标准信号2(01010101)
 			else if (strncmp(chTemp, "012", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 
 				if (ucCheck == FALSE)
 				{
@@ -2186,7 +2186,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             //栅压控制调整使能
 			else if (strncmp(chTemp, "015", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 
 				if (ucCheck == FALSE)
 				{
@@ -2219,7 +2219,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				if (ucCheck == TRUE)
 				{
 
-					ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+					ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 	
 					if (ucCheck == FALSE)
 					{
@@ -2235,7 +2235,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 						return (FALSE);
 					}
 
-					ucLen = strlen(chTemp);	
+					ucLen = strlen((char*)chTemp);	
 
 					DevStaticPara.GridVoltAdj = atoi(chTemp);		//该参数需要后期调试！！！
 	
@@ -2263,7 +2263,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             //发射SART标准信号2:00001111
 			else if (strncmp(chTemp, "017", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 
 				if (ucCheck == FALSE)
 				{
@@ -2291,7 +2291,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             //进入设备自检模式
 			else if (strncmp(chTemp, "018", 3) == FALSE)
 			{
-    			ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+    			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
     			if (ucCheck == FALSE)
     			{
                     UartResponseMsg("$P712,007,018,0");
@@ -2299,14 +2299,14 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
     			}
         
                 /*lq 长度有效性判断*/
-                ucLen = strlen(chTemp);
+                ucLen = strlen((char*)chTemp);
         		if (ucLen != 8)
         		{
                     UartResponseMsg("$P712,007,018,0");
         			return (FALSE);
         		}
         
-                ulTemp = strtoul(chTemp, &pEnd, 16);
+                ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 16);
         
         		/*lq 字符有效性判断*/
         		if ((*pEnd) != 0)
@@ -2329,7 +2329,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 		/********************读取SD卡文件模式*******************************************/
 		else if (DevDynamicPara.ucWorkMode == EQ_WORKMOD_READFILE)
 		{  
-			ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
 
 			if (ucCheck == FALSE)
 			{
@@ -2338,7 +2338,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 
 			if (strncmp(chTemp, "001", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 
 				if (ucCheck == FALSE)
 				{
@@ -2360,7 +2360,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			}
 			else if (strncmp(chTemp, "002", 3) == FALSE) 
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 
 				if (ucCheck == FALSE)
 				{
@@ -2378,7 +2378,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			}
 			else if (strncmp(chTemp, "004", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 
 				if (ucCheck == FALSE)
 				{
@@ -2398,7 +2398,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
     else if (strncmp((char *)pDat, "DUAIQ", 5) == FALSE)
 	{
 		/*lq 获取第1字段内容，判断当前命令 */
-		ucCheck = GetSegment((char *)pDat, chTemp, 1, uiLen, 30);
+		ucCheck = GetSegment((char *)pDat,(char*) chTemp, 1, uiLen, 30);
 
 		if (ucCheck == FALSE)
 		{
@@ -2853,7 +2853,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             //查询Transceiver状态
             else if (strncmp(chTemp, "TR", 2) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);//读取第二字段的内容
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);//读取第二字段的内容
 				if (ucCheck == FALSE)
 				{
 					return (FALSE);
@@ -2862,14 +2862,14 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				/*lq RSSI */
 				if (strncmp(chTemp, "RSSI", 4) == FALSE)
 				{
-    				ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);//读取第3字段的内容    
+    				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);//读取第3字段的内容    
     				if (ucCheck == FALSE)
     				{
                         return (FALSE);
     				}
 
                     /*lq 长度有效性判断*/
-                    ucLen = strlen(chTemp);
+                    ucLen = strlen((char*)chTemp);
         			if (ucLen != 1)
         			{
         				return (FALSE);
@@ -2884,13 +2884,13 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                     else
                     {
                         /*lq 取值范围有效性判断*/
-                        ulTemp = strtoul(chTemp, &pEnd, 10);
+                        ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
                         if (ulTemp == 1)
                         {
                             sprintf(chRetBuf, "$P712,TR,RSSI,1");
             
             				/*lq RSSI */
-                            sprintf(ucTempBuf, "%d", SI446X_GetRssi(SI446X_CHIP_A));
+                            sprintf((char*)ucTempBuf, "%d", SI446X_GetRssi(SI446X_CHIP_A));
             				strcat(chRetBuf, ",");               
                             strcat(chRetBuf, (char *)ucTempBuf);
                                                                                                                                                         
@@ -2901,7 +2901,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                             sprintf(chRetBuf, "$P712,TR,RSSI,2");
             
             				/*lq RSSI */
-                            sprintf(ucTempBuf, "%d", SI446X_GetRssi(SI446X_CHIP_B));
+                            sprintf((char*)ucTempBuf, "%d", SI446X_GetRssi(SI446X_CHIP_B));
             				strcat(chRetBuf, ",");               
                             strcat(chRetBuf, (char *)ucTempBuf);
                                                                                                                                                         
@@ -2917,14 +2917,14 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                 /*lq machine state */
 				if (strncmp(chTemp, "006", 3) == FALSE)
 				{
-    				ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);//读取第3字段的内容    
+    				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);//读取第3字段的内容    
     				if (ucCheck == FALSE)
     				{
                         return (FALSE);
     				}
 
                     /*lq 长度有效性判断*/
-                    ucLen = strlen(chTemp);
+                    ucLen = strlen((char*)chTemp);
         			if (ucLen != 1)
         			{
         				return (FALSE);
@@ -2939,14 +2939,14 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                     else
                     {
                         /*lq 取值范围有效性判断*/
-                        ulTemp = strtoul(chTemp, &pEnd, 10);
+                        ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
                         if (ulTemp == 1)
                         {
                             sprintf(chRetBuf, "$P712,TR,006,1");
             
             				/*lq 状态查询 */
                             SI446X_REQUEST_DEVICE_STATE(buffer, SI446X_CHIP_A);
-                            sprintf(ucTempBuf, "%d", buffer[1]);
+                            sprintf((char*)ucTempBuf, "%d", buffer[1]);
             				strcat(chRetBuf, ",");               
                             strcat(chRetBuf, (char *)ucTempBuf);
                                                                                                                                                         
@@ -2958,7 +2958,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             
             				/*lq 状态查询 */
                             SI446X_REQUEST_DEVICE_STATE(buffer, SI446X_CHIP_B);
-                            sprintf(ucTempBuf, "%d", buffer[1]);
+                            sprintf((char*)ucTempBuf, "%d", buffer[1]);
             				strcat(chRetBuf, ",");               
                             strcat(chRetBuf, (char *)ucTempBuf);
                                                                                                                                                         
@@ -2974,14 +2974,14 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                 /*lq SI4463当前输出功率值 */
 				if (strncmp(chTemp, "007", 3) == FALSE)
 				{
-    				ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);//读取第3字段的内容    
+    				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);//读取第3字段的内容    
     				if (ucCheck == FALSE)
     				{
                         return (FALSE);
     				}
 
                     /*lq 长度有效性判断*/
-                    ucLen = strlen(chTemp);
+                    ucLen = strlen((char*)chTemp);
         			if (ucLen != 1)
         			{
             		    /*lq 长度无效 */
@@ -2989,7 +2989,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
         			}
 
             		/*lq 字符有效性判断 */
-                    ulTemp = strtoul(chTemp, &pEnd, 10);
+                    ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
             		if ((*pEnd) != 0)
             		{
             		    /*lq 字符无效 */
@@ -3013,10 +3013,10 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                     }
 
                     sprintf(chRetBuf, "$P712,TR,007");  
-                    sprintf(ucTempBuf, "%d", ulTemp);
+                    sprintf((char*)ucTempBuf, "%d", ulTemp);
     				strcat(chRetBuf, ",");               
                     strcat(chRetBuf, (char *)ucTempBuf);
-                    sprintf(ucTempBuf, "%d", ulTemp1);
+                    sprintf((char*)ucTempBuf, "%d", ulTemp1);
     				strcat(chRetBuf, ",");               
                     strcat(chRetBuf, (char *)ucTempBuf);
                                                                                                                                                 
@@ -3099,7 +3099,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			//可配置时间参数查询
 			else if (strncmp(chTemp, "050", 3) == FALSE)
 			{
-				ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+				ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
 
 				if (ucCheck == FALSE)
 				{
@@ -3175,12 +3175,12 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 		if (DevDynamicPara.ucWorkMode == EQ_WORKMOD_NORMAL)
 		{
 			/*lq **********************Ship name**************************** */
-			ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
 			
             /*lq 字段非空*/			
             if (ucCheck != FALSE)
 			{
-    			ucLen = strlen(chTemp);
+    			ucLen = strlen((char*)chTemp);
     			if (ucLen > AIS_INFO_SHIP_NAME_LEN)
     			{
     				UartResponseMsg("$DUAIR,0,SSD");
@@ -3199,13 +3199,13 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			}
 
 			/*lq ************************ShipA****************************** */
-			ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
 
             /*lq 字段非空*/			
 			if (ucCheck != FALSE)
 			{
                 /*lq 长度有效性判断*/
-                ucLen = strlen(chTemp);
+                ucLen = strlen((char*)chTemp);
         		if (ucLen != 3)
         		{
     				UartResponseMsg("$DUAIR,0,SSD");
@@ -3213,7 +3213,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
         		}
         
         		/*lq 字符有效性判断*/
-                ulTemp = strtoul(chTemp, &pEnd, 10);
+                ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
         		if ((*pEnd) != 0)
         		{
     				UartResponseMsg("$DUAIR,0,SSD");
@@ -3241,13 +3241,13 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             }
 
 			/*lq ************************ShipB****************************** */
-			ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
 
             /*lq 字段非空*/			
 			if (ucCheck != FALSE)
 			{
                 /*lq 长度有效性判断*/
-                ucLen = strlen(chTemp);
+                ucLen = strlen((char*)chTemp);
         		if (ucLen != 3)
         		{
     				UartResponseMsg("$DUAIR,0,SSD");
@@ -3255,7 +3255,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
         		}
         
         		/*lq 字符有效性判断*/
-                ulTemp = strtoul(chTemp, &pEnd, 10);
+                ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
         		if ((*pEnd) != 0)
         		{
     				UartResponseMsg("$DUAIR,0,SSD");
@@ -3283,13 +3283,13 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			}
 
 			/*lq ************************ShipC****************************** */
-			ucCheck = GetSegment((char *)pDat, chTemp, 5, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 5, uiLen, 30);
 
             /*lq 字段非空*/			
 			if (ucCheck != FALSE)
 			{
                 /*lq 长度有效性判断*/
-                ucLen = strlen(chTemp);
+                ucLen = strlen((char*)chTemp);
         		if (ucLen != 2)
         		{
     				UartResponseMsg("$DUAIR,0,SSD");
@@ -3297,7 +3297,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
         		}
         
         		/*lq 字符有效性判断*/
-                ulTemp = strtoul(chTemp, &pEnd, 10);
+                ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
         		if ((*pEnd) != 0)
         		{
     				UartResponseMsg("$DUAIR,0,SSD");
@@ -3325,13 +3325,13 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			}
 
 			/*lq ************************ShipD****************************** */
-			ucCheck = GetSegment((char *)pDat, chTemp, 6, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 6, uiLen, 30);
 
             /*lq 字段非空*/			
 			if (ucCheck != FALSE)
 			{
                 /*lq 长度有效性判断*/
-                ucLen = strlen(chTemp);
+                ucLen = strlen((char*)chTemp);
         		if (ucLen != 2)
         		{
     				UartResponseMsg("$DUAIR,0,SSD");
@@ -3339,7 +3339,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
         		}
         
         		/*lq 字符有效性判断*/
-                ulTemp = strtoul(chTemp, &pEnd, 10);
+                ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
         		if ((*pEnd) != 0)
         		{
     				UartResponseMsg("$DUAIR,0,SSD");
@@ -3367,13 +3367,13 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			}
 
 			/*lq *************************DTE******************************* */
-			ucCheck = GetSegment((char *)pDat, chTemp, 7, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 7, uiLen, 30);
 
             /*lq 字段非空*/			
 			if (ucCheck != FALSE)
 			{
                 /*lq 长度有效性判断*/
-                ucLen = strlen(chTemp);
+                ucLen = strlen((char*)chTemp);
         		if (ucLen != 1)
         		{
     				UartResponseMsg("$DUAIR,0,SSD");
@@ -3381,7 +3381,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
         		}
         
         		/*lq 字符有效性判断*/
-                ulTemp = strtoul(chTemp, &pEnd, 10);
+                ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
         		if ((*pEnd) != 0)
         		{
     				UartResponseMsg("$DUAIR,0,SSD");
@@ -3419,7 +3419,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 		if (DevDynamicPara.ucWorkMode == EQ_WORKMOD_NORMAL)
 		{           
             /*lq ********Type of ship and cargo category, 0 to 255********** */
-			ucCheck = GetSegment((char *)pDat, chTemp, 1, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 1, uiLen, 30);
             
             /*lq 字段非空*/			
             if (ucCheck != FALSE)
@@ -3443,7 +3443,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                 }
     
     			/*lq 写入EEPROM */
-    			sprintf(ucTempBuf, "%d", ulTemp);
+    			sprintf((char*)ucTempBuf, "%d", ulTemp);
                 //Para_Save(PARA_SHIP_TYPE_TYPE, ucTempBuf, PARA_SHIP_TYPE_MAXLEN);
 				FlashWrite(STM32_FLASH_SHIP_TYPE_TYPE, ucTempBuf,STM32_FLASH_SHIP_TYPE_MAXLEN);
     
@@ -3454,7 +3454,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             }
 
             /*lq ********Maximum present static draught, 0 to 25,5 m******** */
-			ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
             
             /*lq 字段非空*/			
             if (ucCheck != FALSE)
@@ -3478,7 +3478,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                 }
     
     			/*lq 写入EEPROM */
-                sprintf(ucTempBuf, "%d", ulTemp);
+                sprintf((char*)ucTempBuf, "%d", ulTemp);
     			//Para_Save(PARA_MAX_DRAUGHT_TYPE, ucTempBuf, PARA_MAX_DRAUGHT_MAXLEN);
 				FlashWrite(STM32_FLASH_MAX_DRAUGHT_TYPE, ucTempBuf,STM32_FLASH_MAX_DRAUGHT_MAXLEN);
     
@@ -3489,7 +3489,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             }
 
             /*lq *****************Persons on-board, 0 to 8191*************** */
-			ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
             
             /*lq 字段非空*/			
             if (ucCheck != FALSE)
@@ -3513,7 +3513,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                 }
     
     			/*lq 写入EEPROM */
-                sprintf(ucTempBuf, "%d", ulTemp);
+                sprintf((char*)ucTempBuf, "%d", ulTemp);
     			Para_Save(PARA_PERSONS_TYPE, ucTempBuf, PARA_PERSONS_MAXLEN);
     
     			/*lq 更新变量 */
@@ -3523,12 +3523,12 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             }
 
 			/*lq **************Destination, 1-20 characters***************** */
-			ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
 			
             /*lq 字段非空*/			
             if (ucCheck != FALSE)
 			{
-    			ucLen = strlen(chTemp);
+    			ucLen = strlen((char*)chTemp);
     			if (ucLen > AIS_INFO_DESTINATION_LEN)
     			{
     				UartResponseMsg("$DUAIR,0,VSD");
@@ -3547,13 +3547,13 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			}
 
 			/*lq ********Estimated UTC of arrival at destination************ */
-			ucCheck = GetSegment((char *)pDat, chTemp, 5, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 5, uiLen, 30);
 
             /*lq 字段非空*/			
 			if (ucCheck != FALSE)
 			{
                 /*lq 长度有效性判断*/
-                ucLen = strlen(chTemp);
+                ucLen = strlen((char*)chTemp);
         		if ((ucLen < 6) || (ucLen > 9))
         		{
     				UartResponseMsg("$DUAIR,0,VSD");
@@ -3603,13 +3603,13 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             }
 
 			/*lq **Estimated day of arrival at destination, 00 to 31 (UTC)** */
-			ucCheck = GetSegment((char *)pDat, chTemp, 6, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 6, uiLen, 30);
 
             /*lq 字段非空*/			
 			if (ucCheck != FALSE)
 			{
                 /*lq 长度有效性判断*/
-                ucLen = strlen(chTemp);
+                ucLen = strlen((char*)chTemp);
         		if (ucLen != 2)
         		{
     				UartResponseMsg("$DUAIR,0,VSD");
@@ -3617,7 +3617,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
         		}
         
         		/*lq 字符有效性判断*/
-                ulTemp = strtoul(chTemp, &pEnd, 10);
+                ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
         		if ((*pEnd) != 0)
         		{
     				UartResponseMsg("$DUAIR,0,VSD");
@@ -3644,13 +3644,13 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			}
 
 			/*lq *Estimated month of arrival at destination, 00 to 12 (UTC)* */
-			ucCheck = GetSegment((char *)pDat, chTemp, 7, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 7, uiLen, 30);
 
             /*lq 字段非空*/			
 			if (ucCheck != FALSE)
 			{
                 /*lq 长度有效性判断*/
-                ucLen = strlen(chTemp);
+                ucLen = strlen((char*)chTemp);
         		if (ucLen != 2)
         		{
     				UartResponseMsg("$DUAIR,0,VSD");
@@ -3658,7 +3658,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
         		}
         
         		/*lq 字符有效性判断*/
-                ulTemp = strtoul(chTemp, &pEnd, 10);
+                ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
         		if ((*pEnd) != 0)
         		{
     				UartResponseMsg("$DUAIR,0,VSD");
@@ -3685,7 +3685,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 			}
 
 			/*lq **********Navigational status, 0 to 15********************* */
-			ucCheck = GetSegment((char *)pDat, chTemp, 8, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 8, uiLen, 30);
 
             /*lq 字段非空*/			
             if (ucCheck != FALSE)
@@ -3709,7 +3709,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                 }
     
     			/*lq 写入EEPROM */
-                sprintf(ucTempBuf, "%d", ulTemp);
+                sprintf((char*)ucTempBuf, "%d", ulTemp);
     			Para_Save(PARA_NAVIGATION_STATUS_TYPE, ucTempBuf, PARA_NAVIGATION_STATUS_MAXLEN);
     
     			/*lq 更新变量 */
@@ -3719,7 +3719,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
             }
 
 			/*lq **********Regional application flags, 0 to 15************** */
-			ucCheck = GetSegment((char *)pDat, chTemp, 9, uiLen, 30);
+			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 9, uiLen, 30);
 
             /*lq 字段非空*/			
             if (ucCheck != FALSE)
@@ -3743,7 +3743,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                 }
     
     			/*lq 写入EEPROM */
-                sprintf(ucTempBuf, "%d", ulTemp);
+                sprintf((char*)ucTempBuf, "%d", ulTemp);
     			Para_Save(PARA_REGION_APP_FLAG_TYPE, ucTempBuf, PARA_REGION_APP_FLAG_MAXLEN);
     
     			/*lq 更新变量 */

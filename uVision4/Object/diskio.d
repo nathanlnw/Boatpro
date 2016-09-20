@@ -67,6 +67,12 @@
 .\object\diskio.o: ..\driver\inc\BKPRegister.h
 .\object\diskio.o: ..\migrateF4to5\migrate.h
 .\object\diskio.o: ..\driver\inc\power.h
+.\object\diskio.o: ..\debug\inc\debug.h
+.\object\diskio.o: ..\driver\inc\Tim.h
+.\object\diskio.o: ..\user\inc\uartmsg.h
+.\object\diskio.o: ..\driver\inc\wdg.h
+.\object\diskio.o: ..\driver\inc\SPI.h
+.\object\diskio.o: ..\interface_layer\Include\systemtick.h
 .\object\diskio.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\diskio.o: ..\user\inc\flashctrl.h
 .\object\diskio.o: ..\user\inc\encrypt.h

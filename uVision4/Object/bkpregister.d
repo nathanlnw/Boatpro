@@ -64,6 +64,12 @@
 .\object\bkpregister.o: ..\user\inc\TaskManager.h
 .\object\bkpregister.o: ..\migrateF4to5\migrate.h
 .\object\bkpregister.o: ..\driver\inc\power.h
+.\object\bkpregister.o: ..\debug\inc\debug.h
+.\object\bkpregister.o: ..\driver\inc\Tim.h
+.\object\bkpregister.o: ..\user\inc\uartmsg.h
+.\object\bkpregister.o: ..\driver\inc\wdg.h
+.\object\bkpregister.o: ..\driver\inc\SPI.h
+.\object\bkpregister.o: ..\interface_layer\Include\systemtick.h
 .\object\bkpregister.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\bkpregister.o: ..\user\inc\flashctrl.h
 .\object\bkpregister.o: ..\user\inc\encrypt.h

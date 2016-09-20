@@ -88,4 +88,17 @@ extern U8 SetSlotState(AisChannelEnum channel, U16 slotNum, U8 slotSate, S32 fra
 extern U8 GetSlotState(AisChannelEnum channel, U16 slotNum, S32 frame);
 extern S16 SelectCandidateSlot(AisChannelEnum channel, S16 slot, U16 selectInterval, S32 frame, CandSlotSelectEnum selectType);
 extern void SLOT_ModuleInit(void);
+
+//  lnw  add  below
+extern S16 CalcSlotNum(S32 frame, S16 slot, S32 slotOffset);//lnw add 
+extern S32 CalcSlotOffset(S32 frame1, S16 slot1, S32 frame2, S16 slot2); 
+extern U8 SetSlotState(AisChannelEnum channel, U16 slot, U8 slotSate, S32 frame);
+extern U8 GetSlotState(AisChannelEnum channel, U16 slot, S32 frame);
+extern S16 SelectCandidateSlot(AisChannelEnum channel, S16 slot, U16 selectInterval,S32 frame, CandSlotSelectEnum selectType);
+extern S32 SelectCandidateSlotFrame(S16 candSlot, S16 nominalSlot, S32 nominalFrame); 
+extern S32 CalcFrameNum(S32 frame, S16 slot, S32 slotOffset); 
+extern S32 CalcSlotSum(S32 frame, S16 slot, S32 slotOffset); 
+extern U8  IsSlotValid(S16 slot) ;
+
+
 #endif

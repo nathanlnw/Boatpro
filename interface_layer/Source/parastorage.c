@@ -177,7 +177,7 @@ U8 Para_Save(U8 ucPara_Type, U8 *pPara, U8 ucLen)
     }
     else
     {
-        ulTemp = strtoul(pPara, &pEnd, 10);
+        ulTemp = strtoul((const char*)pPara, &pEnd, 10);
         if ((*pEnd) != '\0')
         {
 		    return (FALSE);        
@@ -328,7 +328,7 @@ U8 Para_Read(U8 ucPara_Type, U8 *pPara)
 	U8 ucIndex;
 	U8 ucTempBuf[40];
     U32 ulTemp;
-    U8 ucFormLen;
+    //U8 ucFormLen;
 	 
 	ucAddr = Para_Addr_IndexBuf[ucPara_Type];
 	ucMaxLen = Para_MaxLen_IndexBuf[ucPara_Type];                               //lq 最大长度的含义变为报文中参数的最大字符数
@@ -423,7 +423,7 @@ U8 Para_Read(U8 ucPara_Type, U8 *pPara)
             }
             
             //lq sprintf(pPara, "%*l", ucFormLen, ulTemp);             //lq 与字符型参数统一格式，返回十进制数值的字符串 
-            sprintf(pPara, "%0*lu", ucMaxLen, ulTemp);                 //lq 与字符型参数统一格式，返回十进制数值的字符串
+            sprintf((char*)pPara, "%0*lu", ucMaxLen, ulTemp);                 //lq 与字符型参数统一格式，返回十进制数值的字符串
                                                                        //lq 使用ucMaxLen是为了与之前读写方式兼容，对上层调用透明
 		}
 		/*lq 校验错误*/
@@ -480,7 +480,7 @@ void IniEEPROM_Para(void)
 {
 	U8 ucTempBuf[40];
 	U8 ucLen;
-    U16 i;
+//    U16 i;
 
     /*lq -----------------AIS静态信息---------------------- */	
 	/*lq 读取MMSI号 */
@@ -531,7 +531,7 @@ void IniEEPROM_Para(void)
 	//Para_Read(PARA_SHIP_NAME_TYPE, ucTempBuf);
 	FlashRead(STM32_FLASH_SHIP_NAME_TYPE, ucTempBuf);	
 	strcpy((char *)&AisStaticPara.ShipName[0], AIS_INFO_SHIP_NAME_DEFAULT);     //lq 使用默认值‘@’重写所有字符
-	strncpy((char *)&AisStaticPara.ShipName[0], ucTempBuf, strlen(ucTempBuf));  //lq 使用目标值覆盖前面的‘@’
+	strncpy((char *)&AisStaticPara.ShipName[0], (const char*)ucTempBuf, strlen((const char*)ucTempBuf));  //lq 使用目标值覆盖前面的‘@’
 
 	/*lq 读取船舶大小A点位置 */
 	//Para_Read(PARA_SHIPA_TYPE, ucTempBuf);
@@ -576,7 +576,7 @@ void IniEEPROM_Para(void)
 	//Para_Read(PARA_DESTINATION_TYPE, ucTempBuf);
 	FlashRead(STM32_FLASH_DESTINATION_TYPE, ucTempBuf);
 	strcpy((char *)&AisStaticPara.Destination[0], AIS_INFO_DESTINATION_DEFAULT);    //lq 使用默认值‘@’重写所有字符
-	strncpy((char *)&AisStaticPara.Destination[0], ucTempBuf, strlen(ucTempBuf));   //lq 使用目标值覆盖前面的‘@’
+	strncpy((char *)&AisStaticPara.Destination[0], (const char*)ucTempBuf, strlen((const char*)ucTempBuf));   //lq 使用目标值覆盖前面的‘@’
 
 	/*lq 估计到达时间，月*/
     Para_Read(PARA_ETA_MONTH_TYPE, ucTempBuf);
@@ -610,7 +610,7 @@ void IniEEPROM_Para(void)
     /*lq 读取厂商信息 */
 	//Para_Read(PARA_VENDID_TYPE, ucTempBuf);
 	FlashRead(STM32_FLASH_VENDID_TYPE, ucTempBuf);
-    sprintf(AisStaticPara.VendID, "%s", ucTempBuf);    
+    sprintf((char*)AisStaticPara.VendID, "%s", ucTempBuf);    
 
 #if 0
 	/*lq 偏离预设点距离阈值*/
@@ -916,7 +916,7 @@ void EEPROM_Para_Test(void)
     for (i = 0; i < PARA_INDEXBUF_LEN - 4; i++)
     {
 #if 0
-        sprintf(ucTempBuf, "%*ld", Para_MaxLen_IndexBuf[i], Para_VALUE_IndexBuf[i]);
+        sprintf((char*)ucTempBuf, "%*ld", Para_MaxLen_IndexBuf[i], Para_VALUE_IndexBuf[i]);
         if (Para_Save(i, ucTempBuf, Para_MaxLen_IndexBuf[i]) == FALSE)
         {
             usart_printf("%34s : Save failed\r\n", Para_NAME_IndexBuf[i]);        
@@ -934,7 +934,7 @@ void EEPROM_Para_Test(void)
     for (i = PARA_INDEXBUF_LEN - 4; i < PARA_INDEXBUF_LEN; i++)
     {
 #if 0
-        sprintf(ucTempBuf, "%*s", Para_MaxLen_IndexBuf[i], "aaaaaa");
+        sprintf((char*)ucTempBuf, "%*s", Para_MaxLen_IndexBuf[i], "aaaaaa");
         if (Para_Save(i, ucTempBuf, Para_MaxLen_IndexBuf[i]) == FALSE)
         {
             usart_printf("%34s : Save failed\r\n", Para_NAME_IndexBuf[i]);        

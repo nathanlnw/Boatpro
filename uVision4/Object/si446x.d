@@ -64,6 +64,12 @@
 .\object\si446x.o: ..\driver\inc\BKPRegister.h
 .\object\si446x.o: ..\migrateF4to5\migrate.h
 .\object\si446x.o: ..\driver\inc\power.h
+.\object\si446x.o: ..\debug\inc\debug.h
+.\object\si446x.o: ..\driver\inc\Tim.h
+.\object\si446x.o: ..\user\inc\uartmsg.h
+.\object\si446x.o: ..\driver\inc\wdg.h
+.\object\si446x.o: ..\driver\inc\SPI.h
+.\object\si446x.o: ..\interface_layer\Include\systemtick.h
 .\object\si446x.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\si446x.o: ..\user\inc\flashctrl.h
 .\object\si446x.o: ..\user\inc\encrypt.h

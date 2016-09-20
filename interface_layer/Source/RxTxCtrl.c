@@ -35,7 +35,7 @@ void RxTxCtrl(U8 CtrlType, U32 Freq1, U32 Freq2)
     }
     else if (CtrlType == RXTX_CTRL_TYPE_RX)
     {
-      #if  CONFIG_PTT_EN
+      #if  CONFIG_PTT_EN  // lnw  modify
          if(PTT_OBJ.LowPowerMode_Staus==DISABLE)
 	  #endif           
            RxTxSwitch(RXTX_SWITCH_TYPE_TX_TO_RX);

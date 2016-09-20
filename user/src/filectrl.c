@@ -71,7 +71,7 @@ void CreateFile()
 		//debug_printf("Error 1 %d\r\n",(U8)res);
 		return ;
 	}
-	res=f_open(&fp, RecordName, FA_READ | FA_WRITE | FA_OPEN_ALWAYS);
+	res=f_open(&fp, (const TCHAR*)RecordName, FA_READ | FA_WRITE | FA_OPEN_ALWAYS);
 	if(res)
 	{
 		//debug_printf("Error 2 %d\r\n",(U8)res);
@@ -84,40 +84,40 @@ void CreateFile()
 	}
 	if(count>=10000)
 	{
-		sprintf(FileName, "TCB");
-		sprintf(Temp,"%d",count);
-		strcat(FileName, Temp);
-		strcat(FileName, ".txt");
+		sprintf((char*)FileName, "TCB");
+		sprintf((char*)Temp,"%d",count);
+		strcat((char*)FileName, Temp);
+		strcat((char*)FileName, ".txt");
 	}
 	else if((count>=1000)&&(count<10000))
 	{ 
-		sprintf(FileName, "TCB0");
-		sprintf(Temp,"%d",count);
-		strcat(FileName, Temp);
-		strcat(FileName, ".txt");	 
+		sprintf((char*)FileName, "TCB0");
+		sprintf((char*)Temp,"%d",count);
+		strcat((char*)FileName, Temp);
+		strcat((char*)FileName, ".txt");	 
 	}
 	else if((count>=100)&&(count<1000))
 	{
-		sprintf(FileName, "TCB00");
-		sprintf(Temp,"%d",count);
-		strcat(FileName, Temp);
-		strcat(FileName, ".txt"); 	 
+		sprintf((char*)FileName, "TCB00");
+		sprintf((char*)Temp,"%d",count);
+		strcat((char*)FileName, Temp);
+		strcat((char*)FileName, ".txt"); 	 
 	}
 	else if((count>=10)&&(count<100))
 	{ 
-		sprintf(FileName, "TCB000");
-		sprintf(Temp,"%d",count);
-		strcat(FileName, Temp);
-		strcat(FileName, ".txt");	 
+		sprintf((char*)FileName, "TCB000");
+		sprintf((char*)Temp,"%d",count);
+		strcat((char*)FileName, Temp);
+		strcat((char*)FileName, ".txt");	 
 	}
 	else if((count>=0)&&(count<10))
 	{
-		sprintf(FileName, "TCB0000");
-		sprintf(Temp,"%d",count);
-		strcat(FileName, Temp);
-		strcat(FileName, ".txt");
+		sprintf((char*)FileName, "TCB0000");
+		sprintf((char*)Temp,"%d",count);
+		strcat((char*)FileName, Temp);
+		strcat((char*)FileName, ".txt");
 	}	
-	strcat(FileName,"\r\n");			  //存储文件名时换行
+	strcat((char*)FileName,"\r\n");			  //存储文件名时换行
 	//res = f_write(&fsrc, FileName,12,&a);	 //存储文件名时不换行
 	res = f_write(&fp, FileName,14,&a);	 //存储文件名时换行
 	if(res)
@@ -128,7 +128,7 @@ void CreateFile()
 	f_close(&fp);
 
 	/***************创建报文记录***************************************/
-	res=f_open(&fp, FileName, FA_READ | FA_WRITE | FA_OPEN_ALWAYS);
+	res=f_open(&fp,(const TCHAR*) FileName, FA_READ | FA_WRITE | FA_OPEN_ALWAYS);
 	if(res)
  	{
 		//debug_printf("Error 4 %d\r\n",(U8)res);
@@ -165,13 +165,13 @@ void WriteFile(U8 * buff,UINT bufflen)
 	UINT a;
 	
 	f_mount(&fs,"",0);
-	res = f_open(&fp, FileName, FA_WRITE | FA_OPEN_ALWAYS);
+	res = f_open(&fp, (const TCHAR*)FileName, FA_WRITE | FA_OPEN_ALWAYS);
 	/**************************对单个文件的大小进行限制，限制为2M***********************/
 	if(f_size(&fp) > FILE_LENGTH_MAX)
 	{
 		f_close(&fp);
 		CreateFile();
-		res=f_open(&fp, FileName, FA_WRITE | FA_OPEN_ALWAYS);
+		res=f_open(&fp, (const TCHAR*)FileName, FA_WRITE | FA_OPEN_ALWAYS);
 	}
 	res = f_lseek(&fp,f_size(&fp));					   		//将指针指向文件的尾部
 	res = f_write(&fp, buff,bufflen,&a);				    //向文件尾部写入数据
@@ -228,8 +228,8 @@ void InitFileHead()
 
 	/******************来自AIS静态参数************************************/
 	FileHead.MMSI = AisStaticPara.MMSI;
-	sprintf(FileHead.ShipName, AisStaticPara.ShipName);	
-	sprintf(FileHead.CallSign, AisStaticPara.CallSign);
+	sprintf((char*)FileHead.ShipName, (const char*)AisStaticPara.ShipName);	
+	sprintf((char*)FileHead.CallSign, (const char*)AisStaticPara.CallSign);
 	FileHead.ShipType = AisStaticPara.TypeOfShip;
 	FileHead.IMONumber = AisStaticPara.IMONumber;
 	FileHead.ShipA = AisStaticPara.ShipA; 
@@ -240,16 +240,16 @@ void InitFileHead()
 	/******************来自EEROM参数************************************/
 	//Para_Read(PARA_MMSI_TYPE,MMSI);
 	FlashRead(STM32_FLASH_MMSI_TYPE, MMSI);
-	FileHead.MMSI = atol(MMSI);
+	FileHead.MMSI = atol((const char*)MMSI);
 	//Para_Read(PARA_SERIAL_TYPE,SerialNumber);
 	FlashRead(STM32_FLASH_SERIAL_TYPE, SerialNumber);
-	sprintf(FileHead.SerialNumber, SerialNumber);
+	sprintf((char*)FileHead.SerialNumber, (const char*)SerialNumber);
 	//Para_Read(PARA_HWVERSION_TYPE, HardwareVersion);
 	FlashRead(STM32_FLASH_HWVERSION_TYPE, HardwareVersion);
-	sprintf(FileHead.HardwareVersion, HardwareVersion);
+	sprintf((char*)FileHead.HardwareVersion, (const char*)HardwareVersion);
 
 	/******************来自自定义参数************************************/
-	sprintf(FileHead.SoftwareVersion, "%s", VERSION); 
+	sprintf((char*)FileHead.SoftwareVersion, "%s", VERSION); 
 }
 
 /*******************************************************************************
@@ -281,7 +281,7 @@ void ReadFileName(UINT iNumber)
 	char cName[20];
 	
 	f_mount(&fs,"",0);
-	res=f_open(&fp, RecordName, FA_READ | FA_OPEN_EXISTING);		 //以只读方式打开，如果文件名不存在那么就提示打开失败
+	res=f_open(&fp, (const TCHAR*)RecordName, FA_READ | FA_OPEN_EXISTING);		 //以只读方式打开，如果文件名不存在那么就提示打开失败
 	
 	//CtrlAISAndGPS(0);														 // AIS和GPS无效
 	
@@ -317,7 +317,7 @@ void ReadMulFile(UINT iNumber)
 	char cData[200];
 	
 	f_mount(&fs,"",0);
-	res=f_open(&fprm, RecordName, FA_READ | FA_OPEN_EXISTING);		 //以只读方式打开，如果文件名不存在那么就提示打开失败
+	res=f_open(&fprm, (const TCHAR*)RecordName, FA_READ | FA_OPEN_EXISTING);		 //以只读方式打开，如果文件名不存在那么就提示打开失败
 	
 	//CtrlAISAndGPS(0);												 // AIS和GPS无效
 

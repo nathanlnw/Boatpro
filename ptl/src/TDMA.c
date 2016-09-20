@@ -354,6 +354,7 @@ static U16 SOTDMA_GetAvailableNts(SotdmaParaStruct *pSotdmaParaStruct, S16 ns, S
     return SLOT_INVALID_VALUE;
 }
 
+#if   0  // lnw mask  no use
 /*******************************************************************************
 * 名称  : SOTDMA_IsAtNts
 * 描述  : SOTDMA判断是否位于标称发射时隙
@@ -373,7 +374,7 @@ static U8 SOTDMA_IsAtNts(SotdmaParaStruct *pSotdmaParaStruct, S16 slot)
         return FALSE;
     }
 }
-
+#endif
 /*******************************************************************************
 * 名称  : SOTDMA_IsNtsArrived
 * 描述  : SOTDMA判断是否到达标称发射时隙
@@ -489,6 +490,7 @@ static void SOTDMA_SetFirstNs(SotdmaParaStruct *pSotdmaParaStruct)
         % pSotdmaParaStruct->ReportRate;
 }
 
+#if   0  // lnw mask  no use
 /*******************************************************************************
 * 名称  : SOTDMA_SetNs
 * 描述  : 设置标称时隙
@@ -500,7 +502,7 @@ static void SOTDMA_SetNs(SotdmaParaStruct *pSotdmaParaStruct, U16 index, U16 slo
 {
     pSotdmaParaStruct->NominalSlots[index] = slot;
 }
-
+#endif 
 /*******************************************************************************
 * 名称  : SOTDMA_SetNextNs
 * 描述  : 选择下一个标称时隙
@@ -694,6 +696,7 @@ U8 SOTDMA_SetNssDual(AisChannelEnum channel, S16 nss)
     return TRUE;
 }
 
+#if   0  // lnw mask  no use
 /*******************************************************************************
 * 名称  : SOTDMA_SetTmo
 * 描述  : SOTDMA设置时隙超时
@@ -707,7 +710,7 @@ static void SOTDMA_SetTmo(SotdmaParaStruct *pSotdmaParaStruct, U16 index)
     pSotdmaParaStruct->SlotTimeouts[index] =
         SOTDMA_TMO_MIN + (rand() % (SOTDMA_TMO_MAX - SOTDMA_TMO_MIN + 1));
 }
-
+#endif
 /*******************************************************************************
 * 名称  : SOTDMA_GetTmo
 * 描述  : SOTDMA获取时隙超时
@@ -843,8 +846,8 @@ S16 SOTDMA_CalcSelectIntervalOffset(S16 nominalIncrement)
 void SOTDMA_SetSlotState(AisChannelEnum channel, SOTDMACommStateStruct commState,
                        S32 currFrame, S16 currSlot, U8 slotState)
 {
-    S32 tempS32;
-    S16 tempS16;
+//    S32 tempS32;
+//    S16 tempS16;
     S16 i;
 
     if ((commState.SlotTimeout >= 1)
@@ -859,10 +862,12 @@ void SOTDMA_SetSlotState(AisChannelEnum channel, SOTDMACommStateStruct commState
     {
         if (commState.SubMessage.SlotOffset != 0)
         {
-            tempS32 = CalcFrameNum(currFrame, currSlot,
+            //tempS32 =  //lnw mask
+					    CalcFrameNum(currFrame, currSlot,
                 commState.SubMessage.SlotOffset);
             
-            tempS16 = CalcSlotNum(currFrame, currSlot,
+           // tempS16 =  //lnw mask
+					     CalcSlotNum(currFrame, currSlot,
                 commState.SubMessage.SlotOffset);
         }
     }
@@ -2271,6 +2276,7 @@ static void ITDMA_ItdmaSchedEnable(U8 flag, ItdmaCtrlStruct *pItdmaCtrlStruct)
     pItdmaCtrlStruct->ItdmaEn = flag;
 }
 
+#if   0  // lnw mask  no use
 /*******************************************************************************
 * 名称  : ITDMA_IsAtNts
 * 描述  : ITDMA判断是否位于标称发射时隙
@@ -2292,7 +2298,7 @@ static U8 ITDMA_IsAtNts(ItdmaParaStruct *pItdmaParaStruct, S32 frame, S16 slot)
         return FALSE;
     }
 }
-
+#endif
 /*******************************************************************************
 * 名称  : ITDMA_IsNtsArrived
 * 描述  : ITDMA判断是否到达标称发射时隙
@@ -2626,6 +2632,7 @@ static void ITDMA_SetNss(ItdmaParaStruct *pItdmaParaStruct, S32 frame, S16 slot)
     pItdmaParaStruct->NominalStartSlot = slot;
 }
 
+#if   0  // lnw mask  no use
 /*******************************************************************************
 * 名称  : ITDMA_SetNss
 * 描述  : ITDMA设置标称时隙
@@ -2640,7 +2647,7 @@ static void ITDMA_SetNs(ItdmaParaStruct *pItdmaParaStruct, S32 frame, S16 slot)
     pItdmaParaStruct->NominalFrame = frame;
     pItdmaParaStruct->NominalSlot = slot;
 }
-
+#endif
 /*******************************************************************************
 * 名称  : ITDMA_GetFirstNs
 * 描述  : ITDMA获取首个标称时隙
@@ -2727,10 +2734,10 @@ static void ITDMA_Schedule(ItdmaSchedStruct *pItdmaSchedStruct, S32 currFrame, S
     AisChannelEnum channel;
     ItdmaCtrlStruct *pItdmaCtrlStruct;
     ItdmaParaStruct *pItdmaPara;
-    ItdmaParaStruct *pItdmaParaNew;
+//    ItdmaParaStruct *pItdmaParaNew;
     AISMsgCommStateUnion commState;
     U16 tempU16;
-    U16 tempU16_1;
+//    U16 tempU16_1;
     S32 tempS32;
 
     if (pItdmaSchedStruct == &(TdmaSched.ItdmaSched.ItdmaSchedA))
@@ -2747,7 +2754,7 @@ static void ITDMA_Schedule(ItdmaSchedStruct *pItdmaSchedStruct, S32 currFrame, S
     }
     pItdmaCtrlStruct = &(pItdmaSchedStruct->ItdmaCtrl);
     pItdmaPara = &(pItdmaSchedStruct->ItdmaPara);
-    pItdmaParaNew = &(pItdmaSchedStruct->ItdmaParaNew);
+  //  pItdmaParaNew = &(pItdmaSchedStruct->ItdmaParaNew);
 
     switch (pItdmaCtrlStruct->CtrlState)
     {
@@ -2841,22 +2848,22 @@ static void ITDMA_ScheduleDual(ItdmaSchedDualStruct *pItdmaSchedDualStruct)
 {
     ItdmaSchedStruct *pItdmaSchedA;
     ItdmaSchedStruct *pItdmaSchedB;
-    ItdmaParaStruct *pItdmaParaA;
-    ItdmaParaStruct *pItdmaParaB;
+//    ItdmaParaStruct *pItdmaParaA;
+//    ItdmaParaStruct *pItdmaParaB;
     ItdmaCtrlStruct *pItdmaCtrlA;
     ItdmaCtrlStruct *pItdmaCtrlB;
     ItdmaCtrlStruct *pItdmaCtrlStruct;
     S32 currFrame;
     S16 currSlot;
-    U16 tempU16;
-    U16 tempU16_1;
-    S32 tempS32;
+//    U16 tempU16;
+//    U16 tempU16_1;
+//    S32 tempS32;
 
     pItdmaCtrlStruct = &(pItdmaSchedDualStruct->ItdmaCtrl);
     pItdmaSchedA = &(pItdmaSchedDualStruct->ItdmaSchedA);
     pItdmaSchedB = &(pItdmaSchedDualStruct->ItdmaSchedB);
-    pItdmaParaA = &(pItdmaSchedDualStruct->ItdmaSchedA.ItdmaPara);
-    pItdmaParaB = &(pItdmaSchedDualStruct->ItdmaSchedB.ItdmaPara);
+   // pItdmaParaA = &(pItdmaSchedDualStruct->ItdmaSchedA.ItdmaPara);
+  //  pItdmaParaB = &(pItdmaSchedDualStruct->ItdmaSchedB.ItdmaPara);
     pItdmaCtrlA = &(pItdmaSchedDualStruct->ItdmaSchedA.ItdmaCtrl);
     pItdmaCtrlB = &(pItdmaSchedDualStruct->ItdmaSchedB.ItdmaCtrl);
 
@@ -3298,10 +3305,12 @@ void TDMA_SetSlotState(AisChannelEnum channel, AISMsgCommStateEnum commStateType
 static U8 TDMA_SendMsg(AisChannelEnum channel, S16 txSlot,
              AISMsgCommStateEnum commStateType, AISMsgCommStateUnion commState)
 {
+   U8   RTN_Value=0; // lnw add
+   	
     if (DevStaticPara.AisClass == AIS_CLASS_B)    
     {
         /*lq Class B */
-        SendMsg18(channel, txSlot, commStateType, commState);        
+        RTN_Value=SendMsg18(channel, txSlot, commStateType, commState);   //lnw modify     
     }
     else
     {
@@ -3309,14 +3318,16 @@ static U8 TDMA_SendMsg(AisChannelEnum channel, S16 txSlot,
         if (commStateType == AIS_MSG_COMMSTATE_SOTDMA)
         {
             /*lq 使用SOTDMA通信状态，发送Msg1 */
-            SendMsg1(channel, txSlot, commState);        
+            RTN_Value=SendMsg1(channel, txSlot, commState); // lnw modify      
         }
         else
         {
             /*lq 使用ITDMA通信状态，发送Msg3 */
-            SendMsg3(channel, txSlot, commState);        
+            RTN_Value=SendMsg3(channel, txSlot, commState);  //lnw modify      
         }
     }
+
+	return  RTN_Value;  // lnw  add
 }
 
 /*******************************************************************************

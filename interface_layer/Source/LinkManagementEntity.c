@@ -127,10 +127,12 @@ static U8 LME_BinMsgRxFifoIsFull(BinMsgRxFifoStruct *pBinMsgRxFifoStruct)
         == pBinMsgRxFifoStruct->Output)
     {
         return TRUE;
-        
+      
+     /*		lnw	   mask  unreachable  
         debug_printf("$[%6d:%4d] %s : BinMsg rx fifo [%s]is full!\r\n",
             GetFrameNum(), GetSlotNum(), __func__,
             pBinMsgRxFifoStruct == &BinMsgFifoRx1 ? "A" : "B");
+		 */	
     }
     else
     {
@@ -452,7 +454,7 @@ static void LME_BinMsgRxFifoPortIn(BinMsgRxFifoStruct *pBinMsgRxFifoStruct)
 #endif
             }
 #if 0
-            sprintf(temp, "$FrameProcess: ");            
+            sprintf((char*)Temp, "$FrameProcess: ");            
             for (i = 0; i < pFrameRxCell->DataLen; i++)
             {
                 sprintf(temp2, "%02X", pFrameRxCell->Data[i]);
@@ -560,9 +562,9 @@ void LME_BinMsgTxFifoPortOut(BinMsgTxFifoStruct *pBinMsgTxFifoStruct)
     FrameTxCellStruct *pFrameTxCell;
     BinMsgTxCellStruct *pBinMsgTxCell;        
     U8 *pBuff;
-    U8 *pBuff2;
-    U16 temp16;
-    U16 i;
+    //U8 *pBuff2;  //lnw mask
+   // U16 temp16;  //lnw mask
+   // U16 i;  // lnw mask
     U8  channel;
 
     pBinMsgTxCell = (BinMsgTxCellStruct *)malloc(sizeof(BinMsgTxCellStruct));

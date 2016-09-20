@@ -1223,7 +1223,7 @@ void SI446X_A_TxRxClockIRQS(void)
 		/* Clear the EXTI line pending bit */  
 		EXTI_ClearITPendingBit(SI446X_A_DCLK_LINE);
 
-	   #if  CONFIG_PTT_EN
+	   #if  CONFIG_PTT_EN  //lnw  add
           if ((SI446XA.SI446XStatus == SI446X_MODE_RX)&&(PTT_OBJ.LowPowerMode_Staus==DISABLE))
 	   #else		
 		  if (SI446XA.SI446XStatus == SI446X_MODE_RX)
@@ -1311,7 +1311,7 @@ void SI446X_B_TxRxClockIRQS(void)
 		/* Clear the EXTI line pending bit */  
 		EXTI_ClearITPendingBit(SI446X_B_DCLK_LINE);
 
-       #if  CONFIG_PTT_EN
+       #if  CONFIG_PTT_EN  //lnw  add
           if((SI446XB.SI446XStatus == SI446X_MODE_RX)&&(PTT_OBJ.LowPowerMode_Staus==DISABLE))
 	   #else		
 		  if (SI446XB.SI446XStatus == SI446X_MODE_RX)
@@ -2235,10 +2235,10 @@ OUTPUT   : NONE
 void SI446X_ConfigInit(SI446XChipEnum cs)
 {
     SI446XStruct *pSI446XStruct;
-    U8  i;
-    U16 j = 0;
+ //   U8  i;
+//    U16 j = 0;
     U8  buffer[10];
-    U8  cmd[10];
+//    U8  cmd[10];
 
     if (cs == SI446X_CHIP_A)
     {
@@ -2979,7 +2979,7 @@ void SI446X_SETFREBASE(U32 ulFreBase)
 }
 
 
-#if  CONFIG_PTT_EN
+#if  CONFIG_PTT_EN      // lnw  add
 
 /*******************************************************************************
 * Ãû³Æ  : SI446X_RXSTTUS_Return

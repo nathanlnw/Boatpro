@@ -291,11 +291,11 @@ static void LB_LBPrtCommCtrlProcess(LBPrtCommStruct *pLBPrtCommStruct)
                             case LB_PRT_RDM_DATE:
                             {                				
                                 strcat(chRetBuf, ",");                
-                                sprintf(ucTempBuf, "%02d", GpsPara.GPS_TimeD);
+                                sprintf((char*)ucTempBuf, "%02d", GpsPara.GPS_TimeD);
                                 strcat(chRetBuf, (char *)ucTempBuf);
-                                sprintf(ucTempBuf, "%02d", GpsPara.GPS_TimeMon);
+                                sprintf((char*)ucTempBuf, "%02d", GpsPara.GPS_TimeMon);
                                 strcat(chRetBuf, (char *)ucTempBuf);                                
-                                sprintf(ucTempBuf, "%02d", GpsPara.GPS_TimeY);
+                                sprintf((char*)ucTempBuf, "%02d", GpsPara.GPS_TimeY);
                                 strcat(chRetBuf, (char *)ucTempBuf);                                                    
                                 break;
                             }
@@ -303,11 +303,11 @@ static void LB_LBPrtCommCtrlProcess(LBPrtCommStruct *pLBPrtCommStruct)
                             case LB_PRT_RDM_UTC_TIME:
                 			{	
                                 strcat(chRetBuf, ",");                
-                                sprintf(ucTempBuf, "%02d", GpsPara.GPS_TimeH);
+                                sprintf((char*)ucTempBuf, "%02d", GpsPara.GPS_TimeH);
                                 strcat(chRetBuf, (char *)ucTempBuf);
-                                sprintf(ucTempBuf, "%02d", GpsPara.GPS_TimeM);
+                                sprintf((char*)ucTempBuf, "%02d", GpsPara.GPS_TimeM);
                                 strcat(chRetBuf, (char *)ucTempBuf);                                
-                                sprintf(ucTempBuf, "%02d", GpsPara.GPS_TimeS);
+                                sprintf((char*)ucTempBuf, "%02d", GpsPara.GPS_TimeS);
                                 strcat(chRetBuf, (char *)ucTempBuf);
                                 strcat(chRetBuf, ".00");                    //lq 秒的小数部分为0               
                                 //lq break;                                 //lq 若命令类型为UBX_PRT_RDM_UTC_TIME，则定位经纬度一起返回
@@ -386,7 +386,7 @@ static void LB_LBPrtCommCtrlProcess(LBPrtCommStruct *pLBPrtCommStruct)
                             case LB_PRT_RDM_MMSI:
                 			{	
                                 strcat(chRetBuf, ",");                
-                                sprintf(ucTempBuf, "%09d", siStaticPara.MMSI);
+                                sprintf((char*)ucTempBuf, "%09d", siStaticPara.MMSI);
                                 strcat(chRetBuf, (char *)ucTempBuf);                                                    
                                 break;
                             }
@@ -394,7 +394,7 @@ static void LB_LBPrtCommCtrlProcess(LBPrtCommStruct *pLBPrtCommStruct)
                             case LB_PRT_RDM_LIGHT_BEACON_TYPE:
                 			{	
                                 strcat(chRetBuf, ",");                
-                                sprintf(ucTempBuf, "%0*d", PARA_ATON_TYPE_MAXLEN, siStaticPara.MMSI);
+                                sprintf((char*)ucTempBuf, "%0*d", PARA_ATON_TYPE_MAXLEN, siStaticPara.MMSI);
                                 strcat(chRetBuf, (char *)ucTempBuf);                                                    
                                 break;
                             }
@@ -499,16 +499,16 @@ static void LB_LBPrtCommCtrlProcess(LBPrtCommStruct *pLBPrtCommStruct)
                             case LB_PRT_RDM_USART_SETTING:
                 			{	
                                 strcat(chRetBuf, ",");                
-                                sprintf(ucTempBuf, "%d", Uart1Config.Baud);
+                                sprintf((char*)ucTempBuf, "%d", Uart1Config.Baud);
                                 strcat(chRetBuf, (char *)ucTempBuf);
                                 strcat(chRetBuf, ",");                                                                                                    
-                                sprintf(ucTempBuf, "%d", Uart1Config.Data);
+                                sprintf((char*)ucTempBuf, "%d", Uart1Config.Data);
                                 strcat(chRetBuf, (char *)ucTempBuf);
                                 strcat(chRetBuf, ",");                                                                                                    
-                                sprintf(ucTempBuf, "%d", Uart1Config.Parity);
+                                sprintf((char*)ucTempBuf, "%d", Uart1Config.Parity);
                                 strcat(chRetBuf, (char *)ucTempBuf);
                                 strcat(chRetBuf, ",");                                                                                                    
-                                sprintf(ucTempBuf, "%d", Uart1Config.Stop);
+                                sprintf((char*)ucTempBuf, "%d", Uart1Config.Stop);
                                 strcat(chRetBuf, (char *)ucTempBuf);                                                    
                                 break;
                             }
@@ -560,7 +560,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
     if (strncmp((char *)pDat, "AIRDM", 5) == FALSE)
     {
 		/*lq 获取第1字段内容，repetition time*/
-		ucCheck = GetSegment((char *)pDat, chTemp, 1, uiLen, 30);        
+		ucCheck = GetSegment((char *)pDat,(char*) chTemp, 1, uiLen, 30);        
         if (ucCheck == FALSE)
         {
             /*lq 为空，表示终止重传 */            
@@ -581,7 +581,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
             for (i = 2; i < LB_PRT_REPET_BUFF_LEN; i++)
             {
 		        /*lq 依次获取各个命令类型号 */
-                ucCheck = GetSegment((char *)pDat, chTemp, i, uiLen, 30);        
+                ucCheck = GetSegment((char *)pDat,(char*) chTemp, i, uiLen, 30);        
                 if (ucCheck != FALSE)
                 {
                     /*lq 按在报文中出现的先后顺序记录命令类型号 */
@@ -612,7 +612,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
     else if (strncmp((char *)pDat, "AIWRM", 5) == FALSE)
     {
 		/*lq 获取第1字段内容，cmd type*/
-		ucCheck = GetSegment((char *)pDat, chTemp, 1, uiLen, 30);        
+		ucCheck = GetSegment((char *)pDat,(char*) chTemp, 1, uiLen, 30);        
         if (ucCheck != FALSE)
         {
             ulTemp = atol(chTemp);
@@ -621,7 +621,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                 case LB_PRT_WRM_DATE:
                 {
             		/*lq 获取第2字段内容，年月日 */
-            		ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);    				
+            		ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);    				
                     if (ucCheck != FALSE)
                     {
                         pLBPrtCommStruct->LB_TimeD = (chTemp[0] - '0') * 10 + (chTemp[1] - '0');
@@ -642,7 +642,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                 case LB_PRT_WRM_UTC_TIME:
                 {
             		/*lq 获取第2字段内容，时分秒 */
-            		ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);    				
+            		ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);    				
                     if (ucCheck != FALSE)
                     {
         				pLBPrtCommStruct->LB_TimeH = (chTemp[0] - '0') * 10 + (chTemp[1] - '0');
@@ -656,7 +656,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                     }
 
             		/*lq 获取第3字段内容，定位状态 */
-            		ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);    				
+            		ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);    				
                     if (ucCheck != FALSE)
                     {
         				pLBPrtCommStruct->LB_Stat = chTemp[0];                     
@@ -668,7 +668,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                     }
 
         			/**************************Latitude******************/
-        			ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+        			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
         
                     /*lq 字段非空*/
         			if (ucCheck != FALSE)
@@ -680,13 +680,13 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                         }
 
         			    /*lq -------N/S字段--------- */
-        			    ucCheck = GetSegment((char *)pDat, chTemp, 5, uiLen, 30);
+        			    ucCheck = GetSegment((char *)pDat,(char*) chTemp, 5, uiLen, 30);
                         
                         /*lq 字段非空*/
             			if (ucCheck != FALSE)
             			{
                 			/*lq 长度有效性判断*/
-                			ucLen = strlen(chTemp);
+                			ucLen = strlen((char*)chTemp);
                 			if (ucLen != 1)
                 			{
                         		UartResponseMsg("$AIWRM,301");      //lq?错误代码含义？                    
@@ -719,7 +719,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                     else
                     {
         			    /*lq -------N/S字段--------- */
-        			    ucCheck = GetSegment((char *)pDat, chTemp, 5, uiLen, 30);
+        			    ucCheck = GetSegment((char *)pDat,(char*) chTemp, 5, uiLen, 30);
                     
                         /*lq 纬度数值字段为空，但N/S字段非空*/
         			    if (ucCheck != FALSE)
@@ -730,7 +730,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                     }
 
         			/**************************Longitude******************/
-        			ucCheck = GetSegment((char *)pDat, chTemp, 6, uiLen, 30);
+        			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 6, uiLen, 30);
         
                     /*lq 字段非空*/
         			if (ucCheck != FALSE)
@@ -742,13 +742,13 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                         }
 
         			    /*lq -------E/W字段--------- */
-                        ucCheck = GetSegment((char *)pDat, chTemp, 7, uiLen, 30);
+                        ucCheck = GetSegment((char *)pDat,(char*) chTemp, 7, uiLen, 30);
                         
                         /*lq 字段非空*/
             			if (ucCheck != FALSE)
             			{
                 			/*lq 长度有效性判断*/
-                			ucLen = strlen(chTemp);
+                			ucLen = strlen((char*)chTemp);
                 			if (ucLen != 1)
                 			{
                         		UartResponseMsg("$AIWRM,301");      //lq?错误代码含义？                    
@@ -781,7 +781,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                     else
                     {
         			    /*lq -------E/W字段--------- */
-        			    ucCheck = GetSegment((char *)pDat, chTemp, 7, uiLen, 30);
+        			    ucCheck = GetSegment((char *)pDat,(char*) chTemp, 7, uiLen, 30);
                     
                         /*lq 经度数值字段为空，但E/W字段非空*/
         			    if (ucCheck != FALSE)
@@ -798,7 +798,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                 case LB_PRT_WRM_ANCHOR:
                 {
             		/*lq 获取第2字段内容，定位状态 */
-            		ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);    				
+            		ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);    				
                     if (ucCheck != FALSE)
                     {
         				pLBPrtCommStruct->LB_Stat = chTemp[0];                     
@@ -810,7 +810,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                     }
 
         			/**************************Latitude******************/
-        			ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+        			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
         
                     /*lq 字段非空*/
         			if (ucCheck != FALSE)
@@ -822,13 +822,13 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                         }
 
         			    /*lq -------N/S字段--------- */
-        			    ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+        			    ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
                         
                         /*lq 字段非空*/
             			if (ucCheck != FALSE)
             			{
                 			/*lq 长度有效性判断*/
-                			ucLen = strlen(chTemp);
+                			ucLen = strlen((char*)chTemp);
                 			if (ucLen != 1)
                 			{
                         		UartResponseMsg("$AIWRM,301");      //lq?错误代码含义？                    
@@ -861,7 +861,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                     else
                     {
         			    /*lq -------N/S字段--------- */
-        			    ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+        			    ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
                     
                         /*lq 纬度数值字段为空，但N/S字段非空*/
         			    if (ucCheck != FALSE)
@@ -872,7 +872,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                     }
 
         			/**************************Longitude******************/
-        			ucCheck = GetSegment((char *)pDat, chTemp, 5, uiLen, 30);
+        			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 5, uiLen, 30);
         
                     /*lq 字段非空*/
         			if (ucCheck != FALSE)
@@ -884,13 +884,13 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                         }
 
         			    /*lq -------E/W字段--------- */
-                        ucCheck = GetSegment((char *)pDat, chTemp, 6, uiLen, 30);
+                        ucCheck = GetSegment((char *)pDat,(char*) chTemp, 6, uiLen, 30);
                         
                         /*lq 字段非空*/
             			if (ucCheck != FALSE)
             			{
                 			/*lq 长度有效性判断*/
-                			ucLen = strlen(chTemp);
+                			ucLen = strlen((char*)chTemp);
                 			if (ucLen != 1)
                 			{
                         		UartResponseMsg("$AIWRM,301");      //lq?错误代码含义？                    
@@ -923,7 +923,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                     else
                     {
         			    /*lq -------E/W字段--------- */
-        			    ucCheck = GetSegment((char *)pDat, chTemp, 6, uiLen, 30);
+        			    ucCheck = GetSegment((char *)pDat,(char*) chTemp, 6, uiLen, 30);
                     
                         /*lq 经度数值字段为空，但E/W字段非空*/
         			    if (ucCheck != FALSE)
@@ -940,7 +940,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                 case LB_PRT_WRM_MMSI:
                 {
 		            /*lq 获取第2字段内容，提取MMSI*/
-					ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+					ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
 					if (ucCheck == FALSE)
 					{
                 		UartResponseMsg("$AIWRM,301");      //lq?错误代码含义？
@@ -948,7 +948,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
 					}
 
                     /*lq 长度有效性判断*/
-					ucLen = strlen(chTemp);
+					ucLen = strlen((char*)chTemp);
 					if (ucLen != 9)
 					{
                 		UartResponseMsg("$AIWRM,301");      //lq?错误代码含义？
@@ -978,13 +978,13 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                 case LB_PRT_WRM_LIGHT_BEACON_TYPE:
                 {
        			    /***********************Type of AtoN***********************/
-                    ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+                    ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
         
         			/*lq 字段非空*/
                     if (ucCheck != FALSE)
         			{
             			/*lq 长度有效性判断*/
-                        ucLen = strlen(chTemp);
+                        ucLen = strlen((char*)chTemp);
             			if (ucLen != 2)
             			{
                     		UartResponseMsg("$AIWRM,301");      //lq?错误代码含义？
@@ -1023,13 +1023,13 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                 case LB_PRT_WRM_NAME:
                 {
         			/******************************Name of AtoN************************/
-                    ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 40);
+                    ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 40);
         
                     /*lq 字段非空*/
         			if (ucCheck != FALSE)
         			{
             			/*lq 长度有效性判断*/
-                        ucLen = strlen(chTemp);
+                        ucLen = strlen((char*)chTemp);
             			if (ucLen > PARA_ATON_NAME_MAXLEN)
             			{
                     		UartResponseMsg("$AIWRM,301");      //lq?错误代码含义？
@@ -1049,13 +1049,13 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                 case LB_PRT_WRM_ATON_STATUE:
                 {
                     /***************************AtoN status bits***********************/
-        			ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+        			ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
         			
                     /*lq 字段非空*/
                     if (ucCheck != FALSE)
         			{
             			/*lq 长度有效性判断*/
-            			ucLen = strlen(chTemp);
+            			ucLen = strlen((char*)chTemp);
             			if (ucLen != 8)
             			{
                     		UartResponseMsg("$AIWRM,301");      //lq?错误代码含义？
@@ -1089,7 +1089,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                 case LB_PRT_WRM_USART_SETTING:
                 {
         		    /*lq baud rate*/
-                	ucCheck = GetSegment((char *)pDat, chTemp, 2, uiLen, 30);
+                	ucCheck = GetSegment((char *)pDat,(char*) chTemp, 2, uiLen, 30);
                     if (ucCheck != FALSE)
         			{
                         ulTemp = atol(chTemp);
@@ -1101,7 +1101,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                     }
 
         		    /*lq data length*/
-                	ucCheck = GetSegment((char *)pDat, chTemp, 3, uiLen, 30);
+                	ucCheck = GetSegment((char *)pDat,(char*) chTemp, 3, uiLen, 30);
                     if (ucCheck != FALSE)
         			{
                         ucTemp1 = atoi(chTemp);
@@ -1113,7 +1113,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                     }
 
         		    /*lq parity*/
-                	ucCheck = GetSegment((char *)pDat, chTemp, 4, uiLen, 30);
+                	ucCheck = GetSegment((char *)pDat,(char*) chTemp, 4, uiLen, 30);
                     if (ucCheck != FALSE)
         			{
                         ucTemp2 = atoi(chTemp);
@@ -1125,7 +1125,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
                     }
 
         		    /*lq stop bits*/
-                	ucCheck = GetSegment((char *)pDat, chTemp, 5, uiLen, 30);
+                	ucCheck = GetSegment((char *)pDat,(char*) chTemp, 5, uiLen, 30);
                     if (ucCheck != FALSE)
         			{
                         ucTemp3 = atoi(chTemp);
@@ -1163,7 +1163,7 @@ static U8 LB_MsgDealProcess(LBPrtCommStruct *pLBPrtCommStruct, U8 *pDat, U16 uiL
     else if (strncmp((char *)pDat, "AICDM", 5) == FALSE)
     {
 		/*lq 获取第1字段内容，cmd type*/
-		ucCheck = GetSegment((char *)pDat, chTemp, 1, uiLen, 30);        
+		ucCheck = GetSegment((char *)pDat,(char*) chTemp, 1, uiLen, 30);        
         if (ucCheck != FALSE)
         {
             ulTemp = atol(chTemp);

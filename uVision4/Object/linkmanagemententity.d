@@ -64,6 +64,12 @@
 .\object\linkmanagemententity.o: ..\driver\inc\BKPRegister.h
 .\object\linkmanagemententity.o: ..\migrateF4to5\migrate.h
 .\object\linkmanagemententity.o: ..\driver\inc\power.h
+.\object\linkmanagemententity.o: ..\debug\inc\debug.h
+.\object\linkmanagemententity.o: ..\driver\inc\Tim.h
+.\object\linkmanagemententity.o: ..\user\inc\uartmsg.h
+.\object\linkmanagemententity.o: ..\driver\inc\wdg.h
+.\object\linkmanagemententity.o: ..\driver\inc\SPI.h
+.\object\linkmanagemententity.o: ..\interface_layer\Include\systemtick.h
 .\object\linkmanagemententity.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\linkmanagemententity.o: ..\user\inc\flashctrl.h
 .\object\linkmanagemententity.o: ..\user\inc\encrypt.h

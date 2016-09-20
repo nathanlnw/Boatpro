@@ -65,6 +65,12 @@
 .\object\led.o: ..\driver\inc\BKPRegister.h
 .\object\led.o: ..\migrateF4to5\migrate.h
 .\object\led.o: ..\driver\inc\power.h
+.\object\led.o: ..\debug\inc\debug.h
+.\object\led.o: ..\driver\inc\Tim.h
+.\object\led.o: ..\user\inc\uartmsg.h
+.\object\led.o: ..\driver\inc\wdg.h
+.\object\led.o: ..\driver\inc\SPI.h
+.\object\led.o: ..\interface_layer\Include\systemtick.h
 .\object\led.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\led.o: ..\user\inc\flashctrl.h
 .\object\led.o: ..\user\inc\encrypt.h

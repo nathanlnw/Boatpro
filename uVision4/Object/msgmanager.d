@@ -64,6 +64,12 @@
 .\object\msgmanager.o: ..\driver\inc\BKPRegister.h
 .\object\msgmanager.o: ..\migrateF4to5\migrate.h
 .\object\msgmanager.o: ..\driver\inc\power.h
+.\object\msgmanager.o: ..\debug\inc\debug.h
+.\object\msgmanager.o: ..\driver\inc\Tim.h
+.\object\msgmanager.o: ..\user\inc\uartmsg.h
+.\object\msgmanager.o: ..\driver\inc\wdg.h
+.\object\msgmanager.o: ..\driver\inc\SPI.h
+.\object\msgmanager.o: ..\interface_layer\Include\systemtick.h
 .\object\msgmanager.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\msgmanager.o: ..\user\inc\flashctrl.h
 .\object\msgmanager.o: ..\user\inc\encrypt.h

@@ -64,6 +64,12 @@
 .\object\rxtx.o: ..\driver\inc\BKPRegister.h
 .\object\rxtx.o: ..\migrateF4to5\migrate.h
 .\object\rxtx.o: ..\driver\inc\power.h
+.\object\rxtx.o: ..\debug\inc\debug.h
+.\object\rxtx.o: ..\driver\inc\Tim.h
+.\object\rxtx.o: ..\user\inc\uartmsg.h
+.\object\rxtx.o: ..\driver\inc\wdg.h
+.\object\rxtx.o: ..\driver\inc\SPI.h
+.\object\rxtx.o: ..\interface_layer\Include\systemtick.h
 .\object\rxtx.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\rxtx.o: ..\user\inc\flashctrl.h
 .\object\rxtx.o: ..\user\inc\encrypt.h

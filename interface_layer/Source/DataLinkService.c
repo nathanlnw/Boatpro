@@ -125,10 +125,12 @@ static U8 DLS_BitStreamIsBuffFull(BitStreamStruct *pBitStreamStruct)
         == pBitStreamStruct->Output)
     {
         return TRUE; 
-
+      
+			 /*    lnw  masked   because it is  unreachable
         debug_printf("$[%6d:%4d] %s : Bitstream buffer [%s]is full!\r\n",
             GetFrameNum(), GetSlotNum(), __func__,
             pBitStreamStruct == &PacketProbeInst1.BitStream ? "A" : "B");
+			 */
     }
     else
     {
@@ -502,7 +504,7 @@ static U8 DLS_BitStreamGetFrame(BitStreamStruct *pBitStreamStruct, U8 *pFrameBuf
         }    
     }
 #if 0 //lqdb
-    sprintf(temp, "$PacketProbe FrameData: ");            
+    sprintf((char*)Temp, "$PacketProbe FrameData: ");            
     for (i = 0; i < k; i++)
     {
         sprintf(temp2, "%02X", pFrameBuff[1 + i]);
@@ -539,6 +541,7 @@ static U8 DLS_BitStreamGetFrame(BitStreamStruct *pBitStreamStruct, U8 *pFrameBuf
     }     
 }
 
+#if   0    // lnw mask   because  it is  no  used
 /*******************************************************************************
 * 名称  : DLS_BitStreamGetFrame2
 * 描述  : 获取缓存中的当前帧（缓存中比特的缓存顺序是帧的发射顺序，即帧的每个字节
@@ -637,7 +640,7 @@ static U8 DLS_BitStreamGetFrame2(BitStreamStruct *pBitStreamStruct, U8 *pFrameBu
         }    
     }
 #if 0 //lqdb
-    sprintf(temp, "$PacketProbe FrameData: ");            
+    sprintf((char*)Temp, "$PacketProbe FrameData: ");            
     for (i = 0; i < k; i++)
     {
         sprintf(temp2, "%02X", pFrameBuff[1 + i]);
@@ -673,7 +676,6 @@ static U8 DLS_BitStreamGetFrame2(BitStreamStruct *pBitStreamStruct, U8 *pFrameBu
         return FALSE;                           //lq 不是整数字节
     }     
 }
-
 /*******************************************************************************
 * 名称  : DLS_BitStreamGetFrame3
 * 描述  : 获取缓存中的当前帧（缓存中比特的缓存顺序是帧的发射顺序，即帧的每个字节
@@ -749,7 +751,7 @@ static U8 DLS_BitStreamGetFrame3(BitStreamStruct *pBitStreamStruct, U8 *pFrameBu
         }    
     }
 #if 0 //lqdb
-    sprintf(temp, "$PacketProbe FrameData: ");            
+    sprintf((char*)Temp, "$PacketProbe FrameData: ");            
     for (i = 0; i < k; i++)
     {
         sprintf(temp2, "%02X", pFrameBuff[1 + i]);
@@ -785,6 +787,7 @@ static U8 DLS_BitStreamGetFrame3(BitStreamStruct *pBitStreamStruct, U8 *pFrameBu
         return FALSE;                           //lq 不是整数字节
     }     
 }
+#endif
 
 /*******************************************************************************
 * 名称  : DLS_BitStreamFindFrameHeader
@@ -861,7 +864,7 @@ static U8 DLS_BitStreamFindFrameTailer(BitStreamStruct *pBitStreamStruct)
     U32 i;
     U16 tailIndex;
     U16 tailOffset;
-    U16 tempU16;
+    //U16 tempU16;  //lnw mask
     U8  tailer;
     
     /*lq 缓存bit数未超过2倍帧头长度 */
@@ -930,10 +933,11 @@ static U8 DLS_FrameRxFifoIsFull(FrameRxFifoStruct *pFrameRxFifoStruct)
         == pFrameRxFifoStruct->Output)
     {
         return TRUE;
-
+       /*  lnw mask  unreachable
         debug_printf("$[%6d:%4d] %s : Frame rx fifo [%s]is full!\r\n",
             GetFrameNum(), GetSlotNum(), __func__,
             pFrameRxFifoStruct == &FrameFifoRx1 ? "A" : "B");
+			*/
     }
     else
     {

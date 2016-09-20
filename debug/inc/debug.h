@@ -35,7 +35,8 @@ void usart_printf(char * format, ...);
 
 U8 UartDebugMsg(U8 Type,  U8 Addr,  char * format,...);
 
-U8 UartResponseMsg(char *pData);
+extern U8 UartResponseMsg(char *pData); //lnw add 
+extern 	void debug_printf(char * format,...);// lnw  add
 U8 UartTxString(char *pStr);
 
 #endif

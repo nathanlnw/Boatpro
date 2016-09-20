@@ -64,6 +64,12 @@
 .\object\tdma.o: ..\driver\inc\BKPRegister.h
 .\object\tdma.o: ..\migrateF4to5\migrate.h
 .\object\tdma.o: ..\driver\inc\power.h
+.\object\tdma.o: ..\debug\inc\debug.h
+.\object\tdma.o: ..\driver\inc\Tim.h
+.\object\tdma.o: ..\user\inc\uartmsg.h
+.\object\tdma.o: ..\driver\inc\wdg.h
+.\object\tdma.o: ..\driver\inc\SPI.h
+.\object\tdma.o: ..\interface_layer\Include\systemtick.h
 .\object\tdma.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\tdma.o: ..\user\inc\flashctrl.h
 .\object\tdma.o: ..\user\inc\encrypt.h

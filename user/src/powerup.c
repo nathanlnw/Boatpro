@@ -125,7 +125,7 @@ void PowerUpProcess(void)
         Para_Read(PARA_WDG_RESET_CNT_TYPE, ucTempBuf);
         usTemp = atol((char *)ucTempBuf);
         usTemp = ++usTemp > PARA_WDG_RESET_CNT_CEIL ? PARA_WDG_RESET_CNT_CEIL : usTemp;
-        sprintf(ucTempBuf, "%2d", usTemp);
+        sprintf((char*)ucTempBuf, "%2d", usTemp);
 		Para_Save(PARA_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
 	}
 	else
@@ -187,14 +187,14 @@ void PowerUpProcess(void)
 					Para_Save(PARA_LAST_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
                     
                     /*lq 本次开机至现在看门狗复位次数清0*/
-                    sprintf(ucTempBuf, "%2d", 0);
+                    sprintf((char*)ucTempBuf, "%2d", 0);
 					Para_Save(PARA_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
 
                     /*lq 正常开机次数加1*/
                     Para_Read(PARA_NORMAL_POWER_ON_CNT_TYPE, ucTempBuf);
                     usTemp = atol((char *)ucTempBuf);
                     usTemp = ++usTemp > PARA_NORMAL_POWER_ON_CNT_CEIL ? PARA_NORMAL_POWER_ON_CNT_CEIL : usTemp;
-                    sprintf(ucTempBuf, "%2d", usTemp);
+                    sprintf((char*)ucTempBuf, "%2d", usTemp);
             		Para_Save(PARA_NORMAL_POWER_ON_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
 					break;
 				}
@@ -249,14 +249,14 @@ void PowerUpProcess(void)
 					Para_Save(PARA_LAST_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
                     
                     /*lq 本次开机至现在看门狗复位次数清0*/
-                    sprintf(ucTempBuf, "%2d", 0);
+                    sprintf((char*)ucTempBuf, "%2d", 0);
 					Para_Save(PARA_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存	
                     
                     /*lq 用户测试次数加1*/
                     Para_Read(PARA_USER_TEST_CNT_TYPE, ucTempBuf);
                     usTemp = atol((char *)ucTempBuf);
                     usTemp = ++usTemp > PARA_USER_TEST_CNT_CEIL ? PARA_USER_TEST_CNT_CEIL : usTemp;
-                    sprintf(ucTempBuf, "%2d", usTemp);
+                    sprintf((char*)ucTempBuf, "%2d", usTemp);
             		Para_Save(PARA_USER_TEST_CNT_TYPE, (U8 *)ucTempBuf, 2);//存                    				
 					break;
 				}
@@ -417,10 +417,10 @@ void PowerUpProcess(void)
                     {
                         usTemp = PARA_WORKTIME_CEIL;
                     } 
-                    sprintf(ucTempBuf, "%5d", usTemp);
+                    sprintf((char*)ucTempBuf, "%5d", usTemp);
                 	Para_Save(PARA_WORKTIME_TYPE, (U8 *)ucTempBuf, 5);      //lq 存本次开机之前工作总时长
                     eqEquipPara.WorkTimeSum = usTemp;
-                    sprintf(ucTempBuf, "%5d", 0);
+                    sprintf((char*)ucTempBuf, "%5d", 0);
 					Para_Save(PARA_WORKTIME_LAST_TYPE, (U8 *)ucTempBuf, 5); //lq 上次开机之后工作时长清0，防止下次开机后重复累加 
 
                     /*lq 保存上次正常开机至本次正常开机看门狗复位次数*/
@@ -428,14 +428,14 @@ void PowerUpProcess(void)
 					Para_Save(PARA_LAST_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
                     
                     /*lq 本次开机至现在看门狗复位次数清0*/
-                    sprintf(ucTempBuf, "%2d", 0);
+                    sprintf((char*)ucTempBuf, "%2d", 0);
 					Para_Save(PARA_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
 #if 0
                     /*lq 正常开机次数加1*/
                     Para_Read(PARA_NORMAL_POWER_ON_CNT_TYPE, ucTempBuf);
                     usTemp = atol((char *)ucTempBuf);
                     usTemp = ++usTemp > PARA_NORMAL_POWER_ON_CNT_CEIL ? PARA_NORMAL_POWER_ON_CNT_CEIL : usTemp;
-                    sprintf(ucTempBuf, "%2d", usTemp);
+                    sprintf((char*)ucTempBuf, "%2d", usTemp);
             		Para_Save(PARA_NORMAL_POWER_ON_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
 #endif	
     				break;
@@ -498,10 +498,10 @@ void PowerUpProcess(void)
                     {
                         usTemp = PARA_WORKTIME_CEIL;
                     } 
-                    sprintf(ucTempBuf, "%5d", usTemp);
+                    sprintf((char*)ucTempBuf, "%5d", usTemp);
                 	Para_Save(PARA_WORKTIME_TYPE, (U8 *)ucTempBuf, 5);      //lq 存本次开机之前工作总时长
                     eqEquipPara.WorkTimeSum = usTemp;                    
-                    sprintf(ucTempBuf, "%5d", 0);
+                    sprintf((char*)ucTempBuf, "%5d", 0);
 					Para_Save(PARA_WORKTIME_LAST_TYPE, (U8 *)ucTempBuf, 5); //lq 上次开机之后工作时长清0，防止下次开机后重复累加 
                                         
                     /*lq 保存上次正常开机至本次正常开机看门狗复位次数*/
@@ -509,14 +509,14 @@ void PowerUpProcess(void)
 					Para_Save(PARA_LAST_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
                     
                     /*lq 本次开机至现在看门狗复位次数清0*/
-                    sprintf(ucTempBuf, "%2d", 0);
+                    sprintf((char*)ucTempBuf, "%2d", 0);
 					Para_Save(PARA_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存	
 #if 0                    
                     /*lq 用户测试次数加1*/
                     Para_Read(PARA_USER_TEST_CNT_TYPE, ucTempBuf);
                     usTemp = atol((char *)ucTempBuf);
                     usTemp = ++usTemp > PARA_USER_TEST_CNT_CEIL ? PARA_USER_TEST_CNT_CEIL : usTemp;
-                    sprintf(ucTempBuf, "%2d", usTemp);
+                    sprintf((char*)ucTempBuf, "%2d", usTemp);
             		Para_Save(PARA_USER_TEST_CNT_TYPE, (U8 *)ucTempBuf, 2);//存                    				
 #endif	
     				break;
@@ -639,16 +639,16 @@ void PowerUpProcess(void)
             {
                 usTemp = PARA_WORKTIME_CEIL;
             } 
-            sprintf(ucTempBuf, "%5d", usTemp);
+            sprintf((char*)ucTempBuf, "%5d", usTemp);
         	Para_Save(PARA_WORKTIME_TYPE, (U8 *)ucTempBuf, 5);      //lq 存本次开机之前工作总时长
-            sprintf(ucTempBuf, "%5d", 0);
+            sprintf((char*)ucTempBuf, "%5d", 0);
 			Para_Save(PARA_WORKTIME_LAST_TYPE, (U8 *)ucTempBuf, 5); //lq 上次开机之后工作时长清0，防止下次开机后重复累加 
 
             /*lq 本次正常开机至现在看门狗复位次数加1*/
             Para_Read(PARA_WDG_RESET_CNT_TYPE, ucTempBuf);
             usTemp = atol((char *)ucTempBuf);
             usTemp = ++usTemp > PARA_WDG_RESET_CNT_CEIL ? PARA_WDG_RESET_CNT_CEIL : usTemp;
-            sprintf(ucTempBuf, "%2d", usTemp);
+            sprintf((char*)ucTempBuf, "%2d", usTemp);
     		Para_Save(PARA_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
         }                                                                       
     } 
@@ -881,10 +881,10 @@ void PowerUpProcess(void)
                     {
                         usTemp = PARA_WORKTIME_CEIL;
                     } 
-                    sprintf(ucTempBuf, "%5d", usTemp);
+                    sprintf((char*)ucTempBuf, "%5d", usTemp);
                 	Para_Save(PARA_WORKTIME_TYPE, (U8 *)ucTempBuf, 5);      //lq 存本次开机之前工作总时长
                     eqEquipPara.WorkTimeSum = usTemp;               
-                    sprintf(ucTempBuf, "%5d", 0);
+                    sprintf((char*)ucTempBuf, "%5d", 0);
 					Para_Save(PARA_WORKTIME_LAST_TYPE, (U8 *)ucTempBuf, 5); //lq 上次开机之后工作时长清0，防止下次开机后重复累加 
                                     	
                     /*lq 保存上次正常开机至本次正常开机看门狗复位次数*/
@@ -892,14 +892,14 @@ void PowerUpProcess(void)
 					Para_Save(PARA_LAST_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
                     
                     /*lq 本次开机至现在看门狗复位次数清0*/
-                    sprintf(ucTempBuf, "%2d", 0);
+                    sprintf((char*)ucTempBuf, "%2d", 0);
 					Para_Save(PARA_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
 #if 0
                     /*lq 正常开机次数加1*/
                     Para_Read(PARA_NORMAL_POWER_ON_CNT_TYPE, ucTempBuf);
                     usTemp = atol((char *)ucTempBuf);
                     usTemp = ++usTemp > PARA_NORMAL_POWER_ON_CNT_CEIL ? PARA_NORMAL_POWER_ON_CNT_CEIL : usTemp;
-                    sprintf(ucTempBuf, "%2d", usTemp);
+                    sprintf((char*)ucTempBuf, "%2d", usTemp);
             		Para_Save(PARA_NORMAL_POWER_ON_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
 #endif	
     				break;
@@ -961,10 +961,10 @@ void PowerUpProcess(void)
                     {
                         usTemp = PARA_WORKTIME_CEIL;
                     } 
-                    sprintf(ucTempBuf, "%5d", usTemp);
+                    sprintf((char*)ucTempBuf, "%5d", usTemp);
                 	Para_Save(PARA_WORKTIME_TYPE, (U8 *)ucTempBuf, 5);      //lq 存本次开机之前工作总时长
                     eqEquipPara.WorkTimeSum = usTemp;                    
-                    sprintf(ucTempBuf, "%5d", 0);
+                    sprintf((char*)ucTempBuf, "%5d", 0);
 					Para_Save(PARA_WORKTIME_LAST_TYPE, (U8 *)ucTempBuf, 5); //lq 上次开机之后工作时长清0，防止下次开机后重复累加 
                     					
                     /*lq 保存上次正常开机至本次正常开机看门狗复位次数*/
@@ -972,14 +972,14 @@ void PowerUpProcess(void)
 					Para_Save(PARA_LAST_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
                     
                     /*lq 本次开机至现在看门狗复位次数清0*/
-                    sprintf(ucTempBuf, "%2d", 0);
+                    sprintf((char*)ucTempBuf, "%2d", 0);
 					Para_Save(PARA_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存	
 #if 0                    
                     /*lq 用户测试次数加1*/
                     Para_Read(PARA_USER_TEST_CNT_TYPE, ucTempBuf);
                     usTemp = atol((char *)ucTempBuf);
                     usTemp = ++usTemp > PARA_USER_TEST_CNT_CEIL ? PARA_USER_TEST_CNT_CEIL : usTemp;
-                    sprintf(ucTempBuf, "%2d", usTemp);
+                    sprintf((char*)ucTempBuf, "%2d", usTemp);
             		Para_Save(PARA_USER_TEST_CNT_TYPE, (U8 *)ucTempBuf, 2);//存                    				
 #endif	
     				break;
@@ -1074,7 +1074,7 @@ void PowerUpProcess(void)
         usTemp1 = atol((char *)ucTempBuf);
         DevDynamicPara.OpenCloseTimeIndex = usTemp1;
         usTemp1 = (usTemp1 + 1) % PARA_TIME_OPEN_CLOSE_TOTAL;     //lq 下次开机时要获取的索引值
-        sprintf(ucTempBuf, "%d", usTemp1);
+        sprintf((char*)ucTempBuf, "%d", usTemp1);
     	Para_Save(PARA_OPEN_CLOSE_TIME_INDEX_TYPE, (U8 *)ucTempBuf, PARA_OPEN_CLOSE_TIME_INDEX_MAXLEN);
 
         /*lq 本次开关机时间复位 */
@@ -1096,10 +1096,10 @@ void PowerUpProcess(void)
         {
             usTemp1 = PARA_WORKTIME_CEIL;
         } 
-        sprintf(ucTempBuf, "%5d", usTemp1);
+        sprintf((char*)ucTempBuf, "%5d", usTemp1);
     	Para_Save(PARA_WORKTIME_TYPE, (U8 *)ucTempBuf, 5);      //lq 存本次开机之前工作总时长
 
-        sprintf(ucTempBuf, "%5d", 0);
+        sprintf((char*)ucTempBuf, "%5d", 0);
 		Para_Save(PARA_WORKTIME_LAST_TYPE, (U8 *)ucTempBuf, 5); //lq 上次开机之后工作时长清0，防止下次开机后重复累加 
 
         /*lq 保存上次正常开机至本次正常开机看门狗复位次数*/
@@ -1107,14 +1107,14 @@ void PowerUpProcess(void)
 		Para_Save(PARA_LAST_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
         
         /*lq 本次开机至现在看门狗复位次数清0*/
-        sprintf(ucTempBuf, "%2d", 0);
+        sprintf((char*)ucTempBuf, "%2d", 0);
 		Para_Save(PARA_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
 
         /*lq 正常开机次数加1*/
         Para_Read(PARA_NORMAL_POWER_ON_CNT_TYPE, ucTempBuf);
         usTemp1 = atol((char *)ucTempBuf);
         usTemp1 = ++usTemp1 > PARA_NORMAL_POWER_ON_CNT_CEIL ? PARA_NORMAL_POWER_ON_CNT_CEIL : usTemp1;
-        sprintf(ucTempBuf, "%2d", usTemp1);
+        sprintf((char*)ucTempBuf, "%2d", usTemp1);
 		Para_Save(PARA_NORMAL_POWER_ON_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
 
     }
@@ -1201,7 +1201,7 @@ void PowerUpProcess(void)
             usTemp1 = atol((char *)ucTempBuf);
             DevDynamicPara.OpenCloseTimeIndex = usTemp1;
             usTemp1 = (usTemp1 + 1) % PARA_TIME_OPEN_CLOSE_TOTAL;     //lq 下次开机时要获取的索引值
-            sprintf(ucTempBuf, "%d", usTemp1);
+            sprintf((char*)ucTempBuf, "%d", usTemp1);
         	Para_Save(PARA_OPEN_CLOSE_TIME_INDEX_TYPE, (U8 *)ucTempBuf, PARA_OPEN_CLOSE_TIME_INDEX_MAXLEN);
 
             /*lq 本次开关机时间复位 */
@@ -1223,16 +1223,16 @@ void PowerUpProcess(void)
             {
                 usTemp1 = PARA_WORKTIME_CEIL;
             } 
-            sprintf(ucTempBuf, "%5d", usTemp1);
+            sprintf((char*)ucTempBuf, "%5d", usTemp1);
         	Para_Save(PARA_WORKTIME_TYPE, (U8 *)ucTempBuf, 5);      //lq 存本次开机之前工作总时长
-            sprintf(ucTempBuf, "%5d", 0);
+            sprintf((char*)ucTempBuf, "%5d", 0);
 			Para_Save(PARA_WORKTIME_LAST_TYPE, (U8 *)ucTempBuf, 5); //lq 上次开机之后工作时长清0，防止下次开机后重复累加 
 
             /*lq 本次正常开机至现在看门狗复位次数加1*/
             Para_Read(PARA_WDG_RESET_CNT_TYPE, ucTempBuf);
             usTemp1 = atol((char *)ucTempBuf);
             usTemp1 = ++usTemp1 > PARA_WDG_RESET_CNT_CEIL ? PARA_WDG_RESET_CNT_CEIL : usTemp1;
-            sprintf(ucTempBuf, "%2d", usTemp1);
+            sprintf((char*)ucTempBuf, "%2d", usTemp1);
     		Para_Save(PARA_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
         }                                                                       
     } 
@@ -1401,7 +1401,7 @@ void PowerUpProcess(void)
         usTemp1 = atol((char *)ucTempBuf);
         DevDynamicPara.OpenCloseTimeIndex = usTemp1;
         usTemp1 = (usTemp1 + 1) % PARA_TIME_OPEN_CLOSE_TOTAL;     //lq 下次开机时要获取的索引值
-        sprintf(ucTempBuf, "%d", usTemp1);
+        sprintf((char*)ucTempBuf, "%d", usTemp1);
     	Para_Save(PARA_OPEN_CLOSE_TIME_INDEX_TYPE, (U8 *)ucTempBuf, PARA_OPEN_CLOSE_TIME_INDEX_MAXLEN);
 
         /*lq 本次开关机时间复位 */
@@ -1423,10 +1423,10 @@ void PowerUpProcess(void)
         {
             usTemp1 = PARA_WORKTIME_CEIL;
         } 
-        sprintf(ucTempBuf, "%5d", usTemp1);
+        sprintf((char*)ucTempBuf, "%5d", usTemp1);
     	Para_Save(PARA_WORKTIME_TYPE, (U8 *)ucTempBuf, 5);      //lq 存本次开机之前工作总时长
 
-        sprintf(ucTempBuf, "%5d", 0);
+        sprintf((char*)ucTempBuf, "%5d", 0);
 		Para_Save(PARA_WORKTIME_LAST_TYPE, (U8 *)ucTempBuf, 5); //lq 上次开机之后工作时长清0，防止下次开机后重复累加 
                         	
         /*lq 保存上次正常开机至本次正常开机看门狗复位次数*/
@@ -1434,14 +1434,14 @@ void PowerUpProcess(void)
 		Para_Save(PARA_LAST_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
         
         /*lq 本次开机至现在看门狗复位次数清0*/
-        sprintf(ucTempBuf, "%2d", 0);
+        sprintf((char*)ucTempBuf, "%2d", 0);
 		Para_Save(PARA_WDG_RESET_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
 #if 0
         /*lq 正常开机次数加1*/
         Para_Read(PARA_NORMAL_POWER_ON_CNT_TYPE, ucTempBuf);
         usTemp1 = atol((char *)ucTempBuf);
         usTemp1 = ++usTemp > PARA_NORMAL_POWER_ON_CNT_CEIL ? PARA_NORMAL_POWER_ON_CNT_CEIL : usTemp1;
-        sprintf(ucTempBuf, "%2d", usTemp1);
+        sprintf((char*)ucTempBuf, "%2d", usTemp1);
 		Para_Save(PARA_NORMAL_POWER_ON_CNT_TYPE, (U8 *)ucTempBuf, 2);//存
 #endif	
     }

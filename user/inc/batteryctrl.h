@@ -90,4 +90,7 @@ extern void InitBatteryCtrlPara(void);
 	@brief µÁ≥ÿµÁ¡øºÏ≤‚
 */
 extern U8 BatteryCtrlProcess(void);
+
+extern void Feed_Dog(void);
+
 #endif

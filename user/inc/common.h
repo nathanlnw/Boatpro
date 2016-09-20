@@ -85,6 +85,9 @@ void Delay_ms(U32 nTime);
 U8 EEpromChkSum(U8 *pData,  U16 Len);
 U16 AIS_Cal_CRC16(U8 *data, U16 count);
 
+//  lnw  add
+extern S32 Random(S32 bound1, S32 bound2);
+
 #endif
 /*==============================================================================
 ------------------------------------End of File---------------------------------

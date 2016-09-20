@@ -410,13 +410,14 @@ void SI446X_SETFREBASE(U32 ulFreBase);
 
 extern void SI446X_ModuleInit(void);// lnw add 
 extern void SI446X_A_TxRxClockIRQS(void);//lnw  add 
+extern void SI446X_B_TxRxClockIRQS(void);//lnw add
 
 
 #if  CONFIG_PTT_EN    // lnw
 extern U8 SI446X_RXSTTUS_Return(void);
 #endif
 
-
+extern void SI446X_FUNC_INFO(U8 *buffer, SI446XChipEnum cs);
 
 #endif
 /*==============================================================================

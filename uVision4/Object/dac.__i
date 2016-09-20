@@ -1,6 +1,0 @@
--c --cpu Cortex-M3 -D__MICROLIB -g -O2 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src
--I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"
--I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include
--I E:\Keil_520\ARM\CMSIS\Include
--D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD
--o .\object\dac.o --omf_browse .\object\dac.crf --depend .\object\dac.d "..\driver\src\DAC.c"

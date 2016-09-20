@@ -154,7 +154,7 @@ U8 WriteCry(CryTypeEnum cryType, U8 *ucCryBuff)
 		ulAddr = STM32_FLASH_CRY_0_7_BACKUP2_ADDR;
 	}
 
-	ulTemp = strtoul(ucCryBuff, &pEnd, 10);	
+	ulTemp = strtoul((const char*)ucCryBuff, &pEnd, 10);	
 	for(ucTemp = 0;ucTemp < 4;ucTemp++)
 	{ 
 		ucTempBuff[ucTemp] = (U8)(ulTemp & 0xFF);

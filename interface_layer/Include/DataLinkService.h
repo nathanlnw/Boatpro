@@ -101,5 +101,9 @@ typedef struct FrameFifoStruct
 /* Public variables ---------------------------------------------------------*/
 
 /* Public function  ---------------------------------------------------------*/
-
+extern U8 DLS_Inst1FrameRxFifoDeque(FrameRxCellStruct *pFrameRxCellStruct);// lnw add
+extern U8 DLS_Inst2FrameRxFifoDeque(FrameRxCellStruct *pFrameRxCellStruct);//lnw add
+extern void DLS_FrameBuild(const U8 buff1[DLS_FRAME_MAX_LEN_BYTE + 2], U8 buff2[DLS_FRAME_MAX_LEN_BYTE + 2]);// lnw add
+extern U8 DLS_InstFrameTxFifoEnque(const FrameTxCellStruct *pFrameTxCellStruct);//lnw add
+extern U8 DLS_InstBitStreamPutBit(const PacketProbeTypeEnum type, const U8 data);
 #endif

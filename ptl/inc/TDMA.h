@@ -289,5 +289,6 @@ extern S16 SOTDMA_CalcSelectIntervalOffset(S16 nominalIncrement);
 extern U8 SOTDMA_SetNssDual(AisChannelEnum channel, S16 nss);
 
 /* Public functions ----------------------------------------------------------*/
+extern void TDMA_InstReportIntervalSample(S16 reportInterval);
 
 #endif

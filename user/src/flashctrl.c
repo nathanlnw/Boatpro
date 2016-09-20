@@ -187,7 +187,7 @@ U8 FlashWrite(U8 ucPara_Type, U8 *pPara, U8 ucLen)
 	}
 	else																			  // 非CHAR类型
 	{
-		ulTemp = strtoul(pPara, &pEnd, 10);
+		ulTemp = strtoul((const char*)pPara, &pEnd, 10);
         if ((*pEnd) != '\0')
         {
 		    return (FALSE);        
@@ -392,7 +392,7 @@ U8 FlashRead(U8 ucPara_Type, U8 *pPara)
                 ulTemp |= (ucTempBuf[ucLen - 1 - i] & 0xFF);           // 小端模式
             }
              
-            sprintf(pPara, "%0*lu", ucMaxLen, ulTemp);                 // 与字符型参数统一格式，返回十进制数值的字符串
+            sprintf((char*)pPara, "%0*lu", ucMaxLen, ulTemp);                 // 与字符型参数统一格式，返回十进制数值的字符串
                                                                        // 使用ucMaxLen是为了与之前读写方式兼容，对上层调用透明
 		}
 		/*lq 校验错误*/

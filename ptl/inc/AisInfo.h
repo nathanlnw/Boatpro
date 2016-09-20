@@ -189,6 +189,7 @@ extern AisStaticInfoStruct AisStaticPara;
 extern AisDynamicInfoStruct AisDynamicPara;
 
 /* Public functions ----------------------------------------------------------*/
+extern 	U32 AISINFO_InstRecStationGetQuantity(void);
 
 #endif
 /*==============================================================================

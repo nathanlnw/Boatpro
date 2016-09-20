@@ -82,6 +82,17 @@
 #include "migrate.h"
 #include "Si446x.h"
 #include "power.h"
+#include "debug.h"
+#include "Tim.h"
+#include "uartmsg.h"
+#include "wdg.h"
+#include "SPI.h"
+#include "systemtick.h"
+
+
+
+
+
 #ifdef  LNW
   #include "PTT_lnw.h"
 #endif

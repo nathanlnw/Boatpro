@@ -70,8 +70,11 @@
 .\object\stm32f10x_it.o: ..\driver\inc\BKPRegister.h
 .\object\stm32f10x_it.o: ..\migrateF4to5\migrate.h
 .\object\stm32f10x_it.o: ..\driver\inc\power.h
+.\object\stm32f10x_it.o: ..\debug\inc\debug.h
+.\object\stm32f10x_it.o: ..\user\inc\uartmsg.h
+.\object\stm32f10x_it.o: ..\driver\inc\wdg.h
+.\object\stm32f10x_it.o: ..\driver\inc\SPI.h
+.\object\stm32f10x_it.o: ..\interface_layer\Include\systemtick.h
 .\object\stm32f10x_it.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\stm32f10x_it.o: ..\user\inc\flashctrl.h
 .\object\stm32f10x_it.o: ..\user\inc\encrypt.h
-.\object\stm32f10x_it.o: ..\debug\inc\debug.h
-.\object\stm32f10x_it.o: ..\driver\inc\SPI.h

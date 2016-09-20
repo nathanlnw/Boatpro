@@ -66,6 +66,12 @@
 .\object\parastorage.o: ..\driver\inc\BKPRegister.h
 .\object\parastorage.o: ..\migrateF4to5\migrate.h
 .\object\parastorage.o: ..\driver\inc\power.h
+.\object\parastorage.o: ..\debug\inc\debug.h
+.\object\parastorage.o: ..\driver\inc\Tim.h
+.\object\parastorage.o: ..\user\inc\uartmsg.h
+.\object\parastorage.o: ..\driver\inc\wdg.h
+.\object\parastorage.o: ..\driver\inc\SPI.h
+.\object\parastorage.o: ..\interface_layer\Include\systemtick.h
 .\object\parastorage.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\parastorage.o: ..\user\inc\flashctrl.h
 .\object\parastorage.o: ..\user\inc\encrypt.h

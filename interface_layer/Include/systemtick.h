@@ -35,4 +35,16 @@ void LocalClockStateCtrlProcess(void);
 U32 SetTimePeriodProcess(U32 Period);
 void SystemTickKeyScan(void);
 extern U32 testTimval;
+
+
+
+// lnw add below
+extern U32 SetTimePeriodProcess(U32 Period);
+extern U16 GetLocalClockTickProcess(void);
+extern U32 SetTimePeriodProcess(U32 Period);
+extern void LocalClockStateCtrlProcess(void);
+
+
+
+
 #endif 
