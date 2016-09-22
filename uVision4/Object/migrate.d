@@ -46,9 +46,9 @@
 .\object\migrate.o: ..\user\inc\gpsctrl.h
 .\object\migrate.o: ..\ptl\inc\Slot.h
 .\object\migrate.o: ..\ptl\inc\TDMA.h
+.\object\migrate.o: ..\ptl\inc\AISMsgModule.h
 .\object\migrate.o: ..\driver\inc\RxTx.h
 .\object\migrate.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\migrate.o: ..\ptl\inc\AISMsgModule.h
 .\object\migrate.o: ..\ptl\inc\AisInfo.h
 .\object\migrate.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\migrate.o: ..\ptl\inc\AIS_MsgModu.h
@@ -70,6 +70,11 @@
 .\object\migrate.o: ..\driver\inc\wdg.h
 .\object\migrate.o: ..\driver\inc\SPI.h
 .\object\migrate.o: ..\interface_layer\Include\systemtick.h
+.\object\migrate.o: ..\user\inc\UbloxProtocol.h
+.\object\migrate.o: ..\driver\inc\usart.h
+.\object\migrate.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\migrate.o: ..\interface_layer\Include\parastorage.h
+.\object\migrate.o: ..\user\inc\sleepctrl.h
 .\object\migrate.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\migrate.o: ..\user\inc\flashctrl.h
 .\object\migrate.o: ..\user\inc\encrypt.h

@@ -12,13 +12,13 @@
 .\object\selfcheck.o: ..\user\inc\ledctrl.h
 .\object\selfcheck.o: ..\driver\inc\Si446x.h
 .\object\selfcheck.o: ..\driver\inc\Si446xDefs.h
+.\object\selfcheck.o: ..\user\inc\AisDef.h
 .\object\selfcheck.o: ..\user\inc\RfLinkSelfCheck.h
 .\object\selfcheck.o: ..\user\inc\Include.h
 .\object\selfcheck.o: E:\Keil_520\ARM\ARMCC\Bin\..\include\math.h
 .\object\selfcheck.o: ..\user\inc\config.h
 .\object\selfcheck.o: ..\user\inc\common.h
 .\object\selfcheck.o: ..\user\inc\Include.h
-.\object\selfcheck.o: ..\user\inc\AisDef.h
 .\object\selfcheck.o: ..\library\stm32f10x.h
 .\object\selfcheck.o: ..\StdPeriph_Driver\inc\core_cm3.h
 .\object\selfcheck.o: E:\Keil_520\ARM\ARMCC\Bin\..\include\stdint.h
@@ -53,9 +53,9 @@
 .\object\selfcheck.o: ..\driver\inc\gps.h
 .\object\selfcheck.o: ..\ptl\inc\Slot.h
 .\object\selfcheck.o: ..\ptl\inc\TDMA.h
+.\object\selfcheck.o: ..\ptl\inc\AISMsgModule.h
 .\object\selfcheck.o: ..\driver\inc\RxTx.h
 .\object\selfcheck.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\selfcheck.o: ..\ptl\inc\AISMsgModule.h
 .\object\selfcheck.o: ..\ptl\inc\AisInfo.h
 .\object\selfcheck.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\selfcheck.o: ..\ptl\inc\AIS_MsgModu.h
@@ -74,6 +74,11 @@
 .\object\selfcheck.o: ..\user\inc\uartmsg.h
 .\object\selfcheck.o: ..\driver\inc\wdg.h
 .\object\selfcheck.o: ..\driver\inc\SPI.h
+.\object\selfcheck.o: ..\user\inc\UbloxProtocol.h
+.\object\selfcheck.o: ..\driver\inc\usart.h
+.\object\selfcheck.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\selfcheck.o: ..\interface_layer\Include\parastorage.h
+.\object\selfcheck.o: ..\user\inc\sleepctrl.h
 .\object\selfcheck.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\selfcheck.o: ..\user\inc\flashctrl.h
 .\object\selfcheck.o: ..\user\inc\encrypt.h

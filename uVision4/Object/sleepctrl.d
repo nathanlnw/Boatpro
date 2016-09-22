@@ -55,9 +55,9 @@
 .\object\sleepctrl.o: ..\driver\inc\gps.h
 .\object\sleepctrl.o: ..\ptl\inc\Slot.h
 .\object\sleepctrl.o: ..\ptl\inc\TDMA.h
+.\object\sleepctrl.o: ..\ptl\inc\AISMsgModule.h
 .\object\sleepctrl.o: ..\driver\inc\RxTx.h
 .\object\sleepctrl.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\sleepctrl.o: ..\ptl\inc\AISMsgModule.h
 .\object\sleepctrl.o: ..\ptl\inc\AisInfo.h
 .\object\sleepctrl.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\sleepctrl.o: ..\ptl\inc\AIS_MsgModu.h
@@ -76,6 +76,10 @@
 .\object\sleepctrl.o: ..\user\inc\uartmsg.h
 .\object\sleepctrl.o: ..\driver\inc\wdg.h
 .\object\sleepctrl.o: ..\driver\inc\SPI.h
+.\object\sleepctrl.o: ..\user\inc\UbloxProtocol.h
+.\object\sleepctrl.o: ..\driver\inc\usart.h
+.\object\sleepctrl.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\sleepctrl.o: ..\interface_layer\Include\parastorage.h
 .\object\sleepctrl.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\sleepctrl.o: ..\user\inc\flashctrl.h
 .\object\sleepctrl.o: ..\user\inc\encrypt.h
@@ -89,4 +93,3 @@
 .\object\sleepctrl.o: ..\user\inc\sotdma.h
 .\object\sleepctrl.o: ..\interface_layer\Include\gmskmod.h
 .\object\sleepctrl.o: ..\interface_layer\Include\math_rand.h
-.\object\sleepctrl.o: ..\interface_layer\Include\parastorage.h

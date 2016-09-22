@@ -31,11 +31,8 @@ assembling cortexm3_macro.s...
 assembling stm32f10x_startup.s...
 compiling batteryscan.c...
 compiling stm32f10x_target.c...
-compiling keyscan.c...
 compiling stm32f10x_it.c...
-..\StartUp\src\stm32f10x_it.c(38): warning:  #1295-D: Deprecated declaration wait - give arg types
-  void wait();
-..\StartUp\src\stm32f10x_it.c: 1 warning, 0 errors
+compiling keyscan.c...
 compiling ioctrl.c...
 compiling systemtick.c...
 compiling RxTxCtrl.c...
@@ -62,123 +59,20 @@ compiling AISDigitalInterface.c...
                           if (ulTemp < AIS_DI_MSG_SEQ_MIN
 ..\ptl\src\AISDigitalInterface.c(1335): warning:  #186-D: pointless comparison of unsigned integer with zero
                       if (ulTemp < AIS_DI_BBM_CHN_MIN
-..\ptl\src\AISDigitalInterface.c: 5 warnings, 0 errors
+..\ptl\src\AISDigitalInterface.c(1454): warning:  #186-D: pointless comparison of unsigned integer with zero
+                      if (ulTemp < AIS_DI_BBM_FILL_BIT_MIN
+..\ptl\src\AISDigitalInterface.c: 6 warnings, 0 errors
 compiling Slot.c...
 compiling AISMsgModule.c...
 compiling TDMA.c...
-..\ptl\src\TDMA.c(179): warning:  #177-D: function "SOTDMA_SotdmaCtrlStructCopy" was declared but never referenced
-  static void SOTDMA_SotdmaCtrlStructCopy(SotdmaCtrlStruct *pSotdmaCtrlDst,
-..\ptl\src\TDMA.c: 1 warning, 0 errors
 compiling DeviceInfo.c...
 compiling AisInfo.c...
 compiling AisPtlMain.c...
-..\ptl\src\AisPtlMain.c(38): warning:  #223-D: function "UpdateAisDynamicInfo" declared implicitly
-      UpdateAisDynamicInfo();
-..\ptl\src\AisPtlMain.c(41): warning:  #223-D: function "UpdateDynamicReportInterval" declared implicitly
-      UpdateDynamicReportInterval();
-..\ptl\src\AisPtlMain.c(44): warning:  #223-D: function "DLS_InstPacketProbeProcess" declared implicitly
-      DLS_InstPacketProbeProcess();
-..\ptl\src\AisPtlMain.c(47): warning:  #223-D: function "MSGMAN_MsgRxProcess" declared implicitly
-      MSGMAN_MsgRxProcess();
-..\ptl\src\AisPtlMain.c(50): warning:  #223-D: function "MSGMAN_MsgTxProcess" declared implicitly
-      MSGMAN_MsgTxProcess();
-..\ptl\src\AisPtlMain.c(53): warning:  #223-D: function "LME_BinMsgPort" declared implicitly
-      LME_BinMsgPort();
-..\ptl\src\AisPtlMain.c(56): warning:  #223-D: function "AISDI_SentencePrint" declared implicitly
-      AISDI_SentencePrint();
-..\ptl\src\AisPtlMain.c(59): warning:  #223-D: function "TRCTRL_TransmitProcess" declared implicitly
-      TRCTRL_TransmitProcess();               
-..\ptl\src\AisPtlMain.c: 8 warnings, 0 errors
-compiling adjust.c...
-..\user\src\adjust.c(319): warning:  #223-D: function "CalcTimPhaseAdjust" declared implicitly
-  			CalcTimPhaseAdjust(TimAdjustPara.TimDiffSum, TimAdjustPara.PeriodCount); //lq ????RTC时?拥?偏?畈?偿
-..\user\src\adjust.c(113): warning:  #177-D: variable "Phase1Adjust" was declared but never referenced
-  	S16 Phase1Adjust;//时隙每1?氲???值                                          //lq 实????为省??模式??????状态??偏?畹牡?????准备
-..\user\src\adjust.c(114): warning:  #177-D: variable "Phase10Adjust" was declared but never referenced
-  	S16 Phase10Adjust;//时隙每10?氲???值
-..\user\src\adjust.c(115): warning:  #177-D: variable "Phase100Adjust" was declared but never referenced
-  	S16 Phase100Adjust;//时隙每100?氲???值
-..\user\src\adjust.c: 4 warnings, 0 errors
 compiling batteryctrl.c...
+compiling adjust.c...
 compiling MsgManager.c...
-..\ptl\src\MsgManager.c(593): warning:  #111-D: statement is unreachable
-          debug_printf("$[%6d:%4d] %s : Msg static list is full!\r\n",
-..\ptl\src\MsgManager.c(1118): warning:  #223-D: function "AISDI_ABMIsValid" declared implicitly
-      if (AISDI_ABMIsValid(&ABMPara) == TRUE)
-..\ptl\src\MsgManager.c(1122): warning:  #223-D: function "AISMSG_ConvertToMsgType" declared implicitly
-          if (AISMSG_ConvertToMsgType(ABMPara.MsgID, 0) == AISMsgType6)
-..\ptl\src\MsgManager.c(1133): warning:  #223-D: function "AISDI_BBMIsValid" declared implicitly
-      if (AISDI_BBMIsValid(&BBMPara) == TRUE)
-..\ptl\src\MsgManager.c(1137): warning:  #223-D: function "AISMSG_ConvertToMsgType" declared implicitly
-          if (AISMSG_ConvertToMsgType(BBMPara.MsgID, 0) == AISMsgType8)
-..\ptl\src\MsgManager.c(1210): warning:  #223-D: function "InitMsg3" declared implicitly
-      InitMsg3(commState);
-..\ptl\src\MsgManager.c(1256): warning:  #223-D: function "InitMsg5" declared implicitly
-      InitMsg5();
-..\ptl\src\MsgManager.c(1302): warning:  #223-D: function "InitMsg6" declared implicitly
-      InitMsg6();
-..\ptl\src\MsgManager.c(1348): warning:  #223-D: function "InitMsg6Test" declared implicitly
-      InitMsg6Test();
-..\ptl\src\MsgManager.c(1398): warning:  #223-D: function "InitMsg7" declared implicitly
-      InitMsg7(ackType, pDestinationID, pSequenceNumber);
-..\ptl\src\MsgManager.c(1444): warning:  #223-D: function "InitMsg8" declared implicitly
-      InitMsg8();
-..\ptl\src\MsgManager.c(1490): warning:  #223-D: function "InitMsg12" declared implicitly
-      InitMsg12();
-..\ptl\src\MsgManager.c(1540): warning:  #223-D: function "InitMsg13" declared implicitly
-      InitMsg13(ackType, pDestinationID, pSequenceNumber);
-..\ptl\src\MsgManager.c(1687): warning:  #223-D: function "InitMsg18Test" declared implicitly
-      InitMsg18Test();
-..\ptl\src\MsgManager.c(1783): warning:  #223-D: function "InitMsg24A" declared implicitly
-      InitMsg24A();
-..\ptl\src\MsgManager.c(1829): warning:  #223-D: function "InitMsg24B" declared implicitly
-      InitMsg24B();
-..\ptl\src\MsgManager.c(1871): warning:  #223-D: function "TDMA_InstSchedule" declared implicitly
-      TDMA_InstSchedule();
-..\ptl\src\MsgManager.c(1900): warning:  #223-D: function "TDMA_SetSlotState" declared implicitly
-                  TDMA_SetSlotState(msgCell.Channel, AIS_MSG_COMMSTATE_SOTDMA,
-..\ptl\src\MsgManager.c(1936): warning:  #223-D: function "AISINFO_InstRecStationQuantityIncrease" declared implicitly
-                  AISINFO_InstRecStationQuantityIncrease();
-..\ptl\src\MsgManager.c(57): warning:  #177-D: function "MSGMAN_MsgStaticListElemStructInit" was declared but never referenced
-  static void MSGMAN_MsgStaticListElemStructInit(
-..\ptl\src\MsgManager.c(119): warning:  #177-D: function "MSGMAN_AisAckCellStructCopy" was declared but never referenced
-  static void MSGMAN_AisAckCellStructCopy(AisAckCellStruct *pDst,
-..\ptl\src\MsgManager.c: 21 warnings, 0 errors
-compiling common.c...
 compiling initial.c...
-..\user\src\initial.c(184): warning:  #223-D: function "DEVINFO_ModuleInit" declared implicitly
-      DEVINFO_ModuleInit();
-..\user\src\initial.c(185): warning:  #223-D: function "AISINFO_ModuleInit" declared implicitly
-      AISINFO_ModuleInit();	
-..\user\src\initial.c(215): warning:  #223-D: function "InitRtcParaStruct" declared implicitly
-      InitRtcParaStruct(&struRtcPara);
-..\user\src\initial.c(216): warning:  #223-D: function "InitPowerStru" declared implicitly
-      InitPowerStru();                                                            //lq 按??状态??始化
-..\user\src\initial.c(219): warning:  #223-D: function "UBX_ModuleInit" declared implicitly
-      UBX_ModuleInit();
-..\user\src\initial.c(222): warning:  #223-D: function "InitRtcTimPhaseStruct" declared implicitly
-      InitRtcTimPhaseStruct();
-..\user\src\initial.c(224): warning:  #223-D: function "RF1_RFInstanceInit" declared implicitly
-      RF1_RFInstanceInit();
-..\user\src\initial.c(225): warning:  #223-D: function "PHY_ModuleInit" declared implicitly
-      PHY_ModuleInit();
-..\user\src\initial.c(226): warning:  #223-D: function "DLS_ModuleInit" declared implicitly
-      DLS_ModuleInit();
-..\user\src\initial.c(227): warning:  #223-D: function "LME_ModuleInit" declared implicitly
-      LME_ModuleInit();    
-..\user\src\initial.c(228): warning:  #223-D: function "TRCTRL_ModuleInit" declared implicitly
-      TRCTRL_ModuleInit();    	
-..\user\src\initial.c(229): warning:  #223-D: function "AISDI_ModuleInit" declared implicitly
-      AISDI_ModuleInit();
-..\user\src\initial.c(231): warning:  #223-D: function "TDMA_ModuleInit" declared implicitly
-      TDMA_ModuleInit();
-..\user\src\initial.c(232): warning:  #223-D: function "InitRxTestStruct" declared implicitly
-      InitRxTestStruct(&RxTestInstance);
-..\user\src\initial.c(233): warning:  #223-D: function "TASK_ModuleInit" declared implicitly
-      TASK_ModuleInit();
-..\user\src\initial.c(308): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\user\src\initial.c: 16 warnings, 0 errors
+compiling common.c...
 compiling ledctrl.c...
 ..\user\src\ledctrl.c(569): warning:  #186-D: pointless comparison of unsigned integer with zero
   			if ((LEDCtrlPara.LedYellowPara.LEDPriority >= 
@@ -189,227 +83,27 @@ ED_CTRL_PRIORITY0)
 ..\user\src\ledctrl.c(656): warning:  #186-D: pointless comparison of unsigned integer with zero
   			if ((LEDCtrlPara.LedRedPara.LEDPriority >= 
 ED_CTRL_PRIORITY0)
-..\user\src\ledctrl.c(1066): warning:  #550-D: variable "ucTempRed" was set but never used
-  	U8 ucTempRed;
-..\user\src\ledctrl.c: 4 warnings, 0 errors
+..\user\src\ledctrl.c: 3 warnings, 0 errors
 compiling gpsctrl.c...
-..\user\src\gpsctrl.c(352): warning:  #177-D: variable "sTemp" was declared but never referenced
-  	S32 sTemp;
-..\user\src\gpsctrl.c(2244): warning:  #223-D: function "TIME_DateTimeOffset28Days" declared implicitly
-  				TIME_DateTimeOffset28Days(&dateTime, -GetFrameNum());     //lq 定位时??时?浼?去开???????诘?时?浼涓?
-..\user\src\gpsctrl.c(2258): warning:  #223-D: function "Para_OpenTimeSave" declared implicitly
-  				Para_OpenTimeSave(ucTemp, DevDynamicPara.OpenCloseTimeIndex);
-..\user\src\gpsctrl.c(2259): warning:  #223-D: function "Para_CloseTimeSave" declared implicitly
-  				Para_CloseTimeSave(ucTemp, DevDynamicPara.OpenCloseTimeIndex);
-..\user\src\gpsctrl.c(2260): warning:  #223-D: function "TASK_TaskTimEnable" declared implicitly
-  				TASK_TaskTimEnable(&RecordCloseTimeTask,
-..\user\src\gpsctrl.c(4685): warning:  #223-D: function "SLFCHK_GetCheckSelectValue" declared implicitly
-  					ulTemp = SLFCHK_GetCheckSelectValue(); 
-..\user\src\gpsctrl.c: 6 warnings, 0 errors
 compiling powerdown.c...
-..\user\src\powerdown.c(329): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\user\src\powerdown.c: 1 warning, 0 errors
 compiling main.c...
-..\user\src\main.c(105): warning:  #223-D: function "UBX_GetCOMMMess" declared implicitly
-              UBX_GetCOMMMess(COMM2);
-..\user\src\main.c(106): warning:  #223-D: function "UBX1_UBXPrtCommCtrlProcess" declared implicitly
-              UBX1_UBXPrtCommCtrlProcess();
-..\user\src\main.c(110): warning:  #223-D: function "AisMain" declared implicitly
-              AisMain();
-..\user\src\main.c(124): warning:  #223-D: function "TASK_TaskProcess" declared implicitly
-              TASK_TaskProcess();
-..\user\src\main.c(141): warning:  #223-D: function "TRCTRL_InstTxTestCtrl" declared implicitly
-                  TRCTRL_InstTxTestCtrl();               
-..\user\src\main.c(149): warning:  #223-D: function "DLS_InstPacketProbeProcess" declared implicitly
-                  DLS_InstPacketProbeProcess();
-..\user\src\main.c(150): warning:  #223-D: function "LME_InstBinMsgRxFifoPortIn" declared implicitly
-                  LME_InstBinMsgRxFifoPortIn();
-..\user\src\main.c(163): warning:  #223-D: function "TRCTRL_TransmitProcess" declared implicitly
-                  TRCTRL_TransmitProcess();
-..\user\src\main.c(164): warning:  #223-D: function "DLS_InstPacketProbeProcess" declared implicitly
-                  DLS_InstPacketProbeProcess();
-..\user\src\main.c(165): warning:  #223-D: function "LME_BinMsgPort" declared implicitly
-                  LME_BinMsgPort();
-..\user\src\main.c(166): warning:  #223-D: function "SLFCHK_InstSelfCheckProcess" declared implicitly
-                  SLFCHK_InstSelfCheckProcess();
-..\user\src\main.c(178): warning:  #223-D: function "SI446X_GetRssi" declared implicitly
-  	                    sprintf((char*)ucTempBuf, "%d", SI446X_GetRssi(SI446X_CHIP_B));
-..\user\src\main.c: 12 warnings, 0 errors
 compiling tempersensor.c...
 compiling powerup.c...
-..\user\src\powerup.c(1032): warning:  #223-D: function "Target_SysClock_Init" declared implicitly
-      Target_SysClock_Init();
-..\user\src\powerup.c(1056): warning:  #223-D: function "Target_Periph_Init" declared implicitly
-          Target_Periph_Init();
-..\user\src\powerup.c(1081): warning:  #223-D: function "Para_OpenTimeSave" declared implicitly
-          Para_OpenTimeSave(PARA_TIME_OPEN_DEFAULT, DevDynamicPara.OpenCloseTimeIndex);
-..\user\src\powerup.c(1082): warning:  #223-D: function "Para_CloseTimeSave" declared implicitly
-          Para_CloseTimeSave(PARA_TIME_CLOSE_DEFAULT, DevDynamicPara.OpenCloseTimeIndex);
 ..\user\src\powerup.c(1090): warning:  #186-D: pointless comparison of unsigned integer with zero
           if (usTemp1 < 
 ARA_WORKTIME_FLOOR)
-..\user\src\powerup.c(1097): warning:  #69-D: integer conversion resulted in truncation
-              usTemp1 = 
-ARA_WORKTIME_CEIL;
-..\user\src\powerup.c(1188): warning:  #223-D: function "Target_Periph_Init" declared implicitly
-              Target_Periph_Init();
-..\user\src\powerup.c(1208): warning:  #223-D: function "Para_OpenTimeSave" declared implicitly
-              Para_OpenTimeSave(PARA_TIME_OPEN_DEFAULT, DevDynamicPara.OpenCloseTimeIndex);
-..\user\src\powerup.c(1209): warning:  #223-D: function "Para_CloseTimeSave" declared implicitly
-              Para_CloseTimeSave(PARA_TIME_CLOSE_DEFAULT, DevDynamicPara.OpenCloseTimeIndex);
 ..\user\src\powerup.c(1217): warning:  #186-D: pointless comparison of unsigned integer with zero
               if (usTemp1 < 
 ARA_WORKTIME_FLOOR)
-..\user\src\powerup.c(1224): warning:  #69-D: integer conversion resulted in truncation
-                  usTemp1 = 
-ARA_WORKTIME_CEIL;
-..\user\src\powerup.c(1287): warning:  #223-D: function "Target_Periph_Init" declared implicitly
-              Target_Periph_Init();//??始化 arm                                                  //lq ????ARM
-..\user\src\powerup.c(1383): warning:  #223-D: function "Target_Periph_Init" declared implicitly
-          Target_Periph_Init();
-..\user\src\powerup.c(1408): warning:  #223-D: function "Para_OpenTimeSave" declared implicitly
-          Para_OpenTimeSave(PARA_TIME_OPEN_DEFAULT, DevDynamicPara.OpenCloseTimeIndex);
-..\user\src\powerup.c(1409): warning:  #223-D: function "Para_CloseTimeSave" declared implicitly
-          Para_CloseTimeSave(PARA_TIME_CLOSE_DEFAULT, DevDynamicPara.OpenCloseTimeIndex);
 ..\user\src\powerup.c(1417): warning:  #186-D: pointless comparison of unsigned integer with zero
           if (usTemp1 < 
 ARA_WORKTIME_FLOOR)
-..\user\src\powerup.c(1424): warning:  #69-D: integer conversion resulted in truncation
-              usTemp1 = 
-ARA_WORKTIME_CEIL;
-..\user\src\powerup.c(1016): warning:  #177-D: variable "ucPowerKey" was declared but never referenced
-  	U8 ucPowerKey;
-..\user\src\powerup.c(1017): warning:  #177-D: variable "ucSOSKey" was declared but never referenced
-  	U8 ucSOSKey;
-..\user\src\powerup.c(1018): warning:  #177-D: variable "i" was declared but never referenced
-  	U8 i;
-..\user\src\powerup.c(1021): warning:  #550-D: variable "PowerEnableCount" was set but never used
-  	U16 PowerEnableCount;
-..\user\src\powerup.c(1022): warning:  #550-D: variable "SosEnableCount" was set but never used
-  	U16 SosEnableCount;
-..\user\src\powerup.c(1025): warning:  #177-D: variable "PowerKeyEnableValue" was declared but never referenced
-  	U16 PowerKeyEnableValue;//power开?醇?????值
-..\user\src\powerup.c(1026): warning:  #177-D: variable "SosKeyEnableValue" was declared but never referenced
-  	U16 SosKeyEnableValue;//sos开?醇?????值
-..\user\src\powerup.c: 24 warnings, 0 errors
+..\user\src\powerup.c: 3 warnings, 0 errors
 compiling sleepctrl.c...
-..\user\src\sleepctrl.c(627): warning:  #177-D: variable "slCurrSlotSum" was declared but never referenced
-      S32 slCurrSlotSum;
-..\user\src\sleepctrl.c(628): warning:  #177-D: variable "slGpsOnslot" was declared but never referenced
-      S32 slGpsOnslot;
-..\user\src\sleepctrl.c(688): warning:  #223-D: function "GetGpsOnTim" declared implicitly
-          slGpsWakeupSlot = GetGpsOnTim();    
-..\user\src\sleepctrl.c(735): warning:  #223-D: function "GetGpsOnTim" declared implicitly
-          slGpsWakeupSlot = GetGpsOnTim();    
-..\user\src\sleepctrl.c: 4 warnings, 0 errors
-compiling UbloxProtocol.c...
-..\user\src\UbloxProtocol.c(399): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *"
-  		Check = UBX_UartMsgCheckSum((
-..\user\src\UbloxProtocol.c(405): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-  	UBX_UartTxUbxMsg(UartDebugBuff, Index);
-..\user\src\UbloxProtocol.c(450): warning:  #223-D: function "SetTimePeriodProcess" declared implicitly
-  				pUBXPrtCommStruct->TimeCnt = SetTimePeriodProcess(pUBXPrtCommStruct->TimePeriod);
-..\user\src\UbloxProtocol.c(459): warning:  #223-D: function "GetLocalClockTickProcess" declared implicitly
-  			if (pUBXPrtCommStruct->TimeCnt == GetLocalClockTickProcess())
-..\user\src\UbloxProtocol.c(474): warning:  #223-D: function "SetTimePeriodProcess" declared implicitly
-  				pUBXPrtCommStruct->TimeCnt = SetTimePeriodProcess(pUBXPrtCommStruct->TimePeriod);
-..\user\src\UbloxProtocol.c(484): warning:  #223-D: function "GetLocalClockTickProcess" declared implicitly
-  			if (pUBXPrtCommStruct->TimeCnt == GetLocalClockTickProcess()
-..\user\src\UbloxProtocol.c(508): warning:  #223-D: function "debug_printf" declared implicitly
-  					debug_printf("UBX Msg %02X %02X repeat : %d\r\n", 
-..\user\src\UbloxProtocol.c(695): warning:  #223-D: function "debug_printf" declared implicitly
-                      debug_printf("UBX Msg %02X %02X : ACK\r\n", pDat[4], pDat[5]);
-..\user\src\UbloxProtocol.c(701): warning:  #223-D: function "debug_printf" declared implicitly
-                      debug_printf("UBX Msg %02X %02X : NAK\r\n", pDat[4], pDat[5]);
-..\user\src\UbloxProtocol.c(709): warning:  #940-D: missing return statement at end of non-void function "UBX_MsgDealProcess"
-  }
-..\user\src\UbloxProtocol.c(734): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *"
-              CheckSum = UBX_UartMsgCheckSum(&pUartRxFIFO->RxFIFO[pUartRxFIFO->RxFIFOOutput][1], Len - 2);
-..\user\src\UbloxProtocol.c(840): warning:  #223-D: function "ResetGpsPulseEn" declared implicitly
-      ResetGpsPulseEn();
-..\user\src\UbloxProtocol.c: 12 warnings, 0 errors
 compiling testing.c...
-..\user\src\testing.c(149): warning:  #223-D: function "TRCTRL_InstTransceiverTestStructInit" declared implicitly
-      TRCTRL_InstTransceiverTestStructInit(transceiverType);
-..\user\src\testing.c(151): warning:  #223-D: function "TRCTRL_InstTxTestSetTxSignalType" declared implicitly
-      TRCTRL_InstTxTestSetTxSignalType(transceiverType,
-..\user\src\testing.c(154): warning:  #223-D: function "TRCTRL_InstTxTestSetTxChannel" declared implicitly
-      TRCTRL_InstTxTestSetTxChannel(transceiverType,
-..\user\src\testing.c(157): warning:  #223-D: function "TRCTRL_InstSetTxTestFlg" declared implicitly
-      TRCTRL_InstSetTxTestFlg(transceiverType); 
-..\user\src\testing.c(189): warning:  #223-D: function "SI446X_StateTo" declared implicitly
-      SI446X_StateTo(SI446X_MODE_IDLE, cs);
-..\user\src\testing.c(190): warning:  #223-D: function "TRCTRL_InstTransceiverTestStructInit" declared implicitly
-      TRCTRL_InstTransceiverTestStructInit(transceiverType);
-..\user\src\testing.c(648): warning:  #177-D: variable "ucPowerKeyVal" was declared but never referenced
-  	U8  ucPowerKeyVal;
-..\user\src\testing.c(1106): warning:  #177-D: variable "ucPowerKeyVal" was declared but never referenced
-  	U8 ucPowerKeyVal;
-..\user\src\testing.c: 8 warnings, 0 errors
+compiling UbloxProtocol.c...
 compiling TransceiverCtrl.c...
-..\user\src\TransceiverCtrl.c(163): warning:  #223-D: function "DLS_FrameBuildTest" declared implicitly
-          DLS_FrameBuildTest(&pBuff[0], pTransceiverTestStruct->TxBuffer);
-..\user\src\TransceiverCtrl.c(176): warning:  #223-D: function "DLS_FrameBuildTest" declared implicitly
-          DLS_FrameBuildTest(&pBuff[0], pTransceiverTestStruct->TxBuffer);
-..\user\src\TransceiverCtrl.c(189): warning:  #223-D: function "DLS_FrameBuildTest" declared implicitly
-          DLS_FrameBuildTest(&pBuff[0], pTransceiverTestStruct->TxBuffer);
-..\user\src\TransceiverCtrl.c(239): warning:  #223-D: function "SI446X_TxCfg" declared implicitly
-          SI446X_TxCfg(cs, pTransceiverTestStruct->TxChannel);
-..\user\src\TransceiverCtrl.c(243): warning:  #223-D: function "SI446X_TxCfg" declared implicitly
-          SI446X_TxCfg(cs, pTransceiverTestStruct->TxChannel);
-..\user\src\TransceiverCtrl.c(247): warning:  #223-D: function "SI446X_TxCfg" declared implicitly
-          SI446X_TxCfg(cs, pTransceiverTestStruct->TxChannel);
-..\user\src\TransceiverCtrl.c(251): warning:  #223-D: function "SI446X_CfgCwTx" declared implicitly
-          SI446X_CfgCwTx(cs, pTransceiverTestStruct->TxChannel);
-..\user\src\TransceiverCtrl.c(255): warning:  #223-D: function "SI446X_CfgPN9Tx" declared implicitly
-          SI446X_CfgPN9Tx(cs, pTransceiverTestStruct->TxChannel);                            
-..\user\src\TransceiverCtrl.c(259): warning:  #223-D: function "SI446X_TxCfg" declared implicitly
-          SI446X_TxCfg(cs, pTransceiverTestStruct->TxChannel);
-..\user\src\TransceiverCtrl.c(263): warning:  #223-D: function "SI446X_TxCfg" declared implicitly
-          SI446X_TxCfg(cs, pTransceiverTestStruct->TxChannel);
-..\user\src\TransceiverCtrl.c(689): warning:  #223-D: function "SI446X_StateTo" declared implicitly
-                          SI446X_StateTo(SI446X_MODE_IDLE, SI446X_CHIP_A);
-..\user\src\TransceiverCtrl.c(707): warning:  #223-D: function "SI446X_StateTo" declared implicitly
-                      SI446X_StateTo(SI446X_MODE_TX, SI446X_CHIP_A);
-..\user\src\TransceiverCtrl.c(811): warning:  #223-D: function "DLS_InstFrameTxFifoDeque" declared implicitly
-              if (DLS_InstFrameTxFifoDeque(pFrameTxCell) == TRUE)
-..\user\src\TransceiverCtrl.c(859): warning:  #223-D: function "SI446X_TxCfg" declared implicitly
-                  SI446X_TxCfg(SI446X_CHIP_A, pTransceiverTxCtrlStruct->TxChannel);                     
-..\user\src\TransceiverCtrl.c(922): warning:  #223-D: function "SI446X_RxCfg" declared implicitly
-                  SI446X_RxCfg(SI446X_CHIP_A, ENUM_AIS_CHANNEL_A);
-..\user\src\TransceiverCtrl.c(942): warning:  #223-D: function "SI446X_RxCfg" declared implicitly
-              SI446X_RxCfg(SI446X_CHIP_A, ENUM_AIS_CHANNEL_A);
-..\user\src\TransceiverCtrl.c(791): warning:  #550-D: variable "currPhase" was set but never used
-      S16 currPhase;
-..\user\src\TransceiverCtrl.c: 17 warnings, 0 errors
 compiling uartmsg.c...
-..\user\src\uartmsg.c(365): warning:  #177-D: variable "pEnd" was declared but never referenced
-      char *pEnd;
-..\user\src\uartmsg.c(476): warning:  #177-D: variable "pEnd" was declared but never referenced
-      char *pEnd;
-..\user\src\uartmsg.c(611): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
-          sprintf(pOut, "%0*d", 2, ulTemp);
-..\user\src\uartmsg.c(618): warning:  #181-D: argument is incompatible with corresponding format string conversion
-              sprintf(TempBuf, "%0*.*Lf", 3 + Precision, Precision, lfTemp);        
-..\user\src\uartmsg.c(620): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
-          strcat(pOut, TempBuf);
-..\user\src\uartmsg.c(589): warning:  #177-D: variable "RetBuf" was declared but never referenced
-      char RetBuf[30];
-..\user\src\uartmsg.c(661): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
-          sprintf(pOut, "%0*d", 3, ulTemp);
-..\user\src\uartmsg.c(668): warning:  #181-D: argument is incompatible with corresponding format string conversion
-              sprintf(TempBuf, "%0*.*Lf", 3 + Precision, Precision, lfTemp);        
-..\user\src\uartmsg.c(670): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
-          strcat(pOut, TempBuf);
-..\user\src\uartmsg.c(639): warning:  #177-D: variable "RetBuf" was declared but never referenced
-      char RetBuf[30];
-..\user\src\uartmsg.c(816): warning:  #223-D: function "AISDI_SentenceParse" declared implicitly
-      if (AISDI_SentenceParse(pDat, uiLen) == FALSE)
-..\user\src\uartmsg.c(979): warning:  #223-D: function "DEVINFO_InstResetGpsOutputCnt" declared implicitly
-                      DEVINFO_InstResetGpsOutputCnt();                
-..\user\src\uartmsg.c(985): warning:  #223-D: function "DEVINFO_InstResetGpsOutputCnt" declared implicitly
-                      DEVINFO_InstResetGpsOutputCnt();                
 ..\user\src\uartmsg.c(1020): warning:  #186-D: pointless comparison of unsigned integer with zero
                           if (ulTemp < DEV_INFO_GPS_OUTPUT_INTERVAL_MIN
 ..\user\src\uartmsg.c(1056): warning:  #186-D: pointless comparison of unsigned integer with zero
@@ -424,299 +118,82 @@ compiling uartmsg.c...
                           if (ulTemp < DEV_INFO_GPS_OUTPUT_INTERVAL_MIN
 ..\user\src\uartmsg.c(1236): warning:  #186-D: pointless comparison of unsigned integer with zero
                           if (ulTemp < DEV_INFO_GPS_OUTPUT_INTERVAL_MIN
-..\user\src\uartmsg.c(1249): warning:  #223-D: function "DEVINFO_InstResetGpsOutputCnt" declared implicitly
-                  DEVINFO_InstResetGpsOutputCnt();                
 ..\user\src\uartmsg.c(1382): warning:  #186-D: pointless comparison of unsigned integer with zero
                       if (ulTemp < STM32_FLASH_AIS_CLASS_FLOOR
-..\user\src\uartmsg.c(1463): warning:  #186-D: pointless comparison of unsigned integer with zero
-                                  if ((ulTemp >= 0) && (ulTemp <= 8))
-..\user\src\uartmsg.c(1502): warning:  #186-D: pointless comparison of unsigned integer with zero
-                                  if ((ulTemp >= 0) && (ulTemp <= 8))
-..\user\src\uartmsg.c(1590): warning:  #223-D: function "SI446X_SetSi446xPaPwrLvl" declared implicitly
-                          SI446X_SetSi446xPaPwrLvl(ulTemp1, SI446X_CHIP_A);
-..\user\src\uartmsg.c(1594): warning:  #223-D: function "SI446X_SetSi446xPaPwrLvl" declared implicitly
-                          SI446X_SetSi446xPaPwrLvl(ulTemp1, SI446X_CHIP_B);
-..\user\src\uartmsg.c(1633): warning:  #186-D: pointless comparison of unsigned integer with zero
-                      if (ulTemp < 0
-..\user\src\uartmsg.c(1789): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-  					WriteCry(ucTemp,chTemp);				 	
-..\user\src\uartmsg.c(1903): warning:  #223-D: function "TEST_TxTestInit" declared implicitly
-                  TEST_TxTestInit(channel, TRCTRL_TEST_TX_SIGNAL_CW,
-..\user\src\uartmsg.c(1936): warning:  #223-D: function "TEST_TxTestInit" declared implicitly
-                      TEST_TxTestInit(channel, TRCTRL_TEST_TX_SIGNAL_NUM3,
-..\user\src\uartmsg.c(1947): warning:  #223-D: function "InitRxTestStruct" declared implicitly
-                      InitRxTestStruct(&RxTestInstance);
-..\user\src\uartmsg.c(2111): warning:  #223-D: function "TEST_TxTestStop" declared implicitly
-  				TEST_TxTestStop(TransceiverTypeA);
-..\user\src\uartmsg.c(2139): warning:  #223-D: function "TEST_TxTestInit" declared implicitly
-                  TEST_TxTestInit(channel, TRCTRL_TEST_TX_SIGNAL_NUM2,
-..\user\src\uartmsg.c(2181): warning:  #223-D: function "TEST_TxTestInit" declared implicitly
-                  TEST_TxTestInit(channel, TRCTRL_TEST_TX_SIGNAL_NUM1,
-..\user\src\uartmsg.c(2242): warning:  #186-D: pointless comparison of unsigned integer with zero
+..\user\src\uartmsg.c(2245): warning:  #186-D: pointless comparison of unsigned integer with zero
   					if (DevStaticPara.GridVoltAdj < STM32_FLASH_RF_VOLT_ADJUST_FLOOR 
-..\user\src\uartmsg.c(2320): warning:  #223-D: function "SLFCHK_InstSelfCheckStructInit" declared implicitly
-  				SLFCHK_InstSelfCheckStructInit();
-..\user\src\uartmsg.c(2321): warning:  #223-D: function "SLFCHK_InstCfgCheckSelect" declared implicitly
-                  SLFCHK_InstCfgCheckSelect(ulTemp);
-..\user\src\uartmsg.c(2322): warning:  #223-D: function "SLFCHK_InstSelfCheckStart" declared implicitly
-                  SLFCHK_InstSelfCheckStart();
-..\user\src\uartmsg.c(2499): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *restrict"
-  				sprintf(chTemp, "%.1f", strtod(ucTempBuf, &pEnd) / 10.0);
-..\user\src\uartmsg.c(2893): warning:  #223-D: function "SI446X_GetRssi" declared implicitly
-                              sprintf((char*)ucTempBuf, "%d", SI446X_GetRssi(SI446X_CHIP_A));
-..\user\src\uartmsg.c(2904): warning:  #223-D: function "SI446X_GetRssi" declared implicitly
-                              sprintf((char*)ucTempBuf, "%d", SI446X_GetRssi(SI446X_CHIP_B));
-..\user\src\uartmsg.c(2948): warning:  #223-D: function "SI446X_REQUEST_DEVICE_STATE" declared implicitly
-                              SI446X_REQUEST_DEVICE_STATE(buffer, SI446X_CHIP_A);
-..\user\src\uartmsg.c(2960): warning:  #223-D: function "SI446X_REQUEST_DEVICE_STATE" declared implicitly
-                              SI446X_REQUEST_DEVICE_STATE(buffer, SI446X_CHIP_B);
-..\user\src\uartmsg.c(3008): warning:  #223-D: function "SI446X_GetSi446xPaPwrLvl" declared implicitly
-                          ulTemp1 = SI446X_GetSi446xPaPwrLvl(SI446X_CHIP_A);
-..\user\src\uartmsg.c(3012): warning:  #223-D: function "SI446X_GetSi446xPaPwrLvl" declared implicitly
-                          ulTemp1 = SI446X_GetSi446xPaPwrLvl(SI446X_CHIP_B);                    
-..\user\src\uartmsg.c(3225): warning:  #186-D: pointless comparison of unsigned integer with zero
+..\user\src\uartmsg.c(3228): warning:  #186-D: pointless comparison of unsigned integer with zero
                       if (ulTemp < STM32_FLASH_SHIPA_FLOOR
-..\user\src\uartmsg.c(3267): warning:  #186-D: pointless comparison of unsigned integer with zero
+..\user\src\uartmsg.c(3270): warning:  #186-D: pointless comparison of unsigned integer with zero
                       if (ulTemp < STM32_FLASH_SHIPB_FLOOR
-..\user\src\uartmsg.c(3309): warning:  #186-D: pointless comparison of unsigned integer with zero
+..\user\src\uartmsg.c(3312): warning:  #186-D: pointless comparison of unsigned integer with zero
                       if (ulTemp < STM32_FLASH_SHIPC_FLOOR
-..\user\src\uartmsg.c(3351): warning:  #186-D: pointless comparison of unsigned integer with zero
+..\user\src\uartmsg.c(3354): warning:  #186-D: pointless comparison of unsigned integer with zero
                       if (ulTemp < STM32_FLASH_SHIPD_FLOOR
-..\user\src\uartmsg.c(3393): warning:  #186-D: pointless comparison of unsigned integer with zero
+..\user\src\uartmsg.c(3396): warning:  #186-D: pointless comparison of unsigned integer with zero
                       if (ulTemp < STM32_FLASH_DTE_FLOOR
-..\user\src\uartmsg.c(3437): warning:  #186-D: pointless comparison of unsigned integer with zero
+..\user\src\uartmsg.c(3440): warning:  #186-D: pointless comparison of unsigned integer with zero
                       if (ulTemp < STM32_FLASH_SHIP_TYPE_FLOOR
-..\user\src\uartmsg.c(3472): warning:  #186-D: pointless comparison of unsigned integer with zero
+..\user\src\uartmsg.c(3475): warning:  #186-D: pointless comparison of unsigned integer with zero
                       if (ulTemp < STM32_FLASH_MAX_DRAUGHT_FLOOR
-..\user\src\uartmsg.c(3507): warning:  #186-D: pointless comparison of unsigned integer with zero
+..\user\src\uartmsg.c(3510): warning:  #186-D: pointless comparison of unsigned integer with zero
                       if (ulTemp < PARA_PERSONS_FLOOR
-..\user\src\uartmsg.c(3566): warning:  #186-D: pointless comparison of unsigned integer with zero
+..\user\src\uartmsg.c(3569): warning:  #186-D: pointless comparison of unsigned integer with zero
                   if ((ulTemp < 
 ARA_ETA_HOUR_FLOOR)
-..\user\src\uartmsg.c(3586): warning:  #186-D: pointless comparison of unsigned integer with zero
+..\user\src\uartmsg.c(3589): warning:  #186-D: pointless comparison of unsigned integer with zero
                   if ((ulTemp < 
 ARA_ETA_MINUTE_FLOOR)
-..\user\src\uartmsg.c(3629): warning:  #186-D: pointless comparison of unsigned integer with zero
+..\user\src\uartmsg.c(3632): warning:  #186-D: pointless comparison of unsigned integer with zero
                       if (ulTemp < PARA_ETA_DAY_FLOOR
-..\user\src\uartmsg.c(3670): warning:  #186-D: pointless comparison of unsigned integer with zero
+..\user\src\uartmsg.c(3673): warning:  #186-D: pointless comparison of unsigned integer with zero
                       if (ulTemp < PARA_ETA_MONTH_FLOOR
-..\user\src\uartmsg.c(3703): warning:  #186-D: pointless comparison of unsigned integer with zero
+..\user\src\uartmsg.c(3706): warning:  #186-D: pointless comparison of unsigned integer with zero
                       if (ulTemp < PARA_NAVIGATION_STATUS_FLOOR
-..\user\src\uartmsg.c(3737): warning:  #186-D: pointless comparison of unsigned integer with zero
+..\user\src\uartmsg.c(3740): warning:  #186-D: pointless comparison of unsigned integer with zero
                       if (ulTemp < PARA_REGION_APP_FLAG_FLOOR
-..\user\src\uartmsg.c(793): warning:  #177-D: variable "slTemp" was declared but never referenced
-      S32 slTemp;
-..\user\src\uartmsg.c(797): warning:  #177-D: variable "ulTemp3" was declared but never referenced
-  	U32 ulTemp3;
-..\user\src\uartmsg.c(798): warning:  #177-D: variable "ulTemp4" was declared but never referenced
-  	U32 ulTemp4;
-..\user\src\uartmsg.c(800): warning:  #177-D: variable "pChar" was declared but never referenced
-      char *pChar;
-..\user\src\uartmsg.c(803): warning:  #177-D: variable "ByteTemp" was declared but never referenced
-      U8  ByteTemp[40];
-..\user\src\uartmsg.c(805): warning:  #177-D: variable "uiTempValue" was declared but never referenced
-  	U8	uiTempValue;
-..\user\src\uartmsg.c(806): warning:  #177-D: variable "uiTempValue2" was declared but never referenced
-  	U8	uiTempValue2;
-..\user\src\uartmsg.c(807): warning:  #177-D: variable "sfTemp" was declared but never referenced
-      float sfTemp;
-..\user\src\uartmsg.c(808): warning:  #177-D: variable "lfTemp" was declared but never referenced
-      double lfTemp;
-..\user\src\uartmsg.c(809): warning:  #177-D: variable "VerSeqMsgId" was declared but never referenced
-      static U16 VerSeqMsgId = 0;
-..\user\src\uartmsg.c: 69 warnings, 0 errors
+..\user\src\uartmsg.c: 23 warnings, 0 errors
 compiling SelfCheck.c...
-..\user\src\SelfCheck.c(388): warning:  #223-D: function "EEPROM_EepromSelfCheckStructInit" declared implicitly
-              EEPROM_EepromSelfCheckStructInit(&EepromSelfCheckInst);
-..\user\src\SelfCheck.c(389): warning:  #223-D: function "SI446X_Si446xSelfCheckStructInit" declared implicitly
-              SI446X_Si446xSelfCheckStructInit(&Si446xSelfCheckInstA);
-..\user\src\SelfCheck.c(394): warning:  #223-D: function "RTC_RtcSelfCheckStructInit" declared implicitly
-              RTC_RtcSelfCheckStructInit(&RtcSelfCheckInst);
-..\user\src\SelfCheck.c(395): warning:  #223-D: function "GPS_GpsSelfCheckStructInit" declared implicitly
-              GPS_GpsSelfCheckStructInit(&GpsSelfCheckInst);
-..\user\src\SelfCheck.c(396): warning:  #223-D: function "RFL_RfLinkSelfCheckStructInit" declared implicitly
-              RFL_RfLinkSelfCheckStructInit(&RfLinkSelfCheckInst);
-..\user\src\SelfCheck.c(404): warning:  #223-D: function "EEPROM_SelfCheck" declared implicitly
-              EEPROM_SelfCheck(&EepromSelfCheckInst);
-..\user\src\SelfCheck.c(410): warning:  #223-D: function "RTC_SelfCheck" declared implicitly
-              RTC_SelfCheck(&RtcSelfCheckInst);
-..\user\src\SelfCheck.c(411): warning:  #223-D: function "GPS_SelfCheck" declared implicitly
-              GPS_SelfCheck(&GpsSelfCheckInst);								   //GPS?约?模式,GPS?舻纾?50ms??时?螅??俣?GPS?系悖??觳?GPS?欠?????息
-..\user\src\SelfCheck.c(412): warning:  #223-D: function "RFL_SelfCheck" declared implicitly
-              RFL_SelfCheck(&RfLinkSelfCheckInst);							   //发?浼觳猓????没鼗芳觳猓?????B?诺婪???一??6?挪??裕?然????芯片B???薪???
-..\user\src\SelfCheck.c: 9 warnings, 0 errors
 compiling RfLinkSelfCheck.c...
-..\user\src\RfLinkSelfCheck.c(106): warning:  #223-D: function "SendMsg18Test" declared implicitly
-  					SendMsg18Test(ENUM_AIS_CHANNEL_B, SLOT_FORCE_TX_VALUE);
-..\user\src\RfLinkSelfCheck.c(119): warning:  #223-D: function "MSGMAN_RxMsgListGetElem" declared implicitly
-              if (MSGMAN_RxMsgListGetElem(&msgCell) == TRUE)
-..\user\src\RfLinkSelfCheck.c: 2 warnings, 0 errors
 compiling TaskManager.c...
-..\user\src\TaskManager.c(168): warning:  #223-D: function "Para_CloseTimeSave" declared implicitly
-          Para_CloseTimeSave(ucTemp, DevDynamicPara.OpenCloseTimeIndex);
-..\user\src\TaskManager.c(177): warning:  #223-D: function "AISINFO_InstRecStationQuantityUpdate" declared implicitly
-          AISINFO_InstRecStationQuantityUpdate();
-..\user\src\TaskManager.c: 2 warnings, 0 errors
 compiling diskio.c...
 compiling ff.c...
 compiling filectrl.c...
-..\user\src\filectrl.c(89): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *restrict"
-  		strcat((char*)FileName, Temp);
-..\user\src\filectrl.c(96): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *restrict"
-  		strcat((char*)FileName, Temp);
-..\user\src\filectrl.c(103): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *restrict"
-  		strcat((char*)FileName, Temp);
-..\user\src\filectrl.c(110): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *restrict"
-  		strcat((char*)FileName, Temp);
-..\user\src\filectrl.c(113): warning:  #186-D: pointless comparison of unsigned integer with zero
-  	else if((count>=0)&&(count<10))
-..\user\src\filectrl.c(117): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *restrict"
-  		strcat((char*)FileName, Temp);
-..\user\src\filectrl.c(164): warning:  #550-D: variable "res" was set but never used
-  	FRESULT res;
-..\user\src\filectrl.c(190): warning:  #550-D: variable "res" was set but never used
-  	FRESULT res;
-..\user\src\filectrl.c(227): warning:  #177-D: variable "i" was declared but never referenced
-  	UINT i;
-..\user\src\filectrl.c(267): warning:  #223-D: function "USART1_UsartConfigStructInit" declared implicitly
-      USART1_UsartConfigStructInit(Band, 8, 0, 1);
-..\user\src\filectrl.c(280): warning:  #550-D: variable "res" was set but never used
-  	FRESULT res;
-..\user\src\filectrl.c(314): warning:  #550-D: variable "res" was set but never used
-  	FRESULT res;
-..\user\src\filectrl.c(376): warning:  #223-D: function "LME_ModuleInit" declared implicitly
-  		LME_ModuleInit(); 															//发?浜徒???帧???谐?始化
-..\user\src\filectrl.c(377): warning:  #223-D: function "DLS_InstPacketProbeStructInit" declared implicitly
-  		DLS_InstPacketProbeStructInit();
-..\user\src\filectrl.c(378): warning:  #223-D: function "UartTxFIFOStructInit" declared implicitly
-  		UartTxFIFOStructInit(&Uart2TxFIFO);											//??始化GPS?峁???
-..\user\src\filectrl.c(380): warning:  #223-D: function "UBX_ModuleInit" declared implicitly
-  		UBX_ModuleInit();															//??始化GPS模?椴???
-..\user\src\filectrl.c: 16 warnings, 0 errors
-compiling flashctrl.c...
-..\user\src\flashctrl.c(196): warning:  #186-D: pointless comparison of unsigned integer with zero
-  		if(ucPara_Type >= 0 && ucPara_Type < 5)											  // U32???? 
-..\user\src\flashctrl.c(358): warning:  #186-D: pointless comparison of unsigned integer with zero
-  		if(ucPara_Type >= 0 && ucPara_Type < 5)											  // U32???? 
-..\user\src\flashctrl.c(405): warning:  #940-D: missing return statement at end of non-void function "FlashRead"
-  }
-..\user\src\flashctrl.c(293): warning:  #177-D: variable "ucInteger" was declared but never referenced
-  	U8 ucInteger;									  // ??????
-..\user\src\flashctrl.c(294): warning:  #177-D: variable "ucRemainder" was declared but never referenced
-  	U8 ucRemainder;									  // 0.5?霭?????
-..\user\src\flashctrl.c(301): warning:  #177-D: variable "pEnd" was declared but never referenced
-      char *pEnd;
-..\user\src\flashctrl.c(449): warning:  #177-D: variable "ucInteger" was declared but never referenced
-  	U8 ucInteger;									  // ??????
-..\user\src\flashctrl.c(450): warning:  #177-D: variable "ucRemainder" was declared but never referenced
-  	U8 ucRemainder;									  // 0.5?霭?????
-..\user\src\flashctrl.c: 8 warnings, 0 errors
 compiling encrypt.c...
-..\user\src\encrypt.c(45): warning:  #223-D: function "SI446X_PART_INFO" declared implicitly
-  	SI446X_PART_INFO(ucBuff, SI446X_CHIP_A);
-..\user\src\encrypt.c(36): warning:  #177-D: variable "ulBuff" was declared but never referenced
-  	U32 ulBuff[4];
-..\user\src\encrypt.c(97): warning:  #177-D: variable "ucCRCBuff" was declared but never referenced
-  	U8  ucCRCBuff[3];
-..\user\src\encrypt.c(170): warning:  #940-D: missing return statement at end of non-void function "WriteCry"
-  }
-..\user\src\encrypt.c: 4 warnings, 0 errors
+compiling flashctrl.c...
 compiling Adc.c...
-..\driver\src\Adc.c(162): warning:  #177-D: variable "Status" was declared but never referenced
-      FlagStatus Status; 
-..\driver\src\Adc.c: 1 warning, 0 errors
-compiling 24c02.c...
 compiling BKPRegister.c...
+compiling 24c02.c...
 compiling DAC.c...
-compiling LED.c...
 compiling gps.c...
-..\driver\src\gps.c(159): warning:  #223-D: function "UBX_UartRxProcess" declared implicitly
-              UBX_UartRxProcess(COMM2, Data); 
-..\driver\src\gps.c: 1 warning, 0 errors
+compiling LED.c...
 compiling power.c...
 compiling RxTx.c...
 compiling rtc.c...
-..\driver\src\rtc.c(508): warning:  #177-D: variable "tempDivider" was declared but never referenced
-      U32 tempDivider = 0;
-..\driver\src\rtc.c: 1 warning, 0 errors
+compiling usart.c...
 compiling SPI.c...
 compiling Tim.c...
-..\driver\src\Tim.c(597): warning:  #223-D: function "GPIOSPI_InstClockCount" declared implicitly
-          GPIOSPI_InstClockCount(GPIOSPI1);
-..\driver\src\Tim.c: 1 warning, 0 errors
 compiling wdg.c...
-compiling usart.c...
-..\driver\src\usart.c(98): warning:  #223-D: function "SetUsartFlg" declared implicitly
-          SetUsartFlg();	
-..\driver\src\usart.c(299): warning:  #177-D: variable "putCell" was declared but never referenced
-  	struct UartTxFIFOStruct *putCell;
-..\driver\src\usart.c(300): warning:  #177-D: variable "pUartRxFIFO" was declared but never referenced
-  	struct UartRxFIFOStruct *pUartRxFIFO;
-..\driver\src\usart.c: 3 warnings, 0 errors
 compiling gpiospi.c...
-..\driver\src\gpiospi.c(140): warning:  #940-D: missing return statement at end of non-void function "GPIOSPI_InstWaitClockPeriod"
-  }
-..\driver\src\gpiospi.c(573): warning:  #1-D: last line of file ends without a newline
-  }
-..\driver\src\gpiospi.c(573): warning:  #940-D: missing return statement at end of non-void function "GPIOSPI_InstSendData"
-  }
-..\driver\src\gpiospi.c: 3 warnings, 0 errors
 compiling Si446x.c...
-..\driver\src\Si446x.c(1235): warning:  #223-D: function "PHY_InstNRZIDecode" declared implicitly
-              if(PHY_InstNRZIDecode(NRZIType1, currValue, &decodeValue) == TRUE)
-..\driver\src\Si446x.c(1250): warning:  #223-D: function "TRCTRL_InstGetTxTestFlg" declared implicitly
-                  if (TRCTRL_InstGetTxTestFlg(TransceiverTypeA) == TRUE)
-..\driver\src\Si446x.c(1252): warning:  #223-D: function "TRCTRL_InstTxTestIsTx" declared implicitly
-                      if (TRCTRL_InstTxTestIsTx(TransceiverTypeA) == TRUE)
-..\driver\src\Si446x.c(1273): warning:  #223-D: function "TRCTRL_TxDataClockISR" declared implicitly
-                      TRCTRL_TxDataClockISR(TransceiverTypeA);
-..\driver\src\Si446x.c(1323): warning:  #223-D: function "PHY_InstNRZIDecode" declared implicitly
-              if (PHY_InstNRZIDecode(NRZIType2, currValue, &decodeValue) == TRUE)
-..\driver\src\Si446x.c(1338): warning:  #223-D: function "TRCTRL_InstGetTxTestFlg" declared implicitly
-                  if (TRCTRL_InstGetTxTestFlg(TransceiverTypeB) == TRUE)
-..\driver\src\Si446x.c(1340): warning:  #223-D: function "TRCTRL_InstTxTestIsTx" declared implicitly
-                      if (TRCTRL_InstTxTestIsTx(TransceiverTypeB) == TRUE)
-..\driver\src\Si446x.c(1360): warning:  #223-D: function "TRCTRL_TxDataClockISR" declared implicitly
-                      TRCTRL_TxDataClockISR(TransceiverTypeB);
-..\driver\src\Si446x.c(2035): warning:  #177-D: variable "x" was declared but never referenced
-      U16 x = 255;
-..\driver\src\Si446x.c(2325): warning:  #69-D: integer conversion resulted in truncation
-      SI446X_SET_PROPERTY_1(MODEM_DATA_RATE_1, (
-I446X_MODEM_DATA_RATE * 40) >> 8, cs);
-..\driver\src\Si446x.c(2326): warning:  #69-D: integer conversion resulted in truncation
-      SI446X_SET_PROPERTY_1(MODEM_DATA_RATE_0, (
-I446X_MODEM_DATA_RATE * 40), cs);
-..\driver\src\Si446x.c(2331): warning:  #69-D: integer conversion resulted in truncation
-      SI446X_SET_PROPERTY_1(MODEM_TX_NCO_MODE_2, 
-I446X_FREQ_XO >> 16, cs);
-..\driver\src\Si446x.c(2332): warning:  #69-D: integer conversion resulted in truncation
-      SI446X_SET_PROPERTY_1(MODEM_TX_NCO_MODE_1, 
-I446X_FREQ_XO >> 8, cs);
-..\driver\src\Si446x.c(2333): warning:  #69-D: integer conversion resulted in truncation
-      SI446X_SET_PROPERTY_1(MODEM_TX_NCO_MODE_0, 
-I446X_FREQ_XO, cs);
-..\driver\src\Si446x.c: 14 warnings, 0 errors
 compiling sdcard.c...
-..\driver\src\sdcard.c(261): warning:  #167-D: argument of type "unsigned long *" is incompatible with parameter of type "u32 *"
-      if (SD_SendStatus(&resp1) != SD_OK)
-..\driver\src\sdcard.c: 1 warning, 0 errors
 compiling debug.c...
 compiling misc.c...
-compiling stm32f10x_bkp.c...
 compiling stm32f10x_adc.c...
+compiling stm32f10x_bkp.c...
 compiling stm32f10x_can.c...
-compiling stm32f10x_cec.c...
 compiling stm32f10x_crc.c...
+compiling stm32f10x_cec.c...
 compiling stm32f10x_dac.c...
 compiling stm32f10x_dbgmcu.c...
-compiling stm32f10x_exti.c...
 compiling stm32f10x_dma.c...
+compiling stm32f10x_exti.c...
 compiling stm32f10x_flash.c...
-compiling stm32f10x_gpio.c...
 compiling stm32f10x_fsmc.c...
 compiling stm32f10x_iwdg.c...
-compiling stm32f10x_pwr.c...
+compiling stm32f10x_gpio.c...
 compiling stm32f10x_i2c.c...
+compiling stm32f10x_pwr.c...
 compiling stm32f10x_rtc.c...
 compiling stm32f10x_rcc.c...
 compiling stm32f10x_sdio.c...
@@ -724,19 +201,19 @@ compiling stm32f10x_spi.c...
 compiling stm32f10x_tim.c...
 compiling stm32f10x_usart.c...
 compiling stm32f10x_wwdg.c...
-compiling migrate.c...
 compiling PTT_lnw.c...
+compiling migrate.c...
 linking...
-Program Size: Code=117004 RO-data=3360 RW-data=1272 ZI-data=45456  
+Program Size: Code=116984 RO-data=3332 RW-data=1272 ZI-data=45464  
 After Build - User command #1: fromelf --bin --output=.\Object\AIS_Tranceiver2_Prj.bin .\Object\AIS_Tranceiver2_Prj.axf
-".\Object\AIS_Tranceiver2_Prj.axf" - 0 Error(s), 281 Warning(s).
+".\Object\AIS_Tranceiver2_Prj.axf" - 0 Error(s), 37 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE
   E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:01:17
+Build Time Elapsed:  00:00:51
 </pre>
 </body>
 </html>

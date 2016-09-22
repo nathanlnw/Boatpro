@@ -49,9 +49,9 @@
 .\object\diskio.o: ..\user\inc\gpsctrl.h
 .\object\diskio.o: ..\ptl\inc\Slot.h
 .\object\diskio.o: ..\ptl\inc\TDMA.h
+.\object\diskio.o: ..\ptl\inc\AISMsgModule.h
 .\object\diskio.o: ..\driver\inc\RxTx.h
 .\object\diskio.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\diskio.o: ..\ptl\inc\AISMsgModule.h
 .\object\diskio.o: ..\ptl\inc\AisInfo.h
 .\object\diskio.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\diskio.o: ..\ptl\inc\AIS_MsgModu.h
@@ -73,6 +73,11 @@
 .\object\diskio.o: ..\driver\inc\wdg.h
 .\object\diskio.o: ..\driver\inc\SPI.h
 .\object\diskio.o: ..\interface_layer\Include\systemtick.h
+.\object\diskio.o: ..\user\inc\UbloxProtocol.h
+.\object\diskio.o: ..\driver\inc\usart.h
+.\object\diskio.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\diskio.o: ..\interface_layer\Include\parastorage.h
+.\object\diskio.o: ..\user\inc\sleepctrl.h
 .\object\diskio.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\diskio.o: ..\user\inc\flashctrl.h
 .\object\diskio.o: ..\user\inc\encrypt.h

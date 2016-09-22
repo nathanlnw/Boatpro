@@ -51,9 +51,9 @@
 .\object\debug.o: ..\user\inc\gpsctrl.h
 .\object\debug.o: ..\ptl\inc\Slot.h
 .\object\debug.o: ..\ptl\inc\TDMA.h
+.\object\debug.o: ..\ptl\inc\AISMsgModule.h
 .\object\debug.o: ..\driver\inc\RxTx.h
 .\object\debug.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\debug.o: ..\ptl\inc\AISMsgModule.h
 .\object\debug.o: ..\ptl\inc\AisInfo.h
 .\object\debug.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\debug.o: ..\ptl\inc\AIS_MsgModu.h
@@ -74,6 +74,10 @@
 .\object\debug.o: ..\driver\inc\wdg.h
 .\object\debug.o: ..\driver\inc\SPI.h
 .\object\debug.o: ..\interface_layer\Include\systemtick.h
+.\object\debug.o: ..\user\inc\UbloxProtocol.h
+.\object\debug.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\debug.o: ..\interface_layer\Include\parastorage.h
+.\object\debug.o: ..\user\inc\sleepctrl.h
 .\object\debug.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\debug.o: ..\user\inc\flashctrl.h
 .\object\debug.o: ..\user\inc\encrypt.h

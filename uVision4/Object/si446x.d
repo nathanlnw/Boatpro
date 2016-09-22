@@ -46,9 +46,9 @@
 .\object\si446x.o: ..\user\inc\gpsctrl.h
 .\object\si446x.o: ..\ptl\inc\Slot.h
 .\object\si446x.o: ..\ptl\inc\TDMA.h
+.\object\si446x.o: ..\ptl\inc\AISMsgModule.h
 .\object\si446x.o: ..\driver\inc\RxTx.h
 .\object\si446x.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\si446x.o: ..\ptl\inc\AISMsgModule.h
 .\object\si446x.o: ..\ptl\inc\AisInfo.h
 .\object\si446x.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\si446x.o: ..\ptl\inc\AIS_MsgModu.h
@@ -70,6 +70,11 @@
 .\object\si446x.o: ..\driver\inc\wdg.h
 .\object\si446x.o: ..\driver\inc\SPI.h
 .\object\si446x.o: ..\interface_layer\Include\systemtick.h
+.\object\si446x.o: ..\user\inc\UbloxProtocol.h
+.\object\si446x.o: ..\driver\inc\usart.h
+.\object\si446x.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\si446x.o: ..\interface_layer\Include\parastorage.h
+.\object\si446x.o: ..\user\inc\sleepctrl.h
 .\object\si446x.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\si446x.o: ..\user\inc\flashctrl.h
 .\object\si446x.o: ..\user\inc\encrypt.h

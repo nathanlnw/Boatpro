@@ -46,9 +46,9 @@
 .\object\msgmanager.o: ..\user\inc\gpsctrl.h
 .\object\msgmanager.o: ..\ptl\inc\Slot.h
 .\object\msgmanager.o: ..\ptl\inc\TDMA.h
+.\object\msgmanager.o: ..\ptl\inc\AISMsgModule.h
 .\object\msgmanager.o: ..\driver\inc\RxTx.h
 .\object\msgmanager.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\msgmanager.o: ..\ptl\inc\AISMsgModule.h
 .\object\msgmanager.o: ..\ptl\inc\AisInfo.h
 .\object\msgmanager.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\msgmanager.o: ..\ptl\inc\AIS_MsgModu.h
@@ -70,6 +70,11 @@
 .\object\msgmanager.o: ..\driver\inc\wdg.h
 .\object\msgmanager.o: ..\driver\inc\SPI.h
 .\object\msgmanager.o: ..\interface_layer\Include\systemtick.h
+.\object\msgmanager.o: ..\user\inc\UbloxProtocol.h
+.\object\msgmanager.o: ..\driver\inc\usart.h
+.\object\msgmanager.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\msgmanager.o: ..\interface_layer\Include\parastorage.h
+.\object\msgmanager.o: ..\user\inc\sleepctrl.h
 .\object\msgmanager.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\msgmanager.o: ..\user\inc\flashctrl.h
 .\object\msgmanager.o: ..\user\inc\encrypt.h

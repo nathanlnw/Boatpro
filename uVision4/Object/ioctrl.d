@@ -49,9 +49,9 @@
 .\object\ioctrl.o: ..\user\inc\gpsctrl.h
 .\object\ioctrl.o: ..\ptl\inc\Slot.h
 .\object\ioctrl.o: ..\ptl\inc\TDMA.h
+.\object\ioctrl.o: ..\ptl\inc\AISMsgModule.h
 .\object\ioctrl.o: ..\driver\inc\RxTx.h
 .\object\ioctrl.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\ioctrl.o: ..\ptl\inc\AISMsgModule.h
 .\object\ioctrl.o: ..\ptl\inc\AisInfo.h
 .\object\ioctrl.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\ioctrl.o: ..\ptl\inc\AIS_MsgModu.h
@@ -73,6 +73,11 @@
 .\object\ioctrl.o: ..\driver\inc\wdg.h
 .\object\ioctrl.o: ..\driver\inc\SPI.h
 .\object\ioctrl.o: ..\interface_layer\Include\systemtick.h
+.\object\ioctrl.o: ..\user\inc\UbloxProtocol.h
+.\object\ioctrl.o: ..\driver\inc\usart.h
+.\object\ioctrl.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\ioctrl.o: ..\interface_layer\Include\parastorage.h
+.\object\ioctrl.o: ..\user\inc\sleepctrl.h
 .\object\ioctrl.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\ioctrl.o: ..\user\inc\flashctrl.h
 .\object\ioctrl.o: ..\user\inc\encrypt.h

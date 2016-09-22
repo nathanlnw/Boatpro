@@ -46,9 +46,9 @@
 .\object\deviceinfo.o: ..\user\inc\gpsctrl.h
 .\object\deviceinfo.o: ..\ptl\inc\Slot.h
 .\object\deviceinfo.o: ..\ptl\inc\TDMA.h
+.\object\deviceinfo.o: ..\ptl\inc\AISMsgModule.h
 .\object\deviceinfo.o: ..\driver\inc\RxTx.h
 .\object\deviceinfo.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\deviceinfo.o: ..\ptl\inc\AISMsgModule.h
 .\object\deviceinfo.o: ..\ptl\inc\AisInfo.h
 .\object\deviceinfo.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\deviceinfo.o: ..\ptl\inc\AIS_MsgModu.h
@@ -70,6 +70,11 @@
 .\object\deviceinfo.o: ..\driver\inc\wdg.h
 .\object\deviceinfo.o: ..\driver\inc\SPI.h
 .\object\deviceinfo.o: ..\interface_layer\Include\systemtick.h
+.\object\deviceinfo.o: ..\user\inc\UbloxProtocol.h
+.\object\deviceinfo.o: ..\driver\inc\usart.h
+.\object\deviceinfo.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\deviceinfo.o: ..\interface_layer\Include\parastorage.h
+.\object\deviceinfo.o: ..\user\inc\sleepctrl.h
 .\object\deviceinfo.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\deviceinfo.o: ..\user\inc\flashctrl.h
 .\object\deviceinfo.o: ..\user\inc\encrypt.h

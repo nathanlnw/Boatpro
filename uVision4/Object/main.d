@@ -47,9 +47,9 @@
 .\object\main.o: ..\user\inc\gpsctrl.h
 .\object\main.o: ..\ptl\inc\Slot.h
 .\object\main.o: ..\ptl\inc\TDMA.h
+.\object\main.o: ..\ptl\inc\AISMsgModule.h
 .\object\main.o: ..\driver\inc\RxTx.h
 .\object\main.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\main.o: ..\ptl\inc\AISMsgModule.h
 .\object\main.o: ..\ptl\inc\AisInfo.h
 .\object\main.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\main.o: ..\ptl\inc\AIS_MsgModu.h
@@ -71,6 +71,11 @@
 .\object\main.o: ..\driver\inc\wdg.h
 .\object\main.o: ..\driver\inc\SPI.h
 .\object\main.o: ..\interface_layer\Include\systemtick.h
+.\object\main.o: ..\user\inc\UbloxProtocol.h
+.\object\main.o: ..\driver\inc\usart.h
+.\object\main.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\main.o: ..\interface_layer\Include\parastorage.h
+.\object\main.o: ..\user\inc\sleepctrl.h
 .\object\main.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\main.o: ..\user\inc\flashctrl.h
 .\object\main.o: ..\user\inc\encrypt.h
@@ -79,8 +84,6 @@
 .\object\main.o: ..\user\inc\digunit.h
 .\object\main.o: ..\user\inc\mmi.h
 .\object\main.o: ..\user\inc\batteryctrl.h
-.\object\main.o: ..\driver\inc\usart.h
-.\object\main.o: ..\user\inc\sleepctrl.h
 .\object\main.o: ..\driver\inc\LED.h
 .\object\main.o: ..\driver\inc\24c02.h
 .\object\main.o: ..\ptl\inc\PTL_Main.h
@@ -91,4 +94,3 @@
 .\object\main.o: ..\user\inc\ff.h
 .\object\main.o: ..\user\inc\integer.h
 .\object\main.o: ..\user\inc\ffconf.h
-.\object\main.o: ..\interface_layer\Include\parastorage.h

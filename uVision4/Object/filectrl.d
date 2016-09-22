@@ -46,9 +46,9 @@
 .\object\filectrl.o: ..\user\inc\gpsctrl.h
 .\object\filectrl.o: ..\ptl\inc\Slot.h
 .\object\filectrl.o: ..\ptl\inc\TDMA.h
+.\object\filectrl.o: ..\ptl\inc\AISMsgModule.h
 .\object\filectrl.o: ..\driver\inc\RxTx.h
 .\object\filectrl.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\filectrl.o: ..\ptl\inc\AISMsgModule.h
 .\object\filectrl.o: ..\ptl\inc\AisInfo.h
 .\object\filectrl.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\filectrl.o: ..\ptl\inc\AIS_MsgModu.h
@@ -70,6 +70,11 @@
 .\object\filectrl.o: ..\driver\inc\wdg.h
 .\object\filectrl.o: ..\driver\inc\SPI.h
 .\object\filectrl.o: ..\interface_layer\Include\systemtick.h
+.\object\filectrl.o: ..\user\inc\UbloxProtocol.h
+.\object\filectrl.o: ..\driver\inc\usart.h
+.\object\filectrl.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\filectrl.o: ..\interface_layer\Include\parastorage.h
+.\object\filectrl.o: ..\user\inc\sleepctrl.h
 .\object\filectrl.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\filectrl.o: ..\user\inc\flashctrl.h
 .\object\filectrl.o: ..\user\inc\encrypt.h
@@ -79,5 +84,3 @@
 .\object\filectrl.o: ..\user\inc\integer.h
 .\object\filectrl.o: ..\user\inc\ffconf.h
 .\object\filectrl.o: ..\user\inc\diskio.h
-.\object\filectrl.o: ..\interface_layer\Include\parastorage.h
-.\object\filectrl.o: ..\driver\inc\usart.h

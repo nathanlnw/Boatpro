@@ -46,9 +46,9 @@
 .\object\datalinkservice.o: ..\user\inc\gpsctrl.h
 .\object\datalinkservice.o: ..\ptl\inc\Slot.h
 .\object\datalinkservice.o: ..\ptl\inc\TDMA.h
+.\object\datalinkservice.o: ..\ptl\inc\AISMsgModule.h
 .\object\datalinkservice.o: ..\driver\inc\RxTx.h
 .\object\datalinkservice.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\datalinkservice.o: ..\ptl\inc\AISMsgModule.h
 .\object\datalinkservice.o: ..\ptl\inc\AisInfo.h
 .\object\datalinkservice.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\datalinkservice.o: ..\ptl\inc\AIS_MsgModu.h
@@ -70,6 +70,11 @@
 .\object\datalinkservice.o: ..\driver\inc\wdg.h
 .\object\datalinkservice.o: ..\driver\inc\SPI.h
 .\object\datalinkservice.o: ..\interface_layer\Include\systemtick.h
+.\object\datalinkservice.o: ..\user\inc\UbloxProtocol.h
+.\object\datalinkservice.o: ..\driver\inc\usart.h
+.\object\datalinkservice.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\datalinkservice.o: ..\interface_layer\Include\parastorage.h
+.\object\datalinkservice.o: ..\user\inc\sleepctrl.h
 .\object\datalinkservice.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\datalinkservice.o: ..\user\inc\flashctrl.h
 .\object\datalinkservice.o: ..\user\inc\encrypt.h

@@ -47,9 +47,9 @@
 .\object\bkpregister.o: ..\user\inc\gpsctrl.h
 .\object\bkpregister.o: ..\ptl\inc\Slot.h
 .\object\bkpregister.o: ..\ptl\inc\TDMA.h
+.\object\bkpregister.o: ..\ptl\inc\AISMsgModule.h
 .\object\bkpregister.o: ..\driver\inc\RxTx.h
 .\object\bkpregister.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\bkpregister.o: ..\ptl\inc\AISMsgModule.h
 .\object\bkpregister.o: ..\ptl\inc\AisInfo.h
 .\object\bkpregister.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\bkpregister.o: ..\ptl\inc\AIS_MsgModu.h
@@ -70,6 +70,11 @@
 .\object\bkpregister.o: ..\driver\inc\wdg.h
 .\object\bkpregister.o: ..\driver\inc\SPI.h
 .\object\bkpregister.o: ..\interface_layer\Include\systemtick.h
+.\object\bkpregister.o: ..\user\inc\UbloxProtocol.h
+.\object\bkpregister.o: ..\driver\inc\usart.h
+.\object\bkpregister.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\bkpregister.o: ..\interface_layer\Include\parastorage.h
+.\object\bkpregister.o: ..\user\inc\sleepctrl.h
 .\object\bkpregister.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\bkpregister.o: ..\user\inc\flashctrl.h
 .\object\bkpregister.o: ..\user\inc\encrypt.h

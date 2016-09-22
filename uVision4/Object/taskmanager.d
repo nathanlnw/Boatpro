@@ -46,9 +46,9 @@
 .\object\taskmanager.o: ..\user\inc\gpsctrl.h
 .\object\taskmanager.o: ..\ptl\inc\Slot.h
 .\object\taskmanager.o: ..\ptl\inc\TDMA.h
+.\object\taskmanager.o: ..\ptl\inc\AISMsgModule.h
 .\object\taskmanager.o: ..\driver\inc\RxTx.h
 .\object\taskmanager.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\taskmanager.o: ..\ptl\inc\AISMsgModule.h
 .\object\taskmanager.o: ..\ptl\inc\AisInfo.h
 .\object\taskmanager.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\taskmanager.o: ..\ptl\inc\AIS_MsgModu.h
@@ -70,6 +70,11 @@
 .\object\taskmanager.o: ..\driver\inc\wdg.h
 .\object\taskmanager.o: ..\driver\inc\SPI.h
 .\object\taskmanager.o: ..\interface_layer\Include\systemtick.h
+.\object\taskmanager.o: ..\user\inc\UbloxProtocol.h
+.\object\taskmanager.o: ..\driver\inc\usart.h
+.\object\taskmanager.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\taskmanager.o: ..\interface_layer\Include\parastorage.h
+.\object\taskmanager.o: ..\user\inc\sleepctrl.h
 .\object\taskmanager.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\taskmanager.o: ..\user\inc\flashctrl.h
 .\object\taskmanager.o: ..\user\inc\encrypt.h

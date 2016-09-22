@@ -46,9 +46,9 @@
 .\object\flashctrl.o: ..\user\inc\gpsctrl.h
 .\object\flashctrl.o: ..\ptl\inc\Slot.h
 .\object\flashctrl.o: ..\ptl\inc\TDMA.h
+.\object\flashctrl.o: ..\ptl\inc\AISMsgModule.h
 .\object\flashctrl.o: ..\driver\inc\RxTx.h
 .\object\flashctrl.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\flashctrl.o: ..\ptl\inc\AISMsgModule.h
 .\object\flashctrl.o: ..\ptl\inc\AisInfo.h
 .\object\flashctrl.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\flashctrl.o: ..\ptl\inc\AIS_MsgModu.h
@@ -70,11 +70,14 @@
 .\object\flashctrl.o: ..\driver\inc\wdg.h
 .\object\flashctrl.o: ..\driver\inc\SPI.h
 .\object\flashctrl.o: ..\interface_layer\Include\systemtick.h
+.\object\flashctrl.o: ..\user\inc\UbloxProtocol.h
+.\object\flashctrl.o: ..\driver\inc\usart.h
+.\object\flashctrl.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\flashctrl.o: ..\interface_layer\Include\parastorage.h
+.\object\flashctrl.o: ..\user\inc\sleepctrl.h
 .\object\flashctrl.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\flashctrl.o: ..\user\inc\flashctrl.h
 .\object\flashctrl.o: ..\user\inc\encrypt.h
-.\object\flashctrl.o: ..\interface_layer\Include\parastorage.h
-.\object\flashctrl.o: ..\driver\inc\usart.h
 .\object\flashctrl.o: ..\driver\inc\24c02.h
 .\object\flashctrl.o: ..\interface_layer\Include\gmskmod.h
 .\object\flashctrl.o: ..\interface_layer\Include\math_rand.h

@@ -48,8 +48,8 @@
 .\object\transceiverctrl.o: ..\user\inc\gpsctrl.h
 .\object\transceiverctrl.o: ..\ptl\inc\Slot.h
 .\object\transceiverctrl.o: ..\ptl\inc\TDMA.h
-.\object\transceiverctrl.o: ..\driver\inc\RxTx.h
 .\object\transceiverctrl.o: ..\ptl\inc\AISMsgModule.h
+.\object\transceiverctrl.o: ..\driver\inc\RxTx.h
 .\object\transceiverctrl.o: ..\ptl\inc\AisInfo.h
 .\object\transceiverctrl.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\transceiverctrl.o: ..\ptl\inc\AIS_MsgModu.h
@@ -71,6 +71,11 @@
 .\object\transceiverctrl.o: ..\driver\inc\wdg.h
 .\object\transceiverctrl.o: ..\driver\inc\SPI.h
 .\object\transceiverctrl.o: ..\interface_layer\Include\systemtick.h
+.\object\transceiverctrl.o: ..\user\inc\UbloxProtocol.h
+.\object\transceiverctrl.o: ..\driver\inc\usart.h
+.\object\transceiverctrl.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\transceiverctrl.o: ..\interface_layer\Include\parastorage.h
+.\object\transceiverctrl.o: ..\user\inc\sleepctrl.h
 .\object\transceiverctrl.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\transceiverctrl.o: ..\user\inc\flashctrl.h
 .\object\transceiverctrl.o: ..\user\inc\encrypt.h

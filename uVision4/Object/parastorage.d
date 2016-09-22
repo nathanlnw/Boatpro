@@ -48,9 +48,9 @@
 .\object\parastorage.o: ..\user\inc\gpsctrl.h
 .\object\parastorage.o: ..\ptl\inc\Slot.h
 .\object\parastorage.o: ..\ptl\inc\TDMA.h
+.\object\parastorage.o: ..\ptl\inc\AISMsgModule.h
 .\object\parastorage.o: ..\driver\inc\RxTx.h
 .\object\parastorage.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\parastorage.o: ..\ptl\inc\AISMsgModule.h
 .\object\parastorage.o: ..\ptl\inc\AisInfo.h
 .\object\parastorage.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\parastorage.o: ..\ptl\inc\AIS_MsgModu.h
@@ -72,10 +72,14 @@
 .\object\parastorage.o: ..\driver\inc\wdg.h
 .\object\parastorage.o: ..\driver\inc\SPI.h
 .\object\parastorage.o: ..\interface_layer\Include\systemtick.h
+.\object\parastorage.o: ..\user\inc\UbloxProtocol.h
+.\object\parastorage.o: ..\driver\inc\usart.h
+.\object\parastorage.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\parastorage.o: ..\interface_layer\Include\parastorage.h
+.\object\parastorage.o: ..\user\inc\sleepctrl.h
 .\object\parastorage.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\parastorage.o: ..\user\inc\flashctrl.h
 .\object\parastorage.o: ..\user\inc\encrypt.h
-.\object\parastorage.o: ..\interface_layer\Include\parastorage.h
 .\object\parastorage.o: ..\interface_layer\Include\gmskmod.h
 .\object\parastorage.o: ..\interface_layer\Include\math_rand.h
 .\object\parastorage.o: ..\user\inc\sotdma.h

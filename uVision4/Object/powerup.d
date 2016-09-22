@@ -52,9 +52,9 @@
 .\object\powerup.o: ..\user\inc\gpsctrl.h
 .\object\powerup.o: ..\ptl\inc\Slot.h
 .\object\powerup.o: ..\ptl\inc\TDMA.h
+.\object\powerup.o: ..\ptl\inc\AISMsgModule.h
 .\object\powerup.o: ..\driver\inc\RxTx.h
 .\object\powerup.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\powerup.o: ..\ptl\inc\AISMsgModule.h
 .\object\powerup.o: ..\ptl\inc\AisInfo.h
 .\object\powerup.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\powerup.o: ..\ptl\inc\AIS_MsgModu.h
@@ -73,10 +73,14 @@
 .\object\powerup.o: ..\driver\inc\wdg.h
 .\object\powerup.o: ..\driver\inc\SPI.h
 .\object\powerup.o: ..\interface_layer\Include\systemtick.h
+.\object\powerup.o: ..\user\inc\UbloxProtocol.h
+.\object\powerup.o: ..\driver\inc\usart.h
+.\object\powerup.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\powerup.o: ..\interface_layer\Include\parastorage.h
+.\object\powerup.o: ..\user\inc\sleepctrl.h
 .\object\powerup.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\powerup.o: ..\user\inc\flashctrl.h
 .\object\powerup.o: ..\user\inc\encrypt.h
-.\object\powerup.o: ..\interface_layer\Include\parastorage.h
 .\object\powerup.o: ..\user\inc\sotdma.h
 .\object\powerup.o: ..\driver\inc\rtc.h
 .\object\powerup.o: ..\user\inc\adjust.h

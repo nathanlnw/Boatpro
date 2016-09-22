@@ -48,9 +48,9 @@
 .\object\sdcard.o: ..\user\inc\gpsctrl.h
 .\object\sdcard.o: ..\ptl\inc\Slot.h
 .\object\sdcard.o: ..\ptl\inc\TDMA.h
+.\object\sdcard.o: ..\ptl\inc\AISMsgModule.h
 .\object\sdcard.o: ..\driver\inc\RxTx.h
 .\object\sdcard.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\sdcard.o: ..\ptl\inc\AISMsgModule.h
 .\object\sdcard.o: ..\ptl\inc\AisInfo.h
 .\object\sdcard.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\sdcard.o: ..\ptl\inc\AIS_MsgModu.h
@@ -72,6 +72,11 @@
 .\object\sdcard.o: ..\driver\inc\wdg.h
 .\object\sdcard.o: ..\driver\inc\SPI.h
 .\object\sdcard.o: ..\interface_layer\Include\systemtick.h
+.\object\sdcard.o: ..\user\inc\UbloxProtocol.h
+.\object\sdcard.o: ..\driver\inc\usart.h
+.\object\sdcard.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\sdcard.o: ..\interface_layer\Include\parastorage.h
+.\object\sdcard.o: ..\user\inc\sleepctrl.h
 .\object\sdcard.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\sdcard.o: ..\user\inc\flashctrl.h
 .\object\sdcard.o: ..\user\inc\encrypt.h

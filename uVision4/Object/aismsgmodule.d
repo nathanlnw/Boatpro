@@ -71,6 +71,11 @@
 .\object\aismsgmodule.o: ..\driver\inc\wdg.h
 .\object\aismsgmodule.o: ..\driver\inc\SPI.h
 .\object\aismsgmodule.o: ..\interface_layer\Include\systemtick.h
+.\object\aismsgmodule.o: ..\user\inc\UbloxProtocol.h
+.\object\aismsgmodule.o: ..\driver\inc\usart.h
+.\object\aismsgmodule.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\aismsgmodule.o: ..\interface_layer\Include\parastorage.h
+.\object\aismsgmodule.o: ..\user\inc\sleepctrl.h
 .\object\aismsgmodule.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\aismsgmodule.o: ..\user\inc\flashctrl.h
 .\object\aismsgmodule.o: ..\user\inc\encrypt.h

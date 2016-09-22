@@ -48,9 +48,9 @@
 .\object\usart.o: ..\user\inc\gpsctrl.h
 .\object\usart.o: ..\ptl\inc\Slot.h
 .\object\usart.o: ..\ptl\inc\TDMA.h
+.\object\usart.o: ..\ptl\inc\AISMsgModule.h
 .\object\usart.o: ..\driver\inc\RxTx.h
 .\object\usart.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\usart.o: ..\ptl\inc\AISMsgModule.h
 .\object\usart.o: ..\ptl\inc\AisInfo.h
 .\object\usart.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\usart.o: ..\ptl\inc\AIS_MsgModu.h
@@ -72,7 +72,10 @@
 .\object\usart.o: ..\driver\inc\wdg.h
 .\object\usart.o: ..\driver\inc\SPI.h
 .\object\usart.o: ..\interface_layer\Include\systemtick.h
+.\object\usart.o: ..\user\inc\UbloxProtocol.h
+.\object\usart.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\usart.o: ..\interface_layer\Include\parastorage.h
+.\object\usart.o: ..\user\inc\sleepctrl.h
 .\object\usart.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\usart.o: ..\user\inc\flashctrl.h
 .\object\usart.o: ..\user\inc\encrypt.h
-.\object\usart.o: ..\user\inc\UbloxProtocol.h

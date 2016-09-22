@@ -52,9 +52,9 @@
 .\object\stm32f10x_it.o: ..\user\inc\gpsctrl.h
 .\object\stm32f10x_it.o: ..\ptl\inc\Slot.h
 .\object\stm32f10x_it.o: ..\ptl\inc\TDMA.h
+.\object\stm32f10x_it.o: ..\ptl\inc\AISMsgModule.h
 .\object\stm32f10x_it.o: ..\driver\inc\RxTx.h
 .\object\stm32f10x_it.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\stm32f10x_it.o: ..\ptl\inc\AISMsgModule.h
 .\object\stm32f10x_it.o: ..\ptl\inc\AisInfo.h
 .\object\stm32f10x_it.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\stm32f10x_it.o: ..\ptl\inc\AIS_MsgModu.h
@@ -75,6 +75,10 @@
 .\object\stm32f10x_it.o: ..\driver\inc\wdg.h
 .\object\stm32f10x_it.o: ..\driver\inc\SPI.h
 .\object\stm32f10x_it.o: ..\interface_layer\Include\systemtick.h
+.\object\stm32f10x_it.o: ..\user\inc\UbloxProtocol.h
+.\object\stm32f10x_it.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\stm32f10x_it.o: ..\interface_layer\Include\parastorage.h
+.\object\stm32f10x_it.o: ..\user\inc\sleepctrl.h
 .\object\stm32f10x_it.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\stm32f10x_it.o: ..\user\inc\flashctrl.h
 .\object\stm32f10x_it.o: ..\user\inc\encrypt.h

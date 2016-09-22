@@ -49,9 +49,9 @@
 .\object\gps.o: ..\user\inc\gpsctrl.h
 .\object\gps.o: ..\ptl\inc\Slot.h
 .\object\gps.o: ..\ptl\inc\TDMA.h
+.\object\gps.o: ..\ptl\inc\AISMsgModule.h
 .\object\gps.o: ..\driver\inc\RxTx.h
 .\object\gps.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\gps.o: ..\ptl\inc\AISMsgModule.h
 .\object\gps.o: ..\ptl\inc\AisInfo.h
 .\object\gps.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\gps.o: ..\ptl\inc\AIS_MsgModu.h
@@ -72,6 +72,10 @@
 .\object\gps.o: ..\driver\inc\wdg.h
 .\object\gps.o: ..\driver\inc\SPI.h
 .\object\gps.o: ..\interface_layer\Include\systemtick.h
+.\object\gps.o: ..\user\inc\UbloxProtocol.h
+.\object\gps.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\gps.o: ..\interface_layer\Include\parastorage.h
+.\object\gps.o: ..\user\inc\sleepctrl.h
 .\object\gps.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\gps.o: ..\user\inc\flashctrl.h
 .\object\gps.o: ..\user\inc\encrypt.h

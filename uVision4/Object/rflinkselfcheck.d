@@ -46,9 +46,9 @@
 .\object\rflinkselfcheck.o: ..\user\inc\gpsctrl.h
 .\object\rflinkselfcheck.o: ..\ptl\inc\Slot.h
 .\object\rflinkselfcheck.o: ..\ptl\inc\TDMA.h
+.\object\rflinkselfcheck.o: ..\ptl\inc\AISMsgModule.h
 .\object\rflinkselfcheck.o: ..\driver\inc\RxTx.h
 .\object\rflinkselfcheck.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\rflinkselfcheck.o: ..\ptl\inc\AISMsgModule.h
 .\object\rflinkselfcheck.o: ..\ptl\inc\AisInfo.h
 .\object\rflinkselfcheck.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\rflinkselfcheck.o: ..\ptl\inc\AIS_MsgModu.h
@@ -70,6 +70,11 @@
 .\object\rflinkselfcheck.o: ..\driver\inc\wdg.h
 .\object\rflinkselfcheck.o: ..\driver\inc\SPI.h
 .\object\rflinkselfcheck.o: ..\interface_layer\Include\systemtick.h
+.\object\rflinkselfcheck.o: ..\user\inc\UbloxProtocol.h
+.\object\rflinkselfcheck.o: ..\driver\inc\usart.h
+.\object\rflinkselfcheck.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\rflinkselfcheck.o: ..\interface_layer\Include\parastorage.h
+.\object\rflinkselfcheck.o: ..\user\inc\sleepctrl.h
 .\object\rflinkselfcheck.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\rflinkselfcheck.o: ..\user\inc\flashctrl.h
 .\object\rflinkselfcheck.o: ..\user\inc\encrypt.h

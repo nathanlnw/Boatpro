@@ -46,9 +46,9 @@
 .\object\linkmanagemententity.o: ..\user\inc\gpsctrl.h
 .\object\linkmanagemententity.o: ..\ptl\inc\Slot.h
 .\object\linkmanagemententity.o: ..\ptl\inc\TDMA.h
+.\object\linkmanagemententity.o: ..\ptl\inc\AISMsgModule.h
 .\object\linkmanagemententity.o: ..\driver\inc\RxTx.h
 .\object\linkmanagemententity.o: ..\interface_layer\Include\RxTxCtrl.h
-.\object\linkmanagemententity.o: ..\ptl\inc\AISMsgModule.h
 .\object\linkmanagemententity.o: ..\ptl\inc\AisInfo.h
 .\object\linkmanagemententity.o: ..\ptl\inc\AISDigitalInterface.h
 .\object\linkmanagemententity.o: ..\ptl\inc\AIS_MsgModu.h
@@ -70,6 +70,11 @@
 .\object\linkmanagemententity.o: ..\driver\inc\wdg.h
 .\object\linkmanagemententity.o: ..\driver\inc\SPI.h
 .\object\linkmanagemententity.o: ..\interface_layer\Include\systemtick.h
+.\object\linkmanagemententity.o: ..\user\inc\UbloxProtocol.h
+.\object\linkmanagemententity.o: ..\driver\inc\usart.h
+.\object\linkmanagemententity.o: ..\StartUp\inc\stm32f10x_target.h
+.\object\linkmanagemententity.o: ..\interface_layer\Include\parastorage.h
+.\object\linkmanagemententity.o: ..\user\inc\sleepctrl.h
 .\object\linkmanagemententity.o: ..\PTT_lnw\inc\PTT_lnw.h
 .\object\linkmanagemententity.o: ..\user\inc\flashctrl.h
 .\object\linkmanagemententity.o: ..\user\inc\encrypt.h
