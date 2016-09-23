@@ -12,11 +12,6 @@
 #ifndef _INCLUDE_H_
 #define _INCLUDE_H_
 
-// DevelopV2 Related  add by  lnw
-#define LNW  
-
-
-
 
 
 /* Include -------------------------------------------------------------------*/
@@ -88,12 +83,20 @@
 #include "wdg.h"
 #include "SPI.h"
 #include "systemtick.h"
+#include "def.h"
+#include "UbloxProtocol.h"
+#include "AISDigitalInterface.h"
+#include "stm32f10x_target.h"
+#include "systemtick.h"
+#include "Gps.h"
+#include "parastorage.h"
+#include "sleepctrl.h"
 
 
 
 
 
-#ifdef  LNW
+#if  CONFIG_PTT_EN
   #include "PTT_lnw.h"
 #endif
 

@@ -17,12 +17,22 @@
 #ifndef  _PTT
 #define  _PTT
 
-#include "Include.h"
 
 #if  CONFIG_PTT_EN
 
+#include "Include.h"
+
 /*
     Fuction description:
+
+  
+	9-21
+	//	 PC8 PC9  (39 40) 连焊	 用PC9	 输入  对讲机接受检测 高：无接收 低：有接受
+	  改成控PTT 收发--输出
+	PD2 PC12   (53 54) 连焊 用PC12	 输出  PTT控制 低：开  高：关	 // 9-20   改成高开低关
+	改成 PTT 接收 检测 输入
+
+    
     
     PA14 输入  对讲机接受检测         高：无接收            低：有接受     
                      检测是否有接收
@@ -54,11 +64,11 @@
 
 //  Define   Pins
 #define PTT_RX_PORT			        GPIOC             //  是否有语音接收
-#define PTT_RX_PIN_IN			    GPIO_Pin_9
+#define PTT_RX_PIN_IN			    GPIO_Pin_12
 
 
-#define PTT_RX_PORT_2			    GPIOC             //  是否有语音接收2
-#define PTT_RX_PIN_IN_2			    GPIO_Pin_8
+#define PTT_RX_PORT_2			    GPIOD        //  是否有语音接收2
+#define PTT_RX_PIN_IN_2			    GPIO_Pin_2
 
 //------------------
 #define PTT_WARNLIGHT_PORT		    GPIOA              //  控制报警灯
@@ -80,10 +90,10 @@
 //---------------
 
 #define PTT_SPK_CTL_PORT			GPIOC             // 是否发送语音
-#define PTT_SPK_CTL_PIN_OUT			GPIO_Pin_12
+#define PTT_SPK_CTL_PIN_OUT			GPIO_Pin_9
 
-#define PTT_SPK_CTL_PORT_2			GPIOD             // 是否发送语音2
-#define PTT_SPK_CTL_PIN_OUT_2		GPIO_Pin_2
+#define PTT_SPK_CTL_PORT_2			GPIOC             // 是否发送语音2
+#define PTT_SPK_CTL_PIN_OUT_2		GPIO_Pin_8
 
 
 
@@ -99,27 +109,28 @@
 
 
 //Define   USE
-#define PTT_RX_STATUS_GET                GPIO_ReadOutputDataBit(PTT_RX_PORT, PTT_RX_PIN_IN)
+#define PTT_RX_STATUS_GET                GPIO_ReadInputDataBit(PTT_RX_PORT, PTT_RX_PIN_IN)
 
 
 #define PTT_WARNLIGHT_ON       			GPIO_SetBits(PTT_WARNLIGHT_PORT, PTT_WARNLIGHT_PIN_OUT);GPIO_SetBits(PTT_WARNLIGHT_PORT_2, PTT_WARNLIGHT_PIN_OUT_2)
 #define PTT_WARNLIGHT_OFF      		    GPIO_ResetBits(PTT_WARNLIGHT_PORT, PTT_WARNLIGHT_PIN_OUT);GPIO_ResetBits(PTT_WARNLIGHT_PORT_2, PTT_WARNLIGHT_PIN_OUT_2)
 
 
-#define PTT_MAINPOWERCUT_STATUS_GET        GPIO_ReadOutputDataBit(PTT_MAINPOWERCUT_PORT, PTT_MAINPOWERCUT_IN)
+#define PTT_MAINPOWERCUT_STATUS_GET        GPIO_ReadInputDataBit(PTT_MAINPOWERCUT_PORT, PTT_MAINPOWERCUT_IN)
 
 
 
-#define PTT_SPK_CTL_RX       			GPIO_SetBits(PTT_SPK_CTL_PORT, PTT_SPK_CTL_PIN_OUT);GPIO_SetBits(PTT_SPK_CTL_PORT_2, PTT_SPK_CTL_PIN_OUT_2)
-#define PTT_SPK_CTL_SD    				GPIO_ResetBits(PTT_SPK_CTL_PORT, PTT_SPK_CTL_PIN_OUT);GPIO_ResetBits(PTT_SPK_CTL_PORT_2, PTT_SPK_CTL_PIN_OUT_2)
+#define PTT_SPK_CTL_SD       			GPIO_SetBits(PTT_SPK_CTL_PORT, PTT_SPK_CTL_PIN_OUT);GPIO_SetBits(PTT_SPK_CTL_PORT_2, PTT_SPK_CTL_PIN_OUT_2)
+#define PTT_SPK_CTL_RX    				GPIO_ResetBits(PTT_SPK_CTL_PORT, PTT_SPK_CTL_PIN_OUT);GPIO_ResetBits(PTT_SPK_CTL_PORT_2, PTT_SPK_CTL_PIN_OUT_2)
 
 #define PTT_MODULE_POWER_ON       		GPIO_SetBits(PTT_MODULE_POWERCTL_PORT, PTT_MODULE_POWERCTL_OUT);GPIO_SetBits(PTT_MODULE_POWERCTL_PORT_2, PTT_MODULE_POWERCTL_OUT_2)
 #define PTT_MODULE_POWER_OFF      		GPIO_ResetBits(PTT_MODULE_POWERCTL_PORT, PTT_MODULE_POWERCTL_OUT);GPIO_ResetBits(PTT_MODULE_POWERCTL_PORT_2, PTT_MODULE_POWERCTL_OUT_2)
 
-#define PTT_MODULE_POWER_STATUS_GET     GPIO_ReadOutputDataBit(PTT_MAINPOWERCUT_PORT, PTT_MODULE_POWERCTL_OUT)
-#define PTT_RX_GET                      GPIO_ReadOutputDataBit(PTT_RX_PORT, PTT_RX_PIN_IN)
+#define PTT_MODULE_POWER_STATUS_GET     GPIO_ReadInputDataBit(PTT_MODULE_POWERCTL_PORT, PTT_MODULE_POWERCTL_OUT)
 
-#define RX_EN_PIN_GET                   GPIO_ReadOutputDataBit(RX_EN_PORT, RX_EN_PIN)
+//#define PTT_RX_GET                      GPIO_ReadInputDataBit(PTT_RX_PORT, PTT_RX_PIN_IN)
+
+#define RX_EN_PIN_GET                   GPIO_ReadInputDataBit(RX_EN_PORT, RX_EN_PIN)
 
 
 //   struct  variable
@@ -136,6 +147,7 @@ typedef  struct
   U8   MainPower_Status;     //      0 :  main normal      1 :    main power  cut  donwn    2:  other  idle state  for  programming use 
   
   //  PTT  control
+  U8    PTT_powerOn_RunOnce;  // ruan ONCE
   U8    PTT_TX_Enable;   // Enable TX
   U8    PTT_Rx_STATE;//    0:  IDLE    1:   running
   U32   PTT_TX_timecounter;  //   timer
@@ -152,9 +164,10 @@ typedef  struct
 
 extern PTT_CLASS  PTT_OBJ;
 
-#define WARNLIGHT_KEEP      30    //  30s
-#define PTT_TX_KEEP         20
-#define PTT_IDLE_KEEP       20
+#define WARNLIGHT_KEEP      5    //  30s
+#define PTT_WAIT_KEEP       60 //
+#define PTT_TX_KEEP         17
+#define PTT_IDLE_KEEP       17
 
 
 #define  Enable_PTT                   1

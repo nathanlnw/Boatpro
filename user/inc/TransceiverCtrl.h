@@ -125,5 +125,16 @@ typedef struct TransceiverTxCtrlStruct
 /* Public functions ----------------------------------------------------------*/
 //lnw add
 extern U8 TRCTRL_InstTxTestGetSignalBit(TransceiverTypeEnum cs);
+extern void TRCTRL_TransmitProcess(void);
+extern void TRCTRL_ModuleInit(void);
+extern void TRCTRL_InstTxTestCtrl(void);
+extern void TRCTRL_InstTransceiverTestStructInit(TransceiverTypeEnum cs);
+extern void TRCTRL_InstTxTestSetTxSignalType(TransceiverTypeEnum cs, U8 type);
+extern void TRCTRL_InstTxTestSetTxChannel(TransceiverTypeEnum cs, AisChannelEnum channel);
+extern U8 TRCTRL_InstGetTxTestFlg(TransceiverTypeEnum cs);
+extern void TRCTRL_InstTransceiverTestStructInit(TransceiverTypeEnum cs);
+extern void TRCTRL_InstSetTxTestFlg(TransceiverTypeEnum cs);
+extern U8 TRCTRL_InstTxTestIsTx(TransceiverTypeEnum cs);
+extern void TRCTRL_TxDataClockISR(TransceiverTypeEnum transceiverType);
 
 #endif

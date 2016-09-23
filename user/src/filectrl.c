@@ -86,35 +86,36 @@ void CreateFile()
 	{
 		sprintf((char*)FileName, "TCB");
 		sprintf((char*)Temp,"%d",count);
-		strcat((char*)FileName, Temp);
+		strcat((char*)FileName, (const char*)Temp);
 		strcat((char*)FileName, ".txt");
 	}
 	else if((count>=1000)&&(count<10000))
 	{ 
 		sprintf((char*)FileName, "TCB0");
 		sprintf((char*)Temp,"%d",count);
-		strcat((char*)FileName, Temp);
+		strcat((char*)FileName, (const char*)Temp);
 		strcat((char*)FileName, ".txt");	 
 	}
 	else if((count>=100)&&(count<1000))
 	{
 		sprintf((char*)FileName, "TCB00");
 		sprintf((char*)Temp,"%d",count);
-		strcat((char*)FileName, Temp);
+		strcat((char*)FileName, (const char*)Temp);
 		strcat((char*)FileName, ".txt"); 	 
 	}
 	else if((count>=10)&&(count<100))
 	{ 
 		sprintf((char*)FileName, "TCB000");
 		sprintf((char*)Temp,"%d",count);
-		strcat((char*)FileName, Temp);
+		strcat((char*)FileName, (const char*)Temp);
 		strcat((char*)FileName, ".txt");	 
 	}
-	else if((count>=0)&&(count<10))
+	 //else if((count>=0)&&(count<10))     // lnw  mask    u8>=0   is  const True
+	else if(count<10)   // lnw  modify
 	{
 		sprintf((char*)FileName, "TCB0000");
 		sprintf((char*)Temp,"%d",count);
-		strcat((char*)FileName, Temp);
+		strcat((char*)FileName, (const char*)Temp);
 		strcat((char*)FileName, ".txt");
 	}	
 	strcat((char*)FileName,"\r\n");			  //存储文件名时换行
@@ -161,7 +162,7 @@ void CreateFile()
 *******************************************************************************/
 void WriteFile(U8 * buff,UINT bufflen)
 {
-	FRESULT res;
+//	FRESULT res;
 	UINT a;
 	
 	f_mount(&fs,"",0);
@@ -187,7 +188,7 @@ void WriteFile(U8 * buff,UINT bufflen)
 *******************************************************************************/
 void ReadFile(char * FileNameBuff)
 {
-	FRESULT res;
+//	FRESULT res;
 	char cData[200];
 	
 	f_mount(&fs,"",0);
@@ -224,7 +225,7 @@ void InitFileHead()
 	U8  SerialNumber[9];			//设备序列号
 	U8  HardwareVersion[6];			//硬件版本号
 	U8  MMSI[10];
-	UINT i;
+//	UINT i;
 
 	/******************来自AIS静态参数************************************/
 	FileHead.MMSI = AisStaticPara.MMSI;
@@ -277,7 +278,7 @@ void AdjustUSART1Band(U32 Band)
 *******************************************************************************/
 void ReadFileName(UINT iNumber)
 {
-	FRESULT res;
+//	FRESULT res;
 	char cName[20];
 	
 	f_mount(&fs,"",0);
@@ -311,7 +312,7 @@ void ReadFileName(UINT iNumber)
 *******************************************************************************/
 void ReadMulFile(UINT iNumber)
 {
-	FRESULT res;
+//	FRESULT res;
 	char cFileName[20]={""};
 	char cName[20];
 	char cData[200];

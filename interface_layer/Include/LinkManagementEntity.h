@@ -65,4 +65,12 @@ typedef struct BinMsgTxFifoStruct
 
 /* Public function ----------------------------------------------------------*/
 
+// lnw add  below
+extern void LME_BinMsgPort(void);
+extern void LME_ModuleInit(void);
+extern void LME_InstBinMsgRxFifoPortIn(void);
+extern void LME_InstBinMsgRxFifoPortOut(void);
+extern void LME_InstBinMsgTxFifoPortOut(void);
+extern void LME_InstBinMsgTxFifoPortIn(void);
+
 #endif

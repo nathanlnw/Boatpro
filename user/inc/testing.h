@@ -20,6 +20,8 @@
 #ifndef _TESTING_H
 #define _TESTING_H
 
+#include "Include.h"  //lnw add
+
 /* Private define ------------------------------------------------------------*/
 #define TEST_200MS_PERIOD	40		//200ms¶¨Ê±
 
@@ -240,4 +242,13 @@ extern void InitSleepTestCtrl(void);
 extern void MsgTestCtrl(void);
 extern void SleepTestCtrl(void);
 extern void InitMsgTest(void);
+
+//lnw add
+extern void InitRxTestStruct(RxTestStruct *pRxTestStruct);
+extern void TASK_ModuleInit(void);
+extern void TEST_TxTestInit(AisChannelEnum channel, U8 type,
+                     TransceiverTypeEnum transceiverType);
+extern void TEST_TxTestStop(TransceiverTypeEnum transceiverType);
+
+
 #endif

@@ -96,5 +96,6 @@ typedef struct GpioSpi
 /* Public  variables ---------------------------------------------------------*/
 
 /* Public  function  ---------------------------------------------------------*/
+extern void GPIOSPI_InstClockCount(GpioSpiTypeEnum spiType);
 
 #endif

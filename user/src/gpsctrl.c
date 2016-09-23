@@ -349,7 +349,7 @@ U8 DealGpsMsg(GPSStruct *pGpsCell, U8 *pDat, U16 uiLen)
 	U32 ulMax, ulMin;
 	U16 i;
 	float flTmp;
-	S32 sTemp;
+//	S32 sTemp;
 	S32 sTempLon, sTempLat, sTempLon_EW, sTempLat_NS;
     U8  ucLLValid;
     S8  scNS, scEW;

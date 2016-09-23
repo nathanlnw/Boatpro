@@ -96,4 +96,11 @@ extern void ResetRtcCount(U16 usAlarmValue);
 extern void RTCConfigurationPart1(void);
 extern void RTCConfigurationPart2(void);
 
+//lnw add
+extern void InitRtcParaStruct(RtcPara *pRtcPara);
+extern 	void InitRtcTimPhaseStruct(void);
+extern void RTC_RtcSelfCheckStructInit(RtcSelfCheckStruct *pRtcSelfCheckStruct);
+extern void RTC_SelfCheck(RtcSelfCheckStruct *pRtcSelfCheckStruct);
+
+
 #endif

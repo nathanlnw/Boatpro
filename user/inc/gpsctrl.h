@@ -434,5 +434,8 @@ extern void ResetGpsOffPositionSampleEn(void);
 
 
 extern void IniGpsMsgStru(GPSStruct *pGpsCell);//lnw add
+extern 	S32 GetGpsOnTim(void);//lnw add	
+extern void GPS_GpsSelfCheckStructInit(GpsSelfCheckStruct *pGpsSelfCheckStruct);
+extern void GPS_SelfCheck(GpsSelfCheckStruct *pGpsSelfCheckStruct);
 
 #endif

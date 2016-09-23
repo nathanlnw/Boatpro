@@ -250,7 +250,7 @@ FLASH中单个参数存储方式：
 
 /* Private functions ---------------------------------------------------------*/
 U8 FlashWrite(U8 ucPara_Type, U8 *pPara, U8 ucLen);
-U8 FlashRead(U8 ucPara_Type, U8 *pPara);
+void FlashRead(U8 ucPara_Type, U8 *pPara); // Note : // lnw  modify     before    U8 return but  not return in  function
 U8 U8ToU16(U8 *ucTemp,U16 *usTemp,U8 ucLen);
 U8 U16ToU8(U16 *usTemp,U8 *ucTemp,U8 usLen);
 void ReadCHAR(U8 *u8Temp,U16 *u16Temp,U8 u8Len);

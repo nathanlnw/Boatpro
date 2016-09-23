@@ -1013,20 +1013,20 @@ void PowerUpProcess(void)
 *******************************************************************************/
 void PowerUpProcess(void)
 {
-	U8 ucPowerKey;
-	U8 ucSOSKey;
-	U8 i;
+//	U8 ucPowerKey;
+//	U8 ucSOSKey;
+//	U8 i;
 	char chTemp[100];
     U8 ucTempBuf[40];
-	U16 PowerEnableCount;
-	U16 SosEnableCount;
-	U16 usTemp1;
-    U16 usTemp2;
-	U16 PowerKeyEnableValue;//power开机按键计数阈值
-	U16 SosKeyEnableValue;//sos开机按键计数阈值
+//	U16 PowerEnableCount;
+//	U16 SosEnableCount;
+	U32 usTemp1;  // lnw  modify    old U16
+    U32 usTemp2; // lnw modify  old U16
+//	U16 PowerKeyEnableValue;//power开机按键计数阈值
+//	U16 SosKeyEnableValue;//sos开机按键计数阈值
 
-	PowerEnableCount = 0;
-	SosEnableCount = 0;
+	//PowerEnableCount = 0;
+//	SosEnableCount = 0;
 	
     /*lq 设备系统时钟初始化*/
     Target_SysClock_Init();

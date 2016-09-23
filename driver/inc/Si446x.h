@@ -13,6 +13,7 @@
 #define _SI446X_H_
 #include "def.h"
 #include "Si446xDefs.h"
+#include "AisDef.h"     // lnw add
 
 /* Include ------------------------------------------------------------*/
 
@@ -418,6 +419,21 @@ extern U8 SI446X_RXSTTUS_Return(void);
 #endif
 
 extern void SI446X_FUNC_INFO(U8 *buffer, SI446XChipEnum cs);
+extern S16 SI446X_GetRssi(SI446XChipEnum cs);
+extern void SI446X_StateTo(U8 state, SI446XChipEnum cs);
+extern void SI446X_TxCfg(SI446XChipEnum cs, AisChannelEnum channel);
+extern void SI446X_RxCfg(SI446XChipEnum cs, AisChannelEnum channel);
+
+extern U8 SI446X_CfgCwTx(SI446XChipEnum cs, AisChannelEnum channel);
+extern U8 SI446X_CfgPN9Tx(SI446XChipEnum cs, AisChannelEnum channel);
+extern void SI446X_Si446xSelfCheckStructInit(Si446xSelfCheckStruct *pSi446xSelfCheckStruct);
+extern void SI446X_REQUEST_DEVICE_STATE(U8 *buffer, SI446XChipEnum cs);
+extern U16 SI446X_GetSi446xPaPwrLvl(SI446XChipEnum cs);
+
+//lnw add
+extern void SI446X_PART_INFO(U8 *buffer, SI446XChipEnum cs);
+
+
 
 #endif
 /*==============================================================================

@@ -16,7 +16,9 @@
 #include "UbloxProtocol.h"
 #include "usart.h"
 #include "config.h"
-
+#include "Gps.h"     // lnw  add
+#include "Include.h" //lnw add
+ 
 /*lq 模块实例定义*/
 static UBXPrtCommStruct UBXPrtCommPara;
 
@@ -348,7 +350,7 @@ U8 UBX_UartTxUbxMsg(U8 *pStr, U16 Len)
 * 输出 ：无
 * 返回 ：Check_Sum - 校验码
 *******************************************************************************/
-U16 UBX_UartMsgCheckSum(char *pStr, U16 Length)
+U16 UBX_UartMsgCheckSum(U8*pStr, U16 Length)
 {
     U8 CK_A, CK_B;
     U16 i;
@@ -402,7 +404,7 @@ U8 UBX_UartResponseUbxMsg(U8 *pData, U16 Len)
 	UartDebugBuff[Index++] = Check >> 8;    //lq Check_A
 	UartDebugBuff[Index++] = Check & 0xFF;  //lq Check_B
 
-	UBX_UartTxUbxMsg(UartDebugBuff, Index);
+	UBX_UartTxUbxMsg((U8*)UartDebugBuff, Index);
 	
 	return TRUE;
 }
@@ -675,7 +677,7 @@ void UBX_UartRxProcess(U8 COMM, U8 data)
 * 输出 ：无
 * 返回 ：无
 *******************************************************************************/
-static S16 UBX_MsgDealProcess(UBXPrtCommStruct *pUBXPrtCommStruct, U8 *pDat, U16 uiLen)
+static void UBX_MsgDealProcess(UBXPrtCommStruct *pUBXPrtCommStruct, U8 *pDat, U16 uiLen)
 {
     /*lq 该响应消息为ACK类消息*/
     if (pDat[0] == UBX_PRT_MSG_CLASS_ACK)

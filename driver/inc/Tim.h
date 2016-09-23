@@ -65,4 +65,8 @@ extern void SetFetchFirstFskDataEn(void);
 extern void ResetFetchFirstFskDataEn(void);
 extern U8 GetFetchFirstFskDataEn(void);
 extern void TransPhaseAdjust(S16 * const pAdjust1, S16 * const pAdjust10, S16 * const pAdjust100);
+
+// lnw add
+extern void CalcTimPhaseAdjust(S32 DiffNum ,U16 PeriodCount);
+
 #endif

@@ -54,7 +54,7 @@ typedef struct {
 
 /* Private define ------------------------------------------------------------*/
 /*lq 以下定义LED控制优先级，0为最高优先级，3为最低优先级，优先级比较只限于同一个LED */
-#define LED_CTRL_PRIORITY0		0
+#define LED_CTRL_PRIORITY0		0//0
 #define LED_CTRL_PRIORITY1		1
 #define LED_CTRL_PRIORITY2		2
 #define LED_CTRL_PRIORITY3		3

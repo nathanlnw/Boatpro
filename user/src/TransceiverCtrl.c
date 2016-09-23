@@ -788,7 +788,7 @@ void TRCTRL_TransmitProcess(void)
     TransceiverTxCtrlStruct *pTransceiverTxCtrlStruct;
     S32 currFrame;
     S16 currSlot;
-    S16 currPhase;
+//    S16 currPhase;
     S16 slotDiff;
     U8  txSlotValidFlg = FALSE;
     U8  txDoneFlg = FALSE;
@@ -797,7 +797,7 @@ void TRCTRL_TransmitProcess(void)
 
     currFrame = GetFrameNum();
     currSlot = GetSlotNum();
-    currPhase = GetPhaseNum();
+//    currPhase = GetPhaseNum();
 
     switch (pTransceiverTxCtrlStruct->TxCtrlState)
     {

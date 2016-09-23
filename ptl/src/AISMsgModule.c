@@ -262,7 +262,7 @@ void AISMSG_BuildMsg3(const AISMsgTypeStruct_1_2_3* pAISMsg)
 
 /*******************************************************************************
 * 名称  : AISMSG_BuildMsg4
-* 描述  : 组建AIS消息4
+* 描述  : 组建AIS消息4      lnw add  .SOTDMACommState
 * 输入  : 无		  
 * 输出  : 无
 * 返回  : 无
@@ -297,27 +297,27 @@ void AISMSG_BuildMsg4(const AISMsgTypeStruct_4_11* pAISMsg)
 	bitmap_set_value(&msg_bitmap, pAISMsg->TxCtrlForLrbm, 1);
 	bitmap_set_value(&msg_bitmap, 0, 9);
 	bitmap_set_value(&msg_bitmap, pAISMsg->RAIMFlag, 1);
-	bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SyncState, 2);
-	bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SlotTimeout, 3);
-    if (pAISMsg->CommunicationState.SlotTimeout == 0)
+	bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SOTDMACommState.SyncState, 2);  //lnw modify
+	bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout, 3);
+    if (pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 0)
     {
-	    bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SubMessage.SlotOffset, 14);    
+	    bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SOTDMACommState.SubMessage.SlotOffset, 14);    
     }
-    else if (pAISMsg->CommunicationState.SlotTimeout == 1)
+    else if (pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 1)
     {
-	    bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SubMessage.UTCHourAndMinute, 14);        
+	    bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SOTDMACommState.SubMessage.UTCHourAndMinute, 14);        
     }
-    else if (pAISMsg->CommunicationState.SlotTimeout == 2
-             || pAISMsg->CommunicationState.SlotTimeout == 4
-             || pAISMsg->CommunicationState.SlotTimeout == 6)
+    else if (pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 2
+             || pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 4
+             || pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 6)
     {
-	    bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SubMessage.SlotNumber, 14);        
+	    bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SOTDMACommState.SubMessage.SlotNumber, 14);        
     }
-    else if (pAISMsg->CommunicationState.SlotTimeout == 3
-             || pAISMsg->CommunicationState.SlotTimeout == 5
-             || pAISMsg->CommunicationState.SlotTimeout == 7)
+    else if (pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 3
+             || pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 5
+             || pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 7)
     {
-	    bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SubMessage.ReceivedStations, 14);        
+	    bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SOTDMACommState.SubMessage.ReceivedStations, 14);        
     }
 
     len_1 = msg_bitmap.index;
@@ -699,12 +699,12 @@ void AISMSG_BuildMsg10(const AISMsgTypeStruct_10* pAISMsg)
 
 /*******************************************************************************
 * 名称  : AISMSG_BuildMsg11
-* 描述  : 组建AIS消息11
+* 描述  : 组建AIS消息11       lnw modify  .SOTDMACommState
 * 输入  : 无		  
 * 输出  : 无
 * 返回  : 无
 *******************************************************************************/
-void AISMSG_BuildMsg11(const AISMsgTypeStruct_4_11* pAISMsg)
+void AISMSG_BuildMsg11(const AISMsgTypeStruct_4_11* pAISMsg)    
 {
 	BITMAP msg_bitmap;
 	U8 len_1;
@@ -735,27 +735,27 @@ void AISMSG_BuildMsg11(const AISMsgTypeStruct_4_11* pAISMsg)
 	bitmap_set_value(&msg_bitmap, pAISMsg->TxCtrlForLrbm, 1);
 	bitmap_set_value(&msg_bitmap, 0, 9);
 	bitmap_set_value(&msg_bitmap, pAISMsg->RAIMFlag, 1);
-	bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SyncState, 2);
-	bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SlotTimeout, 3);
-    if (pAISMsg->CommunicationState.SlotTimeout == 0)
+	bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SOTDMACommState.SyncState, 2);
+	bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout, 3);
+    if (pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 0)
     {
-	    bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SubMessage.SlotOffset, 14);    
+	    bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SOTDMACommState.SubMessage.SlotOffset, 14);    
     }
-    else if (pAISMsg->CommunicationState.SlotTimeout == 1)
+    else if (pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 1)
     {
-	    bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SubMessage.UTCHourAndMinute, 14);        
+	    bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SOTDMACommState.SubMessage.UTCHourAndMinute, 14);        
     }
-    else if (pAISMsg->CommunicationState.SlotTimeout == 2
-             || pAISMsg->CommunicationState.SlotTimeout == 4
-             || pAISMsg->CommunicationState.SlotTimeout == 6)
+    else if (pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 2
+             || pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 4
+             || pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 6)
     {
-	    bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SubMessage.SlotNumber, 14);        
+	    bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SOTDMACommState.SubMessage.SlotNumber, 14);        
     }
-    else if (pAISMsg->CommunicationState.SlotTimeout == 3
-             || pAISMsg->CommunicationState.SlotTimeout == 5
-             || pAISMsg->CommunicationState.SlotTimeout == 7)
+    else if (pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 3
+             || pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 5
+             || pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 7)
     {
-	    bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SubMessage.ReceivedStations, 14);        
+	    bitmap_set_value(&msg_bitmap, pAISMsg->CommunicationState.SOTDMACommState.SubMessage.ReceivedStations, 14);        
     }
 
     len_1 = msg_bitmap.index;
@@ -2225,7 +2225,7 @@ static void AISMSG_ParseMsg3(AISMsgBinBuffArray_1_2_3 AISMsgBinBuff, AISMsgTypeS
 
 /*******************************************************************************
 * 名称  : AISMSG_ParseMsg4_11
-* 描述  : 解析AIS消息4和11
+* 描述  : 解析AIS消息4和11             lnw  add     .SOTDMACommState
 * 输入  : 无		  
 * 输出  : 无
 * 返回  : 无
@@ -2277,32 +2277,32 @@ static void AISMSG_ParseMsg4_11(AISMsgBinBuffArray_4_11 AISMsgBinBuff, AISMsgTyp
 	bitmap_get_value(&msg_bitmap, &Temp32, 1);
     pAISMsg->RAIMFlag = Temp32;
 	bitmap_get_value(&msg_bitmap, &Temp32, 2);
-    pAISMsg->CommunicationState.SyncState = Temp32;
+    pAISMsg->CommunicationState.SOTDMACommState.SyncState = Temp32;
 	bitmap_get_value(&msg_bitmap, &Temp32, 3);
-    pAISMsg->CommunicationState.SlotTimeout = Temp32;
-    if (pAISMsg->CommunicationState.SlotTimeout == 0)
+    pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout = Temp32;
+    if (pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 0)
     {
 	    bitmap_get_value(&msg_bitmap, &Temp32, 14);    
-        pAISMsg->CommunicationState.SubMessage.SlotOffset = Temp32;
+        pAISMsg->CommunicationState.SOTDMACommState.SubMessage.SlotOffset = Temp32;
     }
-    else if (pAISMsg->CommunicationState.SlotTimeout == 1)
+    else if (pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 1)
     {
 	    bitmap_get_value(&msg_bitmap, &Temp32, 14);        
-        pAISMsg->CommunicationState.SubMessage.UTCHourAndMinute = Temp32;
+        pAISMsg->CommunicationState.SOTDMACommState.SubMessage.UTCHourAndMinute = Temp32;
     }
-    else if (pAISMsg->CommunicationState.SlotTimeout == 2
-             || pAISMsg->CommunicationState.SlotTimeout == 4
-             || pAISMsg->CommunicationState.SlotTimeout == 6)
+    else if (pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 2
+             || pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 4
+             || pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 6)
     {
 	    bitmap_get_value(&msg_bitmap, &Temp32, 14);        
-        pAISMsg->CommunicationState.SubMessage.SlotNumber = Temp32;
+        pAISMsg->CommunicationState.SOTDMACommState.SubMessage.SlotNumber = Temp32;
     }
-    else if (pAISMsg->CommunicationState.SlotTimeout == 3
-             || pAISMsg->CommunicationState.SlotTimeout == 5
-             || pAISMsg->CommunicationState.SlotTimeout == 7)
+    else if (pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 3
+             || pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 5
+             || pAISMsg->CommunicationState.SOTDMACommState.SlotTimeout == 7)
     {
 	    bitmap_get_value(&msg_bitmap, &Temp32, 14); 
-        pAISMsg->CommunicationState.SubMessage.ReceivedStations = Temp32;       
+        pAISMsg->CommunicationState.SOTDMACommState.SubMessage.ReceivedStations = Temp32;       
     }
 }
 

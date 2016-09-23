@@ -19,7 +19,7 @@
 /*lq 上下限值 */
 #define DEV_INFO_SERIAL_MIN			    0			                            //整机序列号存储最大长度
 #define DEV_INFO_SERIAL_MAX			    99999999                                //整机序列号存储最大长度
-#define DEV_INFO_GPS_OUTPUT_INTERVAL_MIN        0                               //lq unit: 1s
+#define DEV_INFO_GPS_OUTPUT_INTERVAL_MIN        0//0                               //lq unit: 1s
 #define DEV_INFO_GPS_OUTPUT_INTERVAL_MAX        255
 
 /*lq 默认值 */
@@ -76,6 +76,11 @@ extern DevStaticInfoStruct DevStaticPara;
 extern DevDynamicInfoStruct DevDynamicPara;
 
 /* Public functions ----------------------------------------------------------*/
+
+//lnw add
+extern 	void DEVINFO_ModuleInit(void);
+extern void  DEVINFO_InstResetGpsOutputCnt(void);
+extern void  SI446X_SetSi446xPaPwrLvl(U8 pwrLvl, SI446XChipEnum cs);
 
 #endif
 /*==============================================================================

@@ -150,7 +150,6 @@ static void init_task_core(void *pdata)
 	mem_init();					/* 创建应用中的大多数内存分区 	*/	
 	 		
 	application_init();			/* 初始化应用中参数				*/
-//	Wdg_Init();					/* 窗口看门狗初始化 			*/		
 		
 	while(1)
 	{

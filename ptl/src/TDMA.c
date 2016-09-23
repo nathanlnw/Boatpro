@@ -168,6 +168,7 @@ static void SOTDMA_SotdmaCtrlStructInit(SotdmaCtrlStruct *pSotdmaCtrlStruct)
     pSotdmaCtrlStruct->SotdmaEn = FALSE;
 }
 
+#if 0 // lnw mask  noused
 /*******************************************************************************
 * 名称  : SOTDMA_SotdmaCtrlStructInit
 * 描述  : SotdmaCtrlStruct结构体复制
@@ -186,7 +187,7 @@ static void SOTDMA_SotdmaCtrlStructCopy(SotdmaCtrlStruct *pSotdmaCtrlDst,
     pSotdmaCtrlDst->CtrlState = pSotdmaCtrlSrc->CtrlState;
     pSotdmaCtrlDst->SotdmaEn = pSotdmaCtrlSrc->SotdmaEn;
 }
-
+#endif
 /*******************************************************************************
 * 名称  : SOTDMA_SotdmaSchedStructInit
 * 描述  : SotdmaSchedStruct结构体初始化
@@ -3272,9 +3273,7 @@ void TDMA_InstSchedule(void)
 * 输出  : 无
 * 返回  : 无
 *******************************************************************************/
-void TDMA_SetSlotState(AisChannelEnum channel, AISMsgCommStateEnum commStateType,
-                       AISMsgCommStateUnion commState, S32 currFrame,
-                       S16 currSlot, U8 slotState)
+void TDMA_SetSlotState(AisChannelEnum channel, AISMsgCommStateEnum commStateType,AISMsgCommStateUnion commState, S32 currFrame,S16 currSlot, U8 slotState)
 {
     /*lq 开机同步过之后才可设置时隙状态 */
     if (GetGpsPowerupFixState() == TRUE)
@@ -3291,7 +3290,6 @@ void TDMA_SetSlotState(AisChannelEnum channel, AISMsgCommStateEnum commStateType
         }
     }
 }
-
 /*******************************************************************************
 * 名称  : SendMsg18
 * 描述  : 发送18号消息

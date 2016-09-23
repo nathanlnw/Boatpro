@@ -35,6 +35,8 @@ PTT_CLASS  PTT_OBJ;
 void PTT_Init_IO(void)
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
+		GPIO_PinRemapConfig(GPIO_Remap_SWJ_Disable,ENABLE);//Disable JTAG SWD
+		GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable,ENABLE);//Disable JTAG SWD
 	//  1.  OUTPUT PIN  SET
 
 	//  PTT   ±¨¾¯µÆ 
@@ -82,7 +84,7 @@ void PTT_Init_IO(void)
     //  3. OUTPUT  INIT STATE
      PTT_WARNLIGHT_OFF;         //   OFF  Init 
 	 PTT_SPK_CTL_RX;           //   SPK Keep  Rx STATE
-	 PTT_MODULE_POWER_ON;      //  Module Power ON
+	 PTT_MODULE_POWER_OFF;      //  Module Power ON  
    	
 }
 
@@ -98,10 +100,11 @@ void PTT_OBJ_INIT(void)
 {
    memset((U8*)&PTT_OBJ,0, sizeof(PTT_OBJ));
    PTT_OBJ.WarnLight_Keep_Duraiton=WARNLIGHT_KEEP;
-   PTT_OBJ.PTT_TX_Keep_Duraiton=PTT_TX_KEEP;
-   PTT_OBJ.PTT_IDLE_Duration=PTT_IDLE_KEEP;
+   PTT_OBJ.PTT_TX_Keep_Duraiton=PTT_WAIT_KEEP;
+   PTT_OBJ.PTT_IDLE_Duration=PTT_WAIT_KEEP;
    PTT_OBJ.PTT_Demo_Enable=Enable_PTT; 
-   PTT_OBJ.PTT_TX_Enable=Enable_PTT;
+   PTT_OBJ.PTT_TX_Enable=Disable_PTT;
+   PTT_OBJ.PTT_powerOn_RunOnce=0;
 }
 
 
@@ -156,39 +159,71 @@ void PTT_WARNLIGHT_ENABLE(void)
 ************************************************************/
 void PTT_TX_Control(void)
 {
-   if((PTT_MODULE_POWER_STATUS_GET)&&(Enable_PTT==PTT_OBJ.PTT_Demo_Enable)&&(PTT_OBJ.LowPowerMode_Staus==Disable_PTT))
-   {
+//   if((PTT_MODULE_POWER_STATUS_GET)&&(Enable_PTT==PTT_OBJ.PTT_Demo_Enable)&&(PTT_OBJ.LowPowerMode_Staus==Disable_PTT))
+ // if((Enable_PTT==PTT_OBJ.PTT_Demo_Enable)&&(PTT_OBJ.LowPowerMode_Staus==Disable_PTT))
+ 
+   if(Enable_PTT==PTT_OBJ.PTT_Demo_Enable)
+	{      
+
 	        if(Enable_PTT==PTT_OBJ.PTT_TX_Enable)    
 		    {
-	           if(PTT_RX_STATUS_GET)   //  HIGH  means  no  Rx : idle
+	           //if(PTT_RX_STATUS_GET)   //  HIGH  means  no  Rx : idle
 			   {
-	                PTT_SPK_CTL_SD;
+					PTT_WARNLIGHT_ON;
+					PTT_MODULE_POWER_ON;
 			        PTT_OBJ.PTT_TX_timecounter++;
+					if(PTT_OBJ.PTT_TX_timecounter>=5) 
+						{
+						   PTT_SPK_CTL_SD; 
+						}
+					else
+						{
+						   PTT_SPK_CTL_RX;
+						}
 					if(PTT_OBJ.PTT_TX_timecounter>=PTT_OBJ.PTT_TX_Keep_Duraiton)
 					{
 			            PTT_OBJ.PTT_TX_timecounter=0;
 	                    // Convert  to   RX
 						PTT_OBJ.PTT_TX_Enable=Disable_PTT;		
 						PTT_SPK_CTL_RX;
+						PTT_WARNLIGHT_OFF;
+						PTT_MODULE_POWER_OFF; 
+						PTT_OBJ.PTT_IDLE_timecouteer=0;
 					}
-	           	}		
+					if(PTT_OBJ.PTT_powerOn_RunOnce==1)
+							  PTT_OBJ.PTT_TX_Keep_Duraiton=PTT_TX_KEEP; 
+	           	}	
+			   // UartTxString("\r\n    -------PTT  IDLE \r\n");
 		   	}
 		   else
 		   	{
 	                PTT_OBJ.PTT_IDLE_timecouteer++;
-					if(PTT_OBJ.PTT_IDLE_timecouteer>=PTT_OBJ.PTT_IDLE_Duration)
+					if(PTT_OBJ.PTT_IDLE_timecouteer>PTT_OBJ.PTT_TX_Keep_Duraiton) 
 					{
 	                    PTT_OBJ.PTT_IDLE_timecouteer=0;
 	                    PTT_OBJ.PTT_TX_Enable=Enable_PTT;
-					}
+						PTT_OBJ.PTT_TX_timecounter=0;//clear
+
+						if(PTT_OBJ.PTT_powerOn_RunOnce==0)
+							PTT_OBJ.PTT_powerOn_RunOnce=1;
+						
+						if(PTT_OBJ.PTT_powerOn_RunOnce==1)
+							PTT_OBJ.PTT_TX_Keep_Duraiton=PTT_TX_KEEP;
+
+				}
 		   	}
   	}
-    else
+    
+  /*  #if  1
+     else
 	{
 	  PTT_SPK_CTL_RX;
+	  PTT_WARNLIGHT_OFF;
 	  PTT_OBJ.PTT_TX_timecounter=0;
 	  PTT_OBJ.PTT_IDLE_timecouteer=0;
+	 // UartTxString("\r\n    -------PTT  RX2 \r\n");
     }  	
+	#endif*/
 }
 
 
@@ -252,7 +287,7 @@ void PTT_MainPower_Check(void)
      //  part 2 
      PTT_OBJ.MainPower_Status=MAIN__POWER_NORMAL;
 	 PTT_OBJ.LowPowerMode_Staus=Disable_PTT;
-	 PTT_MODULE_POWER_ON;  // main power recover   PTT power   
+	// PTT_MODULE_POWER_ON;  // main power recover   PTT power   
 
 
 	
@@ -271,7 +306,7 @@ void PTT_MainPower_Check(void)
 ************************************************************/
 void PTT_Work_Process(void)
 {
-    PTT_MainPower_Check();   
+   //PTT_MainPower_Check();   
 }
 
 /************************************************************
@@ -288,7 +323,7 @@ void PTT_Timer_Service(void)
 	if(PTT_OBJ.OneSecond_counter>=1000)
 	{ 
 	  PTT_OBJ.OneSecond_counter=0;  // clear
-      PTT_Warnlight_Control();  
+     // PTT_Warnlight_Control();  
 	  PTT_TX_Control();
 	} 
 }

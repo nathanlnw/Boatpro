@@ -645,7 +645,7 @@ void Testing(void)
 *******************************************************************************/
 void BatteryTestCtrlLowFreq(void)
 {
-	U8  ucPowerKeyVal;
+//	U8  ucPowerKeyVal;
 
 	EnterStopMod();
 
@@ -1103,7 +1103,7 @@ void InitSleepTestCtrl(void)
 *******************************************************************************/
 void SleepTestCtrl(void)
 {
-	U8 ucPowerKeyVal;
+//	U8 ucPowerKeyVal;
 		
 	if (SleepTestCtrlPara.CtrlState == SLEEP_TEST_STATE_IDEL)
 	{

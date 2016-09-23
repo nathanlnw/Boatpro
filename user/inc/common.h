@@ -87,6 +87,7 @@ U16 AIS_Cal_CRC16(U8 *data, U16 count);
 
 //  lnw  add
 extern S32 Random(S32 bound1, S32 bound2);
+extern U8 TIME_DateTimeOffset28Days(DateTimeStruct *pDateTimeStruct, S32 second) ;
 
 #endif
 /*==============================================================================

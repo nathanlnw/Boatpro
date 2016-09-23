@@ -104,4 +104,6 @@ extern S32 CalcuSleepPhases_Sleep(void);
 extern void ResetUsartFlg(void);
 extern U8 GetUsartFlgRst(void);
 extern U8 GetUsartFlg(void);
+
+extern void SetUsartFlg(void);
 #endif

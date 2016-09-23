@@ -62,7 +62,7 @@ typedef enum CryType
 U32 Decode(U32 ulSrc, U32 *ulKeyBuff, U8 KeySize);
 void ReadDeviceID(U32 *ucIDBuff);
 U32 ReadCry(U8 ucCryType);
-U8 WriteCry(U8 ucCryType, U8 *ucCryBuff);
+void WriteCry(U8 ucCryType, U8 *ucCryBuff);    // lnw  modify     before    U8 return but  not return in  function
 void FlashReadCry(U8 *ucCryBuff, U32 ulAddr);
 void FlashWriteCry(U8 *ucCryBuff, U32 ulAddr);
 

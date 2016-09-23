@@ -110,9 +110,9 @@ void ResetTimAdjustCtrlState(void)
 *******************************************************************************/
 void TimAdjustProcess(void)//此模块只工作在省电模式                             //lq 正常模式下，GPS长开， 
 {                                                                               //lq Tim可以一直与GPS同步， 
-	S16 Phase1Adjust;//时隙每1秒调整值                                          //lq 实际是为省电模式的休眠状态下偏差的调整做准备
-	S16 Phase10Adjust;//时隙每10秒调整值
-	S16 Phase100Adjust;//时隙每100秒调整值
+	//S16 Phase1Adjust;//时隙每1秒调整值                                          //lq 实际是为省电模式的休眠状态下偏差的调整做准备
+//	S16 Phase10Adjust;//时隙每10秒调整值
+//	S16 Phase100Adjust;//时隙每100秒调整值
 
 	U32 TempCount;
 	U32 TempCount2;

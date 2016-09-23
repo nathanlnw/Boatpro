@@ -34,4 +34,8 @@ typedef struct NRZIStruct
 
 /* Public function ----------------------------------------------------------*/
 
+//lnw add
+extern void PHY_ModuleInit(void);
+extern U8 PHY_InstNRZIDecode(const NRZITypeEnum NRZIType, const U8 curValue, U8 *pDecodeValue);
+
 #endif

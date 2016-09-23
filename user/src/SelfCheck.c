@@ -23,6 +23,7 @@
 #include "ledctrl.h"
 #include "Si446x.h"
 #include "RfLinkSelfCheck.h"
+#include "Include.h"
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/

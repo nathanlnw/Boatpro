@@ -13,13 +13,16 @@ void Target_Init(void);
 
 void Tmr_TickInit(void);
 
-void Wdg_Init(void);
+U32 BSP_CPU_ClkFreq(void);
 
-void Delay_us(u32 nTime);
 
-void delay_ms(u32 nTime);
 
-u32 BSP_CPU_ClkFreq(void);
+
+//lnw  add
+extern void Target_SysClock_Init(void);
+extern void Target_Periph_Init(void);
+
+
 
 #endif /* __STM32F10x_TARGET_H */
 

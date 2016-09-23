@@ -124,6 +124,7 @@ static U8 GPIOSPI_WaitClockPeriod(GpioSpiStruct *pGpioSpiStruct)
     }
 }
 
+#if 0  // lnw  mask  noused
 /*******************************************************************************
 * 名称  : GPIOSPI_InstWaitClockPeriod
 * 描述  : 时钟周期
@@ -138,7 +139,7 @@ U8 GPIOSPI_InstWaitClockPeriod(GpioSpiTypeEnum spiTye)
         return GPIOSPI_WaitClockPeriod(&GpioSpiInstance1);
     }
 }
-
+#endif
 /*******************************************************************************
 * 名称  : GPIOSPI_WaitClockPeriod
 * 描述  : 时钟第一相位
@@ -556,6 +557,7 @@ static U16 GPIOSPI_SendData(GpioSpiStruct *pGpioSpiStruct, U16 data)
     return returnData;
 }
 #endif
+
 /*******************************************************************************
 * 名称  : GPIOSPI_ResetClockPeriod
 * 描述  : 复位时钟计数
@@ -570,4 +572,6 @@ U16 GPIOSPI_InstSendData(GpioSpiTypeEnum spiTye, U16 data)
     {
         return GPIOSPI_SendData(&GpioSpiInstance1, data);
     }
+	else
+		return NULL;        // lnw  modify
 }

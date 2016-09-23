@@ -239,7 +239,8 @@ typedef struct AISMsgType_4_11{
     U8  TxCtrlForLrbm;              //lq 1 bit
     //  Spare;                      //lq 9 bits, all 0
     U8  RAIMFlag;                   //lq 1 bit
-    SOTDMACommStateStruct  CommunicationState;        //lq 19 bits
+    AISMsgCommStateUnion  CommunicationState;        //lq 19 bits      
+                                    // lnw  modify   OLD TYPE : SOTDMACommStateStruct   ITmust be :   AISMsgCommStateUnion
                                     //lq total 168 bits£¬1 slot
 }AISMsgTypeStruct_4_11;
 
@@ -854,6 +855,9 @@ extern void AISMSG_BuildMsg24B(const AISMsgTypeStruct_24B* pAISMsg);
 extern void AISMSG_BuildMsg25(AISMsgTypeStruct_25* pAISMsg);
 extern void AISMSG_BuildMsg26(AISMsgTypeStruct_26* pAISMsg);
 extern void AISMSG_BuildMsg27(const AISMsgTypeStruct_27* pAISMsg);
+extern AISMsgTypeEnum AISMSG_ConvertToMsgType(U8 msgId, U8 partNumber);
+extern void AisMain(void);
+
 
 
 

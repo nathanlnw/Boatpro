@@ -39,6 +39,21 @@ extern TaskTimStruct UpdateRecStationTask;
 
 /* Public functions ----------------------------------------------------------*/
 
+
+
+
+//lnw add
+extern void TASK_TaskTimEnable(TaskTimStruct *pTaskTimStruct, U16 timeout);
+extern void TASK_TaskProcess(void);
+extern void TASK_TaskTimStructInit(TaskTimStruct *pTaskTimStruct);
+extern void TASK_TaskTimEnable(TaskTimStruct *pTaskTimStruct, U16 timeout);
+extern void TASK_TaskTimDisable(TaskTimStruct *pTaskTimStruct);
+extern U8 TASK_PeriodTaskIsTimeout(TaskTimStruct *pTaskTimStruct);
+extern U8 TASK_SingleTaskIsTimeout(TaskTimStruct *pTaskTimStruct);
+extern void TASK_ModuleInit(void); 
+
+
+
 #endif
 /*==============================================================================
 ------------------------------------End of File---------------------------------

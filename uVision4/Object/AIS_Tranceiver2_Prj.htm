@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Object\AIS_Tranceiver2_Prj.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Object\AIS_Tranceiver2_Prj.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060183: Last Updated: Thu Sep 22 13:45:12 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060183: Last Updated: Fri Sep 23 14:15:15 2016
 <BR><P>
 <H3>Maximum Stack Usage =       1000 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -380,7 +380,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> stm32f10x_startup.o(RESET)
 </UL>
 <P><STRONG><a name="[26]"></a>TIM2_IRQHandler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_it.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = TIM2_IRQHandler &rArr; Tim2Interrupt &rArr; PTT_Timer_Service &rArr; PTT_TX_Control
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = TIM2_IRQHandler &rArr; Tim2Interrupt &rArr; PTT_Timer_Service &rArr; PTT_TX_Control
 </UL>
 <BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Tim2Interrupt
 </UL>
@@ -4330,7 +4330,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[86]"></a>Tim2Interrupt</STRONG> (Thumb, 1050 bytes, Stack size 32 bytes, tim.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = Tim2Interrupt &rArr; PTT_Timer_Service &rArr; PTT_TX_Control
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = Tim2Interrupt &rArr; PTT_Timer_Service &rArr; PTT_TX_Control
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsGpsPowerupProtect
 <LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare3
@@ -5184,7 +5184,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[2ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SLFCHK_SelfCheckProcess
 </UL>
 
-<P><STRONG><a name="[3a0]"></a>SI446X_RXSTTUS_Return</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, si446x.o(.text))
+<P><STRONG><a name="[3a0]"></a>SI446X_RXSTTUS_Return</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, si446x.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[39e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PTT_MainPower_Check
 </UL>
 
@@ -5737,7 +5737,6 @@ Global Symbols
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IO_Ctrl
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SI446X_B_TxRxClockIRQS
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SI446X_A_TxRxClockIRQS
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PTT_Init_IO
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Initia_RFPower
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitiaLED
 <LI><a href="#[344]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOSPI_InstanceInit
@@ -5748,7 +5747,6 @@ Global Symbols
 <LI><a href="#[2b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SI446X_SelfCheck
 <LI><a href="#[29f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF_PowerOn
 <LI><a href="#[2a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TRCTRL_TxDataClockISR
-<LI><a href="#[39e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PTT_MainPower_Check
 <LI><a href="#[39d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PTT_TX_Control
 <LI><a href="#[39c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PTT_Warnlight_Control
 <LI><a href="#[36f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SI446X_ReadPacket
@@ -6538,15 +6536,14 @@ Global Symbols
 <P><STRONG><a name="[6f]"></a>PTT_Init_IO</STRONG> (Thumb, 248 bytes, Stack size 40 bytes, ptt_lnw.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = PTT_Init_IO &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
-<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
+<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
 <LI><a href="#[2c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 <LI><a href="#[39b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_PinRemapConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Target_Periph_Init
 </UL>
 
-<P><STRONG><a name="[70]"></a>PTT_OBJ_INIT</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, ptt_lnw.o(.text))
+<P><STRONG><a name="[70]"></a>PTT_OBJ_INIT</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, ptt_lnw.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = PTT_OBJ_INIT
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
@@ -6554,21 +6551,17 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Target_Periph_Init
 </UL>
 
-<P><STRONG><a name="[39c]"></a>PTT_Warnlight_Control</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, ptt_lnw.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = PTT_Warnlight_Control
-</UL>
-<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<P><STRONG><a name="[39c]"></a>PTT_Warnlight_Control</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, ptt_lnw.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
 </UL>
-<BR>[Called By]<UL><LI><a href="#[331]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PTT_Timer_Service
-</UL>
 
-<P><STRONG><a name="[39f]"></a>PTT_WARNLIGHT_ENABLE</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, ptt_lnw.o(.text))
+<P><STRONG><a name="[39f]"></a>PTT_WARNLIGHT_ENABLE</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, ptt_lnw.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[39e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PTT_MainPower_Check
 </UL>
 
-<P><STRONG><a name="[39d]"></a>PTT_TX_Control</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, ptt_lnw.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = PTT_TX_Control
+<P><STRONG><a name="[39d]"></a>PTT_TX_Control</STRONG> (Thumb, 238 bytes, Stack size 40 bytes, ptt_lnw.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = PTT_TX_Control
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
@@ -6578,32 +6571,22 @@ Global Symbols
 
 <P><STRONG><a name="[507]"></a>PTT_LowPower_Get</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, ptt_lnw.o(.text), UNUSED)
 
-<P><STRONG><a name="[39e]"></a>PTT_MainPower_Check</STRONG> (Thumb, 136 bytes, Stack size 32 bytes, ptt_lnw.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = PTT_MainPower_Check &rArr; RxTxCtrl &rArr; RxTxSwitch
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RxTxCtrl
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<P><STRONG><a name="[39e]"></a>PTT_MainPower_Check</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, ptt_lnw.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RxTxCtrl
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
 <LI><a href="#[320]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
 <LI><a href="#[39f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PTT_WARNLIGHT_ENABLE
 <LI><a href="#[3a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SI446X_RXSTTUS_Return
 </UL>
-<BR>[Called By]<UL><LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PTT_Work_Process
-</UL>
 
 <P><STRONG><a name="[233]"></a>PTT_Work_Process</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, ptt_lnw.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = PTT_Work_Process &rArr; PTT_MainPower_Check &rArr; RxTxCtrl &rArr; RxTxSwitch
-</UL>
-<BR>[Calls]<UL><LI><a href="#[39e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PTT_MainPower_Check
-</UL>
-<BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[331]"></a>PTT_Timer_Service</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, ptt_lnw.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = PTT_Timer_Service &rArr; PTT_TX_Control
+<P><STRONG><a name="[331]"></a>PTT_Timer_Service</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, ptt_lnw.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = PTT_Timer_Service &rArr; PTT_TX_Control
 </UL>
 <BR>[Calls]<UL><LI><a href="#[39d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PTT_TX_Control
-<LI><a href="#[39c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PTT_Warnlight_Control
 </UL>
 <BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Tim2Interrupt
 </UL>

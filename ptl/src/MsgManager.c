@@ -46,7 +46,7 @@ static void MSGMAN_MsgCellStructInit(MsgCellStruct *pMsgCellStruct)
     pMsgCellStruct->MsgState = FALSE;
 	pMsgCellStruct->DataLength = 0;
 }
-
+#if 0  //lnw mask noused
 /*******************************************************************************
 * 名称  : MSGMAN_MsgStaticListElemStructInit
 * 描述  : 初始化结构体
@@ -60,7 +60,7 @@ static void MSGMAN_MsgStaticListElemStructInit(
     MSGMAN_MsgCellStructInit(&pMsgStaticListElemStruct->MsgCell);
     pMsgStaticListElemStruct->NextIndex = STATIC_LIST_INDEX_NULL;
 }
-
+#endif 
 /*******************************************************************************
 * 名称  : MSGMAN_MsgTxTaskStructInit
 * 描述  : 初始化结构体
@@ -107,7 +107,7 @@ static void MSGMAN_AisAckCellStructInit(AisAckCellStruct *pAisAckCellStruct)
     pAisAckCellStruct->DestinationID = 0;
     pAisAckCellStruct->SequenceNumber = 0;    
 }
-
+#if 0 // lnw mask  noused
 /*******************************************************************************
 * 名称  : MSGMAN_AisAckCellStructCopy
 * 描述  : 结构体复制
@@ -122,7 +122,7 @@ static void MSGMAN_AisAckCellStructCopy(AisAckCellStruct *pDst,
     pDst->DestinationID = pSrc->DestinationID;
     pDst->SequenceNumber = pSrc->SequenceNumber;    
 }
-
+#endif
 /*******************************************************************************
 * 名称  : MSGMAN_AisAckFifoStructInit
 * 描述  : 初始化结构体
@@ -589,9 +589,11 @@ static U8 MSGMAN_MsgStaticListIsFull(MsgStaticListStruct *pMsgStaticListStruct)
     if (pMsgStaticListStruct->FreeHead == STATIC_LIST_INDEX_NULL)
     {
         return TRUE;
-
+          
+         /*  lnw mask  unreachable			
         debug_printf("$[%6d:%4d] %s : Msg static list is full!\r\n",
             GetFrameNum(), GetSlotNum(), __func__);
+			   */
     }
     else
     {
@@ -1924,11 +1926,8 @@ void MSGMAN_MsgRxProcess(void)
             case AISMsgType4 :
                 
                 /*lq 时隙预占管理 */
-                TDMA_SetSlotState(msgCell.Channel, AIS_MSG_COMMSTATE_SOTDMA,
-                    AISMsg_4.CommunicationState, msgCell.Frame, msgCell.Slot,
-                    SLOT_STATE_EXTER_ALLOC);
-
-                break;
+                  TDMA_SetSlotState(msgCell.Channel,AIS_MSG_COMMSTATE_SOTDMA,AISMsg_4.CommunicationState, msgCell.Frame, msgCell.Slot,SLOT_STATE_EXTER_ALLOC);
+				break;
 
             case AISMsgType5 :
                 
@@ -1980,9 +1979,7 @@ void MSGMAN_MsgRxProcess(void)
             case AISMsgType11 :
                 
                 /*lq 时隙预占管理 */
-                TDMA_SetSlotState(msgCell.Channel, AIS_MSG_COMMSTATE_SOTDMA,
-                    AISMsg_11.CommunicationState, msgCell.Frame, msgCell.Slot,
-                    SLOT_STATE_EXTER_ALLOC);
+                TDMA_SetSlotState(msgCell.Channel, AIS_MSG_COMMSTATE_SOTDMA,AISMsg_11.CommunicationState, msgCell.Frame, msgCell.Slot,SLOT_STATE_EXTER_ALLOC);
 
                 break;
 
@@ -2020,9 +2017,7 @@ void MSGMAN_MsgRxProcess(void)
                     commStateType = AIS_MSG_COMMSTATE_ITDMA;
                 }
 
-                TDMA_SetSlotState(msgCell.Channel, commStateType,
-                    AISMsg_18.CommunicationState, msgCell.Frame, msgCell.Slot,
-                    SLOT_STATE_EXTER_ALLOC);
+                TDMA_SetSlotState(msgCell.Channel, commStateType,(AISMsg_18.CommunicationState), msgCell.Frame, msgCell.Slot, SLOT_STATE_EXTER_ALLOC);
 
                 break;
 

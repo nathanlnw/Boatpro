@@ -505,7 +505,7 @@ void RTCAlarmInt(void)                                                          
     S32 Temp1sCnt = 0;
     S32 Temp10sCnt = 0;
     S32 Temp100sCnt = 0;
-    U32 tempDivider = 0;
+//    U32 tempDivider = 0;
     S32 slTemp1 = 0;
 
     if(RTC_GetITStatus(RTC_IT_ALR) != RESET)

@@ -563,7 +563,7 @@ void Target_Init (void)
 * 输出  : 无
 * 返回  : RCC频率
 *******************************************************************************/
-u32 BSP_CPU_ClkFreq(void)
+U32 BSP_CPU_ClkFreq(void)
 {
     static RCC_ClocksTypeDef rcc_clocks;
 

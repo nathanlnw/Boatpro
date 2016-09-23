@@ -1063,7 +1063,7 @@ void LEDAllDown(void)
 void LedCtrl(LEDStruct *pLEDPara)
 {
 	U8 ucTempGreen;
-	U8 ucTempRed;
+//	U8 ucTempRed;
 
 	if (pLEDPara->LEDEn == TRUE)
 	{
@@ -1078,11 +1078,11 @@ void LedCtrl(LEDStruct *pLEDPara)
 
 		if (pLEDPara->pLEDRed[pLEDPara->ucLedFragment] > 0)
 		{
-			ucTempRed = IO_VAL_ON;
+			;//ucTempRed = IO_VAL_ON;
 		}
 		else
 		{
-			ucTempRed = IO_VAL_OFF;
+			//;ucTempRed = IO_VAL_OFF;
 		}
 
 		pLEDPara->ucLedFragmentTimer++;

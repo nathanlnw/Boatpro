@@ -193,8 +193,9 @@ U8 FlashWrite(U8 ucPara_Type, U8 *pPara, U8 ucLen)
 		    return (FALSE);        
         }
 
-		if(ucPara_Type >= 0 && ucPara_Type < 5)											  // U32类型 
-		{
+	//	if(ucPara_Type >= 0 && ucPara_Type < 5)											  // U32类型   // lnw  mask    u8>=0   is  const True
+	    if(ucPara_Type < 5)     // lnw   modify
+				{
 			if (ucLen > 10 || ulTemp > 0xFFFFFFFF)                              		  // 0-4294967295
             {
                 return (FALSE);                             
@@ -288,17 +289,17 @@ U8 FlashWrite(U8 ucPara_Type, U8 *pPara, U8 ucLen)
 * 输出  : 无
 * 返回  : 无
 *******************************************************************************/
-U8 FlashRead(U8 ucPara_Type, U8 *pPara)
+void  FlashRead(U8 ucPara_Type, U8 *pPara)     // Note : // lnw  modify     before    U8 return but  not return in  function
 {
-	U8 ucInteger;									  // 整半字数
-	U8 ucRemainder;									  // 0.5个半字数
+//	U8 ucInteger;									  // 整半字数
+//	U8 ucRemainder;									  // 0.5个半字数
 	U8 i;
 	U32 ulAddr;
 	U8 ucMaxLen;
 	U8 ucCheck;
 	U8 ucTempBuf[40];
 	U16 usTempBuf[20];
-    char *pEnd;
+//    char *pEnd;
     U32 ulTemp;
 	U8 ucLen;
 	U8 usLen;
@@ -355,7 +356,8 @@ U8 FlashRead(U8 ucPara_Type, U8 *pPara)
 	}
 	else																			  // 非CHAR类型
 	{
-		if(ucPara_Type >= 0 && ucPara_Type < 5)											  // U32类型 
+		//if(ucPara_Type >= 0 && ucPara_Type < 5)											  // U32类型   lnw mask
+    if(ucPara_Type < 5)	
 		{
 			usLen = 3;
 			ucLen = 4;	
@@ -446,8 +448,8 @@ U8 U8ToU16(U8 *ucTemp,U16 *usTemp,U8 ucLen)
 *******************************************************************************/
 U8 U16ToU8(U16 *usTemp,U8 *ucTemp,U8 usLen)
 {
-	U8 ucInteger;									  // 整半字数
-	U8 ucRemainder;									  // 0.5个半字数
+//	U8 ucInteger;									  // 整半字数
+//	U8 ucRemainder;									  // 0.5个半字数
 	U8 i;
 
 	for(i=0;i<usLen;i++)

@@ -76,7 +76,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 I (..\driver\inc\Adc.h)(0x5368837B)
@@ -162,7 +162,7 @@ I (..\user\inc\UbloxProtocol.h)(0x57E3461E)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\StartUp\src\stm32f10x_startup.s)(0x52D8B715)(--cpu Cortex-M3 -g --16 --apcs=interwork --pd "__MICROLIB SETA 1"-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 520" --pd "STM32F10X_HD SETA 1"--list .\list\stm32f10x_startup.lst --xref -o .\object\stm32f10x_startup.o --depend .\object\stm32f10x_startup.d)
@@ -245,7 +245,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\interface_layer\Source\keyscan.c)(0x57BEA0C7)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\keyscan.o --omf_browse .\object\keyscan.crf --depend .\object\keyscan.d)
@@ -327,7 +327,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 I (..\interface_layer\Include\gmskmod.h)(0x559224C3)
@@ -425,7 +425,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\interface_layer\Source\LinkManagementEntity.c)(0x57DF9151)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\linkmanagemententity.o --omf_browse .\object\linkmanagemententity.crf --depend .\object\linkmanagemententity.d)
@@ -504,7 +504,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\interface_layer\Source\PhysicalLayer.c)(0x5421277B)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\physicallayer.o --omf_browse .\object\physicallayer.crf --depend .\object\physicallayer.d)
@@ -589,7 +589,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\ptl\src\AISDigitalInterface.c)(0x57E0CCD0)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\aisdigitalinterface.o --omf_browse .\object\aisdigitalinterface.crf --depend .\object\aisdigitalinterface.d)
@@ -668,7 +668,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\ptl\src\AISMsgModule.c)(0x57E22C09)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\aismsgmodule.o --omf_browse .\object\aismsgmodule.crf --depend .\object\aismsgmodule.d)
@@ -747,7 +747,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\ptl\src\Slot.c)(0x55FF9533)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\slot.o --omf_browse .\object\slot.crf --depend .\object\slot.d)
@@ -826,7 +826,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\ptl\src\TDMA.c)(0x57E221A1)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\tdma.o --omf_browse .\object\tdma.crf --depend .\object\tdma.d)
@@ -905,7 +905,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\interface_layer\Source\DeviceInfo.c)(0x55D18ABC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\deviceinfo.o --omf_browse .\object\deviceinfo.crf --depend .\object\deviceinfo.d)
@@ -984,7 +984,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\ptl\src\AisInfo.c)(0x57DF9DA2)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\aisinfo.o --omf_browse .\object\aisinfo.crf --depend .\object\aisinfo.d)
@@ -1063,7 +1063,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\ptl\src\MsgManager.c)(0x57E221B0)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\msgmanager.o --omf_browse .\object\msgmanager.crf --depend .\object\msgmanager.d)
@@ -1142,7 +1142,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\ptl\src\AisPtlMain.c)(0x55C4440C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\aisptlmain.o --omf_browse .\object\aisptlmain.crf --depend .\object\aisptlmain.d)
@@ -1221,7 +1221,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\user\src\adjust.c)(0x57E0C1C1)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\adjust.o --omf_browse .\object\adjust.crf --depend .\object\adjust.d)
@@ -1300,7 +1300,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 I (..\user\inc\adjust.h)(0x51EE9DBB)
@@ -1383,7 +1383,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\user\src\gpsctrl.c)(0x57E0CC2D)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\gpsctrl.o --omf_browse .\object\gpsctrl.crf --depend .\object\gpsctrl.d)
@@ -1462,7 +1462,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 I (..\interface_layer\Include\ioctrl.h)(0x55B59217)
@@ -1554,7 +1554,7 @@ I (..\interface_layer\Include\systemtick.h)(0x57E338BB)
 I (..\user\inc\UbloxProtocol.h)(0x57E3461E)
 I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 I (..\interface_layer\Include\keyscan.h)(0x4FF3FFD6)
@@ -1645,7 +1645,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 I (..\user\inc\powerdown.h)(0x51F0AF2E)
@@ -1742,7 +1742,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 I (..\user\inc\sotdma.h)(0x52D76508)
@@ -1833,7 +1833,7 @@ I (..\user\inc\UbloxProtocol.h)(0x57E3461E)
 I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 I (..\interface_layer\Include\keyscan.h)(0x4FF3FFD6)
@@ -1923,7 +1923,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 I (..\interface_layer\Include\keyscan.h)(0x4FF3FFD6)
@@ -2010,7 +2010,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 I (..\user\inc\digunit.h)(0x53684A76)
@@ -2103,7 +2103,7 @@ I (..\interface_layer\Include\systemtick.h)(0x57E338BB)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\user\src\TransceiverCtrl.c)(0x57E23F32)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\transceiverctrl.o --omf_browse .\object\transceiverctrl.crf --depend .\object\transceiverctrl.d)
@@ -2183,7 +2183,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\user\src\SelfCheck.c)(0x57E34290)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\debug\inc -I ..\driver\inc -I ..\interface_layer\Include -I ..\library -I ..\ptl\inc -I ..\StartUp\inc -I ..\user\inc -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\selfcheck.o --omf_browse .\object\selfcheck.crf --depend .\object\selfcheck.d)
@@ -2265,7 +2265,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\user\src\RfLinkSelfCheck.c)(0x56F12B60)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\rflinkselfcheck.o --omf_browse .\object\rflinkselfcheck.crf --depend .\object\rflinkselfcheck.d)
@@ -2344,7 +2344,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\user\src\TaskManager.c)(0x57DF3B8A)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\taskmanager.o --omf_browse .\object\taskmanager.crf --depend .\object\taskmanager.d)
@@ -2423,7 +2423,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\user\src\diskio.c)(0x56E8E7CA)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\diskio.o --omf_browse .\object\diskio.crf --depend .\object\diskio.d)
@@ -2504,7 +2504,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\user\src\ff.c)(0x56E8E7CA)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\ff.o --omf_browse .\object\ff.crf --depend .\object\ff.d)
@@ -2590,7 +2590,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 I (..\user\inc\filectrl.h)(0x56E8E913)
@@ -2675,7 +2675,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 I (..\driver\inc\24c02.h)(0x57E23DAA)
@@ -2758,7 +2758,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\driver\src\24c02.c)(0x57BEA0C7)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\24c02.o --omf_browse .\object\24c02.crf --depend .\object\24c02.d)
@@ -2838,7 +2838,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\driver\src\Adc.c)(0x57E34D09)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\adc.o --omf_browse .\object\adc.crf --depend .\object\adc.d)
@@ -2921,7 +2921,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\driver\src\BKPRegister.c)(0x57BEA759)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\bkpregister.o --omf_browse .\object\bkpregister.crf --depend .\object\bkpregister.d)
@@ -3000,7 +3000,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\driver\src\DAC.c)(0x57BEA5B7)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\dac.o --omf_browse .\object\dac.crf --depend .\object\dac.d)
@@ -3079,7 +3079,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\driver\src\gps.c)(0x57BEA0C7)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\gps.o --omf_browse .\object\gps.crf --depend .\object\gps.d)
@@ -3158,7 +3158,7 @@ I (..\user\inc\UbloxProtocol.h)(0x57E3461E)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 I (..\driver\inc\rtc.h)(0x57E34319)
@@ -3238,7 +3238,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\driver\src\power.c)(0x57D0CD4E)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\power.o --omf_browse .\object\power.crf --depend .\object\power.d)
@@ -3317,7 +3317,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\driver\src\rtc.c)(0x57E34D09)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\rtc.o --omf_browse .\object\rtc.crf --depend .\object\rtc.d)
@@ -3397,7 +3397,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 I (..\user\inc\adjust.h)(0x51EE9DBB)
@@ -3477,7 +3477,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\driver\src\SPI.c)(0x57DF983B)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\spi.o --omf_browse .\object\spi.crf --depend .\object\spi.d)
@@ -3556,7 +3556,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\driver\src\Tim.c)(0x57DE3476)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\tim.o --omf_browse .\object\tim.crf --depend .\object\tim.d)
@@ -3640,7 +3640,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 I (..\driver\inc\rtc.h)(0x57E34319)
@@ -3723,7 +3723,7 @@ I (..\user\inc\UbloxProtocol.h)(0x57E3461E)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\driver\src\wdg.c)(0x57BEA0C7)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\wdg.o --omf_browse .\object\wdg.crf --depend .\object\wdg.d)
@@ -3813,7 +3813,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\driver\src\Si446x.c)(0x57E36A24)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\si446x.o --omf_browse .\object\si446x.crf --depend .\object\si446x.d)
@@ -3892,7 +3892,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\driver\src\sdcard.c)(0x57E347D8)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\sdcard.o --omf_browse .\object\sdcard.crf --depend .\object\sdcard.d)
@@ -3972,7 +3972,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\debug\src\debug.c)(0x56E8CCCE)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\debug.o --omf_browse .\object\debug.crf --depend .\object\debug.d)
@@ -4053,7 +4053,7 @@ I (..\user\inc\UbloxProtocol.h)(0x57E3461E)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
 F (..\Tranceiver2_Bugs.txt)(0x55A31346)()
@@ -4335,10 +4335,10 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
-F (..\PTT_lnw\src\PTT_lnw.c)(0x57E36F9D)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\ptt_lnw.o --omf_browse .\object\ptt_lnw.crf --depend .\object\ptt_lnw.d)
+F (..\PTT_lnw\src\PTT_lnw.c)(0x57E4C74D)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ..\interface_layer\Include -I ..\StartUp\inc -I ..\user\inc -I ..\driver\inc -I ..\debug\inc -I ..\ptl\inc -I ..\library -I ..\StdPeriph_Driver\inc -I ..\StdPeriph_Driver\src -I ..\migrateF4to5 -I ..\PTT_lnw\inc -I ..\PTT_lnw\src-I "D:\AIS 2016\AIS_M4508D_V1.0.0\uVision4\RTE"-I E:\Keil_520\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I E:\Keil_520\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\object\ptt_lnw.o --omf_browse .\object\ptt_lnw.crf --depend .\object\ptt_lnw.d)
 I (..\user\inc\Include.h)(0x57E34F6C)
 I (E:\Keil_520\ARM\ARMCC\include\stdlib.h)(0x56FE42DE)
 I (E:\Keil_520\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
@@ -4414,7 +4414,7 @@ I (..\driver\inc\usart.h)(0x57E34452)
 I (..\StartUp\inc\stm32f10x_target.h)(0x57E23ADD)
 I (..\interface_layer\Include\parastorage.h)(0x57E36D89)
 I (..\user\inc\sleepctrl.h)(0x57E34752)
-I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)
+I (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)
 I (..\user\inc\flashctrl.h)(0x57E36D88)
 I (..\user\inc\encrypt.h)(0x57E3453F)
-F (..\PTT_lnw\inc\PTT_lnw.h)(0x57E36F68)()
+F (..\PTT_lnw\inc\PTT_lnw.h)(0x57E4C6C0)()

@@ -24,41 +24,41 @@
 #define AIS_INFO_DESTINATION_LEN        20
 
 /*lq AIS INFO 数值类型信息的取值范围 */
-#define AIS_INFO_MMSI_MIN			    0
+#define AIS_INFO_MMSI_MIN			    0//0
 #define AIS_INFO_MMSI_MAX			    999999999
-#define AIS_INFO_SHIPA_MIN			    0
+#define AIS_INFO_SHIPA_MIN			    0//0
 #define AIS_INFO_SHIPA_MAX			    511
-#define AIS_INFO_SHIPB_MIN			    0
+#define AIS_INFO_SHIPB_MIN			    0//0
 #define AIS_INFO_SHIPB_MAX			    511
-#define AIS_INFO_SHIPC_MIN			    0
+#define AIS_INFO_SHIPC_MIN			    0//0
 #define AIS_INFO_SHIPC_MAX			    63
-#define AIS_INFO_SHIPD_MIN			    0
+#define AIS_INFO_SHIPD_MIN			    0//0
 #define AIS_INFO_SHIPD_MAX			    63
-#define AIS_INFO_DTE_MIN			    0
+#define AIS_INFO_DTE_MIN			    0//0
 #define AIS_INFO_DTE_MAX			    1
-#define AIS_INFO_SHIP_TYPE_MIN	        0
+#define AIS_INFO_SHIP_TYPE_MIN	        0//0
 #define AIS_INFO_SHIP_TYPE_MAX		    255
-#define AIS_INFO_MAX_DRAUGHT_MIN	    0
+#define AIS_INFO_MAX_DRAUGHT_MIN	    0//0
 #define AIS_INFO_MAX_DRAUGHT_MAX		255
-#define AIS_INFO_PERSONS_MIN	        0
+#define AIS_INFO_PERSONS_MIN	        0//0
 #define AIS_INFO_PERSONS_MAX		    8191
-#define AIS_INFO_ETA_MONTH_MIN	        0
+#define AIS_INFO_ETA_MONTH_MIN	        0//0
 #define AIS_INFO_ETA_MONTH_MAX		    12
-#define AIS_INFO_ETA_DAY_MIN	        0
+#define AIS_INFO_ETA_DAY_MIN	        0//0
 #define AIS_INFO_ETA_DAY_MAX		    31
-#define AIS_INFO_ETA_HOUR_MIN	        0
+#define AIS_INFO_ETA_HOUR_MIN	        0//0
 #define AIS_INFO_ETA_HOUR_MAX		    24
-#define AIS_INFO_ETA_MINUTE_MIN	        0
+#define AIS_INFO_ETA_MINUTE_MIN	        0//0
 #define AIS_INFO_ETA_MINUTE_MAX		    60
-#define AIS_INFO_NAVIGATION_STATUS_MIN	0
+#define AIS_INFO_NAVIGATION_STATUS_MIN	0//0
 #define AIS_INFO_NAVIGATION_STATUS_MAX	15
-#define AIS_INFO_REGION_APP_FLAG_MIN	0
+#define AIS_INFO_REGION_APP_FLAG_MIN	0//0
 #define AIS_INFO_REGION_APP_FLAG_MAX	15
-#define AIS_INFO_EPFS_TYPE_MIN	        0
+#define AIS_INFO_EPFS_TYPE_MIN	        0//0
 #define AIS_INFO_EPFS_TYPE_MAX		    15
 #define AIS_INFO_AI_DAC_MAX		        0
 #define AIS_INFO_AI_DAC_MIN		        1023
-#define AIS_INFO_AI_FI_MAX		        0
+#define AIS_INFO_AI_FI_MAX		        0//0
 #define AIS_INFO_AI_FI_MIN		        63
 
 /*lq AIS INFO 默认值 */
@@ -190,6 +190,11 @@ extern AisDynamicInfoStruct AisDynamicPara;
 
 /* Public functions ----------------------------------------------------------*/
 extern 	U32 AISINFO_InstRecStationGetQuantity(void);
+
+// lnw  add
+extern void AISINFO_InstRecStationQuantityIncrease(void);
+extern void AISINFO_ModuleInit(void) ;
+extern void AISINFO_InstRecStationQuantityUpdate(void);
 
 #endif
 /*==============================================================================

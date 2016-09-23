@@ -1552,7 +1552,7 @@ U8 AISDI_BBMIsValid(BBMStruct *pBBMStruct)
 * 输出  : 无
 * 返回  : 无
 *******************************************************************************/
-void AISDI_ModuleInit()
+void AISDI_ModuleInit(void)
 {
 	AISDI_InitAisDiSenFifoStruct(&AisDiSenQue);
     AISDI_InitABMStruct(&ABMPara);

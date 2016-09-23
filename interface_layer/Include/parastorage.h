@@ -150,7 +150,7 @@ EEPROM中单个参数存储方式：
 
 /*lq ==============EEPROM参数上（ceil）/下（floor）限宏定义================== */
 /*-----------------REGION_U32--------------------*/
-#define PARA_WORKTIME_FLOOR             0
+#define PARA_WORKTIME_FLOOR             0//0
 #define PARA_WORKTIME_CEIL              0xFFFFFFFF								// 4294967295
 #define PARA_WORKTIME_LAST_FLOOR        0
 #define PARA_WORKTIME_LAST_CEIL         0xFFFFFFFF								// 4294967295
@@ -242,4 +242,12 @@ U8 Para_Save(U8 ucPara_Type, U8 *pPara, U8 ucLen);
 */
 U8 Para_Read(U8 ucPara_Type, U8 *pPara);
 void IniEEPROM_Para(void);
+
+
+
+//lnw  add
+extern U8 Para_OpenTimeSave(U8 *pPara, U16 index);
+extern U8 Para_CloseTimeSave(U8 *pPara, U16 index);
+
+
 #endif

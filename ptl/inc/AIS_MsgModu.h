@@ -59,7 +59,31 @@ extern U8 GPS_valid;
 //extern U16 set_4501_interval(U16 speed);
 extern void ResetMsgPara(void);
 
+// lnw  add 
 extern U8 bitmap_get_value_for_U8(BITMAP* map, U8* pData, U8 data_bit_len);// lnw add
 extern U8 bitmap_get_value(BITMAP* map, U32* pData, U8 data_bit_len);//lnw add
+extern U16 UpdateAisDynamicInfo(void);
+extern void UpdateDynamicReportInterval(void);
+
+extern void InitMsg1(AISMsgCommStateUnion commState);
+extern void InitMsg3(AISMsgCommStateUnion commState);
+extern void InitMsg5(void);
+extern void InitMsg6(void);
+extern void InitMsg6Test(void);
+extern void InitMsg7(U8 ackType, U32 *pDestinationID, U8 *pSequenceNumber);
+extern void InitMsg8(void);
+extern void InitMsg12(void);
+extern void InitMsg13(U8 ackType, U32 *pDestinationID, U8 *pSequenceNumber);
+extern void InitMsg14(void);
+extern void InitMsg18(AISMsgCommStateEnum commStateType, AISMsgCommStateUnion commState);
+extern void InitMsg18Test(void);
+extern void InitMsg19(void);
+extern void InitMsg24A(void);
+extern void InitMsg24B(void);
+
+
+
+
+
 
 #endif

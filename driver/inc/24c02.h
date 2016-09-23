@@ -77,6 +77,13 @@ extern U8 EraseAllData(void);
 
 extern void I2C_Test(void);
 
+
+
+//lnw  add
+extern void EEPROM_EepromSelfCheckStructInit(EepromSelfCheckStruct *pEepromSelfCheckStruct);
+extern void EEPROM_SelfCheck(EepromSelfCheckStruct *pEepromSelfCheckStruct);
+
+
 #endif /* __I2C_EE_H */
 
 /******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/

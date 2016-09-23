@@ -27,6 +27,7 @@
 #include "uartmsg.h"
 #include "gpsctrl.h"
 #include "UbloxProtocol.h"  
+#include "Include.h"    //lnw add 
 
 /* Private variables ---------------------------------------------------------*/
 struct UartTxFIFOStruct Uart1TxFIFO;
@@ -296,8 +297,8 @@ void UartRxFIFOStructInit(struct UartRxFIFOStruct *pUartRxFIFO)
 ;********************************************************************************************************/
 U8 InitCommStruc(U8 Comm, U32 band) 
 {
-	struct UartTxFIFOStruct *putCell;
-	struct UartRxFIFOStruct *pUartRxFIFO;
+//	struct UartTxFIFOStruct *putCell;
+//	struct UartRxFIFOStruct *pUartRxFIFO;
 	
 	if(Comm == COMM1)
 	{

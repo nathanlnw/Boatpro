@@ -159,7 +159,7 @@ void ADC1_PerInit(void)
 *******************************************************************************/
 void ADC1_Calibration(void)
 {
-    FlagStatus Status; 
+//    FlagStatus Status; 
 
     /* Reset the ADC1 Calibration registers */ 
     ADC_ResetCalibration(ADC1);

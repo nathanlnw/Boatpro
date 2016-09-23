@@ -40,7 +40,7 @@
 #define AIS_FREQ_B                      (AIS_CHANNEL_FREQ_B)
 
 /*lq AISÀà±ð */
-#define AIS_CLASS_A                     0
+#define AIS_CLASS_A                     0//0
 #define AIS_CLASS_B                     1
 #define AIS_CLASS_DEFAULT               (AIS_CLASS_B)
 

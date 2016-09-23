@@ -117,5 +117,7 @@ extern void RF_PowerDown(void);
 extern void RF_PowerOn(void);
 
 extern void InitPowerCtrl(void);//add by lnw
+extern void InitPowerStru(void);// lnw add
+extern void RF1_RFInstanceInit(void);//lnw add
 
 #endif

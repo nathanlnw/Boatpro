@@ -12,6 +12,8 @@
 #ifndef _TDMA_H_
 #define _TDMA_H_
 
+#include "Include.h"   // lnw add 
+#include "AISMsgModule.h"
 /* Include -------------------------------------------------------------------*/
 
 /* Public define -------------------------------------------------------------*/
@@ -290,5 +292,12 @@ extern U8 SOTDMA_SetNssDual(AisChannelEnum channel, S16 nss);
 
 /* Public functions ----------------------------------------------------------*/
 extern void TDMA_InstReportIntervalSample(S16 reportInterval);
+
+//lnw  add
+extern void TDMA_InstSchedule(void);
+extern void TDMA_ModuleInit(void); 
+
+extern void TDMA_SetSlotState(AisChannelEnum channel, AISMsgCommStateEnum commStateType,AISMsgCommStateUnion commState, S32 currFrame,S16 currSlot, U8 slotState);
+
 
 #endif

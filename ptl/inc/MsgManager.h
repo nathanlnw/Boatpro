@@ -158,9 +158,16 @@ extern U8 SendMsg24A(AisChannelEnum channel, S16 txSlot);
 extern U8 SendMsg24B(AisChannelEnum channel, S16 txSlot);
 
 
-
+// lnw add
 extern U8 MSGMAN_RxMsgListInsert(const MsgCellStruct *pMsgCellStruct);// lnw add
 extern U8 SendMsg3(AisChannelEnum channel, S16 txSlot, AISMsgCommStateUnion commState);//lnw add
+extern void MSGMAN_MsgRxProcess(void) ;
+extern void MSGMAN_MsgTxProcess(void) ;
+extern U8 SendMsg18Test(AisChannelEnum channel, S16 txSlot);
+extern U8 MSGMAN_RxMsgListGetElem(MsgCellStruct *pMsgCellStruct);
+
+
+
 #endif
 /*==============================================================================
 ------------------------------------End of File---------------------------------

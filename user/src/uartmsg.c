@@ -362,7 +362,7 @@ U8 SartMmsiFormCheck(char *pInput)
 *******************************************************************************/
 U8 IsLatFormat(char *pData, U32 *pOut, U8 Precision)
 {
-    char *pEnd;
+//    char *pEnd;
     U8  ucLen;
     U8  i;
 	U32 ulTemp1;
@@ -473,7 +473,7 @@ U8 IsLatFormat(char *pData, U32 *pOut, U8 Precision)
 *******************************************************************************/
 U8 IsLonFormat(char *pData, U32 *pOut, U8 Precision)
 {
-    char *pEnd;
+//    char *pEnd;
     U8  ucLen;
     U8  i;
 	U32 ulTemp1;
@@ -586,7 +586,7 @@ U8 ToLatFormat(U32 Data, U8 *pOut, U8 Precision)
     double MaxValue;
     double  lfTemp;
     U32 ulTemp;
-    char RetBuf[30];
+//    char RetBuf[30];
     char TempBuf[30];
     U8  i;
 
@@ -608,16 +608,16 @@ U8 ToLatFormat(U32 Data, U8 *pOut, U8 Precision)
         ulTemp = (U16)(lfTemp / 60);
         lfTemp -= (ulTemp * 60);
 
-        sprintf(pOut, "%0*d", 2, ulTemp);
+        sprintf((char*)pOut, "%0*d", 2, (char*)ulTemp);
         if (Precision == 0)
         {
             sprintf(TempBuf, "%0*d", 2, (U16)lfTemp);        
         }
         else
         {
-            sprintf(TempBuf, "%0*.*Lf", 3 + Precision, Precision, lfTemp);        
+            sprintf(TempBuf, "%0*.*lf", 3 + Precision, Precision, lfTemp);        
         }
-        strcat(pOut, TempBuf);
+        strcat((char*)pOut, TempBuf);
         return TRUE;
     }
 }
@@ -636,7 +636,7 @@ U8 ToLonFormat(U32 Data, U8 *pOut, U8 Precision)
     double MaxValue;
     double  lfTemp;
     U32 ulTemp;
-    char RetBuf[30];
+//    char RetBuf[30];
     char TempBuf[30];
     U8  i;
 
@@ -658,16 +658,16 @@ U8 ToLonFormat(U32 Data, U8 *pOut, U8 Precision)
         ulTemp = (U16)(lfTemp / 60);
         lfTemp -= (ulTemp * 60);
 
-        sprintf(pOut, "%0*d", 3, ulTemp);
+        sprintf((char*)pOut, "%0*d", 3, (char*)ulTemp);
         if (Precision == 0)
         {
             sprintf(TempBuf, "%0*d", 2, (U16)lfTemp);        
         }
         else
         {
-            sprintf(TempBuf, "%0*.*Lf", 3 + Precision, Precision, lfTemp);        
+            sprintf(TempBuf, "%0*.*lf", 3 + Precision, Precision, lfTemp);        
         }
-        strcat(pOut, TempBuf);
+        strcat((char*)pOut, TempBuf);
         return TRUE;
     }
 }
@@ -790,23 +790,23 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 	U8 	ucCheck;
 	U8 	ucLen;
 //	U8	ucRetLen;
-    S32 slTemp;
+//    S32 slTemp;
 	U32 ulTemp;
 	U32 ulTemp1;
 	U32 ulTemp2;
-	U32 ulTemp3;
-	U32 ulTemp4;
+//	U32 ulTemp3;
+//	U32 ulTemp4;
     char *pEnd;
-    char *pChar;
+//    char *pChar;
 	U8 ucTemp;
 	char chRetBuf[100];
-    U8  ByteTemp[40];
+//    U8  ByteTemp[40];
     U8  ucSartFlg;
-	U8	uiTempValue;
-	U8	uiTempValue2;
-    float sfTemp;
-    double lfTemp;
-    static U16 VerSeqMsgId = 0;
+//	U8	uiTempValue;
+//	U8	uiTempValue2;
+//    float sfTemp;
+//    double lfTemp;
+//    static U16 VerSeqMsgId = 0;
     U8  buffer[10];
     S16 i;
     AisChannelEnum channel;
@@ -1460,7 +1460,8 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                             {
                                 /*lq 取值范围有效性判断*/
                                 ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
-                                if ((ulTemp >= 0) && (ulTemp <= 8))
+                                //if ((ulTemp >= 0) && (ulTemp <= 8))  // lnw mask  because   u8 >=0   const  True 
+															  if(ulTemp <= 8)    // lnw  modify
                                 {
                                     SI446X_CHANGE_STATE(ulTemp, SI446X_CHIP_A);
                                     UartResponseMsg("$DUAIR,1,TR,006");         
@@ -1499,7 +1500,8 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                             {
                                 /*lq 取值范围有效性判断*/
                                 ulTemp = strtoul((const char*)chTemp, (char**)&pEnd, 10);
-                                if ((ulTemp >= 0) && (ulTemp <= 8))
+                                //if ((ulTemp >= 0) && (ulTemp <= 8))  // lnw mask  because   u8 >=0   const  True 
+															  if(ulTemp <= 8)    // lnw  modify
                                 {
                                     SI446X_CHANGE_STATE(ulTemp, SI446X_CHIP_B);
                                     UartResponseMsg("$DUAIR,1,TR,006");         
@@ -1630,8 +1632,9 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
                 else
                 {
                     /*lq 取值范围有效性判断 */
-                    if (ulTemp < 0
-                        || ulTemp > 1)
+                    //if (ulTemp < 0            lnw  mask      U8<0  is  foolish
+                    //    || ulTemp > 1)
+									 if (ulTemp > 1)    // lnw  modify
                     {
         		        /*lq 取值无效 */
         				UartResponseMsg("$DUAIR,0,DBO");
@@ -1786,7 +1789,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				
 				for(ucTemp = 0;ucTemp < 3;ucTemp++)
 				{
-					WriteCry(ucTemp,chTemp);				 	
+					WriteCry((U8)ucTemp,(U8*)chTemp);				 	
 				}
 
 				
@@ -2496,7 +2499,7 @@ U8 UartMsgProcess(U8 *pDat, U16 uiLen)
 				strcat(chRetBuf, chTemp);
 				//Para_Read(PARA_MAX_DRAUGHT_TYPE, ucTempBuf);
 				FlashRead(STM32_FLASH_MAX_DRAUGHT_TYPE, ucTempBuf);
-				sprintf(chTemp, "%.1f", strtod(ucTempBuf, &pEnd) / 10.0);
+				sprintf(chTemp, "%.1f", strtod((const char*)ucTempBuf, &pEnd) / 10.0);
                 strcat(chRetBuf, (char *)chTemp);
 
 				/*lq Persons on-board */

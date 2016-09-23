@@ -77,4 +77,12 @@ typedef struct SelfCheckStruct
 
 /* Public function ----------------------------------------------------------*/
 
+//lnw add
+extern 	U32 SLFCHK_GetCheckSelectValue(void);
+extern  void SLFCHK_InstSelfCheckProcess(void);
+extern void SLFCHK_InstSelfCheckStructInit(void);
+extern void SLFCHK_InstCfgCheckSelect(const U32 bitMask);
+extern void SLFCHK_InstSelfCheckStart(void);
+
+
 #endif

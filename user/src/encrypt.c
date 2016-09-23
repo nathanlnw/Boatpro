@@ -33,7 +33,7 @@ U32 Decode(U32 ulSrc, U32 *ulKeyBuff, U8 KeySize)
 void ReadDeviceID(U32 *ucIDBuff)
 {
 	U8  ucBuff[10];
-	U32 ulBuff[4];
+//	U32 ulBuff[4];
 	U8  ucTemp1;
 	U8  ucTemp2;
 	u32 ulTemp;
@@ -94,7 +94,7 @@ void ReadDeviceID(U32 *ucIDBuff)
 U32 ReadCry(CryTypeEnum cryType)
 {
 	U8  ucTempBuff[7];
-	U8  ucCRCBuff[3];
+//	U8  ucCRCBuff[3];
 	U8  ucTemp;
 	U16 usCRC;
 	U16 usCRCTemp;
@@ -131,8 +131,10 @@ U32 ReadCry(CryTypeEnum cryType)
 	return ulSrc;
 }
 
-U8 WriteCry(CryTypeEnum cryType, U8 *ucCryBuff)
-{	
+void WriteCry(CryTypeEnum cryType, U8 *ucCryBuff)
+{	 
+     // Note : // lnw  modify     before    U8 return but  not return in  function
+     
 	U8 ucTempBuff[7];
 	U8 ucTemp;
 	U16 usCRC;		  

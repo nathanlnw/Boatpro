@@ -624,8 +624,8 @@ U32 CalcuSleepSpan(void)
 *******************************************************************************/
 U32 CalcuSleepSpan(void)
 {
-    S32 slCurrSlotSum;
-    S32 slGpsOnslot;
+//    S32 slCurrSlotSum;
+//    S32 slGpsOnslot;
     S32 slPhaseDiff;
     S32 slAlarmValue;
 

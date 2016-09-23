@@ -89,4 +89,10 @@ extern UBXPrtCommStruct UBXPrtCommPara;
 
 /* Public  function  ---------------------------------------------------------*/
 
+//lnw add
+extern void UBX_ModuleInit(void); 
+extern U16 UBX_GetCOMMMess(U8 COMM);
+extern void UBX1_UBXPrtCommCtrlProcess(void);
+extern void UBX_UartRxProcess(U8 COMM, U8 data);
+
 #endif

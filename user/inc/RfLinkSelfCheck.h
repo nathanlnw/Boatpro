@@ -50,6 +50,10 @@ typedef struct
 /* Public variables ----------------------------------------------------------*/
 
 /* Public functions ----------------------------------------------------------*/
+//lnw add
+extern void RFL_RfLinkSelfCheckStructInit(RfLinkSelfCheckStruct *pRfLinkSelfCheckStruct);
+extern void RFL_SelfCheck(RfLinkSelfCheckStruct *pRfLinkSelfCheckStruct);
+
 
 #endif
 /*==============================================================================

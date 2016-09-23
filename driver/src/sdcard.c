@@ -258,7 +258,7 @@ SDCardState SD_GetState(void)
   
   if(SD_Detect()== SD_PRESENT)
   {
-    if (SD_SendStatus(&resp1) != SD_OK)
+    if (SD_SendStatus((u32*)&resp1) != SD_OK)
     {
       return SD_CARD_ERROR;
     }

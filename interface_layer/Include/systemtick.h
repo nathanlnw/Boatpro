@@ -43,7 +43,12 @@ extern U32 SetTimePeriodProcess(U32 Period);
 extern U16 GetLocalClockTickProcess(void);
 extern U32 SetTimePeriodProcess(U32 Period);
 extern void LocalClockStateCtrlProcess(void);
+extern U32  SetTimePeriodProcess(U32 Period);
+extern U16  GetLocalClockTickProcess(void);
 
+extern U32 SetTimePeriodProcess(U32 Period);
+extern void LocalClockCtrlMainProcess(void);
+extern void init_systermtick(void);
 
 
 

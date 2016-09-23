@@ -89,6 +89,12 @@ extern void UartTxMainProcess(struct UartTxFIFOStruct *pUartTxFIFO);
 extern void UartRxProcess(struct UartRxFIFOStruct *pUartRxFIFOStruct, U8 data);
 extern void UartTxIntProcess(struct UartTxFIFOStruct *pUartTxFIFO);
 extern S16 GetCOMMMess(U8 COMM);
+
+// lnw  add
+extern void USART1_UsartConfigStructInit(U32 Baud, U8 Data, U8 Parity, U8 Stop);
+extern void UartTxFIFOStructInit(struct UartTxFIFOStruct *putCell);
+
+
 #endif	//__USART_H__
 
 
